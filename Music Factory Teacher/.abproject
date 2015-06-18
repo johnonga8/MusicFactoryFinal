@@ -9,7 +9,6 @@
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
-    "1",
     "2"
   ],
   "iOSBackgroundMode": [],
@@ -19,7 +18,6 @@
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [
-    "Portrait",
     "Landscape"
   ],
   "AndroidHardwareAcceleration": "false",
