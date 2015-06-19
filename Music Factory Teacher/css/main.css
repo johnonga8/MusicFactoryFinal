@@ -1,0 +1,71 @@
+/**
+ * CONTENTS
+ *
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * JS CONTROLS
+ *
+ * COMPONENTS
+ * header............The main page header.
+ * footer............The main page footer.
+ *
+ * MEDIA QUERIES
+ * Media queries.................Media Queries
+ */
+
+ /*------------------------------------*\
+    #SETTINGS
+\*------------------------------------*/
+html{background:#1C1C1C}
+body{font:normal 14px/1.5  "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;}
+a, a:hover, a:visited, a:active, a:focus{text-decoration:none;color:#000;outline:none;}
+.nav > li > a:focus, .nav > li > a:hover {background-color:transparent}
+ /*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+/**HEADINGS**/
+h1{font: 600 40px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+h2{font: 700 30px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+h3{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+small{font-size:12px;display:block;margin:10px 0}
+/**FONTS**/
+ /*------------------------------------*\
+    #TOOLS
+\*------------------------------------*/
+
+/**BUTTONS**/
+.bttn-next{float:right}
+/**MARGINS/PADDINGS/LINE HEIGHT STYLE**/
+
+/**ICONS**/
+/**PAGINATION**/
+
+/**MIXINS**/
+
+
+ /*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+/**====HEADER====**/
+/**====FOOTER====**/
+/**====BOOK LISTING====**/
+.main-aside{border-right:1px solid #000;}
+.listing-masthead-wrap{border-bottom:1px solid #000;margin-left:-15px;margin-right:-15px;padding-bottom:20px;}
+.listing-books{padding-top:20px;background:#f2f2f2;margin-left:-15px;margin-right:-15px}
+.listing-books h3{font-size:14px;text-align:left;margin-left:0}
+.listing-books strong{font-weight:normal}
+.listing-books .km-listview-link::after, .listing-books .km-listview-label::after{display:none}
+.listing-books a:selected{background-color:transparent}
+/**====BOOK DETAILS====**/
+.book-details-title{text-align:center;display:block}
+.book-details-wrap .row{padding:60px 0}
+.book-details-wrap header{background:#f2f2f2;height:50px;padding-top:10px;top:0;width:100%;display:block}
+.book-details-wrap footer{background:#f2f2f2;position:fixed;bottom:0;height:50px;padding-top:10px;width:100%;display:block}
