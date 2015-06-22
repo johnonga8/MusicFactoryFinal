@@ -24,6 +24,7 @@
             <p>
                 Leading the way in creative music education
             </p>
+            <!--
             <div class="listing-masthead-tabs clearfix">
               <div class="pull-right">
                 <button>
@@ -34,9 +35,18 @@
                 </button>
               </div>
             </div>
+			-->
         </div>
       </div>
-      <div class="row listing-books" data-role="listview">
+      <div class="row listing-books" data-role="listview" data-model="listingBooks" id="listingBooks">
+        <div class="col-xs-2">
+          <a href="views/book-details.html" title="">
+            <img src="" id="js-listingbooks-cover" class="img-responsive"/>
+            <h3>English Version</h3>
+            <strong>Owl Series: Classroom Music Program</strong>
+          </a>
+        </div>
+          <!--
         <div class="col-xs-2">
           <a href="views/book-details.html" title="">
             <img src="./img/book.jpg" class="img-responsive"/>
@@ -58,10 +68,34 @@
             <strong>Owl Series: Classroom Music Program</strong>
           </a>
         </div>
+-->
       </div>
     </div>
     <script>
+    (function () {
         var fullheight = $(window).height();
         $('.js-fullheight').css('min-height', fullheight);
+
+        var domain = "http://192.168.1.39:9999/";
+        $.ajax({
+            type: "POST",
+            url: domain + "Custom/Service/TestService.svc/GetTestBook",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            data: null,
+            success: function (result) 
+            {
+                var data = result.d
+                var htmlDisplay = "";
+                /*$.each(data, function (index)
+                {
+                    htmlDisplay += data[index].CoverImageUrl;
+                });*/
+                $("#js-listingbooks-cover").attr("src",data[0].CoverImageUrl);
+            },
+            error: function (error) { alert(error); }
+        });
+
+    }());
     </script>
 </div>
