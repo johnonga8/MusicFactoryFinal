@@ -52,6 +52,7 @@ small{font-size:12px;display:block;margin:10px 0}
 video{max-width:100%}
 .row-margin-null{margin-left:0;margin-right:0}
 /**BUTTONS**/
+.km-widget.km-button.bttn{background:#f2944e;color:#fff}
 .bttn-next{float:right}
 .bttn-signout{position:absolute;bottom:20px}
 .km-button.bttn-tableofcontents{width:200px;border-right:1px solid #2a383f;border-radius:0}
@@ -68,6 +69,10 @@ video{max-width:100%}
 \*------------------------------------*/
 /**====HEADER====**/
 /**====FOOTER====**/
+/**====LOGIN====**/
+#login.container-fluid{padding:0}
+#login .km-content{background:#e4e9ed!important}
+
 /**====BOOK LISTING====**/
 .main-aside{background:#7ebbb6}
 .branding-wrap{margin-left:-15px;margin-right:-15px;background:#fff}
@@ -85,7 +90,7 @@ video{max-width:100%}
 .listing-books h3{font-size:14px;text-align:left;margin-left:0}
 .listing-books strong{font-weight:normal}
 .listing-books .km-listview-link::after, .listing-books .km-listview-label::after{display:none}
-.listing-books a{width:100%}
+.listing-books a.km-button{width:100%;padding:0;border:none;margin:0}
 .listing-books a:selected{background-color:transparent}
 /**====BOOK DETAILS====**/
 .bookdetails-drawer .km-content{background:#7ebbb6!important}
@@ -108,3 +113,8 @@ video{max-width:100%}
 
 .book-content-wrap{padding:60px 0}
 .tab-content-02,.tab-content-03{display:none}
+
+
+
+.temp-margin{margin:100px 0}
+.temp{margin:0 auto;display:block;width:150px;margin-top:80px}
