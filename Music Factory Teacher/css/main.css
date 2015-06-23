@@ -38,6 +38,7 @@ a, a:hover, a:visited, a:active, a:focus{text-decoration:none;color:#000;outline
 .km-button.km-state-active{background-color:transparent;color:transparent}
 .km-listview-link::after {display:none}
 .km-widget.km-button{background:none;border:none;color:#000}
+.km-android .km-widget .km-state-active {background-color:transparent}
 /**HEADINGS**/
 h1{font: 600 30px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
 h2{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
@@ -92,10 +93,10 @@ video{max-width:100%}
 .bookdetails-drawer-firstnav ul {display:none}
 .bookdetails-drawer-firstnav ul li{margin-bottom:10px}
 
-.km-android .book-main-wrap header.km-header{background:#f6f6f6;height:50px;padding-top:0}
+.km-android .book-main-wrap-header.km-footer{background:#f6f6f6;height:50px;padding-top:0}
 .book-main-wrap-header strong{font-size:16px;line-height:50px;float:right;padding-right:15px}
 .book-main-wrap-header a{font-size:16px;line-height:30px;padding-left:15px}
-.km-android  .book-main-wrap footer.km-footer{background:#f6f6f6;height:50px;padding-top:10px;}
+.km-android .book-main-wrap-footer.km-header{background:#f6f6f6;height:50px;padding-top:10px;}
 
 .book-content-head{margin-bottom:30px}
 .bookdetails-tabs{float:right}
