@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Factory</title>
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="css/kendo.bootstrap.min.css" rel="stylesheet"/>
+    
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+</head>
+<body>
+<!--
+<div class="container-fluid" id="home" data-role="view" data-layout="default">
+  <div class="row">
+    <a href="views/listoverview.html" data-role="button" style="margin:100px auto;width:200px;display:block">Book Overview</a>  
+  </div>
+</div>
+-->
+
+<div class="book-main-wrap" data-role="view" id="chapter00" data-layout="drawer-layout" data-title="Chapter00">
+  <header>
+    <div class="row">
+        <div class="col-xs-2">
+            <a data-role="button" data-rel="drawer" href="#book-chapters" data-icon="drawer-button"></a>
+        </div>
+        <div class="col-xs-8">
+            <span data-role="view-title" class="book-details-title" data-bind="text: title" >test</span>
+        </div>
+        <div class="col-xs-2">
+            <a data-role="button" href="views/listoverview.html" data-transition="fade" class="pull-right">Close</a>
+        </div>	        
+    </div>       
+  </header>
+  
+  <!--<ul data-template="infantBooks-template" data-bind="source: InfantBooks">
+  </ul>
+  <script id="infantBooks-template" type="text/x-kendo-template">
+      <li>
+          author: <span data-bind="text: Author"></span>
+          coverimage: <span data-bind="text: CoverImageUrl"></span>
+      </li>
+  </script>-->
+  
+<!--<ul data-template="ul-template" data-bind="source: products">
+</ul>
+<script id="ul-template" type="text/x-kendo-template">
+    <li data-bind="text: this"></li>
+</script>-->
+  
+<!-- Generate All Books -->
+  <div id="divInfantBooks" class="row" data-bind="source: InfantBooks" data-template="infantBooks-template">
+    
+  </div>
+  <script id="infantBooks-template" type="text/x-kendo-template">
+    <div class="col-xs-12">
+       <strong>Author: <span data-bind="text: Author"></span></strong>
+       <strong>Cover: <span data-bind="text: CoverImageUrl"></span></strong>
+       <strong>Title: <span data-bind="text: Title"></span></strong>
+       <strong>Type: <span data-bind="text: Type"></span></strong>
+    </div>
+  </script> 
+
+  <footer>
+    <a data-role="#" class="bttn-prev">Prev</a>
+    <a data-role="nextbutton" class="bttn-next">Next</a>
+  </footer>
+</div>
+
+<section data-role="layout" data-id="default">
+    <header data-role="header" class="header-top" style="display:none">
+        <div data-role="navbar">Music Factory</div>
+    </header>
+    <header data-role="header" class="header-top" style="display:none">
+        <div data-role="navbar">Music Factory</div>
+    </header>
+    <!--View content will render here-->
+</section>
+<script src="js/bindings.js"></script>
+
+</body>
+</html>

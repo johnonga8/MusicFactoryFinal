@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Listing" id="listoverview">    
+<div data-role="view" data-title="Listing" id="listoverview" data-reload="true">    
     <div class="col-xs-3 main-aside js-fullheight">
       <h1>Music Factory</h1>
       <div class="profile-wrap">
@@ -71,8 +71,9 @@
 -->
       </div>
     </div>
+    <script src="js/listview.js"></script>
     <script>
-    (function () {
+        (function () {
         var fullheight = $(window).height();
         $('.js-fullheight').css('min-height', fullheight);
 

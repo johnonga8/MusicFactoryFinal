@@ -38,27 +38,6 @@
 
 <script>
 (function () {
-  var domain = "http://192.168.1.39:9999/";
-  window.bookdetails = kendo.observable({
-      function(){
-        $.ajax({
-            type: "POST",
-            url: domain + "Custom/Service/TestService.svc/GetTestBook",
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            data: null,
-            success: function (result) 
-            {
-                var data = result.d
-                var htmlDisplay = "";
-  				title: data[index].CoverImageUrl
 
-
-            },
-            error: function (error) { alert(error); }
-        });      
-      }
-      alert(data[index].CoverImageUrl);
-  });
 }());
 </script>

@@ -1,0 +1,100 @@
+<div class="book-main-wrap" data-role="view" data-layout="drawer-layout">
+
+  <header data-role="header" class="book-main-wrap-header">
+    <div class="row">
+        <div class="col-xs-6">
+            <a data-role="button" href="views/mf-booklisting.html" data-icon="rewind">Library</a>
+        </div>
+        <div class="col-xs-6">
+            <strong>OWL SERIES: Preface Introduction</strong>
+        </div>	        
+    </div>       
+  </header>
+  
+  <div class="row book-content-wrap js-fullheight row-margin-null">
+  <!--start content-->
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>Lesson 1: The Bicycle Bells</h1>
+        </div>
+        <div class="col-xs-6">
+          <ul class="bookdetails-tabs">
+            <li class="tab-control-01">Overview</li>
+            <li class="tab-control-02">Activity Procedure</li>
+            <li class="tab-control-03">Reference Materials</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row tab-content-01">
+        <div class="col-xs-6">
+          <div class="book-content-lessonmodel">
+            <h2>Learning Objective</h2>
+            <p>Curabitur facilisis, ipsum a maximus ultrices, ipsum nulla tempor lacus, sit amet euismod nulla lorem ac nibh. Nulla orci nisl, ornare at ex ac, semper convallis tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ut finibus urna.</p>
+          </div>
+         <div class="book-content-lessonmodel">
+            <h2>Learning Objective</h2>
+            <p>Pinceptos himenaeos. Praesent ut finibus urna.</p>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <video controls>
+            <source src="./vids/video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="row tab-content-02">
+        <div class="col-xs-12">
+          <div class="book-content-lessonmodel">
+            <h2>Activity Procedure</h2>
+            <p>Curabitur facilisis, ipsum a maximus ultrices, ipsum nulla tempor lacus, sit amet euismod nulla lorem ac nibh. Nulla orci nisl, ornare at ex ac, semper convallis tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ut finibus urna.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row tab-content-03">
+        <div class="col-xs-12">
+          <div class="book-content-lessonmodel">
+            <h2>Reference Materials</h2>
+            <p>Curabitur facilisis, ipsum a maximus ultrices, ipsum nulla tempor lacus, sit amet euismod nulla lorem ac nibh. Nulla orci nisl, ornare at ex ac, semper convallis tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ut finibus urna.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--end content-->
+  </div>
+  
+  <footer data-role="footer">
+    <div class="row">
+        <div class="col-xs-6">
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#book-chapters" data-icon="organize">Table of Contents</a>
+            <a class="bttn-prev" data-role="button" href="#" data-icon="rewind">Back: Preface</a>
+        </div>
+        <div class="col-xs-6">
+            <a class="bttn-next" data-role="button" href="#" data-transition="slide" class="pull-right" data-icon="fastforward">Next: Lesson 1</a>
+        </div>	        
+    </div> 
+  </footer>
+<script src="js/bookdetails.js"></script>
+</div>
+
+<div data-role="drawer" id="book-chapters" class="bookdetails-drawer" style="width:300px" data-swipe-to-open="false">
+    <div class="bookdetails-drawer-head">
+      <h1>Owl Series:<br/> Classroom Music Program</h1>
+    </div>
+    <ul data-role="listview" class="bookdetails-drawer-firstnav">
+      <li><a href="" data-transition="none">Cover </a></li>
+      <li>
+        <a href="" data-transition="none" class="js-subnav-link">Chapter 1: Listening and Exploring <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+        <ul>
+          <li><a href="#" data-transition="none">Lesson 1</a></li>
+          <li><a href="#" data-transition="none">Lesson 2</a></li>
+          <li><a href="#" data-transition="none">Lesson 3</a></li>
+          <li><a href="#" data-transition="none">Lesson 4</a></li>
+        </ul>
+      </li>
+      <li><a href="" data-transition="none">Chapter 2: Listening and Responding to Music</a></li>
+      <li><a href="" data-transition="none">Chapter 3</a></li>
+    </ul>
+    <a data-click="hideDrawer" data-role="button">Hide</a>
+</div>
+

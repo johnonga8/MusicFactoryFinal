@@ -34,18 +34,24 @@ a, a:hover, a:visited, a:active, a:focus{text-decoration:none;color:#000;outline
 /**KENDO**/
 .km-content, .km-android{background:#fff!important}
 .km-android input, .km-android select, .km-android textarea, .km-android .km-widget{color:#000}
+.km-ios7 .km-button{border:none}
+.km-button .km-state-active{background-color:transparent}
+.km-listview-link::after {display:none}
 /**HEADINGS**/
-h1{font: 600 40px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
-h2{font: 700 30px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+h1{font: 600 30px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+h2{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
 h3{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
 small{font-size:12px;display:block;margin:10px 0}
 /**FONTS**/
  /*------------------------------------*\
     #TOOLS
 \*------------------------------------*/
-
+video{max-width:100%}
+.row-margin-null{margin-left:0;margin-right:0}
 /**BUTTONS**/
 .bttn-next{float:right}
+.bttn-signout{position:absolute;bottom:20px}
+.km-button.bttn-tableofcontents{width:200px;border-right:1px solid #2a383f;border-radius:0}
 /**MARGINS/PADDINGS/LINE HEIGHT STYLE**/
 
 /**ICONS**/
@@ -60,15 +66,39 @@ small{font-size:12px;display:block;margin:10px 0}
 /**====HEADER====**/
 /**====FOOTER====**/
 /**====BOOK LISTING====**/
-.main-aside{border-right:1px solid #000;}
-.listing-masthead-wrap{border-bottom:1px solid #000;margin-left:-15px;margin-right:-15px;padding-bottom:20px;}
-.listing-books{padding-top:20px;background:#f2f2f2;margin-left:-30px;margin-right:-30px}
+.main-aside{background:#7ebbb6}
+.branding-wrap{margin-left:-15px;margin-right:-15px;background:#fff}
+.profile-wrap-bg{margin-left: -15px;margin-right: -15px;max-height: 150px;overflow: hidden;}
+.profile-photo{border:5px solid #fff;border-radius:50%;width:150px;height:150px;margin:-75px auto 20px;position:relative}
+.profile-header{text-align:center}
+.listing-masthead-wrap{background:#f6f6f6;border-bottom:4px solid #eceff0;margin-left:-15px;margin-right:-15px;padding-bottom:20px;}
+.tabs-listing.km-widget.km-buttongroup{color:#fe904e;border:1px solid #fe904e;border-radius:5px}
+.tabs-listing .km-button.km-state-active{color:#fff}
+.tabs-listing .km-button{border-color:#fe904e;}
+.tabs-listing .km-state-active{background-color:#fe904e}
+.tabcontent-infantbooks{display:none}
+.listing-books{padding-top:20px;background:#fff;margin-left:-30px;margin-right:-30px}
 .listing-books h3{font-size:14px;text-align:left;margin-left:0}
 .listing-books strong{font-weight:normal}
 .listing-books .km-listview-link::after, .listing-books .km-listview-label::after{display:none}
 .listing-books a:selected{background-color:transparent}
 /**====BOOK DETAILS====**/
-.book-details-title{text-align:center;display:block}
-.book-details-wrap .row{padding:60px 0}
-.book-main-wrap header{background:#f2f2f2;height:50px;padding-top:0px;top:0;width:100%;display:block}
-.book-main-wrap footer{background:#f2f2f2;position:fixed;bottom:0;height:50px;padding-top:0px;width:100%;display:block}
+.bookdetails-drawer .km-content{background:#7ebbb6!important}
+.bookdetails-drawer-head h1{background:#94c8c6;font-size:20px;margin:0;padding:15px;color:#296b68}
+.bookdetails-drawer .km-listview-wrapper li a{color:#fff}
+.bookdetails-drawer .glyphicon{float:right}
+.bookdetails-drawer-firstnav > li{border-bottom:1px solid #fff}
+.bookdetails-drawer-firstnav ul li{margin-bottom:10px}
+
+.book-main-wrap header.km-header{background:#f6f6f6;height:50px;padding-top:0}
+.book-main-wrap-header strong{font-size:16px;line-height:50px;float:right;padding-right:15px}
+.book-main-wrap-header a{font-size:16px;line-height:30px;padding-left:15px}
+.book-main-wrap footer.km-footer{background:#f6f6f6;height:50px;padding-top:10px;}
+
+.book-content-head{margin-bottom:30px}
+.bookdetails-tabs{float:right}
+.bookdetails-tabs li{display:inline;margin-right:20px;cursor:pointer}
+.bookdetails-tabs li:hover{border-bottom:3px solid #fe9251}
+
+.book-content-wrap{padding:60px 0}
+.tab-content-02,.tab-content-03{display:none}
