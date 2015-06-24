@@ -1,4 +1,4 @@
-<div class="book-main-wrap" data-role="view" data-layout="drawer-layout">
+<div class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="zoom">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
@@ -12,8 +12,8 @@
   </header>
   
   <div class="row book-content-wrap js-fullheight row-margin-null">
-  <!--start content-->
     <div class="col-xs-12">
+    <!--start content-->
       <div class="row">
         <div class="col-xs-6">
           <h1>Lesson 1: The Bicycle Bells</h1>
@@ -59,8 +59,8 @@
           </div>
         </div>
       </div>
+    <!--end content-->
     </div>
-  <!--end content-->
   </div>
   
   <footer data-role="header" class="book-main-wrap-footer">
@@ -77,6 +77,7 @@
 <script src="js/bookdetails.js"></script>
 </div>
 
+<!--drawer navigation-->
 <div data-role="drawer" id="book-chapters" class="bookdetails-drawer" style="width:300px" data-swipe-to-open="false">
     <div class="bookdetails-drawer-head">
       <h1>Owl Series:<br/> Classroom Music Program</h1>
@@ -97,4 +98,4 @@
     </ul>
     <a data-click="hideDrawer" data-role="button">Hide</a>
 </div>
-
+<!--drawer navigation-->
