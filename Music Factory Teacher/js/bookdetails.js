@@ -1,7 +1,7 @@
 (function () {
     //FULL HEIGHT
-    var fullheight = $(window).height();
-    $('.js-fullheight').css('min-height', (fullheight - 100));
+    var bookdetailsfullheight = $(window).height();
+    $('.js-fullheight').css('min-height', (bookdetailsfullheight - 100));
     //TABS
     $(".tab-control-01").click(function(){
       $(".tab-content-01").show();
