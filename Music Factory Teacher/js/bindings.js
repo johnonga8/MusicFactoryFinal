@@ -14,7 +14,7 @@
                 generateInfantBooks(books.InfantBooks);
                 console.log(books);
             },
-            error: function (error) { alert(error); }
+            error: function () { alert("Oh no"); }
         });
       });
       GetAllBooks();
