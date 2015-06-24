@@ -3,7 +3,7 @@
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" href="views/mf-booklisting.html" data-icon="rewind">Library</a>
+            <a data-role="button" href="views/mf-booklisting.html"><span class="glyphicon glyphicon-book"></span> Library</a>
         </div>
         <div class="col-xs-6">
             <strong>OWL SERIES: Preface Introduction</strong>
@@ -33,7 +33,7 @@
             <p>Curabitur facilisis, ipsum a maximus ultrices, ipsum nulla tempor lacus, sit amet euismod nulla lorem ac nibh. Nulla orci nisl, ornare at ex ac, semper convallis tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ut finibus urna.</p>
           </div>
          <div class="book-content-lessonmodel">
-            <h2>Learning Objective</h2>
+            <h2><img src="./img/icon-bulb.png" class="icon-img"/>Learning Objective</h2>
             <p>Pinceptos himenaeos. Praesent ut finibus urna.</p>
           </div>
         </div>
@@ -66,15 +66,16 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#book-chapters" data-icon="organize">Table of Contents</a>
-            <a class="bttn-prev" data-role="button" href="#" data-icon="rewind">Back: Preface</a>
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#book-chapters"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
+            <a class="bttn-prev" data-role="button" href="#"><span class="glyphicon glyphicon-chevron-left"></span> Back: Preface</a>
         </div>
         <div class="col-xs-6">
-            <a class="bttn-next" data-role="button" href="#" data-transition="slide" class="pull-right" data-icon="fastforward">Next: Lesson 1</a>
+            <a class="bttn-next" data-role="button" href="#" data-transition="slide" class="pull-right">Next: Lesson 1 <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>	        
     </div> 
   </footer>
 <script src="js/bookdetails.js"></script>
+<script src="js/bindings.js"></script>
 </div>
 
 <!--drawer navigation-->
@@ -87,7 +88,7 @@
       <li>
         <a href="" data-transition="none" class="js-subnav-link">Chapter 1: Listening and Exploring <span class="glyphicon glyphicon-triangle-bottom"></span></a>
         <ul>
-          <li><a href="#" data-transition="none">Lesson 1</a></li>
+          <li><a href="views/slider.html" data-transition="none" data-role="button">Lesson 1</a></li>
           <li><a href="#" data-transition="none">Lesson 2</a></li>
           <li><a href="#" data-transition="none">Lesson 3</a></li>
           <li><a href="#" data-transition="none">Lesson 4</a></li>

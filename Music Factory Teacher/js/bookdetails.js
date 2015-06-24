@@ -24,6 +24,7 @@
       $(this).siblings('ul').slideToggle();
       $(this).children(".glyphicon").toggleClass("glyphicon-triangle-bottom glyphicon-triangle-top");
     });
+
 }());
 function hideDrawer() {
     $("#book-chapters").data("kendoMobileDrawer").hide();
