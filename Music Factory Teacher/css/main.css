@@ -55,12 +55,14 @@ video{max-width:100%}
 .km-widget.km-button.bttn{background:#f2944e;color:#fff}
 .bttn-next{float:right}
 .bttn-signout{position:absolute;bottom:20px}
+.bttn-hidedrawer{position:fixed;bottom:0;width:300px;background:#94C8C6;display:block}
 .km-button.bttn-tableofcontents{width:200px;border-right:1px solid #2a383f;border-radius:0}
 /**MARGINS/PADDINGS/LINE HEIGHT STYLE**/
 
 /**ICONS**/
 .icon-bulb{background:url(../img/icon-bulb.png) left center no-repeat;width:25px;min-height:25px;display:inline-block}
 .icon-img{width:25px;display:inline-block;}
+
 /**PAGINATION**/
 
 /**MIXINS**/
@@ -119,11 +121,11 @@ video{max-width:100%}
 .book-content-head{margin-bottom:30px}
 .book-content-wrap{padding:60px 0}
 
-/**====SMALL DEVICE AND PORTRAIT===
+/**====SMALL DEVICE AND PORTRAIT===**/
 .km-content, .km-android, .km-vertical{position:relative}
 .km-vertical:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-orientation.png) center center no-repeat #e4e9ed!important;}
 .km-phone .km-content:before, .km-phone .km-android:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-phone.png) center center no-repeat #e4e9ed!important;}
-**/
+
 
 .mf-scrollview p{white-space:normal!important}
 .mf-scrollview .km-widget{color:#000}
