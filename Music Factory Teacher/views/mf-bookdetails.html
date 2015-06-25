@@ -1,12 +1,12 @@
-<div class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left">
+<div class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left" data-init="onInitialize" data-before-show="beforeShow" data-after-show="afterShow"  data-show="onShow">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
             <a data-role="button" href="views/mf-booklisting.html"><span class="glyphicon glyphicon-book"></span> Library</a>
         </div>
-        <div class="col-xs-6">
-            <strong>OWL SERIES: Preface Introduction</strong>
+        <div class="col-xs-6" >
+            <strong data-bind="text: Title"></strong>
         </div>	        
     </div>       
   </header>
@@ -16,7 +16,7 @@
     <!--start content-->
       <div class="row book-content-header">
         <div class="col-xs-12">
-          <h1>Lesson 1: The Bicycle Bells</h1>
+          <h1>Lesson 1: The Bicycle Bells</h1> <!-- Lesson Title -->
         </div>
         <div class="col-xs-12">
           <ul class="bookdetails-tabs">
@@ -75,7 +75,7 @@
     </div> 
   </footer>
 <script src="js/bookdetails.js"></script>
-<script src="js/bindings.js"></script>
+<script src="js/book-details.js"></script>
 </div>
 
 <!--drawer navigation-->

@@ -4,11 +4,11 @@
     $('.listing-books').css('height', fullheight - 90);
     
     $(".tabs-listing .tab-kinder").click(function(){
-      $(".tabcontent-kindergarten").show();
+      $(".tabcontent-kinder").show();
       $(".tabcontent-infantbooks").hide();
     });
     $(".tabs-listing .tab-inf").click(function(){
-      $(".tabcontent-kindergarten").hide();
+      $(".tabcontent-kinder").hide();
       $(".tabcontent-infantbooks").show();
     });
 }());

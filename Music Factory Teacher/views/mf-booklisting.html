@@ -42,82 +42,22 @@
         </div>
       </div>
       <!--end masthead-->
-      <div class="row listing-books row-margin-null" id="listingBooks" data-role="scroller" >     
-        <!--template KIN start-->
-        <div class="tabcontent-kindergarten clearfix">
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button">
-              <img src="./img/book.jpg" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3>Owl Series: K Classroom Music Program</h3>
-            </a>
-          </div>
+      <div class="row listing-books row-margin-null" id="listingBooks" data-role="scroller" >   
+        <!--template KIN start-->            
+        <div class="tabcontent-kinder clearfix" data-bind="source: KinderBooks" data-template="kinder-template">
+          <!--content from template goes here-->
         </div>
+          <script id="kinder-template" type="text/x-kendo-template">
+          <div class="col-xs-2">
+            <a data-bind="attr: { title: Title }, events: { click: SelectBook}" data-role="button" class="js-book-selected">
+              <img data-bind="attr: { src: CoverImageUrl , alt: Title }" id="js-listingbooks-cover" class="img-responsive"/>
+              <h3 data-bind="text: Title"></h3>
+              <input id="currentBookId" type="text" data-bind="value: Id" hidden/>
+              <input id="currentCultureName" type="text" data-bind="value: CultureName" hidden/>
+              <input id="currentBookType" type="text" data-bind="value: Type" hidden/>
+            </a>
+          </div>
+          </script> 
         <!--template KIN end-->
         <!--template INF start-->
         <div class="tabcontent-infantbooks clearfix" data-bind="source: InfantBooks" data-template="infantBooks-template">
@@ -125,7 +65,7 @@
         </div>
           <script id="infantBooks-template" type="text/x-kendo-template">
           <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" title="" data-role="button" >
+            <a href="views/mf-bookdetails.html" data-bind="attr: { title: Title }" data-role="button" >
               <img data-bind="attr: { src: CoverImageUrl , alt: Title }" id="js-listingbooks-cover" class="img-responsive"/>
               <h3 data-bind="text: Title"></h3>
             </a>
@@ -136,5 +76,5 @@
     </div>
     <!--end listing-->
 <script src="js/listview.js"></script>
-<script src="js/bindings.js"></script>
+<script src="js/book-listing.js"></script>
 </div>
