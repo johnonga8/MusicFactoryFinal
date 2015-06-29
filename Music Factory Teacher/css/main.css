@@ -6,7 +6,7 @@
  * Global...............Globally-available variables and config.
  *
  * BASE
- * Headings.............H1�H6 styles.
+ * Headings.............H1H6 styles.
  *
  * TOOLS
  * Mixins...............Useful mixins.
@@ -24,15 +24,15 @@
  /*------------------------------------*\
     #SETTINGS
 \*------------------------------------*/
-html{background:#fff}
-body{font:normal 14px/1.5  "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;}
-a, a:hover, a:visited, a:active, a:focus{text-decoration:none;color:#000;outline:none;}
+html{background:#e4e9ed;width:1024px!important;margin:0 auto}
+body{font:normal 15px/1.5  "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#12384b;}
+a, a:hover, a:visited, a:active, a:focus{text-decoration:none;outline:none;}
 .nav > li > a:focus, .nav > li > a:hover {background-color:transparent}
  /*------------------------------------*\
     #BASE
 \*------------------------------------*/
 /**KENDO**/
-.km-content, .km-android{background:#fff!important}
+.km-content, .km-android{background:#fff!important;color:#12384b}
 .km-android input, .km-android select, .km-android textarea, .km-android .km-widget{color:#000}
 .km-android .km-button{border:none}
 .km-button.km-state-active{background-color:transparent;color:transparent}
@@ -40,29 +40,41 @@ a, a:hover, a:visited, a:active, a:focus{text-decoration:none;color:#000;outline
 .km-widget.km-button{background:none;border:none;color:#000}
 .km-android .km-widget .km-state-active {background-color:transparent}
 .km-android .km-button.km-state-active:after, .km-android .km-buttongroup .km-state-active:after {display:none}
+.km-content p, .km-content h1, .km-content h2, .km-content h3, .km-content h4, .km-content h5, .km-content h6{margin:0}
 /**HEADINGS**/
-h1{font: 600 30px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
-h2{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
-h3{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+.km-content h1{font: 600 30px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+.km-content h2{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+.km-content h3{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
 small{font-size:12px;display:block;margin:10px 0}
 /**FONTS**/
+.font-normal{font-weight:normal;}
  /*------------------------------------*\
     #TOOLS
 \*------------------------------------*/
+hr{border:1px solid #e5ebeb;margin:30px 0}
 video{max-width:100%}
+.music-img{display:block;margin:20px auto}
 .row-margin-null{margin-left:0;margin-right:0}
 /**BUTTONS**/
-.km-widget.km-button.bttn{background:#f2944e;color:#fff}
+a.bttn{padding:10px 25px;border-radius:3px;color:#fff;cursor:pointer}
+.km-widget.km-button.bttn, .bttn{background:#ff914e;color:#fff;text-transform:uppercase;padding:0;font-size:14px;}
 .bttn-next{float:right}
 .bttn-signout{position:absolute;bottom:20px}
-.bttn-hidedrawer{position:fixed;bottom:0;width:300px;background:#94C8C6;display:block}
-.km-button.bttn-tableofcontents{width:200px;border-right:1px solid #2a383f;border-radius:0}
+.bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;}
+.bttn-modal{background:url(../img/icon-music-white.png) no-repeat 180px #ff8e3c;width:220px;border-radius:3px;height:40px;text-transform:uppercase;font-size:14px;text-align:center;color:#fff;display:block;line-height:40px;padding-right:20px;cursor:pointer}
+.bttn:hover, a.bttn:hover, .bttn-modal:hover{background-color:#e7711c}
 /**MARGINS/PADDINGS/LINE HEIGHT STYLE**/
-
+.marg-b-10{margin-bottom:10px}
+.marg-b-15{margin-bottom:15px}
+.marg-b-20{margin-bottom:20px}
+.marg-t-200{margin-top:200px}
 /**ICONS**/
 .icon-bulb{background:url(../img/icon-bulb.png) left center no-repeat;width:25px;min-height:25px;display:inline-block}
 .icon-img{width:25px;display:inline-block;}
-
+.icon-booklist{background:url(../img/icon-booklist.png) left center no-repeat;height:15px;padding-left:20px}
+.icon-left{background:url(../img/icon-left.png);width:6px;height:11px;display:inline-block;margin-right:5px}
+.icon-right{background:url(../img/icon-right.png);width:6px;height:11px;display:inline-block;margin-left:5px}
+.icon-img{margin-top:-5px}
 /**PAGINATION**/
 
 /**MIXINS**/
@@ -71,19 +83,36 @@ video{max-width:100%}
  /*------------------------------------*\
     #COMPONENTS
 \*------------------------------------*/
-/**====HEADER====**/
-/**====FOOTER====**/
+/**====HEADER FOOTER====**/
+.book-main-wrap-header.km-footer{background:url(../img/bg-header.jpg);height:50px;padding:0 5px 0}
+.book-main-wrap-header.km-footer strong, .book-main-wrap-header.km-footer a{font-size:12px;color:#7d878c;font-weight:normal}
+.book-main-wrap-header.km-footer a{line-height:40px}
+.book-main-wrap-header strong{font-size:16px;line-height:50px;float:right;padding-right:5px}
+.book-main-wrap-header a{font-size:16px;line-height:30px;}
+.book-main-wrap-footer.km-header{background:url(../img/bg-header.jpg);height:50px;padding-top:10px;}
+.km-button.bttn-tableofcontents{width:170px;border-right:1px solid #7d878c;border-radius:0;color:#7d878c;padding-left:5px}
+.bttn-tableofcontents .glyphicon{margin-right:10px}
+.bttn-prev span, .bttn-next span{color:#39464c}
+a.bttn-prev.km-button, a.bttn-next.km-button{color:#7d878c}
 /**====LOGIN====**/
-#login.container-fluid{padding:0}
-#login .km-content{background:#e4e9ed!important}
-
+#login.container-fluid{padding:0;}
+#login .km-content{background:url(../img/bg-login.png) bottom center no-repeat #e4e9ed!important}
+#login h2{font-size:30px;color:#76c4e0;float:left;margin-left:0;margin-right:130px}
+a.login-password{font-size:12px;color:#8d8d8d;float:left}
+#login input{display:block;margin-bottom:10px;border:0;height:40px;width:320px;padding:10px;background-clip:border-box}
+#login input[type=text]{background:url(../img/icon-username.png) 300px center no-repeat #fff;padding-right:25px}
+#login input[type=text]:focus{background:url(../img/icon-username-active.png) 300px center no-repeat #fff;border:1px solid #ff914e;}
+#login input[type=password]{background:url(../img/icon-password.png) 300px center no-repeat #fff;padding-right:25px}
+#login input[type=password]:focus{background:url(../img/icon-password-active.png) 300px center no-repeat #fff;border:1px solid #ff914e;}
+#login input[type=submit]{width:150px;border-radius:5px;background:#ff914e;height:40px;font-size:16px}
+.temp-login.km-button{width:150px;border-radius:3px;background:#ff914e;height:40px;line-height:40px;}
 /**====BOOK LISTING====**/
 .main-aside{background:#7ebbb6;height:100%}
 .branding-wrap{margin-left:-15px;margin-right:-15px;background:#fff}
 .profile-wrap-bg{margin-left: -15px;margin-right: -15px;max-height: 150px;overflow: hidden;}
 .profile-photo{border:5px solid #fff;border-radius:50%;width:150px;height:150px;margin:-75px auto 20px;position:relative}
 .profile-header{text-align:center}
-.listing-masthead-wrap{background:#f6f6f6;border-bottom:4px solid #eceff0;margin-left:-15px;margin-right:-15px;padding:10px;height:85px}
+.listing-masthead-wrap{display:block;background:#f6f6f6;border-bottom:4px solid #eceff0;margin-left:-15px;margin-right:-15px;padding:10px;height:85px}
 .listing-masthead-wrap h1{margin:0}
 .tabs-listing.km-widget.km-buttongroup{color:#fe904e;border:1px solid #fe904e;border-radius:5px;float:right}
 .tabs-listing.km-buttongroup .km-button{background:#fff;border-color:#fe904e;color:#fe904e}
@@ -94,33 +123,89 @@ video{max-width:100%}
 .listing-books h3{font-size:14px;text-align:left;margin-left:0}
 .listing-books strong{font-weight:normal}
 .listing-books .km-listview-link::after, .listing-books .km-listview-label::after{display:none}
-.listing-books .col-xs-2 img{margin-bottom:10px}
+.listing-books .col-xs-2 img{margin-bottom:10px;-webkit-box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);-moz-box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);
+box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);}
 .listing-books .col-xs-2 h3{margin-bottom:30px}
 .listing-books a.km-button{width:100%;padding:0;border:none;margin:0}
 .listing-books a:selected{background-color:transparent}
 /**====BOOK DETAILS====**/
 /*drawer*/
 .bookdetails-drawer .km-content{background:#7ebbb6!important}
-.bookdetails-drawer-head h1{background:#94c8c6;font-size:20px;margin:0;padding:15px;color:#296b68}
-.bookdetails-drawer .km-listview-wrapper li a{color:#fff}
-.bookdetails-drawer .glyphicon{float:right}
-.bookdetails-drawer-firstnav > li{border-bottom:1px solid #fff;font-size:14px}
+.bookdetails-drawer-head h1{background:#93c8c5;font-size:16px;margin:0;padding:15px;color:#296b68}
+.bookdetails-drawer .glyphicon{font-size:12px;color:#fff;position:absolute;top:10px;right:0}
+.bookdetails-drawer .glyphicon.glyphicon-triangle-top{color:#2e716d}
 .bookdetails-drawer-firstnav ul {display:none}
-.bookdetails-drawer-firstnav ul li{margin-bottom:10px}
-/*header & footer*/
-.km-android .book-main-wrap-header.km-footer{background:#f6f6f6;height:50px;padding-top:0}
-.book-main-wrap-header strong{font-size:16px;line-height:50px;float:right;padding-right:15px}
-.book-main-wrap-header a{font-size:16px;line-height:30px;padding-left:15px}
-.km-android .book-main-wrap-footer.km-header{background:#f6f6f6;height:50px;padding-top:10px;}
-/*tabs*/
-.bookdetails-tabs{margin-bottom:20px}
-.bookdetails-tabs li{display:inline;margin-right:20px;cursor:pointer}
-.bookdetails-tabs li:hover{border-bottom:3px solid #fe9251}
-.tab-content-02,.tab-content-03{display:none}
-/*content*/
+.bookdetails-drawer-firstnav ul li{margin-bottom:10px;}
+.bookdetails-drawer-firstnav{max-height:500px;overflow-y:auto}
+.bookdetails-drawer .km-list>li{background:#7ebbb7;border-width:0;border-image:none;font-size:14px;padding:0 10px;margin:0}
+.bookdetails-drawer .km-list>li.li-active-link{background:#69ada9;margin-bottom:-10px}
+.bookdetails-drawer .km-list li>.km-listview-link, .bookdetails-drawer .km-list li>a{border-bottom:1px solid #8bc8c4;color:#d7f3f1;padding:10px 5px;margin:0;font-weight:bold;text-align:left;display:block;line-height:1.5}
+a.js-subnav-link {color:#d7f3f1;font-weight:bold}
+a.js-subnav-link.active-link{color:#2e716d!important;border-bottom:0!important}
+a.js-subnav-link .font-normal{padding-right:15px}
+.bookdetails-drawer-firstnav li ul{margin:0 -10px;padding:20px 20px 20px 40px;background:#579f9b}
+.bookdetails-drawer-firstnav li{list-style-type:disc;color:#d7f3f1}
+.bookdetails-drawer-firstnav li ul a{padding:0!important;font-size:14px!important;color:#d7f3f1!important;text-align:left!important;display:block!important;margin-bottom:25px;font-weight:normal!important;border-bottom:0!important;padding-right:20px!important}
+.bookdetails-drawer-firstnav li ul a .font-light{color:#b4e9e5;}
+.bookdetails-drawer-firstnav li ul li.drawer-complete, .bookdetails-drawer-firstnav li ul li.drawer-complete a, .bookdetails-drawer-firstnav li ul li.drawer-complete span{color:#d1d309!important}
+.bookdetails-drawer-firstnav li ul li.drawer-complete a{background:url(../img/icon-check.png) right top no-repeat;}
+/**BOOK CONTENT**/
 .book-content-head{margin-bottom:30px}
-.book-content-wrap{padding:60px 0}
-
+.book-content-header{background:url(../img/bg-details.png) right center no-repeat #f8f8f8;height:110px;padding:20px 30px;}
+.book-content-header h1{font-size:26px;color:#76c4e0;margin-bottom:25px}
+/*tabs*/
+ul.bookdetails-tabs{padding-left:0}
+.bookdetails-tabs{margin-bottom:20px}
+.bookdetails-tabs li{display:inline-block;color:#809b9b;font-size:12px;text-transform:uppercase;margin-right:35px;cursor:pointer;height:32px;}
+.bookdetails-tabs li:hover{border-bottom:3px solid #fe9251}
+.bookdetails-tabs li.tab-active{border-bottom:3px solid #fe9251;color:#fe9251}
+.tab-content-02,.tab-content-03{display:none}
+/*******tab content*****/
+.tab-content-wrap{padding:30px}
+.lesson-block{margin-bottom:20px}
+.lesson-block h3{color:#12384b;font-size:15px;margin-bottom:10px}
+.lesson-block p, .lesson-block li{color:#12384b;line-height:1.5}
+/*modal*/
+.modalcontent{width:880px;padding:0 30px}
+.modalcontent h2{font-size:21px;color:#69a1b5;margin-bottom:30px;}
+.modalcontent h3{font-size:18px;color:#12384b;margin-bottom:20px;margin-top:40px}
+.modalcontent strong{font-weight:bold;font-size:15px;color:#12384b;line-height:1.5}
+.modalcontent p{font-size:15px;color:#12384b;line-height:1.5;}
+.modalcontent li{line-height:1.5;color:#12384b;font-size:15px}
+.modalcontent ul li ul{padding-left:20px}
+/*activity*/
+.detail-wrap h2{font-size:21px;color:#69a1b5;margin-bottom:30px}
+.detail-wrap h3{font-size:18px;color:#12384b;margin-bottom:20px}
+.detail-wrap strong{font-weight:bold;font-size:15px;color:#12384b;line-height:1.5}
+.detail-wrap p{font-size:15px;color:#12384b;line-height:1.5;}
+.detail-wrap ul{margin-top:10px}
+.detail-wrap li{line-height:1.5;color:#12384b;font-size:15px}
+/*lesson complete*/
+.lesson-complete{background:#d3f3f0;margin-top:30px;padding:30px;color:#59b2aa;font-size:15px;line-height:1.5}
+.lesson-complete h3{color:#64b7af;font-size:15px;}
+.lesson-complete-star{margin-left:20px}
+.lesson-complete-star p:before{content:"\2217";font-size:8px;position:relative;top:-5px}
+/*cover*/
+#bookcover{background:#94d457;padding:20px}
+.detailfull-wrap{background:#f5f6f6;}
+.detailfull-wrap img{margin-left:auto;margin-right:auto;padding-top:50px;display:block}
+/*preface*/
+#preface{background:#f5f6f6}
+#preface .detailfull-wrap{background:#f5f6f6;}
+#preface h1{color:#87bcb0}
+#preface h2{color:#e2636b}
+/*fancybox*/
+.modalcontent{display:none}
+.fancybox-skin{background:#ffffff}
+.fancybox-close{background:url(../img/fancybox-close.png) top right no-repeat #fff!important;top:10px!important;right:10px!important}
+/**slider**/
+#carousel.flexslider{border:0;background:none}
+#carousel.flexslider .slides li{width:100px!important}
+#carousel.flexslider .slides img{border-radius:50%;width:25px;height:25px}
+/**audio**/
+.audio-block strong{text-align:center;display:block;font-size:15px;margin-bottom:10px}
+.audio-block span{font-weight:normal}
+.audio-block audio{display:block;margin:0 auto}
 /**====SMALL DEVICE AND PORTRAIT==
 .km-content, .km-android, .km-vertical{position:relative}
 .km-vertical:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-orientation.png) center center no-repeat #e4e9ed!important;}

@@ -1,0 +1,70 @@
+<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left">
+
+  <header data-role="footer" class="book-main-wrap-header">
+    <div class="row">
+        <div class="col-xs-6">
+            <a data-role="button" href="views/mf-booklisting.html"><span class="icon-booklist"></span> Back to Book List</a>
+        </div>
+        <div class="col-xs-6" >
+            <strong>OWL SERIES: Preface Introduction</strong>
+        </div>	        
+    </div>       
+  </header>
+  
+  <div class="row book-content-wrap row-margin-null">
+    <div class="col-xs-12" id="preface">
+      <div class="detailfull-wrap js-fullheight-preface">
+        <!--start content-->
+          <img src="./img/books/preface.jpg" class="img-responsive"/>
+        <!--end content-->
+      </div>
+    </div>
+  </div>
+  
+  <footer data-role="header" class="book-main-wrap-footer">
+    <div class="row">
+        <div class="col-xs-6">
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
+            <a class="bttn-prev" data-role="button" href="views/mf-bookcover.html"><span class="icon-left"></span> <span>Back:</span> Book Cover</a>
+        </div>
+        <div class="col-xs-6">
+            <a href="views/mf-bookdetails.html" class="bttn-next" data-role="button" class="pull-right"><span>Next:</span> Lesson 1 <span class="icon-right"></span></a>
+        </div>	        
+    </div> 
+  </footer>
+<script src="js/bookpreface.js"></script>
+</div>
+
+<!--drawer navigation-->
+<div data-role="drawer" id="table-of-contents" class="bookdetails-drawer" style="width:250px" data-swipe-to-open="false">
+    <div class="bookdetails-drawer-head">
+      <h1>Owl Series:<br/> Classroom Music Program</h1>
+    </div>
+    <ul data-role="listview" class="bookdetails-drawer-firstnav">
+      <li><a href="views/mf-bookcover.html" data-transition="none" data-role="button">Cover </a></li>
+      <li>
+        <a href="views/mf-bookpreface.html" data-transition="none" data-role="button">Preface <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+      </li>
+      <li>
+        <a data-transition="none" class="js-subnav-link" data-role="button">Chapter 1: <span class="font-normal">Listening and Exploring</span> <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+        <ul>
+          <li class="drawer-complete"><a href="views/mf-bookdetails.html" data-transition="none" data-role="button">Lesson 1: <span class="font-light">The Bicycle Bells</span></a></li>
+          <li class="drawer-complete"><a data-transition="none" data-role="button">Lesson 2: <span class="font-light">I Hear Thunder</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 3: <span class="font-light">Little Johnny</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 4: <span class="font-light">If You're Happy and You Know It</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 5: <span class="font-light">This is the Way the Girls Ride</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 6: <span class="font-light">Camptown Races</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 7: <span class="font-light">Bickle Bockle</span></a></li>
+        </ul>
+      </li>
+      <li><a data-transition="none" data-role="button">Chapter 2: <span class="font-light">Listening and Responding to Music</span></a></li>
+      <li><a data-transition="none" data-role="button">Chapter 3: <span class="font-light">Music Concepts</span></a></li>
+      <li><a data-transition="none" data-role="button">Chapter 4: <span class="font-light">Improvise and Create</span></a></li>
+      <li><a data-transition="none" data-role="button">Glossary</a></li>
+    </ul>
+    <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>
+</div>
+<!--end drawer navigation-->
+
+
+

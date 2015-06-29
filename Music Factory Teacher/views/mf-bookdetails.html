@@ -1,12 +1,12 @@
-<div class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left" data-init="onInitialize" data-before-show="beforeShow" data-after-show="afterShow"  data-show="onShow">
+<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" href="views/mf-booklisting.html"><span class="glyphicon glyphicon-book"></span> Library</a>
+            <a data-role="button" href="views/mf-booklisting.html"><span class="icon-booklist"></span> Back to Book List</a>
         </div>
         <div class="col-xs-6" >
-            <strong data-bind="text: Title"></strong>
+            <strong>OWL SERIES: Chapter 1 Listening and Exploring</strong>
         </div>	        
     </div>       
   </header>
@@ -16,49 +16,172 @@
     <!--start content-->
       <div class="row book-content-header">
         <div class="col-xs-12">
-          <h1>Lesson 1: The Bicycle Bells</h1> <!-- Lesson Title -->
+          <h1>Lesson 1: The Bicycle Bells</h1> 
         </div>
         <div class="col-xs-12">
           <ul class="bookdetails-tabs">
-            <li class="tab-control-01">Overview</li>
+            <li class="tab-control-01 tab-active">Overview</li>
             <li class="tab-control-02">Activity Procedure</li>
             <li class="tab-control-03">Reference Materials</li>
+            <li class="tab-control-04">Music Play Center</li>
+            <li class="tab-control-05">Moments</li>
           </ul>
         </div>
       </div>
-      <div class="row tab-content-01">
+      <!--Start Overview-->
+      <div class="row tab-content-wrap tab-content-01">
         <div class="col-xs-6">
-          <div class="book-content-lessonmodel">
-            <h2><span class="icon-bulb"></span>Learning Objective</h2>
-            <p>Curabitur facilisis, ipsum a maximus ultrices, ipsum nulla tempor lacus, sit amet euismod nulla lorem ac nibh. Nulla orci nisl, ornare at ex ac, semper convallis tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ut finibus urna.</p>
+          <div class="lesson-block">
+            <h3><img src="./img/icon-bulb.png" title="Learning Objective" class="icon-img"/> Learning Objective:</h3>
+            <p>To aurally identify environmetal, weather, animal, people sounds and demonstrate that recognition by describing the sounds heard.</p>
           </div>
-         <div class="book-content-lessonmodel">
-            <h2><img src="./img/icon-bulb.png" class="icon-img"/>Learning Objective</h2>
-            <p>Pinceptos himenaeos. Praesent ut finibus urna.</p>
+          <div class="lesson-block">
+            <h3><img src="./img/icon-music.png" title="Music Element" class="icon-img"/>Music Element:</h3>
+            <p>Timbre</p>
+          </div>
+          <div class="lesson-block">
+            <h3><img src="./img/icon-teaching.png" title="Teaching Materials" class="icon-img"/>Teaching Materials</h3>
+            <p>Funsheet:</p>
+            <p>Environmental Sounds</p>
+            <p>Audio CD</p>
+          </div>
+          <div class="lesson-block">
+            <h3><img src="./img/icon-cd.png" title="CD Track" class="icon-img"/>CD Track:</h3>
+            <p>Vol.1 Track #1 of "Soundscapes: Our Environmental Sounds."</p>
+            <p>Vol.1 Track #2 of "The Bicycle Bells"</p>
           </div>
         </div>
         <div class="col-xs-6">
           <video controls>
-            <source src="./vids/video.mp4" type="video/mp4" />
+            <source src="./vids/video.mp4" type="video/mp4" controls="controls"/>
           </video>
         </div>
       </div>
-      <div class="row tab-content-02">
+      <!--End Overview-->
+      <!--Start Activity Procedure-->
+      <div class="row tab-content-wrap tab-content-02">
         <div class="col-xs-12">
-          <div class="book-content-lessonmodel">
-            <h2>Activity Procedure</h2>
-            <p>Curabitur facilisis, ipsum a maximus ultrices, ipsum nulla tempor lacus, sit amet euismod nulla lorem ac nibh. Nulla orci nisl, ornare at ex ac, semper convallis tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ut finibus urna.</p>
+          <div class="fancybox bttn-modal" href="#welcomesong">Play Welcome Song</div>
+          <hr/>
+          <!--start modal-->
+          <div id="welcomesong" class="modalcontent">
+            <h2>Welcome Song</h2>
+            <div class="lesson-block">
+              <h3><img src="./img/icon-flag.png" title="Objective of this lesson" class="icon-img"/> Objective of this lesson</h3>
+              <strong>CD track:</strong>
+              <p>Vol. 2 Track #19 of It's Time to Sing Hello</p>
+            </div>
+            <div class="lesson-block">
+              <h3><img src="./img/icon-music.png" title="Activity Procedure" class="icon-img"/> Activity Procedure</h3>
+              <strong>Activity Variations:</strong>
+              <ul>
+                <li>Encourage children to sing and respond following actions writtin in [*brackets]</li>
+                <li>
+                  Subsitute "clap our hands" and "stomp your feet" with any other actions such as:
+                  <ul>
+                    <li>Pat on different facial features, such as touch your nose, touch your eyebrows, touch your cheeks</li>
+                    <li>Use locomotive movements such as Twirl to the right, twirl to the left, march to the right, march to the left, jump to the right, jump to the left</li>
+                    <li>Personalise the song by using a child’s name to sing on "Hello child’s name" instead of "Hello children" and have the child respond back by singing individually</li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="audio-block">
+                <strong>Audio 1: <span>It's Time to say Hello</strong>
+                <audio src="./vids/audio.mp3" controls="controls"></audio>
+              </div>
+              <img src="./img/music/music.jpg" alt="Music" class="img-responsive music-img"/>
+            </div>
+          </div>
+          <!--end modal-->
+          <div class="row detail-wrap">
+            <div class="col-xs-12">
+              <h2>The Bicycle Bells</h2>
+              <h3><img src="./img/icon-music-v2.png" alt="Activity Procedure" class="icon-img"/>Activity Procedure</h3>
+              <div class="row">
+                <div class="col-xs-6">
+                  <strong>1. Listening to sound sources:</strong>
+                  <p>TPlay the Vol. 1 Track #1 of “Soundscapes: Our Environmental Sounds” to children. Encourage children to listen and imitate the sounds they hear. Ask them to describe the sounds heard, e.g.:</p>
+                  <ul>
+                    <li>Transport (alarm, bicycle bells, motorbike vrooming) </li>
+                    <li>Weather (thunder, wind) </li>
+                    <li>Animals (elephant, lion, monzkeys) </li>
+                    <li>People (sneeze, cough) </li>
+                  </ul>
+                  <strong>2. Imitating Sounds</strong>
+                  <ul>
+                    <li>Teach song by rote (Vol. 1 Track #2 of “The Bicycle Bells”)</li>
+                    <li>Invite children to make appropriate sounds for each verse of the song </li>
+                    <li>Encourage children to create movements for each verse as they sing the song</li>
+                  </ul>
+                  <strong>3. Activity</strong>
+                  <p>Refer to Funsheet: Our Environmental Sounds</p>
+                  <br/>
+                  <!--<strong><em>Refer to Music Play Centre: Sounds Around Us</em></strong>-->
+                </div>
+                <div class="col-xs-6">
+                  <div class="audio-block">
+                    <strong>Audio 1.1: <span>Soundscapes My Environmental Sounds </strong>
+                    <audio src="./vids/audio.mp3" controls="controls"></audio>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr/>
+          <div class="bttn-modal">Play Goodbye Song</div>
+          <!--Lesson Complete-->
+          <div class="lesson-complete">
+            <div class="row">
+              <div class="col-xs-12"><h3>Lesson Complete</h3></div>
+              <div class="col-xs-9">
+                <p>By clicking on "Complete"</p>
+                <div class="lesson-complete-star">
+                  <p>This lesson will be marked as completed</p>
+                  <p>Parent Activity for the lesson will be sent to the parents</p>
+                </div>
+              </div>
+              <div class="col-xs-3">
+                <a class="bttn">Complete</a>
+              </div>
+            </div>
+          </div>
+          <!--end Lesson Complete-->
+        </div>
+      </div>
+      <!--End Activity Procedure-->
+      <!--Start Reference Materials-->
+      <div class="row tab-content-wrap tab-content-03">
+        <div class="col-xs-12">
+
+        </div>
+      </div>
+      <!--End Reference Materials-->   
+      <!--Start Music Play Center-->
+      <div class="row tab-content-wrap tab-content-04">
+        <div class="col-xs-12">
+          <div class="row detail-wrap">
+            <div class="col-xs-12">
+              <h2>Sounds Around Us</h2>
+              <h3><img src="./img/icon-music-v2.png" alt="Activity A" class="icon-img"/>Activity A</h3>
+              <div class="row">
+                <div class="col-xs-6">
+                  <strong>Listening Objective</strong>
+                  <p>To identify sounds in the environment</p>
+                </div>
+                <div class="col-xs-6">
+                  <div class="slider-wrap">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row tab-content-03">
-        <div class="col-xs-12">
-          <div class="book-content-lessonmodel">
-            <h2>Reference Materials</h2>
-            <p>Curabitur facilisis, ipsum a maximus ultrices, ipsum nulla tempor lacus, sit amet euismod nulla lorem ac nibh. Nulla orci nisl, ornare at ex ac, semper convallis tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ut finibus urna.</p>
-          </div>
-        </div>
-      </div>
+      <!--End Music Play Center-->
+      <!--Start Moments-->
+      
+      <!--End Moments-->
     <!--end content-->
     </div>
   </div>
@@ -66,37 +189,47 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#book-chapters"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
-            <a class="bttn-prev" data-role="button" href="#"><span class="glyphicon glyphicon-chevron-left"></span> Back: Preface</a>
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
+            <a class="bttn-prev" data-role="button" href="views/mf-bookpreface.html"><span class="icon-left"></span> <span>Back:</span> Preface</a>
         </div>
         <div class="col-xs-6">
-            <a class="bttn-next" data-role="button" href="#" data-transition="slide" class="pull-right">Next: Lesson 1 <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="bttn-next" data-role="button" class="pull-right"><span>Next:</span> Lesson 2 <span class="icon-right"></span></a>
         </div>	        
     </div> 
   </footer>
 <script src="js/bookdetails.js"></script>
-<script src="js/book-details.js"></script>
 </div>
 
 <!--drawer navigation-->
-<div data-role="drawer" id="book-chapters" class="bookdetails-drawer" style="width:300px" data-swipe-to-open="false">
+<div data-role="drawer" id="table-of-contents" class="bookdetails-drawer" style="width:250px" data-swipe-to-open="false">
     <div class="bookdetails-drawer-head">
       <h1>Owl Series:<br/> Classroom Music Program</h1>
     </div>
     <ul data-role="listview" class="bookdetails-drawer-firstnav">
-      <li><a href="" data-transition="none">Cover </a></li>
+      <li><a href="views/mf-bookcover.html" data-transition="none" data-role="button">Cover </a></li>
       <li>
-        <a href="" data-transition="none" class="js-subnav-link">Chapter 1: Listening and Exploring <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+        <a href="views/mf-bookpreface.html" data-transition="none" data-role="button">Preface <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+      </li>
+      <li>
+        <a data-transition="none" class="js-subnav-link" data-role="button">Chapter 1: <span class="font-normal">Listening and Exploring</span> <span class="glyphicon glyphicon-triangle-bottom"></span></a>
         <ul>
-          <li><a href="views/slider.html" data-transition="none" data-role="button">Lesson 1</a></li>
-          <li><a href="#" data-transition="none">Lesson 2</a></li>
-          <li><a href="#" data-transition="none">Lesson 3</a></li>
-          <li><a href="#" data-transition="none">Lesson 4</a></li>
+          <li class="drawer-complete"><a href="views/mf-bookdetails.html" data-transition="none" data-role="button">Lesson 1: <span class="font-light">The Bicycle Bells</span></a></li>
+          <li class="drawer-complete"><a data-transition="none" data-role="button">Lesson 2: <span class="font-light">I Hear Thunder</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 3: <span class="font-light">Little Johnny</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 4: <span class="font-light">If You're Happy and You Know It</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 5: <span class="font-light">This is the Way the Girls Ride</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 6: <span class="font-light">Camptown Races</span></a></li>
+          <li><a data-transition="none" data-role="button">Lesson 7: <span class="font-light">Bickle Bockle</span></a></li>
         </ul>
       </li>
-      <li><a href="" data-transition="none">Chapter 2: Listening and Responding to Music</a></li>
-      <li><a href="" data-transition="none">Chapter 3</a></li>
+      <li><a data-transition="none" data-role="button">Chapter 2: <span class="font-light">Listening and Responding to Music</span></a></li>
+      <li><a data-transition="none" data-role="button">Chapter 3: <span class="font-light">Music Concepts</span></a></li>
+      <li><a data-transition="none" data-role="button">Chapter 4: <span class="font-light">Improvise and Create</span></a></li>
+      <li><a data-transition="none" data-role="button">Glossary</a></li>
     </ul>
-    <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer">Hide</a>
+    <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>
 </div>
-<!--drawer navigation-->
+<!--end drawer navigation-->
+
+
+

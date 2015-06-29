@@ -27,54 +27,97 @@
     <!--start listing-->
     <div class="col-xs-9">
       <!--start masthead-->
-      <div class="listing-masthead-wrap" style="display:block">
+      <div class="listing-masthead-wrap">
         <div class="row row-margin-null">
-          <div class="col-xs-8">
+          <div class="col-xs-12">
             <h1>Music Factory Library</h1>
             <strong>Leading the way in creative music education</strong>
-          </div>
-          <div class="col-xs-4">
-            <ul data-role="buttongroup" data-index="0" data-select="regroup" class="tabs-listing">
-             <li class="tab-kinder">Kindergarten</li>
-             <li class="tab-inf">Infant</li>
-            </ul>
           </div>
         </div>
       </div>
       <!--end masthead-->
       <div class="row listing-books row-margin-null" id="listingBooks" data-role="scroller" >   
         <!--template KIN start-->            
-        <div class="tabcontent-kinder clearfix" data-bind="source: KinderBooks" data-template="kinder-template">
+        <div class="clearfix">
           <!--content from template goes here-->
-        </div>
-          <script id="kinder-template" type="text/x-kendo-template">
           <div class="col-xs-2">
-            <a data-bind="attr: { title: Title }, events: { click: SelectBook}" data-role="button" class="js-book-selected">
-              <img data-bind="attr: { src: CoverImageUrl , alt: Title }" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3 data-bind="text: Title"></h3>
-              <input id="currentBookId" type="text" data-bind="value: Id" hidden/>
-              <input id="currentCultureName" type="text" data-bind="value: CultureName" hidden/>
-              <input id="currentBookType" type="text" data-bind="value: Type" hidden/>
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Owl Series: Classroom Music Program</h3>
             </a>
           </div>
-          </script> 
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Cat Series: Classroom Video Program</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>猫系列：课堂视频节目</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Owl Series: Classroom Music Program</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>猫系列：课堂视频节目</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Owl Series: Classroom Music Program</h3>
+            </a>
+          </div>
+          <!--start second row-->
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Owl Series: Classroom Music Program</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Cat Series: Classroom Video Program</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>猫系列：课堂视频节目</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Owl Series: Classroom Music Program</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>猫系列：课堂视频节目</h3>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a title="" href="views/mf-bookcover.html" data-role="button">
+              <img title="" src="./img/books/en-book-01.jpg" class="img-responsive listingbooks-cover"/>
+              <h3>Owl Series: Classroom Music Program</h3>
+            </a>
+          </div>
+          <!--end content from template-->
+        </div>
         <!--template KIN end-->
-        <!--template INF start-->
-        <div class="tabcontent-infantbooks clearfix" data-bind="source: InfantBooks" data-template="infantBooks-template">
-          <!--content from template goes here-->
-        </div>
-          <script id="infantBooks-template" type="text/x-kendo-template">
-          <div class="col-xs-2">
-            <a href="views/mf-bookdetails.html" data-bind="attr: { title: Title }" data-role="button" >
-              <img data-bind="attr: { src: CoverImageUrl , alt: Title }" id="js-listingbooks-cover" class="img-responsive"/>
-              <h3 data-bind="text: Title"></h3>
-            </a>
-          </div>
-          </script> 
-        <!--template INF end-->
       </div>
     </div>
     <!--end listing-->
 <script src="js/listview.js"></script>
-<script src="js/book-listing.js"></script>
 </div>

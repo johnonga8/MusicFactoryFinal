@@ -1,11 +1,4 @@
-$(document).ready(function() {
-  if(currentBookType === "Kinder"){
-    //alert('Get Kinder Book: ' + currentBookId + '|| ' + currentCultureName);
-    var kinderBook = GetKinderBookById(currentBookId, currentCultureName);
-  }else{
-    //GetInfantBookById(currentBookId, currentCultureName);
-  };
-});
+
 
 
 /**$(".bookItem").click(function()
@@ -16,9 +9,14 @@ $(document).ready(function() {
 
 });**/
 //Function for drawer
+function beforeShow(e)
+{
+  GetKinderBookById(currentBookId, currentCultureName);
+}
+
 function afterShow(e){
     setTimeout(function () {
-        $("#book-chapters").data("kendoMobileDrawer").show();
+        $("#table-of-contentss").data("kendoMobileDrawer").show();
     }, 1);
 }
 
