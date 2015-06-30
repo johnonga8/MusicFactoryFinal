@@ -1,4 +1,6 @@
 (function () {
+    //NAV
+    DropNav();
     //FULL HEIGHT
     var bookdetailsfullheight = $(window).height();
     $('.js-fullheight').css('min-height', (bookdetailsfullheight - 100));
