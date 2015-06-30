@@ -7,49 +7,57 @@
     $(".tab-control-01").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
-      $(".tab-content-01").show();
-      $(".tab-content-02").hide();
-      $(".tab-content-03").hide();
-      $(".tab-content-04").hide();
-      $(".tab-content-05").hide();
+      $(".tab-content-01").fadeIn();
+      $(".tab-content-02").fadeOut();
+      $(".tab-content-03").fadeOut();
+      $(".tab-content-04").fadeOut();
+      $(".tab-content-05").fadeOut();
     });
     $(".tab-control-02").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
-      $(".tab-content-02").show();
-      $(".tab-content-01").hide();
-      $(".tab-content-03").hide();
-      $(".tab-content-04").hide();
-      $(".tab-content-05").hide();
+      $(".tab-content-02").fadeIn();
+      $(".tab-content-01").fadeOut();
+      $(".tab-content-03").fadeOut();
+      $(".tab-content-04").fadeOut();
+      $(".tab-content-05").fadeOut();
     });
     $(".tab-control-03").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
-      $(".tab-content-03").show();
-      $(".tab-content-01").hide();
-      $(".tab-content-02").hide();
-      $(".tab-content-04").hide();
-      $(".tab-content-05").hide();
+      $(".tab-content-03").fadeIn();
+      $(".tab-content-01").fadeOut();
+      $(".tab-content-02").fadeOut();
+      $(".tab-content-04").fadeOut();
+      $(".tab-content-05").fadeOut();
+      Flexslider();
     });
     $(".tab-control-04").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
-      $(".tab-content-04").show();
-      $(".tab-content-01").hide();
-      $(".tab-content-02").hide();
-      $(".tab-content-03").hide();
-      $(".tab-content-05").hide();
+      $(".tab-content-04").fadeIn();
+      $(".tab-content-01").fadeOut();
+      $(".tab-content-02").fadeOut();
+      $(".tab-content-03").fadeOut();
+      $(".tab-content-05").fadeOut();
+      Flexslider();
     });
     $(".tab-control-05").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
-      $(".tab-content-05").show();
-      $(".tab-content-01").hide();
-      $(".tab-content-02").hide();
-      $(".tab-content-03").hide();
-      $(".tab-content-04").hide();
+      $(".tab-content-05").fadeIn();
+      $(".tab-content-01").fadeOut();
+      $(".tab-content-02").fadeOut();
+      $(".tab-content-03").fadeOut();
+      $(".tab-content-04").fadeOut();
+    });
+    //INPUT TEMP
+    $(".moments-publish").click(function(){
+      $(".moments-img input").toggle();
+      $(".moments-active").toggle();
+      $(".phototooltip").toggle();
+      $(".photoselected").toggle();
     });
 }());
-function hideDrawer() {
-    $("#table-of-contents").data("kendoMobileDrawer").hide();
-}
+
+

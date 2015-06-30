@@ -1,3 +1,4 @@
+
 /**
  * CONTENTS
  *
@@ -25,33 +26,97 @@
     #SETTINGS
 \*------------------------------------*/
 html{background:#e4e9ed;width:1024px!important;margin:0 auto}
-body{font:normal 15px/1.5  "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#12384b;}
+body{font:normal 15px/1.5  "museo_sans300" ,sans-serif;color:#12384b;}
 a, a:hover, a:visited, a:active, a:focus{text-decoration:none;outline:none;}
 .nav > li > a:focus, .nav > li > a:hover {background-color:transparent}
  /*------------------------------------*\
     #BASE
 \*------------------------------------*/
+@font-face {
+    font-family: 'museo_sans300';
+    src: url('../fonts/museosans-300-webfont.eot'),
+         url('../fonts/museosans-300-webfont.woff2') format('woff2'),
+         url('../fonts/museosans-300-webfont.woff') format('woff'),
+         url('../fonts/museosans-300-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans500';
+    src: url('../fonts/museosans_2-webfont.eot'),
+         url('../fonts/museosans_2-webfont.woff2') format('woff2'),
+         url('../fonts/museosans_2-webfont.woff') format('woff'),
+         url('../fonts/museosans_2-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans700';
+    src: url('../fonts/museosans_3-webfont.eot'),
+         url('../fonts/museosans_3-webfont.woff2') format('woff2'),
+         url('../fonts/museosans_3-webfont.woff') format('woff'),
+         url('../fonts/museosans_3-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans700_italic';
+    src: url('../fonts/museosans-700italic-webfont.eot'),
+         url('../fonts/museosans-700italic-webfont.woff2') format('woff2'),
+         url('../fonts/museosans-700italic-webfont.woff') format('woff'),
+         url('../fonts/museosans-700italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans900';
+    src: url('../fonts/museosans_4-webfont.eot'),
+         url('../fonts/museosans_4-webfont.woff2') format('woff2'),
+         url('../fonts/museosans_4-webfont.woff') format('woff'),
+         url('../fonts/museosans_4-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'museo_slab700';
+    src: url('../fonts/museo_slab_2-webfont.eot'),
+         url('../fonts/museo_slab_2-webfont.woff2') format('woff2'),
+         url('../fonts/museo_slab_2-webfont.woff') format('woff'),
+         url('../fonts/museo_slab_2-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /**KENDO**/
 .km-content, .km-android{background:#fff!important;color:#12384b}
+.km-pane{font-family:"museo_sans300" ,sans-serif}
 .km-android input, .km-android select, .km-android textarea, .km-android .km-widget{color:#000}
 .km-android .km-button{border:none}
 .km-button.km-state-active{background-color:transparent;color:transparent}
 .km-listview-link::after {display:none}
 .km-widget.km-button{background:none;border:none;color:#000}
-.km-android .km-widget .km-state-active {background-color:transparent}
-.km-android .km-button.km-state-active:after, .km-android .km-buttongroup .km-state-active:after {display:none}
+.km-widget .km-state-active {background-color:transparent}
+.km-button.km-state-active:after, .km-buttongroup .km-state-active:after {display:none}
 .km-content p, .km-content h1, .km-content h2, .km-content h3, .km-content h4, .km-content h5, .km-content h6{margin:0}
+.km-ios7 li.km-state-active .km-listview-link{background:transparent}
 /**HEADINGS**/
-.km-content h1{font: 600 30px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
-.km-content h2{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
-.km-content h3{font: 700 20px/1.2 "Century Gothic",CenturyGothic,AppleGothic,sans-serif;color:#282828;margin:0}
+.km-content h1{font: 600 30px/1.2 "museo_slab700";color:#282828;margin:0}
+.km-content h2{font: 700 20px/1.2 "museo_slab700";color:#282828;margin:0}
+.km-content h3{font: 700 20px/1.2 "museo_slab700";color:#282828;margin:0}
 small{font-size:12px;display:block;margin:10px 0}
 /**FONTS**/
 .font-normal{font-weight:normal;}
+.gallery-center{display:block;text-align:center}
  /*------------------------------------*\
     #TOOLS
 \*------------------------------------*/
 hr{border:1px solid #e5ebeb;margin:30px 0}
+.tab-content-wrap hr{margin:35px 0 30px}
 video{max-width:100%}
 .music-img{display:block;margin:20px auto}
 .row-margin-null{margin-left:0;margin-right:0}
@@ -59,7 +124,8 @@ video{max-width:100%}
 a.bttn{padding:10px 25px;border-radius:3px;color:#fff;cursor:pointer}
 .km-widget.km-button.bttn, .bttn{background:#ff914e;color:#fff;text-transform:uppercase;padding:0;font-size:14px;}
 .bttn-next{float:right}
-.bttn-signout{position:absolute;bottom:20px}
+a.bttn-signout.km-button{background:url(../img/icon-signout.png) left center no-repeat!important;position:absolute;bottom:10px;height:32px;font:normal 14px "museo_sans500";color:#eafcfb!important;padding-left:40px;margin-left:20px}
+a.bttn-signout.km-button span{line-height:22px}
 .bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;}
 .bttn-modal{background:url(../img/icon-music-white.png) no-repeat 180px #ff8e3c;width:220px;border-radius:3px;height:40px;text-transform:uppercase;font-size:14px;text-align:center;color:#fff;display:block;line-height:40px;padding-right:20px;cursor:pointer}
 .bttn:hover, a.bttn:hover, .bttn-modal:hover{background-color:#e7711c}
@@ -70,6 +136,11 @@ a.bttn{padding:10px 25px;border-radius:3px;color:#fff;cursor:pointer}
 .marg-t-200{margin-top:200px}
 /**ICONS**/
 .icon-bulb{background:url(../img/icon-bulb.png) left center no-repeat;width:25px;min-height:25px;display:inline-block}
+.icon-class{background:url(../img/icon-class.png) left center no-repeat;width:32px;min-height:32px;float:left;margin-right:10px}
+.booklist-activelink .icon-class{background:url(../img/icon-class.png) left center no-repeat;}
+.icon-books{background:url(../img/icon-books.png) left center no-repeat;width:32px;min-height:32px;float:left;margin-right:10px}
+.booklist-activelink .icon-books{background:url(../img/icon-book-actv.png) left center no-repeat;}
+.icon-signout{background:url(../img/icon-signout.png) left center no-repeat;width:32px;min-height:32px;float:left;margin-right:10px}
 .icon-img{width:25px;display:inline-block;}
 .icon-booklist{background:url(../img/icon-booklist.png) left center no-repeat;height:15px;padding-left:20px}
 .icon-left{background:url(../img/icon-left.png);width:6px;height:11px;display:inline-block;margin-right:5px}
@@ -107,20 +178,28 @@ a.login-password{font-size:12px;color:#8d8d8d;float:left}
 #login input[type=submit]{width:150px;border-radius:5px;background:#ff914e;height:40px;font-size:16px}
 .temp-login.km-button{width:150px;border-radius:3px;background:#ff914e;height:40px;line-height:40px;}
 /**====BOOK LISTING====**/
-.main-aside{background:#7ebbb6;height:100%}
-.branding-wrap{margin-left:-15px;margin-right:-15px;background:#fff}
-.profile-wrap-bg{margin-left: -15px;margin-right: -15px;max-height: 150px;overflow: hidden;}
-.profile-photo{border:5px solid #fff;border-radius:50%;width:150px;height:150px;margin:-75px auto 20px;position:relative}
-.profile-header{text-align:center}
-.listing-masthead-wrap{display:block;background:#f6f6f6;border-bottom:4px solid #eceff0;margin-left:-15px;margin-right:-15px;padding:10px;height:85px}
-.listing-masthead-wrap h1{margin:0}
+.main-aside{background:#7ebbb7;height:100%}
+.branding-wrap{margin-left:-15px;margin-right:-15px;background:#fff;height:75px;padding-top:10px}
+.profile-wrap-bg{margin-left: -15px;margin-right: -15px;max-height: 100px;overflow: hidden;}
+.profile-photo{border:3px solid #fff;border-radius:50%;width:120px;height:120px;margin:-55px auto 15px;position:relative}
+.profile-header{text-align:center;background:url(../img/line.png) bottom center no-repeat;padding-bottom:20px;margin-bottom:10px}
+.profile-header strong{font:normal 14px "museo_sans500";color:#b0e6e2;margin-bottom:5px}
+.profile-header h2{font:normal 20px "museo_sans700";color:#eafcfb;}
+.main-aside nav ul{margin:0 -15px}
+.main-aside nav li{border-width:0px!important}
+.main-aside nav li.booklist-activelink{background:#69ada9;}
+.main-aside nav li.booklist-activelink a{color:#2f716d!important}
+.main-aside .km-list li>.km-listview-link{margin-left:0;font:normal 14px "museo_sans500";color:#eafcfb;margin:0;padding:0 20px;line-height:32px}
+.listing-masthead-wrap{display:block;background:#f6f6f6;border-bottom:2px solid #dbe1e6;margin-left:-15px;margin-right:-15px;padding:10px;height:85px}
+.listing-masthead-wrap h1{font:normal 30px "museo_slab700";margin:0;color:#76c4e0}
+.listing-masthead-wrap strong{font:normal 14px "museo_sans300", sans-serif;color:#7d8487}
 .tabs-listing.km-widget.km-buttongroup{color:#fe904e;border:1px solid #fe904e;border-radius:5px;float:right}
 .tabs-listing.km-buttongroup .km-button{background:#fff;border-color:#fe904e;color:#fe904e}
 .tabs-listing .km-button.km-state-active{color:#fff;background:#fe904e}
 .tabs-listing .km-state-active{background-color:#fe904e}
 .tabcontent-infantbooks{display:none}
 .listing-books{padding-top:20px;background:#fff;/**margin-left:-28px;margin-right:-28px**/}
-.listing-books h3{font-size:14px;text-align:left;margin-left:0}
+.listing-books h3{font:normal 14px/1.2 "museo_sans300";text-align:left;margin-left:0}
 .listing-books strong{font-weight:normal}
 .listing-books .km-listview-link::after, .listing-books .km-listview-label::after{display:none}
 .listing-books .col-xs-2 img{margin-bottom:10px;-webkit-box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);-moz-box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);
@@ -159,7 +238,7 @@ ul.bookdetails-tabs{padding-left:0}
 .bookdetails-tabs li{display:inline-block;color:#809b9b;font-size:12px;text-transform:uppercase;margin-right:35px;cursor:pointer;height:32px;}
 .bookdetails-tabs li:hover{border-bottom:3px solid #fe9251}
 .bookdetails-tabs li.tab-active{border-bottom:3px solid #fe9251;color:#fe9251}
-.tab-content-02,.tab-content-03{display:none}
+.tab-content-02,.tab-content-03, .tab-content-04, .tab-content-05{display:none}
 /*******tab content*****/
 .tab-content-wrap{padding:30px}
 .lesson-block{margin-bottom:20px}
@@ -186,22 +265,50 @@ ul.bookdetails-tabs{padding-left:0}
 .lesson-complete-star{margin-left:20px}
 .lesson-complete-star p:before{content:"\2217";font-size:8px;position:relative;top:-5px}
 /*cover*/
-#bookcover{background:#94d457;padding:20px}
-.detailfull-wrap{background:#f5f6f6;}
-.detailfull-wrap img{margin-left:auto;margin-right:auto;padding-top:50px;display:block}
+#bookcover{background:#fff;padding:20px}
+.detailfull-wrap{background:#fff;}
+.detailfull-wrap img{margin-left:auto;margin-right:auto;padding-top:50px;display:block;}
 /*preface*/
-#preface{background:#f5f6f6}
-#preface .detailfull-wrap{background:#f5f6f6;}
 #preface h1{color:#87bcb0}
 #preface h2{color:#e2636b}
+#preface .book-content-wrap {padding:30px 30px}
+#preface .book-content-wrap h1{font:normal 25px "museo_slab700";color:#76c4e0;margin-bottom:15px}
+#preface .book-content-wrap p{font:normal 15px "museo_sans300";color:#12384b;margin-bottom:15px;white-space:normal!important}
+.mf-scrollview p{white-space:normal!important}
+.mf-scrollview .km-widget{color:#000}
+/*moments*/
+.moments-active{content:" ";background:rgba(0,0,0,0.5);position:fixed;width:100%;height:100%;top:0;left:0;z-index:10}
+.tab-content-wrap.tab-content-05{padding:20px}
+.tab-content-wrap.tab-content-05 .col-xs-12{padding:0}
+.moments-gallery .moments-img{float:left;margin:0 2px 4px 2px;width:136px;height:105px;overflow:hidden;position:relative}
+.moments-img input{position:absolute;top:5px;left:5px;display:none;z-index:12}
+.moments-bttn{font:normal 12px "museo_sans700";color:#ff914e;float:right;margin:0 5px 20px 15px;cursor:pointer;}
+.moments-capture{background:url(../img/icon-capture.png) right center no-repeat;padding-right:25px}
+.moments-publish {z-index:11;position:relative}
+.moments-publish span{background:url(../img/icon-publish.png) right center no-repeat;padding-right:25px;}
+.phototooltip{position:absolute;font:normal 14px "museo_sans500";color:#22a05a;background:#fff;padding:3px;z-index:12;top:20px;width:120px;text-align:center;right:20px}
+span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:absolute;height:9px;width:15px;top:-9px;right:10px}
+.moments-delete{background:url(../img/icon-delete.png) right center no-repeat;padding-right:15px}
+.photoselected{background:url(../img/icon-publishcheck.png) top right no-repeat;height:10px;width:10px;position:absolute;top:-3px;right:10px}
+.moments-active, .phototooltip, .photoselected{display:none}
 /*fancybox*/
 .modalcontent{display:none}
 .fancybox-skin{background:#ffffff}
-.fancybox-close{background:url(../img/fancybox-close.png) top right no-repeat #fff!important;top:10px!important;right:10px!important}
+.fancybox-close{background:url(../img/fancybox-close.png) top right no-repeat #fff!important;top:10px!important;right:10px!important;height:25px;width:25px}
 /**slider**/
-#carousel.flexslider{border:0;background:none}
-#carousel.flexslider .slides li{width:100px!important}
-#carousel.flexslider .slides img{border-radius:50%;width:25px;height:25px}
+.flex-direction-nav{display:none}
+.flexslider{border:0;margin-bottom:10px;background:none}
+.flex-control-thumbs{border:0;background:none}
+.flex-control-thumbs li{width:60px!important;cursor:pointer}
+.flex-control-thumbs img{border-radius:50%;width:45px;height:45px;border:3px solid #6da3b7}
+.flex-control-thumbs img.flex-active{border:3px solid #ff914e}
+.flex-control-nav{margin:20px auto}
+.gallery-items-01 .flex-control-nav{width:60px;}
+.gallery-items-02 .flex-control-nav{width:120px;}
+.gallery-items-03 .flex-control-nav{width:180px;}
+.gallery-items-04 .flex-control-nav{width:240px;}
+.gallery-items-05 .flex-control-nav{width:300px;}
+.gallery-items-06 .flex-control-nav{width:360px;}
 /**audio**/
 .audio-block strong{text-align:center;display:block;font-size:15px;margin-bottom:10px}
 .audio-block span{font-weight:normal}
@@ -212,8 +319,7 @@ ul.bookdetails-tabs{padding-left:0}
 .km-phone .km-content:before, .km-phone .km-android:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-phone.png) center center no-repeat #e4e9ed!important;}
 =**/
 
-.mf-scrollview p{white-space:normal!important}
-.mf-scrollview .km-widget{color:#000}
+
 
 
 .temp-margin{margin:200px 0}
