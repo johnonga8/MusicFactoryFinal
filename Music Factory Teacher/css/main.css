@@ -25,7 +25,7 @@
  /*------------------------------------*\
     #SETTINGS
 \*------------------------------------*/
-html{background:#e4e9ed;width:1024px!important;margin:0 auto}
+html{background:#e4e9ed;margin:0 auto}
 body{font:normal 15px/1.5  "museo_sans300" ,sans-serif;color:#12384b;}
 a, a:hover, a:visited, a:active, a:focus{text-decoration:none;outline:none;}
 .nav > li > a:focus, .nav > li > a:hover {background-color:transparent}
@@ -100,10 +100,11 @@ a, a:hover, a:visited, a:active, a:focus{text-decoration:none;outline:none;}
 .km-button.km-state-active{background-color:transparent;color:transparent}
 .km-listview-link::after {display:none}
 .km-widget.km-button{background:none;border:none;color:#000}
-.km-widget .km-state-active {background-color:transparent}
+.km-widget.km-state-active {background-color:transparent}
 .km-button.km-state-active:after, .km-buttongroup .km-state-active:after {display:none}
 .km-content p, .km-content h1, .km-content h2, .km-content h3, .km-content h4, .km-content h5, .km-content h6{margin:0}
 .km-ios7 li.km-state-active .km-listview-link{background:transparent}
+.km-android input[type=password], .km-android input[type=search], .km-android input[type=number], .km-android input[type=tel], .km-android input[type=url], .km-android input[type=email], .km-android input[type=text]:not(.k-input), .km-root .km-android textarea{outline-width:0;outline-offset:0;border-width:0}
 /**HEADINGS**/
 .km-content h1{font: 600 30px/1.2 "museo_slab700";color:#282828;margin:0}
 .km-content h2{font: 700 20px/1.2 "museo_slab700";color:#282828;margin:0}
@@ -133,6 +134,7 @@ a.bttn-signout.km-button span{line-height:22px}
 .marg-b-10{margin-bottom:10px}
 .marg-b-15{margin-bottom:15px}
 .marg-b-20{margin-bottom:20px}
+.marg-t-150{margin-top:150px}
 .marg-t-200{margin-top:200px}
 /**ICONS**/
 .icon-bulb{background:url(../img/icon-bulb.png) left center no-repeat;width:25px;min-height:25px;display:inline-block}
@@ -146,21 +148,15 @@ a.bttn-signout.km-button span{line-height:22px}
 .icon-left{background:url(../img/icon-left.png);width:6px;height:11px;display:inline-block;margin-right:5px}
 .icon-right{background:url(../img/icon-right.png);width:6px;height:11px;display:inline-block;margin-left:5px}
 .icon-img{margin-top:-5px}
-/**PAGINATION**/
-
-/**MIXINS**/
-
-
  /*------------------------------------*\
     #COMPONENTS
 \*------------------------------------*/
 /**====HEADER FOOTER====**/
 .book-main-wrap-header.km-footer{background:url(../img/bg-header.jpg);height:50px;padding:0 5px 0}
 .book-main-wrap-header.km-footer strong, .book-main-wrap-header.km-footer a{font-size:12px;color:#7d878c;font-weight:normal}
-.book-main-wrap-header.km-footer a{line-height:40px}
 .book-main-wrap-header strong{font-size:16px;line-height:50px;float:right;padding-right:5px}
 .book-main-wrap-header a{font-size:16px;line-height:30px;}
-.book-main-wrap-footer.km-header{background:url(../img/bg-header.jpg);height:50px;padding-top:10px;}
+.book-main-wrap-footer.km-header{background:url(../img/bg-header.jpg);height:50px;padding-top:5px;}
 .km-button.bttn-tableofcontents{width:170px;border-right:1px solid #7d878c;border-radius:0;color:#7d878c;padding-left:5px}
 .bttn-tableofcontents .glyphicon{margin-right:10px}
 .bttn-prev span, .bttn-next span{color:#39464c}
@@ -168,8 +164,8 @@ a.bttn-prev.km-button, a.bttn-next.km-button{color:#7d878c}
 /**====LOGIN====**/
 #login.container-fluid{padding:0;}
 #login .km-content{background:url(../img/bg-login.png) bottom center no-repeat #e4e9ed!important}
-#login h2{font-size:30px;color:#76c4e0;float:left;margin-left:0;margin-right:130px}
-a.login-password{font-size:12px;color:#8d8d8d;float:left}
+#login h2{font-size:30px;color:#76c4e0;float:left;margin-left:0;margin-right:85px}
+a.login-password{font-size:12px;color:#8d8d8d;float:left;line-height:40px}
 #login input{display:block;margin-bottom:10px;border:0;height:40px;width:320px;padding:10px;background-clip:border-box}
 #login input[type=text]{background:url(../img/icon-username.png) 300px center no-repeat #fff;padding-right:25px}
 #login input[type=text]:focus{background:url(../img/icon-username-active.png) 300px center no-repeat #fff;border:1px solid #ff914e;}
@@ -185,7 +181,7 @@ a.login-password{font-size:12px;color:#8d8d8d;float:left}
 .profile-header{text-align:center;background:url(../img/line.png) bottom center no-repeat;padding-bottom:20px;margin-bottom:10px}
 .profile-header strong{font:normal 14px "museo_sans500";color:#b0e6e2;margin-bottom:5px}
 .profile-header h2{font:normal 20px "museo_sans700";color:#eafcfb;}
-.main-aside nav ul{margin:0 -15px}
+.main-aside nav ul{margin:0 -30px}
 .main-aside nav li{border-width:0px!important}
 .main-aside nav li.booklist-activelink{background:#69ada9;}
 .main-aside nav li.booklist-activelink a{color:#2f716d!important}
@@ -211,8 +207,9 @@ box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);}
 /*drawer*/
 .bookdetails-drawer .km-content{background:#7ebbb6!important}
 .bookdetails-drawer-head h1{background:#93c8c5;font-size:16px;margin:0;padding:15px;color:#296b68}
-.bookdetails-drawer .glyphicon{font-size:12px;color:#fff;position:absolute;top:10px;right:0}
+.bookdetails-drawer .glyphicon{font-size:12px;color:#fff;position:absolute!important;top:10px;right:0}
 .bookdetails-drawer .glyphicon.glyphicon-triangle-top{color:#2e716d}
+.bookdetails-drawer-firstnav  {margin:0 -20px;height:458px}
 .bookdetails-drawer-firstnav ul {display:none}
 .bookdetails-drawer-firstnav ul li{margin-bottom:10px;}
 .bookdetails-drawer-firstnav{max-height:500px;overflow-y:auto}
@@ -265,9 +262,9 @@ ul.bookdetails-tabs{padding-left:0}
 .lesson-complete-star{margin-left:20px}
 .lesson-complete-star p:before{content:"\2217";font-size:8px;position:relative;top:-5px}
 /*cover*/
-#bookcover{background:#fff;padding:20px}
+#bookcover{background:#94d457;padding:20px}
 .detailfull-wrap{background:#fff;}
-.detailfull-wrap img{margin-left:auto;margin-right:auto;padding-top:50px;display:block;}
+.detailfull-wrap img{margin-left:auto;margin-right:auto;padding-top:0;display:block;}
 /*preface*/
 #preface h1{color:#87bcb0}
 #preface h2{color:#e2636b}
@@ -313,11 +310,11 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 .audio-block strong{text-align:center;display:block;font-size:15px;margin-bottom:10px}
 .audio-block span{font-weight:normal}
 .audio-block audio{display:block;margin:0 auto}
-/**====SMALL DEVICE AND PORTRAIT==
+/**====SMALL DEVICE AND PORTRAIT===**/
 .km-content, .km-android, .km-vertical{position:relative}
 .km-vertical:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-orientation.png) center center no-repeat #e4e9ed!important;}
 .km-phone .km-content:before, .km-phone .km-android:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-phone.png) center center no-repeat #e4e9ed!important;}
-=**/
+
 
 
 
