@@ -105,6 +105,7 @@ a, a:hover, a:visited, a:active, a:focus{text-decoration:none;outline:none;}
 .km-content p, .km-content h1, .km-content h2, .km-content h3, .km-content h4, .km-content h5, .km-content h6{margin:0}
 .km-ios7 li.km-state-active .km-listview-link{background:transparent}
 .km-android input[type=password], .km-android input[type=search], .km-android input[type=number], .km-android input[type=tel], .km-android input[type=url], .km-android input[type=email], .km-android input[type=text]:not(.k-input), .km-root .km-android textarea{outline-width:0;outline-offset:0;border-width:0}
+.km-android .km-widget .km-state-active{color:transparent}
 /**HEADINGS**/
 .km-content h1{font: 600 30px/1.2 "museo_slab700";color:#282828;margin:0}
 .km-content h2{font: 700 20px/1.2 "museo_slab700";color:#282828;margin:0}
@@ -127,7 +128,7 @@ a.bttn{padding:10px 25px;border-radius:3px;color:#fff;cursor:pointer}
 .bttn-next{float:right}
 a.bttn-signout.km-button{background:url(../img/icon-signout.png) left center no-repeat!important;position:absolute;bottom:10px;height:32px;font:normal 14px "museo_sans500";color:#eafcfb!important;padding-left:40px;margin-left:20px}
 a.bttn-signout.km-button span{line-height:22px}
-.bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;}
+.bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;margin-top:-15px!important}
 .bttn-modal{background:url(../img/icon-music-white.png) no-repeat 180px #ff8e3c;width:220px;border-radius:3px;height:40px;text-transform:uppercase;font-size:14px;text-align:center;color:#fff;display:block;line-height:40px;padding-right:20px;cursor:pointer}
 .bttn:hover, a.bttn:hover, .bttn-modal:hover{background-color:#e7711c}
 /**MARGINS/PADDINGS/LINE HEIGHT STYLE**/
@@ -181,7 +182,7 @@ a.login-password{font-size:12px;color:#8d8d8d;float:left;line-height:40px}
 .profile-header{text-align:center;background:url(../img/line.png) bottom center no-repeat;padding-bottom:20px;margin-bottom:10px}
 .profile-header strong{font:normal 14px "museo_sans500";color:#b0e6e2;margin-bottom:5px}
 .profile-header h2{font:normal 20px "museo_sans700";color:#eafcfb;}
-.main-aside nav ul{margin:0 -30px}
+.main-aside nav ul{margin:0 -28px}
 .main-aside nav li{border-width:0px!important}
 .main-aside nav li.booklist-activelink{background:#69ada9;}
 .main-aside nav li.booklist-activelink a{color:#2f716d!important}
@@ -209,7 +210,7 @@ box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);}
 .bookdetails-drawer-head h1{background:#93c8c5;font-size:16px;margin:0;padding:15px;color:#296b68}
 .bookdetails-drawer .glyphicon{font-size:12px;color:#fff;position:absolute!important;top:10px;right:0}
 .bookdetails-drawer .glyphicon.glyphicon-triangle-top{color:#2e716d}
-.bookdetails-drawer-firstnav  {margin:0 -20px;height:458px}
+.bookdetails-drawer-firstnav  {margin:0 -20px;height:460px}
 .bookdetails-drawer-firstnav ul {display:none}
 .bookdetails-drawer-firstnav ul li{margin-bottom:10px;}
 .bookdetails-drawer-firstnav{max-height:500px;overflow-y:auto}
