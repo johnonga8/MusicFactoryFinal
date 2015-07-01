@@ -1,4 +1,4 @@
-<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left">
+<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left" data-before-show="closeNav">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
@@ -483,7 +483,7 @@
       <li>
         <a href="views/mf-bookpreface.html" data-transition="none" data-role="button">Preface <span class="glyphicon glyphicon-triangle-bottom"></span></a>
       </li>
-      <li>
+      <li data-role="collapsible">
         <a data-transition="none" class="js-subnav-link" data-role="button">Chapter 1: <span class="font-normal">Listening and Exploring</span> <span class="glyphicon glyphicon-triangle-bottom"></span></a>
         <ul>
           <li class="drawer-complete"><a href="views/mf-bookdetails.html" data-transition="none" data-role="button">Lesson 1: <span class="font-light">The Bicycle Bells</span></a></li>
