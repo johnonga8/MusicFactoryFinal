@@ -13,7 +13,7 @@ function closeNav() {
   $(".js-subnav-link").siblings('ul').hide();
   $(".js-subnav-link").removeClass("active-link");
   $(".js-subnav-link").parent("li").removeClass("li-active-link");
-  $(".js-subnav-link").children(".glyphicon").removeClass("glyphicon-triangle-top"); 
+  $(".js-subnav-link").children(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-bottom"); 
   $(".bookdetails-drawer-firstnav .km-scroll-container").css("transform","translate3d(0px, 0px, 0px)");
   $(".bookdetails-drawer-firstnav .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
 };
@@ -41,7 +41,3 @@ function Flexslider(){
     controlNav: "thumbnails"
   });  
 };
-
-
-
-
