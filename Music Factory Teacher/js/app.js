@@ -14,7 +14,8 @@ function closeNav() {
   $(".js-subnav-link").removeClass("active-link");
   $(".js-subnav-link").parent("li").removeClass("li-active-link");
   $(".js-subnav-link").children(".glyphicon").removeClass("glyphicon-triangle-top"); 
-  $(".bookdetails-drawer-firstnav .km-scroll-container").css("transform","translate3d(0px, 0, 0px)");
+  $(".bookdetails-drawer-firstnav .km-scroll-container").css("transform","translate3d(0px, 0px, 0px)");
+  $(".bookdetails-drawer-firstnav .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
 };
 //COLLAPSABLE NAV
 function DropNav(){
@@ -23,7 +24,8 @@ function DropNav(){
   $(this).toggleClass("active-link");
   $(this).parent("li").toggleClass("li-active-link");
   $(this).children(".glyphicon").toggleClass("glyphicon-triangle-bottom glyphicon-triangle-top");  
-  $(".bookdetails-drawer-firstnav .km-scroll-container").css("transform","translate3d(0px, 0, 0px)");
+  $(".bookdetails-drawer-firstnav .km-scroll-container").css("transform","translate3d(0px, 0px, 0px)");
+  $(".bookdetails-drawer-firstnav .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
   });
 };
 //FANCYBOX

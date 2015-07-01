@@ -129,7 +129,7 @@ a.bttn{padding:10px 25px;border-radius:3px;color:#fff;cursor:pointer}
 .bttn-next{float:right}
 a.bttn-signout.km-button{background:url(../img/icon-signout.png) left center no-repeat!important;position:absolute;bottom:10px;height:32px;font:normal 14px "museo_sans500";color:#eafcfb!important;padding-left:40px;margin-left:20px}
 a.bttn-signout.km-button span{line-height:22px}
-.bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;margin-top:-15px!important}
+.bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;margin-top:-15px!important;margin-left:0!important}
 .bttn-modal{background:url(../img/icon-music-white.png) no-repeat 180px #ff8e3c;width:220px;border-radius:3px;height:40px;text-transform:uppercase;font-size:14px;text-align:center;color:#fff;display:block;line-height:40px;padding-right:20px;cursor:pointer}
 .bttn:hover, a.bttn:hover, .bttn-modal:hover{background-color:#e7711c}
 /**MARGINS/PADDINGS/LINE HEIGHT STYLE**/
@@ -212,7 +212,7 @@ box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);}
 .bookdetails-drawer-head h1{background:#93c8c5;font-size:16px;margin:0;padding:15px;color:#296b68}
 .bookdetails-drawer .glyphicon{font-size:12px;color:#fff;position:absolute!important;top:10px;right:0}
 .bookdetails-drawer .glyphicon.glyphicon-triangle-top{color:#2e716d}
-.bookdetails-drawer-firstnav  {margin:0;height:460px}
+.bookdetails-drawer-firstnav  {margin:0;height:473px}
 .bookdetails-drawer-firstnav .km-scroll-container> li{list-style-type:none}
 .bookdetails-drawer-firstnav{padding-left:0}
 .bookdetails-drawer-firstnav a.km-widget.km-button{border-bottom:1px solid #8bc8c4;color:#d7f3f1!important;padding:10px 15px 10px 10px;margin:0 10px;font-weight:bold;text-align:left;display:block;line-height:1.5;font:normal 14px "museo_sans700"}
