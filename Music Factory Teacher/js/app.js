@@ -8,9 +8,12 @@ function hideDrawer() {
       //function(){};
     );
 }
+function beforeHide() {
+  $("video").get(0).pause();
+  $("audio").trigger("pause");
+};
 //REMOVE COLLAPSIBLE ON PAGE LOAD
-function closeNav(e) {
-  e.preventDefault();
+function closeNav() {
   $(".js-subnav-link").siblings('ul').hide();
   $(".js-subnav-link").removeClass("active-link");
   $(".js-subnav-link").parent("li").removeClass("li-active-link");
