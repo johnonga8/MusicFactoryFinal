@@ -9,7 +9,8 @@ function hideDrawer() {
     );
 }
 //REMOVE COLLAPSIBLE ON PAGE LOAD
-function closeNav() {
+function closeNav(e) {
+  e.preventDefault();
   $(".js-subnav-link").siblings('ul').hide();
   $(".js-subnav-link").removeClass("active-link");
   $(".js-subnav-link").parent("li").removeClass("li-active-link");
@@ -41,3 +42,7 @@ function Flexslider(){
     controlNav: "thumbnails"
   });  
 };
+
+
+
+

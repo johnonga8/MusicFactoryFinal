@@ -1,4 +1,5 @@
 function afterShow(e){
+    e.preventDefault();
     setTimeout(function () {
         $("#table-of-contents").data("kendoMobileDrawer").show();
     }, 1);

@@ -334,11 +334,11 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 .audio-block strong{text-align:center;display:block;font-size:15px;margin-bottom:10px}
 .audio-block span{font-weight:normal}
 .audio-block audio{display:block;margin:0 auto}
-/**====SMALL DEVICE AND PORTRAIT===**/
+/**====SMALL DEVICE AND PORTRAIT===
 .km-content, .km-android, .km-vertical{position:relative}
 .km-vertical:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-orientation.png) center center no-repeat #e4e9ed!important;}
 .km-phone .km-content:before, .km-phone .km-android:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-phone.png) center center no-repeat #e4e9ed!important;}
-
+**/
 
 
 
