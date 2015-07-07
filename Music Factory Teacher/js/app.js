@@ -38,13 +38,21 @@ $(document).ready(function() {
   });
 });
 //FLEXSLIDER
-function Flexslider(){
-  $('.gallery-01').flexslider({
+function FlexsliderReference(){
+  $('.gallery-refer').flexslider({
     slideshow: false,
     animation: "slide",
     controlNav: "thumbnails"
   });  
 };
+function FlexsliderMusic(){
+  $('.gallery-music').flexslider({
+    slideshow: false,
+    animation: "slide",
+    controlNav: "thumbnails"
+  });  
+};
+
 
 
 

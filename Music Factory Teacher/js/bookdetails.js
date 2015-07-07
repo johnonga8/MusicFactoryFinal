@@ -36,7 +36,7 @@
       $(".tab-content-02").fadeOut();
       $(".tab-content-04").fadeOut();
       $(".tab-content-05").fadeOut();
-      Flexslider();
+      FlexsliderReference();
       $("video").get(0).pause();
       $("audio").trigger("pause");
     });
@@ -48,7 +48,7 @@
       $(".tab-content-02").fadeOut();
       $(".tab-content-03").fadeOut();
       $(".tab-content-05").fadeOut();
-      Flexslider();
+      FlexsliderMusic();
       $("video").get(0).pause();
       $("audio").get(0).pause();
     });
