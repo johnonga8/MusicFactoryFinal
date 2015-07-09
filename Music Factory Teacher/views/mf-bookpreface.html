@@ -1,48 +1,36 @@
-<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left" data-before-show="closeNav">
+<div id="preface-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="BeforeShowPreface">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" href="views/mf-booklisting.html"><span class="icon-booklist"></span> Back to Book List</a>
+            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> Back to Book List</a>
         </div>
         <div class="col-xs-6" >
-            <strong>OWL SERIES: MUSIC CLASSROOM PROGRAM - Preface Introduction</strong>
+            <strong><span data-bind="text: BookTitle"></span> - Preface Introduction</strong>
         </div>	        
     </div>       
   </header>
   
   <div class="row book-content-wrap row-margin-null">
     <div class="col-xs-12" id="preface">
-      <div data-role="scrollview" data-enable-pager="false" >
-        <div class="detailfull-wrap js-fullheight-preface" data-role="page">
-          <!--start content-->
-            <img src="./img/books/preface.jpg" class="img-responsive"/>
-          <!--end content-->
+        <div data-bind="html: PrefaceContent">
         </div>
-        <div class="row" data-role="page">
-          <div class="book-content-wrap">
-            <div class="col-xs-12">
-              <h1>Music Factory programs for 4 to 6 years old</h1>
-              <p>Music Factory program is an early childhood music education program designed for children aged between 4 to 6 years old. The Music Factory eBook allows classroom teachers to develop musical understandings in young children in a sequential manner. The Music Factory eBook is an instructional manual aimed to provide a “pick-up-and-use” guide for anyone with no prior music background. It is simple and comes guided with lesson plans, audio clips and video demonstrations to conduct a music lesson with success. Music Factory Funsheets™ and Picture This™ cards are also available for prints to compliment the music teaching and learning process. To capitalize on children’ innate musicality, Music Playhouse™ are created for children to explore and stretch their musical world.</p>
-              <br/>
-              <br/>
-              <h1>Music Factory Lesson</h1>
-              <p>A Music Factory lesson exposes a child to Creative Movements in response to music, musical collaborations and exchanges through group percussion play, interactive singing, and musical play using song-stories. With purposeful play as central to Music Factory’s curricular, children will experience music as an active participant, leading to meaningfully making music together.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-preface"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
             <a class="bttn-prev" data-role="button" href="views/mf-bookcover.html"><span class="icon-left"></span> <span>Back:</span> Book Cover</a>
         </div>
         <div class="col-xs-6">
-            <a href="views/mf-bookdetails.html" class="bttn-next" data-role="button" class="pull-right"><span>Next:</span> Lesson 1 <span class="icon-right"></span></a>
+            <a class="bttn-next km-widget km-button" class="pull-right" 
+               data-bind="events: { click: NextLessonClick }">
+              <span class="km-text">Next:</span> Lesson </span><span data-bind="text: FirstLessonNumber" ></span> <span class="icon-right"></span>
+              <input class="js-lessonnumber" type="text" data-bind="value: FirstLessonNumber" hidden/>
+              <input class="js-chapternumber" type="text" data-bind="value: FirstChapterNumber" hidden/>
+            </a>
         </div>	        
     </div> 
   </footer>
@@ -50,35 +38,51 @@
 </div>
 
 <!--drawer navigation-->
-<div data-role="drawer" id="table-of-contents" class="bookdetails-drawer" style="width:250px" data-swipe-to-open="true">
-    <div class="bookdetails-drawer-head">
-      <h1>Owl Series:<br/> Classroom Music Program</h1>
+<div data-role="drawer" id="table-of-contents-preface" class="bookdetails-drawer table-of-contents" style="width:250px" data-swipe-to-open="true" data-show="onShowDrawer">
+    <!--<div id="book-title" class="bookdetails-drawer-head" data-bind="source: Book" data-template="title-template">
+
+    </div>-->
+    <div id="book-title" class="bookdetails-drawer-head">
+      <h1 data-bind="text: Book.Title"></h1>
     </div>
-    <ul data-role="scroller" class="bookdetails-drawer-firstnav">
-      <li><a href="views/mf-bookcover.html" data-transition="none" data-role="button">Cover </a></li>
-      <li>
-        <a href="views/mf-bookpreface.html" data-transition="none" data-role="button">Preface</a>
-      </li>
-      <li>
-        <a data-transition="none" class="js-subnav-link" data-role="button">Chapter 1: <span class="font-normal">Listening and Exploring</span> <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-        <ul>
-          <li><a href="views/mf-bookdetails.html" data-transition="none" data-role="button">Lesson 1: <span class="font-light">The Bicycle Bells</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 2: <span class="font-light">I Hear Thunder</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 3: <span class="font-light">Little Johnny</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 4: <span class="font-light">If You're Happy and You Know It</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 5: <span class="font-light">This is the Way the Girls Ride</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 6: <span class="font-light">Camptown Races</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 7: <span class="font-light">Bickle Bockle</span></a></li>
-        </ul>
-      </li>
-      <li><a data-transition="none" data-role="button">Chapter 2: <span class="font-light">Listening and Responding to Music</span></a></li>
-      <li><a data-transition="none" data-role="button">Chapter 3: <span class="font-light">Music Concepts</span></a></li>
-      <li><a data-transition="none" data-role="button">Chapter 4: <span class="font-light">Improvise and Create</span></a></li>
-      <li><a data-transition="none" data-role="button">Glossary</a></li>
-    </ul>
-    <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>
+    <div data-role="scroller" style="height: 473px" id="scroller">
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }">Cover</a></div>
+      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
+      <ul id="list-chapters" class="bookdetails-drawer-firstnav" data-bind="source: Chapters" data-template="chapters-template">
+      </ul>
+    </div>
+    <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>
 <!--end drawer navigation-->
+
+<!-- Title Nav Template -->
+<script id="title-template" type="text/x-kendo-template">
+  <h1 data-bind="text: Title"></h1>
+</script>
+
+<!-- Chapter Nav Template -->
+<script id="chapters-template" type="text/x-kendo-template">
+  <li>
+    <a class="km-widget km-button js-subnav-link" data-role="button" data-bind="attr: { title: Title }, events: { click: SlideToggle }" data-transition="none" data-role="button" class="js-subnav-link"> <span data-bind="text: Title"></span><span class="glyphicon glyphicon-triangle-bottom"></span></a>
+    <ul>
+      #= RenderLessonsTemplate(data) #
+    </ul>
+  </li>
+</script>
+
+<!-- Lesson Nav Template -->
+<script id="lessons-template" type="text/x-kendo-template">
+    # $.each(data.Lessons, function (index, lesson) { 
+            # <li>
+              <a class="km-widget km-button" data-bind="events: { click: SelectLesson }" data-transition="none">
+                <input class="js-lessonnumber" type="text" value="${lesson.LessonNumber}" hidden/>
+                <input class="js-chapternumber" type="text" value="${lesson.ChapterNumber}" hidden/>
+                ${lesson.Title}
+              </a>
+            </li> #
+      }); 
+    #
+</script>
 
 
 

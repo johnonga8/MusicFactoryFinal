@@ -1,12 +1,13 @@
-<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-transition="overlay:left" data-before-show="closeNav" data-before-hide="beforeHide">
+<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="BeforeShowLesson" data-before-hide="beforeHide">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" href="views/mf-booklisting.html"><span class="icon-booklist"></span> Back to Book List</a>
+            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> Back to Book List</a>
         </div>
         <div class="col-xs-6" >
-            <strong>OWL SERIES: MUSIC CLASSROOM PROGRAM - Chapter 1 Listening and Exploring</strong>
+            <!--<strong>OWL SERIES: MUSIC CLASSROOM PROGRAM - Chapter 1 Listening and Exploring</strong>-->
+            <strong><span data-bind="text: Book.Title"></span> - <span data-bind="text: CurrentChapter.Title"></span></strong>
         </div>	        
     </div>       
   </header>
@@ -16,7 +17,8 @@
     <!--start content-->
       <div class="row book-content-header">
         <div class="col-xs-12">
-          <h1>Lesson 1: The Bicycle Bells</h1> 
+          <!--<h1>Lesson 1: The Bicycle Bells</h1> -->
+          <h1 data-bind="text: CurrentLesson.Title"></h1>
         </div>
         <div class="col-xs-12">
           <ul class="bookdetails-tabs">
@@ -29,38 +31,13 @@
         </div>
       </div>
       <!--Start Overview-->
-      <div class="row tab-content-wrap tab-content-01">
-        <div class="col-xs-6">
-          <div class="lesson-block">
-            <h3><img src="./img/icon-bulb.png" title="Learning Objective" class="icon-img"/> Learning Objective:</h3>
-            <p>To aurally identify environmetal, weather, animal, people sounds and demonstrate that recognition by describing the sounds heard.</p>
-          </div>
-          <div class="lesson-block">
-            <h3><img src="./img/icon-music.png" title="Music Element" class="icon-img"/>Music Element:</h3>
-            <p>Timbre</p>
-          </div>
-          <div class="lesson-block">
-            <h3><img src="./img/icon-teaching.png" title="Teaching Materials" class="icon-img"/>Teaching Materials</h3>
-            <p>Funsheet:</p>
-            <p>Environmental Sounds</p>
-            <p>Audio CD</p>
-          </div>
-          <div class="lesson-block">
-            <h3><img src="./img/icon-cd.png" title="CD Track" class="icon-img"/>CD Track:</h3>
-            <p>Vol.1 Track #1 of "Soundscapes: Our Environmental Sounds."</p>
-            <p>Vol.1 Track #2 of "The Bicycle Bells"</p>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <video controls>
-            <source src="http://a8mf.cloudapp.net/mf_videos/lesson1_bicycle.mp4" type="video/mp4" controls="controls"/>
-          </video>
-        </div>
+      <div class="tab-content-wrap tab-content-01" data-bind="html: CurrentLesson.Section1_Content">
       </div>
       <!--End Overview-->
+      
       <!--Start Activity Procedure-->
       <div class="row tab-content-wrap tab-content-02">
-        <div class="col-xs-12">
+        <div class="col-xs-12">  
           <div class="fancybox bttn-modal" href="#welcomesong">Play Welcome Song</div>
           <hr/>
           <!--start modal-->
@@ -93,39 +70,7 @@
             </div>
           </div>
           <!--end modal-->
-          <div class="row detail-wrap">
-            <div class="col-xs-12">
-              <!--<h2>The Bicycle Bells</h2>-->
-              <h3><img src="./img/icon-music-v2.png" alt="Activity Procedure" class="icon-img"/>Activity Procedure</h3>
-              <div class="row">
-                <div class="col-xs-6">
-                  <strong>1. Listening to sound sources:</strong>
-                  <p>TPlay the Vol. 1 Track #1 of “Soundscapes: Our Environmental Sounds” to children. Encourage children to listen and imitate the sounds they hear. Ask them to describe the sounds heard, e.g.:</p>
-                  <ul>
-                    <li>Transport (alarm, bicycle bells, motorbike vrooming) </li>
-                    <li>Weather (thunder, wind) </li>
-                    <li>Animals (elephant, lion, monzkeys) </li>
-                    <li>People (sneeze, cough) </li>
-                  </ul>
-                  <strong>2. Imitating Sounds</strong>
-                  <ul>
-                    <li>Teach song by rote (Vol. 1 Track #2 of “The Bicycle Bells”)</li>
-                    <li>Invite children to make appropriate sounds for each verse of the song </li>
-                    <li>Encourage children to create movements for each verse as they sing the song</li>
-                  </ul>
-                  <strong>3. Activity</strong>
-                  <p>Refer to Funsheet: Our Environmental Sounds</p>
-                  <br/>
-                  <!--<strong><em>Refer to Music Play Centre: Sounds Around Us</em></strong>-->
-                </div>
-                <div class="col-xs-6">
-                  <div class="audio-block">
-                    <strong>Audio 1.1: <span>Soundscapes My Environmental Sounds </strong>
-                    <audio src="http://a8mf.cloudapp.net/mf_audios/soundscapes_environmental.mp3" controls="controls"></audio>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div data-bind="html: CurrentLesson.Section2_Content">
           </div>
           <hr/>
           <div class="bttn-modal fancybox" href="#goodbyesong">Play Goodbye Song</div>
@@ -181,279 +126,18 @@
       </div>
       <!--End Activity Procedure-->
       <!--Start Reference Materials-->
-      <div class="row tab-content-wrap tab-content-03 detail-wrap">
-        <div class="col-xs-12">
-          <div class="row detail-wrap">
-            <div class="col-xs-12">
-              <h2>Sounds Around Us</h2>
-              <div class="row">
-                <div class="col-xs-6">
-                <strong class="gallery-center">Musical Note</strong>
-                  <div class="gallery-01 gallery-refer gallery-items-02">
-                    <ul class="slides">
-                      <li data-thumb="./img/books/sliderv2-01.jpg">
-                        <a href="./img/books/sliderv2-01.jpg" class="fancybox">
-                          <img src="./img/books/sliderv2-01.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/sliderv2-01.jpg">
-                        <a href="./img/books/sliderv2-01.jpg" class="fancybox">
-                          <img src="./img/books/sliderv2-01.jpg" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-xs-6">
-                  <div class="audio-block"> 
-                    <strong>Audio 1.2: <span>The Bicycle Bells</strong>
-                    <audio src="http://a8mf.cloudapp.net/mf_audios/bicycle_bells.mp3" controls="controls"></audio>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr/>
-            <div class="col-xs-12">
-              <h2>Gallery</h2>
-              <div class="row">
-                <div class="col-xs-6">
-                <strong class="gallery-center">Gallery 1.1: Funsheet</strong>
-                  <div class="gallery-01 gallery-refer gallery-items-02">
-                    <ul class="slides">
-                      <li data-thumb="./img/books/sliderv2-02.jpg">
-                        <a href="./img/books/sliderv2-02.jpg" class="fancybox">
-                          <img src="./img/books/sliderv2-02.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/sliderv2-02.jpg">
-                        <a href="./img/books/sliderv2-02.jpg" class="fancybox">
-                          <img src="./img/books/sliderv2-02.jpg" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-xs-6">
-                  <!--data-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="tab-content-wrap tab-content-03 detail-wrap" data-bind="html: CurrentLesson.Section3_Content">
+        
       </div>
       <!--End Reference Materials-->   
       <!--Start Music Play Center-->
-      <div class="row tab-content-wrap tab-content-04">
-        <div class="col-xs-12">
-          <div class="row detail-wrap">
-            <div class="col-xs-12">
-              <h2>Sounds Around Us</h2>
-              <!--Start Activity A-->
-              <h3><img src="./img/icon-music-v2.png" alt="Activity A" class="icon-img"/>Activity A</h3>
-              <div class="row">
-                <div class="col-xs-6">
-                  <strong>Listening Objective:</strong>
-                  <p>To identify sounds in the environment</p>
-                  <br/>
-                  <strong>Task card:</strong>
-                  <p>Listen to the sound source and pick out the FunCards</p>
-                  <br/>
-                  <strong>Activity:</strong>
-                  <p>Listen and identify sounds in the classroom environment</p>
-                  <br/>
-                  <strong>Materials:</strong>
-                  <ul>
-                    <li>FunCard: Classroom Sounds</li>
-                    <li>SoundBank: Classroom Sounds</li>
-                  </ul>
-                </div>
-                <div class="col-xs-6">
-                  <strong class="gallery-center">Gallery Music Play Centre.1</strong>
-                  <div class="gallery-01 gallery-music gallery-items-05">
-                    <ul class="slides">
-                      <li data-thumb="./img/books/slider-01.jpg">
-                        <a href="./img/books/slider-01.jpg" class="fancybox">
-                          <img src="./img/books/slider-01.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-02.jpg">
-                        <a href="./img/books/slider-02.jpg" class="fancybox">
-                          <img src="./img/books/slider-02.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-03.jpg">
-                        <a href="./img/books/slider-03.jpg" class="fancybox">
-                          <img src="./img/books/slider-03.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-03.jpg">
-                        <a href="./img/books/slider-03.jpg" class="fancybox">
-                          <img src="./img/books/slider-03.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-02.jpg">
-                        <a href="./img/books/slider-02.jpg" class="fancybox">
-                          <img src="./img/books/slider-02.jpg" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <br/>
-                  <div class="audio-block">
-                    <strong>Audio Music Play Centre.1: <span>Environment Sounds</strong>
-                    <audio src="./vids/audio.mp3" controls="controls"></audio>
-                  </div>
-                </div>
-              </div>
-              <hr/>
-              <!--End Activity A-->
-              <!--Start Activity B-->
-              <h3><img src="./img/icon-music-v2.png" alt="Activity B" class="icon-img"/>Activity B</h3>
-              <div class="row">
-                <div class="col-xs-6">
-                  <strong>Learning objective:</strong>
-                  <p>Listen and recognise pitch differences in the classroom environment</p>
-                  <br/>
-                  <strong>Task card:</strong>
-                  <p>Imitate the environment sounds and identify them as high, low or in between</p>
-                  <br/>
-                  <strong>Activity:</strong>
-                  <p>Place the FunSound Grid: High, Low and In between; FunCard: Classroom Sounds and SoundBank: Classroom sounds at the Music Play Centre. Guide child to listen and identify the pitch differences in the sounds heard</p>
-                  <br/>
-                  <strong>Materials:</strong>
-                  <ul>
-                    <li>FunSound Grid: High, Low and In between</li>
-                    <li>SoundCard: Classroom Sounds</li>
-                    <li>SoundBank: Classroom Sounds</li>
-                  </ul>
-                </div>
-                <div class="col-xs-6">
-                  <strong class="gallery-center">Gallery Music Play Centre.2</strong>
-                  <div class="gallery-01 gallery-music gallery-items-06">
-                    <ul class="slides">
-                      <li data-thumb="./img/books/slider-01.jpg">
-                        <a href="./img/books/slider-01.jpg" class="fancybox">
-                          <img src="./img/books/slider-01.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-02.jpg">
-                        <a href="./img/books/slider-02.jpg" class="fancybox">
-                          <img src="./img/books/slider-02.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-03.jpg">
-                        <a href="./img/books/slider-03.jpg" class="fancybox">
-                          <img src="./img/books/slider-03.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-03.jpg">
-                        <a href="./img/books/slider-03.jpg" class="fancybox">
-                          <img src="./img/books/slider-03.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-02.jpg">
-                        <a href="./img/books/slider-02.jpg" class="fancybox">
-                          <img src="./img/books/slider-02.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-02.jpg">
-                        <a href="./img/books/slider-02.jpg" class="fancybox">
-                          <img src="./img/books/slider-02.jpg" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!--End Activity B-->
-              <hr/>
-              <!--Start Activity C-->
-              <h3><img src="./img/icon-music-v2.png" alt="Activity B" class="icon-img"/>Activity C</h3>
-              <div class="row">
-                <div class="col-xs-6">
-                  <strong>Learning objective:</strong>
-                  <p>Listen and classify sounds into sound families</p>
-                  <br/>
-                  <strong>Task card:</strong>
-                  <p>Listen and categorise the sounds into sound families</p>
-                  <br/>
-                  <strong>Activity:</strong>
-                  <p>Place the FunCard: Classification and SoundBank: Environment at the Music Play Centre. Guide child to listen to the audio clips and then to classify the sounds into different sound families, such as weather, people, animal, machine</p>
-                  <br/>
-                  <strong>Materials:</strong>
-                  <ul>
-                    <li>FunCard: Classification</li>
-                    <li>SoundBank: Environment</li>
-                  </ul>
-                </div>
-                <div class="col-xs-6">
-                  <strong class="gallery-center">Gallery Music Play Centre.3</strong>
-                  <div class="gallery-01  gallery-music gallery-items-03">
-                    <ul class="slides">
-                      <li data-thumb="./img/books/slider-01.jpg">
-                        <a href="./img/books/slider-01.jpg" class="fancybox">
-                          <img src="./img/books/slider-01.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-02.jpg">
-                        <a href="./img/books/slider-02.jpg" class="fancybox">
-                          <img src="./img/books/slider-02.jpg" />
-                        </a>
-                      </li>
-                      <li data-thumb="./img/books/slider-03.jpg">
-                        <a href="./img/books/slider-03.jpg" class="fancybox">
-                          <img src="./img/books/slider-03.jpg" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="audio-block">
-                    <strong>Audio Music Play Centre.2: <span>Three Little Elves</strong>
-                    <audio src="http://a8mf.cloudapp.net/mf_audios/three_little_elves.mp3" controls="controls"></audio>
-                  </div>
-                </div>
-              </div>
-              <!--End Activity C-->
-            </div>
-          </div>
-        </div>
+      <div class="tab-content-wrap tab-content-04" data-bind="html: CurrentLesson.Section4_Content">
+        
       </div>
       <!--End Music Play Center-->
       <!--Start Moments-->
-      <div class="row tab-content-wrap tab-content-05">
-        <div class="moments-active"></div>
-        <div class="col-xs-12">
-          <div class="clearfix">
-            <div class="moments-bttn moments-capture">Capture Moment</div>
-            <div class="moments-bttn moments-publish">
-              <span>Select to Publish</span>
-              <div class="phototooltip"><span class="tooltiparrow"></span>Publish 2 Photos</div>
-              <div class="photoselected"></div>
-            </div>
-           <!-- <div class="moments-bttn moments-delete">Delete Photos</div> -->
-          </div>
-        </div>
-        <div class="col-xs-12 moments-gallery">
-          <div class="moments-img"><input type="checkbox" checked/><img src="./img/moments/thumb1.png"/></div>
-          <div class="moments-img"><input type="checkbox" checked/><img src="./img/moments/thumb2.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb3.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb4.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb5.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb6.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb7.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb8.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb9.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb10.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb11.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb12.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb13.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb14.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb15.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb16.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb17.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb18.png"/></div>
-          <div class="moments-img"><input type="checkbox" /><img src="./img/moments/thumb19.png"/></div>
-        </div>
+      <div class="tab-content-wrap tab-content-05" data-bind="html: CurrentLesson.Section5_Content">
+        
       </div>
       <!--End Moments-->
     <!--end content-->
@@ -463,11 +147,12 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
-            <a class="bttn-prev" data-role="button" href="views/mf-bookpreface.html"><span class="icon-left"></span> <span>Back:</span> Preface</a>
+            <a data-role="button" class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-chapter"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
+            <a data-role="button" class="bttn-prev bttn-prev-lesson" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Lesson </span> <span data-bind="text: PrevLessonNumber"></span></a>
+            <a data-role="button" class="bttn-prev-preface hide" href="views/mf-bookpreface.html" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Preface</a>
         </div>
         <div class="col-xs-6">
-            <a class="bttn-next" data-role="button" class="pull-right"><span>Next:</span> Lesson 2 <span class="icon-right"></span></a>
+            <a class="bttn-next" data-bind="events: { click: NextLessonClick }" data-role="button"><span class="km-text">Next:</span>Lesson </span> <span data-bind="text: NextLessonNumber" ></span> <span class="icon-right"></span></a>
         </div>	        
     </div> 
   </footer>
@@ -475,35 +160,51 @@
 </div>
 
 <!--drawer navigation-->
-<div data-role="drawer" id="table-of-contents" class="bookdetails-drawer" style="width:250px" data-swipe-to-open="true">
-    <div class="bookdetails-drawer-head">
-      <h1>Owl Series:<br/> Classroom Music Program</h1>
+<div data-role="drawer" id="table-of-contents-chapter" class="bookdetails-drawer table-of-contents" style="width:250px" data-swipe-to-open="true" data-show="onShowDrawer">
+    <!--<div id="book-title" class="bookdetails-drawer-head" data-bind="source: Book" data-template="title-template">
+
+    </div>-->
+    <div id="book-title" class="bookdetails-drawer-head">
+      <h1 data-bind="text: Book.Title"></h1>
     </div>
-    <ul data-role="scroller" class="bookdetails-drawer-firstnav">
-      <li><a href="views/mf-bookcover.html" data-transition="none" data-role="button">Cover </a></li>
-      <li>
-        <a href="views/mf-bookpreface.html" data-transition="none" data-role="button">Preface</a>
-      </li>
-      <li data-role="collapsible">
-        <a data-transition="none" class="js-subnav-link" data-role="button">Chapter 1: <span class="font-normal">Listening and Exploring</span> <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-        <ul>
-          <li><a href="views/mf-bookdetails.html" data-transition="none" data-role="button">Lesson 1: <span class="font-light">The Bicycle Bells</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 2: <span class="font-light">I Hear Thunder</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 3: <span class="font-light">Little Johnny</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 4: <span class="font-light">If You're Happy and You Know It</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 5: <span class="font-light">This is the Way the Girls Ride</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 6: <span class="font-light">Camptown Races</span></a></li>
-          <li><a data-transition="none" data-role="button">Lesson 7: <span class="font-light">Bickle Bockle</span></a></li>
-        </ul>
-      </li>
-      <li><a data-transition="none" data-role="button">Chapter 2: <span class="font-light">Listening and Responding to Music</span></a></li>
-      <li><a data-transition="none" data-role="button">Chapter 3: <span class="font-light">Music Concepts</span></a></li>
-      <li><a data-transition="none" data-role="button">Chapter 4: <span class="font-light">Improvise and Create</span></a></li>
-      <li><a data-transition="none" data-role="button">Glossary</a></li>
-    </ul>
-    <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>
+    <div data-role="scroller" style="height: 473px" id="scroller">
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }">Cover</a></div>
+      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
+      <ul id="list-chapters" class="bookdetails-drawer-firstnav" data-bind="source: Chapters" data-template="chapters-template">
+      </ul>
+    </div>
+    <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>
 <!--end drawer navigation-->
+
+<!-- Title Nav Template -->
+<script id="title-template" type="text/x-kendo-template">
+  <h1 data-bind="text: Title"></h1>
+</script>
+
+<!-- Chapter Nav Template -->
+<script id="chapters-template" type="text/x-kendo-template">
+  <li>
+    <a class="km-widget km-button js-subnav-link" data-role="button" data-bind="attr: { title: Title }, events: { click: SlideToggle }" data-transition="none" data-role="button" class="js-subnav-link"> <span data-bind="text: Title"></span><span class="glyphicon glyphicon-triangle-bottom"></span></a>
+    <ul>
+      #= RenderLessonsTemplate(data) #
+    </ul>
+  </li>
+</script>
+
+<!-- Lesson Nav Template -->
+<script id="lessons-template" type="text/x-kendo-template">
+    # $.each(data.Lessons, function (index, lesson) { 
+            # <li>
+              <a class="km-widget km-button" data-bind="events: { click: SelectLesson }" data-transition="none">
+                <input class="js-lessonnumber" type="text" value="${lesson.LessonNumber}" hidden/>
+                <input class="js-chapternumber" type="text" value="${lesson.ChapterNumber}" hidden/>
+                ${lesson.Title}
+              </a>
+            </li> #
+      }); 
+    #
+</script>
 
 
 

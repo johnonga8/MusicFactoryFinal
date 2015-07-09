@@ -1,5 +1,11 @@
 //FULL HEIGHT
 var bookdetailsfullheightpreface = $(window).height();
 $('.js-fullheight-preface').css('min-height', (bookdetailsfullheightpreface - 100));
-//NAV
-DropNav();
+
+//BINDING STARTS
+//Function for drawer
+function BeforeShowPreface(e)
+{
+  BindKinderPrefaceDetails(currentBook);
+  closeNav();
+}

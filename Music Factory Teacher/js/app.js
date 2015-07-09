@@ -4,13 +4,17 @@
 }());
 //DRAWER
 function hideDrawer() {
-    $("#table-of-contents").data("kendoMobileDrawer").hide(
+    $(".table-of-contents").data("kendoMobileDrawer").hide(
       //function(){};
     );
 }
 function beforeHide() {
-  $("video").get(0).pause();
-  $("audio").trigger("pause");
+  //$("video").get(0).pause();
+  //$("audio").trigger("pause");
+};
+function onShowDrawer(){
+    var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
+    closeNav();
 };
 //REMOVE COLLAPSIBLE ON PAGE LOAD
 function closeNav() {
@@ -18,8 +22,8 @@ function closeNav() {
   $(".js-subnav-link").removeClass("active-link");
   $(".js-subnav-link").parent("li").removeClass("li-active-link");
   $(".js-subnav-link").children(".glyphicon").removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-bottom"); 
-  $(".bookdetails-drawer-firstnav .km-scroll-container").css("transform","translate3d(0px, 0px, 0px)");
-  $(".bookdetails-drawer-firstnav .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+  $("#scroller .km-scroll-container").css("transform","translate3d(0px, 0px, 0px)");
+  $("#scroller .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
 };
 //COLLAPSABLE NAV
 function DropNav(){
@@ -52,7 +56,15 @@ function FlexsliderMusic(){
     controlNav: "thumbnails"
   });  
 };
-
+//LINQ INITIALIZATION
+Array.prototype.First = function (predicate, def) {
+    var l = this.length;
+    if (!predicate) return l ? this[0] : def == null ? null : def;
+    for (var i = 0; i < l; i++)
+        if (predicate(this[i], i, this))
+            return this[i];
+    return def == null ? null : def;
+};
 
 
 

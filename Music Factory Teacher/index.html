@@ -27,7 +27,7 @@
     <div class="col-xs-5 col-xs-offset-1">
       <div class="clearfix marg-b-10">
         <h2>Sign in</h2>
-        <a class="login-password">Forgot your password?</a>
+        <a href="#password" class="login-password">Forgot your password?</a>
       </div>
       <form>
         <input type="text" placeholder="Username"/>
@@ -37,6 +37,25 @@
       </form>
     </div>
     <div class="col-xs-6">
+      <img src="./img/branding-home.jpg" class="img-responsive"/>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="password" data-role="view" data-layout="default" data-transition="overlay:right">
+  <div class="row marg-t-150 row-margin-null">
+    <div class="col-xs-4 col-xs-offset-1">
+      <div class="clearfix marg-b-10">
+        <h2>Reset Your Password</h2>
+        <p>Enter your registered email and we'll send instructions to get you back on your feet.</p>
+      </div>
+      <form>
+        <input type="email" placeholder="Email address"/>
+        <input type="submit" value="Send" class="bttn" data-role="button"/>
+        <a href="#login" data-role="button" class="">I remember now</a>  
+      </form>
+    </div>
+    <div class="col-xs-offset-1 col-xs-6">
       <img src="./img/branding-home.jpg" class="img-responsive"/>
     </div>
   </div>

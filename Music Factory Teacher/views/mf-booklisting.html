@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Book Listing" id="mf-booklisting" data-transition="overlay:down">    
+<div data-role="view" data-title="Book Listing" id="mf-booklisting" data-transition="overlay:down" data-before-show="beforeShow">    
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -39,85 +39,34 @@
       <div class="row listing-books row-margin-null" id="listingBooks" data-role="scroller" >   
         <!--template KIN start-->            
         <div class="clearfix">
+          <!--content from template goes here
+          <div class="row row-margin-null">
+            <div class="col-xs-2">
+              <a title="" href="views/mf-bookcover.html" data-role="button">
+                <img title="" src="./img/books/owl_yellow.jpg" class="img-responsive listingbooks-cover"/>
+                <h3>Owl Series: Classroom Music Program</h3>
+              </a>
+            </div>
+          </div>
+          end content from template-->
+         
+        <!--BIND template KIN start-->            
+        <div class="row row-margin-null booklisting-kinder" data-bind="source: KinderBooks" data-template="kinder-template">
           <!--content from template goes here-->
-          <div class="row row-margin-null">
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_yellow.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Owl Series: Classroom Music Program</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_green.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Cat Series: Classroom Video Program</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_green.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>猫系列：课堂视频节目</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_lavender.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Owl Series: Classroom Music Program</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_lavender.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>猫系列：课堂视频节目</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_yellow.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Owl Series: Classroom Music Program</h3>
-              </a>
-            </div>
+        </div>
+          <script id="kinder-template" type="text/x-kendo-template">
+          <div class="col-xs-2">
+            <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
+              <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
+              <h3 data-bind="text: Title"></h3>
+              <input type="text" data-bind="value: Id" hidden/>
+              <input type="text" data-bind="value: CultureName" hidden/>
+              <input type="text" data-bind="value: Type" hidden/>
+            </a>
           </div>
-          <!--start second row-->
-          <div class="row row-margin-null">
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_orange.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Owl Series: Classroom Music Program</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_teal.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Cat Series: Classroom Video Program</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_teal.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>猫系列：课堂视频节目</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_blue.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Owl Series: Classroom Music Program</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_blue.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>猫系列：课堂视频节目</h3>
-              </a>
-            </div>
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_orange.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Owl Series: Classroom Music Program</h3>
-              </a>
-            </div>
-          </div>
-          <!--end content from template-->
+          </script> 
+        <!--BIND template KIN end-->   
+        
         </div>
         <!--template KIN end-->
       </div>
