@@ -1,2 +1,1 @@
-# MusicFactoryTeacher
-Music Factory Teacher App
+# MusicFactoryTeacherV2
