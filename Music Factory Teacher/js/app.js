@@ -7,10 +7,14 @@ function hideDrawer() {
     $(".table-of-contents").data("kendoMobileDrawer").hide();
 }
 function PauseMedia() {
-  $("video").get(0).pause();
-  $("audio").trigger("pause");
-  $("audio").load();
-  $("video").load();
+  if ( $( "video" ).length ) { 
+    $("video").get(0).pause();
+    $("audio").trigger("pause");
+    $("audio").load();
+    $("video").load();
+  } else {
+    //do nothing
+  }
 };
 function onShowDrawer(){
     var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
@@ -65,7 +69,11 @@ function InitializeTabs(){
   $(".tab-content-03").fadeOut();
   $(".tab-content-04").fadeOut();
   $(".tab-content-05").fadeOut();
-  $("video").load();
+  if ( $( "video" ).length ) { 
+    $("video").load();
+  } else {
+    //do nothing
+  }
 };
 //LINQ INITIALIZATION
 Array.prototype.First = function (predicate, def) {
@@ -76,7 +84,3 @@ Array.prototype.First = function (predicate, def) {
             return this[i];
     return def == null ? null : def;
 };
-
-
-
-
