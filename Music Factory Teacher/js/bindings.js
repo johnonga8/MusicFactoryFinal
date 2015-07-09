@@ -66,16 +66,11 @@
           url: domain + "Custom/Services/A8_MusicFactoryService.svc/GetKinderBookById",
           contentType: "application/json;charset=utf-8",
           dataType: "json",
-          //data: JSON.stringify({ bookId: "758a7bb3-986e-67b9-8ff0-ff0000d15b77", cultureName: "zh" }),
           data: JSON.stringify({ bookId: _bookId, cultureName: _cultureName }),
           async: false,
           success: function (result) {
               var book = result.d;
               currentBook = book;
-              //GenerateKinderTableOfContents(book);
-              //var firstChapter = book.Chapters.First().ChapterNumber;
-              //var firstLesson = book.Chapters.First().Lessons.First().LessonNumber;
-              //GenerateKinderLessonDetails(book, firstChapter, firstLesson);
           },
           error: function () { alert("error GetKinderBookById"); }
       });
@@ -114,12 +109,9 @@
           $(e.currentTarget).children(".glyphicon").toggleClass("glyphicon-triangle-bottom glyphicon-triangle-top");
         },
         SelectLesson: function(e){
-          //var lessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
-          //var chapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
-          //GenerateKinderLessonDetails(currentBook, chapterNumber, lessonNumber);
-          //hideDrawer();
           currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
           currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
+          InitializeTabs();
           if (window.location.href.indexOf("mf-bookdetails") > -1) {
             hideDrawer();
             GenerateKinderLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
@@ -170,16 +162,14 @@
           NextLessonNumber: nextLessonNumber,
           PrevLessonClick: function(e){
             GenerateKinderLessonDetails(currentBook, prevLesson.ChapterNumber, prevLesson.LessonNumber);
-            $('#lesson-details').hide().slideUp();
-            $('#lesson-details').slideDown();
-            FlexsliderReference();
-            FlexsliderMusic();
+            $('#lesson-details .km-scroll-container').hide().slideUp();
+            $('#lesson-details .km-scroll-container').slideDown();
+            InitializeTabs();
           },
           NextLessonClick: function(e){
-            $('#lesson-details').hide().slideUp();
-            $('#lesson-details').slideDown();
-            FlexsliderReference();
-            FlexsliderMusic();
+            $('#lesson-details .km-scroll-container').hide().slideUp();
+            $('#lesson-details .km-scroll-container').slideDown();
+            InitializeTabs();
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
           },
           GoToLibrary: function(e){
@@ -201,8 +191,6 @@
           currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
           currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
           window.location = "#views/mf-bookdetails.html";
-          $('#lesson-details').hide().slideUp();
-          $('#lesson-details').slideDown();
         },
         GoToLibrary: function(e){
           window.location = "#views/mf-booklisting.html";

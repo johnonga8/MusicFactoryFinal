@@ -129,7 +129,7 @@ a.bttn{padding:10px 25px;border-radius:3px;color:#fff;cursor:pointer}
 .bttn-next{float:right}
 a.bttn-signout.km-button{background:url(../img/icon-signout.png) left center no-repeat!important;position:absolute;bottom:10px;height:32px;font:normal 14px "museo_sans500";color:#eafcfb!important;padding-left:40px;margin-left:20px}
 a.bttn-signout.km-button span{line-height:22px}
-.bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;margin-top:-15px!important;margin-left:0!important}
+.bttn-hidedrawer{background:url(../img/icon-hide.png) 15px center no-repeat #7ebbb7!important;position:fixed;width:250px;display:block;height:50px;margin-top:0!important;margin-left:0!important}
 .bttn-modal{background:url(../img/icon-music-white.png) no-repeat 180px #ff8e3c;width:220px;border-radius:3px;height:40px;text-transform:uppercase;font-size:14px;text-align:center;color:#fff;display:block;line-height:40px;padding-right:20px;cursor:pointer}
 .bttn:hover, a.bttn:hover, .bttn-modal:hover{background-color:#e7711c}
 /**MARGINS/PADDINGS/LINE HEIGHT STYLE**/
@@ -166,8 +166,9 @@ input[type=submit]{width:150px;border-radius:5px;background:#ff914e;height:40px;
 .book-main-wrap-footer.km-header{background:url(../img/bg-header.jpg);height:50px;padding-top:5px;}
 .km-button.bttn-tableofcontents{width:170px;border-right:1px solid #7d878c;border-radius:0;color:#7d878c;padding-left:5px}
 .bttn-tableofcontents .glyphicon{margin-right:10px}
-.bttn-prev span, .bttn-next span{color:#39464c}
-a.bttn-prev.km-button, a.bttn-next.km-button{color:#7d878c}
+a.bttn-prev.km-button, a.bttn-prev-preface, a.bttn-next.km-button{color:#7d878c!important}
+.bttn-prev span.km-text, .bttn-next span.km-text, .bttn-prev-preface span.km-text{color:#39464c!important}
+.bttn-prev span.km-text.km-lessonnum, .bttn-next span.km-text.km-lessonnum, .bttn-prev-preface span.km-text.km-lessonnum{color:#7d878c!important}
 /**====LOGIN====**/
 #login.container-fluid{padding:0;}
 #login .km-content{background:url(../img/bg-login.png) bottom center no-repeat #e4e9ed!important}

@@ -11,16 +11,14 @@
       $(this).addClass("tab-active");
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-01").fadeIn();
-      $("video").get(0).pause();
-      $("audio").trigger("pause");
+      PauseMedia();
     });
     $(".tab-control-02").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-02").fadeIn();
-      $("video").get(0).pause();
-      $("audio").trigger("pause");
+      PauseMedia();
     });
     $(".tab-control-03").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
@@ -28,8 +26,7 @@
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-03").fadeIn();
       FlexsliderReference();
-      $("video").get(0).pause();
-      $("audio").trigger("pause");
+      PauseMedia();
     });
     $(".tab-control-04").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
@@ -37,14 +34,14 @@
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-04").fadeIn();
       FlexsliderMusic();
-      $("video").get(0).pause();
-      $("audio").get(0).pause();
+      PauseMedia();
     });
     $(".tab-control-05").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-05").fadeIn();
+      PauseMedia();
     });
     //INPUT TEMP
     $(".moments-publish").click(function(){
@@ -60,5 +57,15 @@ function BeforeShowLesson(e)
 {
   BindKinderLessonDetails(currentBook);
   closeNav();
+  InitializeTabs();
+  PauseMedia();
 }
-
+function afterShowAnimate(e)
+{
+  $('#lesson-details .km-scroll-container').hide().slideUp();
+  $('#lesson-details .km-scroll-container').slideDown();
+}
+function beforeHide(e)
+{
+  PauseMedia();
+}

@@ -1,4 +1,4 @@
-<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="BeforeShowLesson" data-before-hide="beforeHide">
+<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="BeforeShowLesson" data-before-hide="beforeHide" data-after-show="afterShowAnimate">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
@@ -152,7 +152,7 @@
             <a data-role="button" class="bttn-prev-preface hide" href="views/mf-bookpreface.html" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Preface</a>
         </div>
         <div class="col-xs-6">
-            <a class="bttn-next" data-bind="events: { click: NextLessonClick }" data-role="button"><span class="km-text">Next:</span>Lesson </span> <span data-bind="text: NextLessonNumber" ></span> <span class="icon-right"></span></a>
+            <a class="bttn-next" data-bind="events: { click: NextLessonClick }" data-role="button"><span class="km-text">Next: </span>Lesson </span> <span data-bind="text: NextLessonNumber" class="km-lessonnum"></span> <span class="icon-right"></span></a>
         </div>	        
     </div> 
   </footer>

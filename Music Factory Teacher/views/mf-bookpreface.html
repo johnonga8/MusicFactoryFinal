@@ -26,8 +26,8 @@
         </div>
         <div class="col-xs-6">
             <a class="bttn-next km-widget km-button" class="pull-right" 
-               data-bind="events: { click: NextLessonClick }">
-              <span class="km-text">Next:</span> Lesson </span><span data-bind="text: FirstLessonNumber" ></span> <span class="icon-right"></span>
+               data-bind="events: { click: NextLessonClick }" data-transition="slide">
+              <span class="km-text">Next:</span> Lesson </span><span data-bind="text: FirstLessonNumber" class="km-lessonnum" ></span> <span class="icon-right"></span>
               <input class="js-lessonnumber" type="text" data-bind="value: FirstLessonNumber" hidden/>
               <input class="js-chapternumber" type="text" data-bind="value: FirstChapterNumber" hidden/>
             </a>

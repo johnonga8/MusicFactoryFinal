@@ -4,13 +4,13 @@
 }());
 //DRAWER
 function hideDrawer() {
-    $(".table-of-contents").data("kendoMobileDrawer").hide(
-      //function(){};
-    );
+    $(".table-of-contents").data("kendoMobileDrawer").hide();
 }
-function beforeHide() {
-  //$("video").get(0).pause();
-  //$("audio").trigger("pause");
+function PauseMedia() {
+  $("video").get(0).pause();
+  $("audio").trigger("pause");
+  $("audio").load();
+  $("video").load();
 };
 function onShowDrawer(){
     var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
@@ -55,6 +55,17 @@ function FlexsliderMusic(){
     animation: "slide",
     controlNav: "thumbnails"
   });  
+};
+//TABS Initialize
+function InitializeTabs(){
+  $(".bookdetails-tabs li").removeClass('tab-active');
+  $(".tab-control-01").addClass("tab-active");
+  $(".tab-content-01").fadeIn();
+  $(".tab-content-02").fadeOut();
+  $(".tab-content-03").fadeOut();
+  $(".tab-content-04").fadeOut();
+  $(".tab-content-05").fadeOut();
+  $("video").load();
 };
 //LINQ INITIALIZATION
 Array.prototype.First = function (predicate, def) {
