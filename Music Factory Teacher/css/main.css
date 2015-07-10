@@ -120,7 +120,7 @@ small{font-size:12px;display:block;margin:10px 0}
 \*------------------------------------*/
 hr{border:1px solid #e5ebeb;margin:30px 0}
 .tab-content-wrap hr{margin:35px 0 30px}
-video{max-width:100%;min-width:250px}
+video{max-width:100%;min-width:100%}
 .music-img{display:block;margin:20px auto}
 .row-margin-null{margin-left:0;margin-right:0}
 /**BUTTONS**/
@@ -136,6 +136,7 @@ a.bttn-signout.km-button span{line-height:22px}
 .marg-b-10{margin-bottom:10px}
 .marg-b-15{margin-bottom:15px}
 .marg-b-20{margin-bottom:20px}
+.marg-t-20{margin-top:20px}
 .marg-t-150{margin-top:150px}
 .marg-t-200{margin-top:200px}
 /**ICONS**/
@@ -221,7 +222,7 @@ box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);}
 .bookdetails-drawer-head h1{background:#93c8c5;font-size:16px;margin:0;padding:15px;color:#296b68}
 .bookdetails-drawer .glyphicon{font-size:12px;color:#fff;position:absolute!important;top:10px;right:0}
 .bookdetails-drawer .glyphicon.glyphicon-triangle-top{color:#2e716d}
-.bookdetails-drawer-firstnav  {margin:0;height:473px}
+.bookdetails-drawer-firstnav  {margin:0;/**height:473px**/}
 .bookdetails-drawer-firstnav .km-scroll-container> li{list-style-type:none}
 .bookdetails-drawer-firstnav{padding-left:0}
 .bookdetails-drawer-firstnav a.km-widget.km-button{border-bottom:1px solid #8bc8c4;color:#d7f3f1!important;padding:10px 15px 10px 10px;margin:0 10px;font-weight:bold;text-align:left;display:block;line-height:1.5;font:normal 14px "museo_sans700"!important}

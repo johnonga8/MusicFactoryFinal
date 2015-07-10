@@ -1,11 +1,10 @@
-(function(){
 //INITIATE APP
-  var app = new kendo.mobile.Application(document.body);
-}());
+var app = new kendo.mobile.Application(document.body);
 //DRAWER
 function hideDrawer() {
     $(".table-of-contents").data("kendoMobileDrawer").hide();
 }
+//MEDIA
 function PauseMedia() {
   if ( $( "video" ).length ) { 
     $("video").get(0).pause();
@@ -15,6 +14,9 @@ function PauseMedia() {
   } else {
     //do nothing
   }
+};
+function removeScroll(){
+    $("#lesson-details .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
 };
 function onShowDrawer(){
     var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
@@ -84,3 +86,7 @@ Array.prototype.First = function (predicate, def) {
             return this[i];
     return def == null ? null : def;
 };
+
+
+
+

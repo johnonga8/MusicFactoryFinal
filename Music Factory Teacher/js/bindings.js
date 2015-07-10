@@ -165,11 +165,13 @@
             $('#lesson-details .km-scroll-container').hide().slideUp();
             $('#lesson-details .km-scroll-container').slideDown();
             InitializeTabs();
+            removeScroll();
           },
           NextLessonClick: function(e){
             $('#lesson-details .km-scroll-container').hide().slideUp();
             $('#lesson-details .km-scroll-container').slideDown();
             InitializeTabs();
+            removeScroll();
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
           },
           GoToLibrary: function(e){

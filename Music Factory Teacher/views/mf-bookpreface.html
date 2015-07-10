@@ -26,7 +26,7 @@
         </div>
         <div class="col-xs-6">
             <a class="bttn-next km-widget km-button" class="pull-right" 
-               data-bind="events: { click: NextLessonClick }" data-transition="slide">
+               data-bind="events: { click: NextLessonClick }">
               <span class="km-text">Next:</span> Lesson </span><span data-bind="text: FirstLessonNumber" class="km-lessonnum" ></span> <span class="icon-right"></span>
               <input class="js-lessonnumber" type="text" data-bind="value: FirstLessonNumber" hidden/>
               <input class="js-chapternumber" type="text" data-bind="value: FirstChapterNumber" hidden/>
@@ -39,10 +39,7 @@
 
 <!--drawer navigation-->
 <div data-role="drawer" id="table-of-contents-preface" class="bookdetails-drawer table-of-contents" style="width:250px" data-swipe-to-open="true" data-show="onShowDrawer">
-    <!--<div id="book-title" class="bookdetails-drawer-head" data-bind="source: Book" data-template="title-template">
-
-    </div>-->
-    <div id="book-title" class="bookdetails-drawer-head">
+      <div id="book-title" class="bookdetails-drawer-head">
       <h1 data-bind="text: Book.Title"></h1>
     </div>
     <div data-role="scroller" style="height: 473px" id="scroller">
@@ -50,6 +47,7 @@
       <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
       <ul id="list-chapters" class="bookdetails-drawer-firstnav" data-bind="source: Chapters" data-template="chapters-template">
       </ul>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" href="views/mf-bookglossary.html">Glossary</a></div>
     </div>
     <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>

@@ -6,7 +6,6 @@
             <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> Back to Book List</a>
         </div>
         <div class="col-xs-6" >
-            <!--<strong>OWL SERIES: MUSIC CLASSROOM PROGRAM - Chapter 1 Listening and Exploring</strong>-->
             <strong><span data-bind="text: Book.Title"></span> - <span data-bind="text: CurrentChapter.Title"></span></strong>
         </div>	        
     </div>       
@@ -161,9 +160,6 @@
 
 <!--drawer navigation-->
 <div data-role="drawer" id="table-of-contents-chapter" class="bookdetails-drawer table-of-contents" style="width:250px" data-swipe-to-open="true" data-show="onShowDrawer">
-    <!--<div id="book-title" class="bookdetails-drawer-head" data-bind="source: Book" data-template="title-template">
-
-    </div>-->
     <div id="book-title" class="bookdetails-drawer-head">
       <h1 data-bind="text: Book.Title"></h1>
     </div>
@@ -172,6 +168,7 @@
       <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
       <ul id="list-chapters" class="bookdetails-drawer-firstnav" data-bind="source: Chapters" data-template="chapters-template">
       </ul>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" href="views/mf-bookglossary.html">Glossary</a></div>
     </div>
     <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>

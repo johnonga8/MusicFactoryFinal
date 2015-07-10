@@ -11,14 +11,29 @@
       $(this).addClass("tab-active");
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-01").fadeIn();
-      PauseMedia();
+      if ( $( "video" ).length ) { 
+        $("video").get(0).pause();
+        $("audio").trigger("pause");
+        $(".tab-control-01 audio").load();
+        $(".tab-control-01 video").load();
+      } else {
+        //do nothing
+      }
+      
     });
     $(".tab-control-02").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-02").fadeIn();
-      PauseMedia();
+      if ( $( "video" ).length ) { 
+        $("video").get(0).pause();
+        $("audio").trigger("pause");
+        $(".tab-control-02 audio").load();
+        $(".tab-control-02 video").load();
+      } else {
+        //do nothing
+      }
     });
     $(".tab-control-03").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
@@ -26,7 +41,14 @@
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-03").fadeIn();
       FlexsliderReference();
-      PauseMedia();
+      if ( $( "video" ).length ) { 
+        $("video").get(0).pause();
+        $("audio").trigger("pause");
+        $(".tab-control-03 audio").load();
+        $(".tab-control-03 video").load();
+      } else {
+        //do nothing
+      }
     });
     $(".tab-control-04").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
@@ -34,14 +56,26 @@
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-04").fadeIn();
       FlexsliderMusic();
-      PauseMedia();
+      if ( $( "video" ).length ) { 
+        $("video").get(0).pause();
+        $("audio").trigger("pause");
+        $(".tab-control-04 audio").load();
+        $(".tab-control-04 video").load();
+      } else {
+        //do nothing
+      }
     });
     $(".tab-control-05").click(function(){
       $(".bookdetails-tabs li").removeClass('tab-active');
       $(this).addClass("tab-active");
       $(".tab-content-wrap").fadeOut();
       $(".tab-content-05").fadeIn();
-      PauseMedia();
+      if ( $( "video" ).length ) { 
+        $("video").get(0).pause();
+        $("audio").trigger("pause");
+      } else {
+        //do nothing
+      }
     });
     //INPUT TEMP
     $(".moments-publish").click(function(){
