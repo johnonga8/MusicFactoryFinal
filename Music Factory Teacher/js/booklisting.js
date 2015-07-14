@@ -4,8 +4,14 @@
     $('.listing-books').css('height', fullheight - 85);
 }());
 //BINDING STARTS
-function beforeShow(e)
+function beforeShowListing(e)
 {
-   GetAllBooks();
+    app.pane.loader.show();
+    GetAllBooks();
+
+}
+function showListing(e)
+{
+    app.pane.loader.hide();
 }
 

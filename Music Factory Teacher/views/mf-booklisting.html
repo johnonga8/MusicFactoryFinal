@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Book Listing" id="mf-booklisting" data-transition="overlay:down" data-before-show="beforeShow">    
+<div data-role="view" data-title="Book Listing" id="mf-booklisting" data-transition="overlay:down" data-before-show="beforeShowListing" data-after-show="showListing">    
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -39,34 +39,43 @@
       <div class="row listing-books row-margin-null" id="listingBooks" data-role="scroller" >   
         <!--template KIN start-->            
         <div class="clearfix">
-          <!--content from template goes here
           <div class="row row-margin-null">
-            <div class="col-xs-2">
-              <a title="" href="views/mf-bookcover.html" data-role="button">
-                <img title="" src="./img/books/owl_yellow.jpg" class="img-responsive listingbooks-cover"/>
-                <h3>Owl Series: Classroom Music Program</h3>
-              </a>
+ 
+            <!--BIND template KIN start-->            
+            <div class="booklisting-kinder" data-bind="source: KinderBooks" data-template="kinder-template">
+              <!--content from template goes here-->
             </div>
-          </div>
-          end content from template-->
-         
-        <!--BIND template KIN start-->            
-        <div class="row row-margin-null booklisting-kinder" data-bind="source: KinderBooks" data-template="kinder-template">
-          <!--content from template goes here-->
-        </div>
-          <script id="kinder-template" type="text/x-kendo-template">
-          <div class="col-xs-2">
-            <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
-              <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
-              <h3 data-bind="text: Title"></h3>
-              <input type="text" data-bind="value: Id" hidden/>
-              <input type="text" data-bind="value: CultureName" hidden/>
-              <input type="text" data-bind="value: Type" hidden/>
-            </a>
-          </div>
-          </script> 
-        <!--BIND template KIN end-->   
+              <script id="kinder-template" type="text/x-kendo-template">
+              <div class="col-xs-2">
+                <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
+                  <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
+                  <h3 data-bind="text: Title"></h3>
+                  <input type="text" data-bind="value: Id" hidden/>
+                  <input type="text" data-bind="value: CultureName" hidden/>
+                  <input type="text" data-bind="value: Type" hidden/>
+                </a>
+              </div>
+              </script> 
+            <!--BIND template KIN end-->   
+            
+            <!--BIND template INF start-->            
+            <div class="booklisting-infant" data-bind="source: InfantBooks" data-template="infant-template">
+              <!--content from template goes here-->
+            </div>
+              <script id="infant-template" type="text/x-kendo-template">
+              <div class="col-xs-2">
+                <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
+                  <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
+                  <h3 data-bind="text: Title"></h3>
+                  <input type="text" data-bind="value: Id" hidden/>
+                  <input type="text" data-bind="value: CultureName" hidden/>
+                  <input type="text" data-bind="value: Type" hidden/>
+                </a>
+              </div>
+              </script> 
+            <!--BIND template INF end-->   
         
+          </div>
         </div>
         <!--template KIN end-->
       </div>
@@ -74,3 +83,4 @@
     <!--end listing-->
 <script src="js/booklisting.js"></script>
 </div>
+

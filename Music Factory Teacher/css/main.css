@@ -346,19 +346,12 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 .audio-block strong{text-align:center;display:block;font-size:15px;margin-bottom:10px}
 .audio-block span{font-weight:normal}
 .audio-block audio{display:block;margin:0 auto}
-/**====SMALL DEVICE AND PORTRAIT===
-
-.km-content, .km-android, .km-vertical{position:relative}
-.km-vertical:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-orientation.png) center center no-repeat #e4e9ed!important;}
-.km-phone .km-content:before, .km-phone .km-android:before, .km-on-ios:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-phone.png) center center no-repeat #e4e9ed!important;}
-
-
-@media all and (orientation:portrait) {
-.km-content{position:relative}
-.km-content:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-orientation.png) center center no-repeat #e4e9ed!important;}
-}
-**/
+/**====TEMPLATE===**/
+.tp-label{display:none!important}
 
 
 .temp-margin{margin:200px 0}
 .temp{margin:0 auto;display:block;width:150px;margin-top:80px}
+
+.preloader{position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10}
+

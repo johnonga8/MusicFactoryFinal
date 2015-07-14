@@ -87,19 +87,19 @@
 }());
 //BINDING STARTS
 //Function for drawer
-function BeforeShowLesson(e)
+function InfantBeforeShowLesson(e)
 {
-  BindKinderLessonDetails(currentBook);
+  BindInfantLessonDetails(currentBook);
   closeNav();
   InitializeTabs();
   PauseMedia();
 }
-function afterShowAnimate(e)
+function InfantafterShowAnimate(e)
 {
   $('#lesson-details .km-scroll-container').hide().slideUp();
   $('#lesson-details .km-scroll-container').slideDown();
 }
-function beforeHide(e)
+function InfantbeforeHide(e)
 {
   PauseMedia();
 }

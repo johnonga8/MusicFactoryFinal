@@ -1,4 +1,4 @@
-<div id="cover-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-after-show="afterShow" data-before-show="BeforeShowCover">
+<div id="cover-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-after-show="KinderafterShow" data-before-show="KinderBeforeShowCover">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
@@ -27,15 +27,15 @@
             <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-cover"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
         </div>
         <div class="col-xs-6">
-            <a class="bttn-next" data-role="button" href="views/mf-bookpreface.html" class="pull-right" data-transition="slide"><span>Next:</span> Preface <span class="icon-right"></span></a>
+            <a class="bttn-next" data-role="button" href="views/mf-kinderbookpreface.html" class="pull-right" data-transition="slide"><span>Next:</span> Preface <span class="icon-right"></span></a>
         </div>	        
     </div> 
   </footer>
-<script src="js/bookcover.js"></script>
+<script src="js/kinderbookcover.js"></script>
 </div>
 
 <!--drawer navigation-->
-<div data-role="drawer" id="table-of-contents-cover" class="bookdetails-drawer table-of-contents" style="width:250px" data-swipe-to-open="true" data-show="onShowDrawer">
+<div data-role="drawer" id="table-of-contents-cover" class="bookdetails-drawer table-of-contents" style="width:250px"  data-swipe-to-open="true"  data-show="onShowDrawer" data-views='["views/mf-kinderbookcover.html"]'>
     <div id="book-title" class="bookdetails-drawer-head">
       <h1 data-bind="text: Book.Title"></h1>
     </div>
@@ -44,16 +44,11 @@
       <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
       <ul id="list-chapters" class="bookdetails-drawer-firstnav" data-bind="source: Chapters" data-template="chapters-template">
       </ul>
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" href="views/mf-bookglossary.html">Glossary</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }">Glossary</a></div>
     </div>
     <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>
 <!--end drawer navigation-->
-
-<!-- Title Nav Template -->
-<script id="title-template" type="text/x-kendo-template">
-  <h1 data-bind="text: Title"></h1>
-</script>
 
 <!-- Chapter Nav Template -->
 <script id="chapters-template" type="text/x-kendo-template">

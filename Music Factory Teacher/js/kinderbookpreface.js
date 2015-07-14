@@ -4,7 +4,7 @@ $('.js-fullheight-preface').css('min-height', (bookdetailsfullheightpreface - 10
 
 //BINDING STARTS
 //Function for drawer
-function BeforeShowPreface(e)
+function KinderBeforeShowPreface(e)
 {
   BindKinderPrefaceDetails(currentBook);
   closeNav();

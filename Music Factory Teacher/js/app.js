@@ -87,6 +87,15 @@ Array.prototype.First = function (predicate, def) {
     return def == null ? null : def;
 };
 
+Array.prototype.Last = function (predicate, def) {
+    var l = this.length;
+    if (!predicate) return l ? this[ l-1 ] : def == null ? null : def;
+    for (var i = l-1; i >= 0; i--)
+        if (predicate(this[i], i, this))
+            return this[i];
+    return def == null ? null : def;
+};
+
 
 
 

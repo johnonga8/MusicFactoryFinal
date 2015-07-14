@@ -1,4 +1,4 @@
-function afterShow(){
+function InfantafterShow(){
     setTimeout(function () {
         $("#table-of-contents-cover").data("kendoMobileDrawer").show();
     }, 1);
@@ -11,8 +11,8 @@ $('.js-fullheight-cover').css('min-height', (bookdetailsfullheightcover - 140));
 
 //BINDING STARTS
 //Function for drawer
-function BeforeShowCover(e)
+function InfantBeforeShowCover(e)
 {
-  BindKinderCoverDetails(currentBook);
+  BindInfantCoverDetails(currentBook);
   closeNav();
 }
