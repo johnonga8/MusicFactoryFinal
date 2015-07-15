@@ -1,4 +1,4 @@
-<div id="lesson-details" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="KinderBeforeShowLesson" data-before-hide="KinderbeforeHide" data-after-show="KinderafterShowAnimate">
+<div id="lesson-details-kinder" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="KinderBeforeShowLesson" data-before-hide="KinderbeforeHide" data-after-show="KinderafterShowAnimate">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
@@ -69,7 +69,7 @@
             </div>
           </div>
           <!--end modal-->
-          <div data-bind="html: CurrentLesson.Section2_Content">
+          <div class="detail-wrap" data-bind="html: CurrentLesson.Section2_Content">
           </div>
           <hr/>
           <div class="bttn-modal fancybox" href="#goodbyesong">Play Goodbye Song</div>
@@ -146,7 +146,7 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-chapter"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
+            <a data-role="button" class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-chapter-kinder"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
             <a data-role="button" class="bttn-prev bttn-prev-lesson" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Lesson </span> <span data-bind="text: PrevLessonNumber"></span></a>
             <a data-role="button" class="bttn-prev-preface hide" href="views/mf-kinderbookpreface.html" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Preface</a>
         </div>
@@ -160,7 +160,7 @@
 </div>
 
 <!--drawer navigation-->
-<div data-role="drawer" id="table-of-contents-chapter" class="bookdetails-drawer table-of-contents" style="width:250px"  data-swipe-to-open="true"  data-show="onShowDrawer" data-views='["views/mf-kinderbookdetails.html"]'>
+<div data-role="drawer" id="table-of-contents-chapter-kinder" class="bookdetails-drawer table-of-contents" style="width:250px"  data-swipe-to-open="true"  data-show="onShowDrawer" data-views='["views/mf-kinderbookdetails.html"]'>
     <div id="book-title" class="bookdetails-drawer-head">
       <h1 data-bind="text: Book.Title"></h1>
     </div>

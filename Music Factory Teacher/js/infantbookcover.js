@@ -1,6 +1,6 @@
 function InfantafterShow(){
     setTimeout(function () {
-        $("#table-of-contents-cover").data("kendoMobileDrawer").show();
+        $("#table-of-contents-cover-infant").data("kendoMobileDrawer").show();
     }, 1);
 }
 //NAV

@@ -96,8 +96,8 @@ function InfantBeforeShowLesson(e)
 }
 function InfantafterShowAnimate(e)
 {
-  $('#lesson-details .km-scroll-container').hide().slideUp();
-  $('#lesson-details .km-scroll-container').slideDown();
+  $('#lesson-details-infant .km-scroll-container').hide().slideUp();
+  $('#lesson-details-infant .km-scroll-container').slideDown();
 }
 function InfantbeforeHide(e)
 {

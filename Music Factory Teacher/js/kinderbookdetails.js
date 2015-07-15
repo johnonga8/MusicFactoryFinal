@@ -96,8 +96,8 @@ function KinderBeforeShowLesson(e)
 }
 function KinderafterShowAnimate(e)
 {
-  $('#lesson-details .km-scroll-container').hide().slideUp();
-  $('#lesson-details .km-scroll-container').slideDown();
+  $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
+  $('#lesson-details-kinder .km-scroll-container').slideDown();
 }
 function KinderbeforeHide(e)
 {

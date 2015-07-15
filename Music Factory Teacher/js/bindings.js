@@ -82,28 +82,28 @@
     function BindKinderCoverDetails(book)
     {
       var BookViewModel = GenerateKinderTableOfContents(book);
-      kendo.bind($("#table-of-contents-cover"), BookViewModel);
+      kendo.bind($("#table-of-contents-cover-kinder"), BookViewModel);
       GenerateKinderCoverDetails(book);
     }
     
     function BindKinderPrefaceDetails(book)
     {
       var BookViewModel = GenerateKinderTableOfContents(book);
-      kendo.bind($("#table-of-contents-preface"), BookViewModel);
+      kendo.bind($("#table-of-contents-preface-kinder"), BookViewModel);
       GenerateKinderPrefaceDetails(book);
     }
     
     function BindKinderLessonDetails(book)
     {
       var BookViewModel = GenerateKinderTableOfContents(book);
-      kendo.bind($("#table-of-contents-chapter"), BookViewModel);
+      kendo.bind($("#table-of-contents-chapter-kinder"), BookViewModel);
       GenerateKinderLessonDetails(book, currentChapterNumber, currentLessonNumber);
     }
  
     function BindKinderGlossaryDetails(book)
     {
       var BookViewModel = GenerateKinderTableOfContents(book);
-      kendo.bind($("#table-of-contents-glossary"), BookViewModel);
+      kendo.bind($("#table-of-contents-glossary-kinder"), BookViewModel);
       GenerateKinderGlossaryDetails(book);
     }    
    
@@ -122,8 +122,8 @@
           currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
           currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
           InitializeTabs();
-          $('#lesson-details .km-scroll-container').hide().slideUp();
-          $('#lesson-details .km-scroll-container').slideDown();
+          $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
+          $('#lesson-details-kinder .km-scroll-container').slideDown();
           if (window.location.href.indexOf("bookdetails") > -1) {
             hideDrawer();
             GenerateKinderLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
@@ -183,14 +183,14 @@
           NextLessonNumber: nextLessonNumber,
           PrevLessonClick: function(e){
             GenerateKinderLessonDetails(currentBook, prevLesson.ChapterNumber, prevLesson.LessonNumber);
-            $('#lesson-details .km-scroll-container').hide().slideUp();
-            $('#lesson-details .km-scroll-container').slideDown();
+            $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
+            $('#lesson-details-kinder .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
           },
           NextLessonClick: function(e){
-            $('#lesson-details .km-scroll-container').hide().slideUp();
-            $('#lesson-details .km-scroll-container').slideDown();
+            $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
+            $('#lesson-details-kinder .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
@@ -199,7 +199,7 @@
             window.location = "#views/mf-booklisting.html";
           },
         });
-        kendo.bind($("#lesson-details"), LessonViewModel);  
+        kendo.bind($("#lesson-details-kinder"), LessonViewModel);  
     }
     
     function GenerateKinderPrefaceDetails(book)
@@ -219,7 +219,7 @@
           window.location = "#views/mf-booklisting.html";
         },
       });
-      kendo.bind($("#preface-details"), PrefaceViewModel, kendo.ui, kendo.mobile.ui); 
+      kendo.bind($("#preface-details-kinder"), PrefaceViewModel, kendo.ui, kendo.mobile.ui); 
     }
     
     function GenerateKinderGlossaryDetails(book)
@@ -238,7 +238,7 @@
             window.location = "#views/mf-kinderbookdetails.html";
           },
       });
-      kendo.bind($("#glossary-details"), GlossaryViewModel); 
+      kendo.bind($("#glossary-details-kinder"), GlossaryViewModel); 
     }
     
     function GenerateKinderCoverDetails(book)
@@ -250,7 +250,7 @@
           window.location = "#views/mf-booklisting.html";
         },
       });
-      kendo.bind($("#cover-details"), CoverViewModel); 
+      kendo.bind($("#cover-details-kinder"), CoverViewModel); 
     } 
 //------FUNCTIONS FOR KINDER BOOK DETAILS END-----//
     
@@ -274,28 +274,28 @@
     function BindInfantCoverDetails(book)
     {
       var BookViewModel = GenerateInfantTableOfContents(book);
-      kendo.bind($("#table-of-contents-cover"), BookViewModel);
+      kendo.bind($("#table-of-contents-cover-infant"), BookViewModel);
       GenerateInfantCoverDetails(book);
     }
     
     function BindInfantPrefaceDetails(book)
     {
       var BookViewModel = GenerateInfantTableOfContents(book);
-      kendo.bind($("#table-of-contents-preface"), BookViewModel);
+      kendo.bind($("#table-of-contents-preface-infant"), BookViewModel);
       GenerateInfantPrefaceDetails(book);
     }
     
     function BindInfantLessonDetails(book)
     {
       var BookViewModel = GenerateInfantTableOfContents(book);
-      kendo.bind($("#table-of-contents-theme"), BookViewModel);
+      kendo.bind($("#table-of-contents-theme-infant"), BookViewModel);
       GenerateInfantLessonDetails(book, currentChapterNumber, currentLessonNumber);
     }
     
     function BindInfantGlossaryDetails(book)
     {
       var BookViewModel = GenerateInfantTableOfContents(book);
-      kendo.bind($("#table-of-contents-glossary"), BookViewModel);
+      kendo.bind($("#table-of-contents-glossary-infant"), BookViewModel);
       GenerateInfantGlossaryDetails(book);
     } 
     
@@ -314,8 +314,8 @@
           currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
           currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
           InitializeTabs();
-          $('#lesson-details .km-scroll-container').hide().slideUp();
-          $('#lesson-details .km-scroll-container').slideDown();
+          $('#lesson-details-infant .km-scroll-container').hide().slideUp();
+          $('#lesson-details-infant .km-scroll-container').slideDown();
           if (window.location.href.indexOf("bookdetails") > -1) {
             hideDrawer();
             GenerateInfantLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
@@ -351,7 +351,7 @@
          app.navigate("views/mf-booklisting.html");
         },
       });
-      kendo.bind($("#cover-details"), CoverViewModel); 
+      kendo.bind($("#cover-details-infant"), CoverViewModel); 
     } 
     
     function GenerateInfantPrefaceDetails(book)
@@ -373,7 +373,7 @@
          app.navigate("views/mf-booklisting.html");
         },
       });
-      kendo.bind($("#preface-details"), PrefaceViewModel, kendo.ui, kendo.mobile.ui); 
+      kendo.bind($("#preface-details-infant"), PrefaceViewModel, kendo.ui, kendo.mobile.ui); 
     }
     
     function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber)
@@ -414,14 +414,14 @@
           NextLessonNumber: nextLessonNumber,
           PrevLessonClick: function(e){
             GenerateInfantLessonDetails(currentBook, prevLesson.ThemeNumber, prevLesson.LessonNumber);
-            $('#lesson-details .km-scroll-container').hide().slideUp();
-            $('#lesson-details .km-scroll-container').slideDown();
+            $('#lesson-details-infant .km-scroll-container').hide().slideUp();
+            $('#lesson-details-infant .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
           },
           NextLessonClick: function(e){
-            $('#lesson-details .km-scroll-container').hide().slideUp();
-            $('#lesson-details .km-scroll-container').slideDown();
+            $('#lesson-details-infant .km-scroll-container').hide().slideUp();
+            $('#lesson-details-infant .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
             GenerateInfantLessonDetails(currentBook, nextLesson.ThemeNumber, nextLesson.LessonNumber);
@@ -431,7 +431,7 @@
             app.navigate("views/mf-booklisting.html");
           },
         });
-        kendo.bind($("#lesson-details"), LessonViewModel);  
+        kendo.bind($("#lesson-details-infant"), LessonViewModel);  
     }
     
     function GenerateInfantGlossaryDetails(book)
@@ -452,7 +452,7 @@
           app.navigate("views/mf-infantbookdetails.html");
           },
       });
-      kendo.bind($("#glossary-details"), GlossaryViewModel); 
+      kendo.bind($("#glossary-details-infant"), GlossaryViewModel); 
     }
     
 //------FUNCTIONS FOR INFANT BOOK DETAILS END-----//    

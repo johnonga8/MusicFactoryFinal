@@ -16,7 +16,8 @@ function PauseMedia() {
   }
 };
 function removeScroll(){
-    $("#lesson-details .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+    $("#lesson-details-kinder .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+    $("#lesson-details-infant .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
 };
 function onShowDrawer(){
     var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;

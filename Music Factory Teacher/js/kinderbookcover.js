@@ -1,6 +1,6 @@
 function KinderafterShow(){
     setTimeout(function () {
-        $("#table-of-contents-cover").data("kendoMobileDrawer").show();
+        $("#table-of-contents-cover-kinder").data("kendoMobileDrawer").show();
     }, 1);
 }
 //NAV
