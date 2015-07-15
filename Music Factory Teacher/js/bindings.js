@@ -7,7 +7,13 @@
     var currentChapterNumber;
     //var domain = "http://musicfactory.a8hosting.com/";
     var domain = "http://192.168.1.39:2580/";
-    
+//------FUNCTIONS FOR LOGIN-----//
+    function LogIn(){
+        $(".bttn-login").click(function(){
+          app.navigate("views/mf-booklisting.html");
+        });
+      };
+
 //------FUNCTIONS FOR BOOK LISTING START-----//
     function GetAllBooks(){
         $.ajax({
@@ -147,8 +153,18 @@
     
     function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber)
     {
+      var currentLesson = GetLessonByNumber(book.Lessons, lessonNumber);
+      var currentChapter = GetChapterByNumber(book.Chapters, currentLesson.ChapterNumber)
+      
+      var currentIndex = jQuery.inArray( currentLesson, book.Lessons )
+      
       var prevLessonNumber = "";
-      var prevLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) - 1));
+      var prevLesson;
+      if(currentIndex > 0)
+      { 
+        //prevLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) - 1));
+        prevLesson = book.Lessons[currentIndex - 1];
+      }
       if(prevLesson == null || prevLesson.LessonNumber == 0) 
       {
         $(".bttn-prev-lesson").addClass("hide");
@@ -159,11 +175,15 @@
         $(".bttn-prev-lesson").removeClass("hide");
         $(".bttn-prev-preface").addClass("hide");
       }
-      var currentLesson = GetLessonByNumber(book.Lessons, lessonNumber);
-      var currentChapter = GetChapterByNumber(book.Chapters, currentLesson.ChapterNumber)
+      
       
       var nextLessonNumber = "";
-      var nextLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) + 1));
+      var nextLesson;
+      if(currentIndex < (book.Lessons.length -1))
+      {
+        //nextLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) + 1));
+        nextLesson = book.Lessons[currentIndex + 1]
+      }
       if(nextLesson == null) 
       {
         $(".bttn-next-lesson").addClass("hide");
@@ -378,8 +398,18 @@
     
     function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber)
     {
+      var currentLesson = GetLessonByNumber(book.Lessons, lessonNumber);
+      var currentChapter = GetChapterByNumber(book.Themes, currentLesson.ThemeNumber)
+      
+      var currentIndex = jQuery.inArray( currentLesson, book.Lessons )
+      
       var prevLessonNumber = "";
-      var prevLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) - 1));
+      var prevLesson;
+      if(currentIndex > 0)
+      { 
+        //prevLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) - 1));
+        prevLesson = book.Lessons[currentIndex - 1];
+      }
       if(prevLesson == null || prevLesson.LessonNumber == 0) 
       {
         $(".bttn-prev-lesson").addClass("hide");
@@ -390,11 +420,15 @@
         $(".bttn-prev-lesson").removeClass("hide");
         $(".bttn-prev-preface").addClass("hide");
       }
-      var currentLesson = GetLessonByNumber(book.Lessons, lessonNumber);
-      var currentChapter = GetChapterByNumber(book.Themes, currentLesson.ThemeNumber)
+      
       
       var nextLessonNumber = "";
-      var nextLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) + 1));
+      var nextLesson;
+      if(currentIndex < (book.Lessons.length -1))
+      {
+        //nextLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) + 1));
+        nextLesson = book.Lessons[currentIndex + 1]
+      }
       if(nextLesson == null) 
       {
         $(".bttn-next-lesson").addClass("hide");
