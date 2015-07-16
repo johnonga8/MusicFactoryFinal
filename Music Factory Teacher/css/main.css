@@ -267,7 +267,7 @@ a.js-subnav-link .font-normal{padding-right:15px}
 /*tabs*/
 ul.bookdetails-tabs{padding-left:0}
 .bookdetails-tabs{margin-bottom:20px}
-.bookdetails-tabs li{display:inline-block;color:#809b9b;font-size:12px;text-transform:uppercase;margin-right:35px;cursor:pointer;height:32px;}
+.bookdetails-tabs li{display:inline-block;color:#809b9b;font-size:15px;text-transform:uppercase;margin-right:35px;cursor:pointer;height:32px;}
 .bookdetails-tabs li:hover{border-bottom:3px solid #fe9251}
 .bookdetails-tabs li.tab-active{border-bottom:3px solid #fe9251;color:#fe9251}
 .tab-content-02,.tab-content-03, .tab-content-04, .tab-content-05{display:none}
