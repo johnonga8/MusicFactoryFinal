@@ -15,3 +15,10 @@ function showListing(e)
     app.pane.loader.hide();
 }
 
+$(".bttn-signout").click(function(){
+    LogoutUser (currentUserName);
+    app.navigate("#");
+});
+
+
+

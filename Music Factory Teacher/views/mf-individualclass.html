@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Book Listing" id="mf-booklisting" data-transition="overlay:down" data-before-show="beforeShowListing" data-after-show="showListing">    
+<div data-role="view" data-title="Individual Class" id="mf-individualclass" data-transition="overlay:down" data-before-show="beforeShowIndividualClass" data-after-show="showIndividualClass">    
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -14,13 +14,14 @@
           <h2>Go Wan Xiu</h2>
         </div>
       </div>
-      <nav>
-        <ul data-role="listview">
-            <li><a data-role="button"><span class="icon-class"></span>My Class</a></li>
-            <li class="booklist-activelink"><a data-role="button"><span class="icon-books"></span>Books</a></li>
-        </ul>
-        <a class="km-widget km-button bttn-signout">Sign Out</a>  
-      </nav>
+      <div class="aside-myclasses">
+        <div class="aside-myclasses-title"><strong><span class="icon-class"></span>My Classes</strong></div>
+        <div data-role="scroller" style="height: 250px" id="scroll-myclasses">
+          <div class="aside-myclasses-class aside-myclasses-class-active"><a class="aside-classes-link">Class Joy 2015</a></div>
+          <div class="aside-myclasses-class"><a class="aside-classes-link">Class Unity 2015</a></div>
+        </div>
+        <div class="wrap-signout"><a class="km-widget km-button bttn-signout">Sign Out</a></div>
+      </div>
     </div>
     <!--end sidebar-->
     
@@ -29,9 +30,13 @@
       <!--start masthead-->
       <div class="listing-masthead-wrap">
         <div class="row row-margin-null">
-          <div class="col-xs-12">
-            <h1>Music Factory Library</h1>
-            <strong>Leading the way in creative music education</strong>
+          <div class="col-xs-7">
+            <h1>Class Joy 2015</h1>
+            <strong>Age Group: 3-4 years old</strong>
+          </div>
+          <div class="col-xs-5">
+            <strong>Total Students: 10</strong>
+            <strong>Start Date: July 29, 2015</strong>
           </div>
         </div>
       </div>

@@ -6,12 +6,49 @@
     var currentLessonNumber;
     var currentChapterNumber;
     var domain = "http://musicfactory.a8hosting.com/";
+    var dashboardURL = "views/mf-booklisting.html";
+    var currentUserName;
     //var domain = "http://192.168.1.39:2580/";
 //------FUNCTIONS FOR LOGIN-----//
-    function LogIn(){
-        $(".bttn-login").click(function(){
-          app.navigate("views/mf-booklisting.html");
+    function LogIn(username, password){
+        
+         // app.pane.loader.show();
+          //$.fancybox.open([{href : '#alreadylogged'}]);
+
+          var response = AuthenticateUser (username, password)
+          
+          if(response.IsValid === true)
+          {
+            app.navigate(dashboardURL);
+            currentUserName = username;
+          }
+          else
+          {
+            switch(response.ResponseCode) {
+              case 2: //UserNotFound
+              case 7: //Unknown
+                $(".login-error").show();
+              break;
+              
+              case 3: //UserLoggedFromDifferentIp
+              case 6: //UserLoggedFromDifferentComputer
+              case 9: //UserAlreadyLoggedIn
+                $.fancybox.open([{href : '#alreadylogged'}]);
+              break;
+              
+              default:
+                 alert("Something went wrong. Please contact your system administrator.");
+              break;
+            }
+          }
+    
+     /**   
+        $(".js-modal-close").click(function(){
+         // app.pane.loader.show();
+          $.fancybox.close([{href : '#alreadylogged'}]);
+          //app.navigate(dashboardURL);
         });
+        **/
       };
 
 //------FUNCTIONS FOR BOOK LISTING START-----//
@@ -368,7 +405,7 @@
         CoverImageUrl: book.CoverImageUrl,
         GoToLibrary: function(e){
          // window.location = "#views/mf-booklisting.html";
-         app.navigate("views/mf-booklisting.html");
+         app.navigate(dashboardURL);
         },
       });
       kendo.bind($("#cover-details-infant"), CoverViewModel); 
@@ -390,7 +427,7 @@
         },
         GoToLibrary: function(e){
          // window.location = "#views/mf-booklisting.html";
-         app.navigate("views/mf-booklisting.html");
+         app.navigate(dashboardURL);
         },
       });
       kendo.bind($("#preface-details-infant"), PrefaceViewModel, kendo.ui, kendo.mobile.ui); 
@@ -462,7 +499,7 @@
           },
           GoToLibrary: function(e){
             //window.location = "#views/mf-booklisting.html";
-            app.navigate("views/mf-booklisting.html");
+            app.navigate(dashboardURL);
           },
         });
         kendo.bind($("#lesson-details-infant"), LessonViewModel);  
@@ -477,7 +514,7 @@
         LastLessonNumber: lastLesson.LessonNumber,
         GoToLibrary: function(e){
          // window.location = "#views/mf-booklisting.html";
-         app.navigate("views/mf-booklisting.html");
+         app.navigate(dashboardURL);
         },
         PrevLessonClick: function(e){
             currentLessonNumber = lastLesson.LessonNumber;
@@ -512,6 +549,59 @@
     function EnableScrolling() 
     {
       $("#scroller").data("kendoMobileScroller").enable();
+    }
+    
+    function AuthenticateUser (username, password)
+    {
+      var response;
+      $.ajax({
+        type: "POST",
+        url: domain + "Custom/Services/A8_MusicFactoryService.svc/AuthenticateUser",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify({ username: username, password: password }),
+        async: false,
+        beforeSend: function () {
+          app.pane.loader.show();
+        },
+        complete: function () {
+          app.pane.loader.hide();
+        },
+        success: function (result) {
+            response = result.d;
+        },
+        error: function () { alert("Authentication error"); }
+        });
+      return response;
+    }
+    
+    function LogoutUser (username)
+    {
+      var isSuccessful;
+      $.ajax({
+        type: "POST",
+        url: domain + "Custom/Services/A8_MusicFactoryService.svc/LogoutUser",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify({ username: "TeacherAppUser" }),
+        async: false,
+        beforeSend: function () {
+         $(".preloader-img").show();
+        },
+        complete: function () {
+          $.fancybox.close([{href : '#alreadylogged'}]);
+          $(".preloader-img").hide();
+        },
+        success: function (result) {
+            isSuccessful = result.d;
+            if(isSuccessful === true)
+            {
+              currentUserName = "";
+            }
+        },
+        error: function () { alert("Logout error"); }
+      });
+      return isSuccessful;
     }
 //------COMMON FUNCTIONS END-----//
 
