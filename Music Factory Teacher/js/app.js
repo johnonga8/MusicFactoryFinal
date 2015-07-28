@@ -1,8 +1,17 @@
 //INITIATE APP
 var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
 //DRAWER
-function hideDrawer() {
-    $(".table-of-contents").data("kendoMobileDrawer").hide();
+function hideDrawerIC() {
+    $("#table-of-contents-cover-infant").data("kendoMobileDrawer").hide();
+}
+function hideDrawerIP() {
+    $("#table-of-contents-preface-infant").data("kendoMobileDrawer").hide();
+}
+function hideDrawerKC() {
+    $("#table-of-contents-cover-kinder").data("kendoMobileDrawer").hide();
+}
+function hideDrawerKP() {
+    $("#table-of-contents-preface-kinder").data("kendoMobileDrawer").hide();
 }
 //MEDIA
 function PauseMedia() {
