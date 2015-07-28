@@ -281,7 +281,7 @@ ul.bookdetails-tabs{padding-left:0}
 #bookcover{/*background:#94d457;*/padding:0}
 .detailfull-wrap{background:#fff;}
 .detailfull-wrap img{margin-left:auto;margin-right:auto;padding-top:0;display:block;}
-#bookcover .detailfull-wrap img{margin-left:0;margin-right:0;padding-top:0;display:block;position:absolute;top:50%;left:50%;margin-right:50%;transform: translate(-50%, -50%) }}
+#bookcover .detailfull-wrap img{margin-left:0;margin-right:0;padding-top:0;display:block;position:absolute;top:50%;left:50%;margin-right:50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%)}
 /*preface*/
 #preface h1{color:#87bcb0}
 #preface h2{color:#e2636b}
@@ -342,7 +342,7 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 #alreadylogged.modalcontent p{font-size:15px}
 .choose-language{padding:20px 10px}
 .choose-language strong{font:normal 13px "museo_sans700";color:#7d8487;line-height:30px;margin-right:10px}
-.choose-language select{padding:5px;background:#f7f7f7;color:#7d8487;font-size:13px;height:30px;min-width:100px}
+.choose-language select{padding:5px!important;background:#f7f7f7!important;color:#7d8487!important;font-size:13px;height:30px;min-width:100px}
 #password h2{font:normal 30px "museo_slab700";color:#76c4e0;margin-bottom:5px}
 #password p{font:normal 14px "museo_sans500";color:#aab3b8;max-width:300px;margin-bottom:10px}
 a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;font-size:12px}

@@ -12,8 +12,6 @@
       $('.js-kindertabs .tab-content-wrap').fadeOut();
       $(this).addClass('tab-active');
       $("#"+tab_id).fadeIn();
-      FlexsliderReference();
-      FlexsliderMusic();
       if ( $( "video" ).length ) { 
         $("video").get(0).pause();
         $("#"+tab_id).find("video").load();
@@ -25,6 +23,13 @@
         $("#"+tab_id).find("audio").load();
       } else {
         //do nothing
+      }
+      if (tab_id === "kindertab-3"){
+        FlexsliderReference();
+      } else if (tab_id === "kindertab-4") {
+        FlexsliderMusic();
+      } else {
+        console.log('no slider');
       }
     })
 
