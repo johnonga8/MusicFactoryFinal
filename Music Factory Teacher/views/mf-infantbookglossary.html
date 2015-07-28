@@ -1,9 +1,9 @@
-<div id="glossary-details-infant" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="InfantBeforeShowGlossary">
+<div id="glossary-details-infant" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="beforeShowInfantglossary" data-after-show="afterShowInfantglossary" data-before-hide="beforeHideInfantglossary">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> Back to Book List</a>
+            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> <span data-bind="text: GoToHomeLabel"></span></a>
         </div>
         <div class="col-xs-6" >
             <strong data-bind="text: BookTitle"></strong>
@@ -23,14 +23,15 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-glossary-infant"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
-             <a class="bttn-prev bttn-prev-lesson km-widget km-button" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Lesson </span> <span data-bind="text: LastLessonNumber"></span></a>
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-glossary-infant"><span class="glyphicon glyphicon-menu-hamburger"></span><span data-bind="text: TableOfContentsLabel"></span></a>
+             <a class="bttn-prev bttn-prev-lesson km-widget km-button" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="km-text span-bold" data-bind="text: Back"></span> <span data-bind="text: LastLessonNumber"></span></a>
         </div>
         <div class="col-xs-6">
 
         </div>	        
     </div> 
   </footer>
+<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
 <script src="js/infantbookglossary.js"></script>
 </div>
 
@@ -40,11 +41,11 @@
       <h1 data-bind="text: Book.Title"></h1>
     </div>
     <div data-role="scroller" style="height: 473px" id="scroller">
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }">Cover</a></div>
-      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }"><span data-bind="text: CoverLabel"></span></a></div>
+      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }"><span data-bind="text: PrefaceTitle"></span></a></div>
       <ul id="list-themes" class="bookdetails-drawer-firstnav" data-bind="source: Themes" data-template="themes-template">
       </ul>
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }">Glossary</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }"><span data-bind="text: GlossaryTitle"></span></a></div>
     </div>
     <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>

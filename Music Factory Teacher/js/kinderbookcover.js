@@ -11,8 +11,16 @@ $('.js-fullheight-cover').css('min-height', (bookdetailsfullheightcover - 140));
 
 //BINDING STARTS
 //Function for drawer
-function KinderBeforeShowCover(e)
+function beforeShowKindercover(e)
 {
   BindKinderCoverDetails(currentBook);
   closeNav();
+}
+function afterShowKindercover(e)
+{
+  $(".preloader-mf").hide();
+}
+function beforeHideKindercover(e)
+{
+//Do Something
 }

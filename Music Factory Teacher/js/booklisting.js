@@ -6,19 +6,22 @@
 //BINDING STARTS
 function beforeShowListing(e)
 {
-    app.pane.loader.show();
-    GetAllBooks();
-
+    var books = GetAllBooks();
+    BindBooklistingDetails(books);
 }
-function showListing(e)
+function beforeHideListing(e)
 {
-    app.pane.loader.hide();
+  //Do Something
 }
-
-$(".bttn-signout").click(function(){
+function afterShowListing(e)
+{
+    $(".preloader-mf").hide();
+}
+//SIGN OUT
+/*$(".bttn-signout").click(function(){
     LogoutUser (currentUserName);
     app.navigate("#");
-});
+});*/
 
 
 

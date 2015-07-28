@@ -2,8 +2,16 @@ DropNav();
 
 //BINDING STARTS
 //Function for drawer
-function InfantBeforeShowGlossary(e)
+function beforeShowInfantglossary(e)
 {
   BindInfantGlossaryDetails(currentBook);
   closeNav();
+}
+function afterShowInfantglossary(e)
+{
+  $(".preloader-mf").hide();
+}
+function beforeHideInfantglossary(e)
+{
+//Do Something
 }

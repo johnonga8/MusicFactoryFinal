@@ -1,12 +1,12 @@
-<div id="preface-details-infant" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="InfantBeforeShowPreface">
+<div id="preface-details-infant" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="beforeShowInfantpreface" data-after-show="afterShowInfantpreface" data-before-hide="beforeHideInfantpreface">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> Back to Book List</a>
+            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> <span data-bind="text: GoToHomeLabel"></span></a>
         </div>
         <div class="col-xs-6" >
-            <strong><span data-bind="text: BookTitle"></span> - Preface Introduction</strong>
+            <strong><span data-bind="text: BookTitle"></span> <span data-bind="text: PrefaceTitle"></span></strong>
         </div>	        
     </div>       
   </header>
@@ -21,17 +21,18 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-preface-infant"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
-            <a class="bttn-prev" data-role="button" href="views/mf-infantbookcover.html"><span class="icon-left"></span> <span>Back:</span> Book Cover</a>
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-preface-infant"><span class="glyphicon glyphicon-menu-hamburger"></span><span data-bind="text: TableOfContentsLabel"></span></a>
+            <a class="bttn-prev" data-role="button" href="views/mf-infantbookcover.html"><span class="icon-left"></span> <span class="km-text span-bold" data-bind="text: BackCover"></span></a>
         </div>
         <div class="col-xs-6">
             <a class="bttn-next km-widget km-button" class="pull-right" 
                data-bind="events: { click: NextLessonClick }">
-              <span class="km-text">Next:</span> Lesson </span><span data-bind="text: FirstLessonNumber" class="km-lessonnum" ></span> <span class="icon-right"></span>
+              <span class="span-bold km-text" data-bind="text: Next"></span> </span><span data-bind="text: FirstLessonNumber" class="km-lessonnum" ></span> <span class="icon-right"></span>
             </a>
         </div>	        
     </div> 
   </footer>
+<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
 <script src="js/infantbookpreface.js"></script>
 </div>
 
@@ -41,11 +42,11 @@
       <h1 data-bind="text: Book.Title"></h1>
     </div>
     <div data-role="scroller" style="height: 473px" id="scroller">
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }">Cover</a></div>
-      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }"><span data-bind="text: CoverLabel"></span></a></div>
+      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }"><span data-bind="text: PrefaceTitle"></span></a></div>
       <ul id="list-themes" class="bookdetails-drawer-firstnav" data-bind="source: Themes" data-template="themes-template">
       </ul>
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }">Glossary</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }"><span data-bind="text: GlossaryTitle"></span></a></div>
     </div>
     <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>

@@ -1,5 +1,5 @@
 //INITIATE APP
-var app = new kendo.mobile.Application(document.body);
+var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
 //DRAWER
 function hideDrawer() {
     $(".table-of-contents").data("kendoMobileDrawer").hide();
@@ -8,11 +8,15 @@ function hideDrawer() {
 function PauseMedia() {
   if ( $( "video" ).length ) { 
     $("video").get(0).pause();
-    $("audio").trigger("pause");
-    $("audio").load();
     $("video").load();
   } else {
-    //do nothing
+    console.log("no video");
+  }
+  if ( $( "audio" ).length ) { 
+    $("audio").trigger("pause");
+    $("audio").load();
+  } else {
+    console.log("no audio");
   }
 };
 function removeScroll(){
@@ -47,6 +51,12 @@ function DropNav(){
 $(document).ready(function() {
   $('.fancybox').fancybox({
   });
+	$('.fancybox-notify').fancybox({
+    closeBtn: false,
+    wrapCSS: "notify-wrap",
+    maxWidth: 600,
+    minHeight: 200,
+	});
 });
 //FLEXSLIDER
 function FlexsliderReference(){
@@ -65,19 +75,33 @@ function FlexsliderMusic(){
 };
 //TABS Initialize
 function InitializeTabs(){
-  $(".bookdetails-tabs li").removeClass('tab-active');
-  $(".tab-control-01").addClass("tab-active");
-  $(".tab-content-01").fadeIn();
-  $(".tab-content-02").fadeOut();
-  $(".tab-content-03").fadeOut();
-  $(".tab-content-04").fadeOut();
-  $(".tab-content-05").fadeOut();
-  if ( $( "video" ).length ) { 
+  $(".js-kindertabs .bookdetails-tabs li").removeClass('tab-active');
+  $(".js-kindertabs .tab-control-01").addClass("tab-active");
+  $(".js-kindertabs .tab-content-01").fadeIn();
+  $(".js-kindertabs .tab-content-02").fadeOut();
+  $(".js-kindertabs .tab-content-03").fadeOut();
+  $(".js-kindertabs .tab-content-04").fadeOut();
+  $(".js-kindertabs .tab-content-05").fadeOut();
+  if ( $(".js-kindertabs .tab-control-01").find( "video" ).length ) { 
+    $("video").load();
+  } else {
+    //do nothing
+  }
+  
+  $(".js-infanttabs .bookdetails-tabs li").removeClass('tab-active');
+  $(".js-infanttabs .tab-control-01").addClass("tab-active");
+  $(".js-infanttabs .tab-content-01").fadeIn();
+  $(".js-infanttabs .tab-content-02").fadeOut();
+  $(".js-infanttabs .tab-content-03").fadeOut();
+  $(".js-infanttabs .tab-content-04").fadeOut();
+  $(".js-infanttabs .tab-content-05").fadeOut();
+  if ( $(".js-infanttabs .tab-control-01").find( "video" ).length ) { 
     $("video").load();
   } else {
     //do nothing
   }
 };
+
 //LINQ INITIALIZATION
 Array.prototype.First = function (predicate, def) {
     var l = this.length;

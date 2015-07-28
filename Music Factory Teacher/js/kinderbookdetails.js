@@ -6,77 +6,28 @@
     $('.js-fullheight').css('min-height', (bookdetailsfullheight - 100));
     $('.js-drawerheight .km-listview-wrapper').css('min-height', (bookdetailsfullheight - 100));
     //TABS
-    $(".tab-control-01").click(function(){
-      $(".bookdetails-tabs li").removeClass('tab-active');
-      $(this).addClass("tab-active");
-      $(".tab-content-wrap").fadeOut();
-      $(".tab-content-01").fadeIn();
-      if ( $( "video" ).length ) { 
-        $("video").get(0).pause();
-        $("audio").trigger("pause");
-        $(".tab-control-01 audio").load();
-        $(".tab-control-01 video").load();
-      } else {
-        //do nothing
-      }
-      
-    });
-    $(".tab-control-02").click(function(){
-      $(".bookdetails-tabs li").removeClass('tab-active');
-      $(this).addClass("tab-active");
-      $(".tab-content-wrap").fadeOut();
-      $(".tab-content-02").fadeIn();
-      if ( $( "video" ).length ) { 
-        $("video").get(0).pause();
-        $("audio").trigger("pause");
-        $(".tab-control-02 audio").load();
-        $(".tab-control-02 video").load();
-      } else {
-        //do nothing
-      }
-    });
-    $(".tab-control-03").click(function(){
-      $(".bookdetails-tabs li").removeClass('tab-active');
-      $(this).addClass("tab-active");
-      $(".tab-content-wrap").fadeOut();
-      $(".tab-content-03").fadeIn();
+    $('.kinder-tabs li').click(function(){
+      var tab_id = $(this).attr('data-tab');
+      $('.kinder-tabs li').removeClass('tab-active');
+      $('.js-kindertabs .tab-content-wrap').fadeOut();
+      $(this).addClass('tab-active');
+      $("#"+tab_id).fadeIn();
       FlexsliderReference();
-      if ( $( "video" ).length ) { 
-        $("video").get(0).pause();
-        $("audio").trigger("pause");
-        $(".tab-control-03 audio").load();
-        $(".tab-control-03 video").load();
-      } else {
-        //do nothing
-      }
-    });
-    $(".tab-control-04").click(function(){
-      $(".bookdetails-tabs li").removeClass('tab-active');
-      $(this).addClass("tab-active");
-      $(".tab-content-wrap").fadeOut();
-      $(".tab-content-04").fadeIn();
       FlexsliderMusic();
       if ( $( "video" ).length ) { 
         $("video").get(0).pause();
-        $("audio").trigger("pause");
-        $(".tab-control-04 audio").load();
-        $(".tab-control-04 video").load();
+        $("#"+tab_id).find("video").load();
       } else {
         //do nothing
       }
-    });
-    $(".tab-control-05").click(function(){
-      $(".bookdetails-tabs li").removeClass('tab-active');
-      $(this).addClass("tab-active");
-      $(".tab-content-wrap").fadeOut();
-      $(".tab-content-05").fadeIn();
-      if ( $( "video" ).length ) { 
-        $("video").get(0).pause();
+      if ( $( "audio" ).length ) { 
         $("audio").trigger("pause");
+        $("#"+tab_id).find("audio").load();
       } else {
         //do nothing
       }
-    });
+    })
+
     //INPUT TEMP
     $(".moments-publish").click(function(){
       $(".moments-img input").toggle();
@@ -87,19 +38,21 @@
 }());
 //BINDING STARTS
 //Function for drawer
-function KinderBeforeShowLesson(e)
+function beforeShowKinderlessons(e)
 {
   BindKinderLessonDetails(currentBook);
   closeNav();
   InitializeTabs();
   PauseMedia();
 }
-function KinderafterShowAnimate(e)
+function afterShowKinderlessons(e)
 {
+  $(".preloader-mf").hide();
   $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
   $('#lesson-details-kinder .km-scroll-container').slideDown();
 }
-function KinderbeforeHide(e)
+function beforeHideKinderlessons(e)
 {
   PauseMedia();
+//Do Something
 }

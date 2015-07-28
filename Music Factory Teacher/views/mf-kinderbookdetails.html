@@ -1,9 +1,9 @@
-<div id="lesson-details-kinder" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="KinderBeforeShowLesson" data-before-hide="KinderbeforeHide" data-after-show="KinderafterShowAnimate">
+<div id="lesson-details-kinder" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="beforeShowKinderlessons" data-after-show="afterShowKinderlessons" data-before-hide="beforeHideKinderlessons">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> Back to Book List</a>
+            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> <span data-bind="text: GoToHomeLabel"></span></a>
         </div>
         <div class="col-xs-6" >
             <strong><span data-bind="text: Book.Title"></span> - <span data-bind="text: CurrentChapter.Title"></span></strong>
@@ -11,7 +11,7 @@
     </div>       
   </header>
   
-  <div class="row book-content-wrap js-fullheight row-margin-null">
+  <div class="row book-content-wrap js-fullheight row-margin-null js-kindertabs">
     <div class="col-xs-12">
     <!--start content-->
       <div class="row book-content-header">
@@ -20,103 +20,48 @@
           <h1 data-bind="text: CurrentLesson.Title"></h1>
         </div>
         <div class="col-xs-12">
-          <ul class="bookdetails-tabs">
-            <li class="tab-control-01 tab-active">Overview</li>
-            <li class="tab-control-02">Activity Procedure</li>
-            <li class="tab-control-03">Reference Materials</li>
-            <li class="tab-control-04">Music Play Center</li>
-            <li class="tab-control-05">Moments</li>
+          <ul class="bookdetails-tabs kinder-tabs">
+            <li class="tab-control-01 tab-active" data-tab="kindertab-1"><span data-bind="text: Tab1"></span></li>
+            <li class="tab-control-02" data-tab="kindertab-2"><span data-bind="text: Tab2"></span></li>
+            <li class="tab-control-03" data-tab="kindertab-3"><span data-bind="text: Tab3"></span></li>
+            <li class="tab-control-04" data-tab="kindertab-4"><span data-bind="text: Tab4"></span></li>
+            <li class="tab-control-05" data-tab="kindertab-5"><span data-bind="text: Tab5"></span></li>
           </ul>
         </div>
       </div>
       <!--Start Overview-->
-      <div class="tab-content-wrap tab-content-01" data-bind="html: CurrentLesson.Section1_Content">
+      <div id="kindertab-1" class="tab-content-wrap tab-content-01" data-bind="html: CurrentLesson.Section1_Content">
       </div>
       <!--End Overview-->
       
       <!--Start Activity Procedure-->
-      <div class="row tab-content-wrap tab-content-02">
+      <div id="kindertab-2" class="row tab-content-wrap tab-content-02">
         <div class="col-xs-12">  
-          <div class="fancybox bttn-modal" href="#welcomesong">Play Welcome Song</div>
+          <div class="fancybox bttn-modal" href="#kinderwelcomesong"><span data-bind="text: PlayWelcomeSong"></span></div>
           <hr/>
           <!--start modal-->
-          <div id="welcomesong" class="modalcontent">
-            <h2>Welcome Song</h2>
-            <div class="lesson-block">
-              <h3><img src="./img/icon-flag.png" title="Objective of this lesson" class="icon-img"/> Objective of this lesson</h3>
-              <strong>CD track:</strong>
-              <p>Vol. 2 Track #19 of It's Time to Sing Hello</p>
-            </div>
-            <div class="lesson-block">
-              <h3><img src="./img/icon-music.png" title="Activity Procedure" class="icon-img"/> Activity Procedure</h3>
-              <strong>Activity Variations:</strong>
-              <ul>
-                <li>Encourage children to sing and respond following actions written in [*brackets]</li>
-                <li>
-                  Substitute "clap our hands" and "stomp your feet" with any other actions such as:
-                  <ul>
-                    <li>Pat on different facial features, such as touch your nose, touch your eyebrows, touch your cheeks</li>
-                    <li>Use locomotive movements such as Twirl to the right, twirl to the left, march to the right, march to the left, jump to the right, jump to the left</li>
-                    <li>Personalise the song by using a child’s name to sing on "Hello child’s name" instead of "Hello children" and have the child respond back by singing individually</li>
-                  </ul>
-                </li>
-              </ul>
-              <div class="audio-block">
-                <strong>Audio 1: <span>It's Time to say Hello</strong>
-                <audio src="http://musicfactory.a8hosting.com/docs/default-source/default-document-library/it-39-s-time-to-say-hello.mp4?sfvrsn=2" controls="controls"></audio>
-              </div>
-              <img src="./img/music/music.jpg" alt="Music" class="img-responsive music-img"/>
+          <div id="kinderwelcomesong" class="modalcontent">
+            <div class="data-modalcontent"  data-bind="html: BookWelcome">
             </div>
           </div>
           <!--end modal-->
           <div class="detail-wrap" data-bind="html: CurrentLesson.Section2_Content">
           </div>
           <hr/>
-          <div class="bttn-modal fancybox" href="#goodbyesong">Play Goodbye Song</div>
+          <div class="bttn-modal fancybox" href="#kindergoodbyesong"><span data-bind="text: PlayGoodbyeSong"></span></div>
           <!--start modal-->
-          <div id="goodbyesong" class="modalcontent">
-            <h2>Goodbye Song</h2>
-            <div class="lesson-block">
-              <h3><img src="./img/icon-flag.png" title="Objective of this lesson" class="icon-img"/> Objective of this lesson</h3>
-              <strong>CD track:</strong>
-              <p>Vol. 2 Track #19 of It’s Time to Sing Goodbye</p>
-            </div>
-            <div class="lesson-block">
-              <h3><img src="./img/icon-music.png" title="Activity Procedure" class="icon-img"/> Activity Procedure</h3>
-              <strong>Activity Variations:</strong>
-              <ul>
-                <li>Encourage children to sing and respond following actions written in [*brackets]</li>
-                <li>
-                  Substitute "wave your hands" and "sing goodbye" to other farewell actions such as:
-                  <ul>
-                    <li>Wave goodbye, Sing farewell</li>
-                    <li>Hug a friend, Say/Sing goodbye</li>
-                    <li>Give high five, So long friend</li>
-                    <li>Personalise the song by using a child’s name to sing on "Goodbye child’s name" instead of "Goodbye children" and have the child respond back by singing individually</li>
-                  </ul>
-                </li>
-              </ul>
-              <div class="audio-block">
-                <strong>Audio 1: <span>It's Time to sing Goodbye</strong>
-                <audio src="http://musicfactory.a8hosting.com/docs/default-source/default-document-library/it-39-s-time-to-sing-goodbye.mp4?sfvrsn=2" controls="controls"></audio>
-              </div>
-              <img src="./img/music/musicv2.jpg" alt="Music" class="img-responsive music-img"/>
+          <div id="kindergoodbyesong" class="modalcontent">
+            <div class="data-modalcontent"  data-bind="html: BookGoodbye">
             </div>
           </div>
           <!--end modal-->
           <!--Lesson Complete-->
           <div class="lesson-complete">
             <div class="row">
-              <div class="col-xs-12"><h3>Lesson Complete</h3></div>
-              <div class="col-xs-9">
-                <p>By clicking on "Complete"</p>
-                <div class="lesson-complete-star">
-                  <p>This lesson will be marked as completed</p>
-                  <p>Parent Activity for the lesson will be sent to the parents</p>
-                </div>
+              <div data-bind="html: Complete">
               </div>
               <div class="col-xs-3">
-                <a class="bttn">Complete</a>
+                <a class="bttn"><span data-bind="text: CompleteButton"></span></a>
               </div>
             </div>
           </div>
@@ -125,22 +70,26 @@
       </div>
       <!--End Activity Procedure-->
       <!--Start Reference Materials-->
-      <div class="tab-content-wrap tab-content-03 detail-wrap" data-bind="html: CurrentLesson.Section3_Content">
+      <div id="kindertab-3" class="tab-content-wrap tab-content-03 detail-wrap" data-bind="html: CurrentLesson.Section3_Content">
         
       </div>
       <!--End Reference Materials-->   
       <!--Start Music Play Center-->
-      <div class="tab-content-wrap tab-content-04">
+      <div id="kindertab-4" class="tab-content-wrap tab-content-04">
+          <div data-bind="html: MPC_Disclaimer" class="mpc-disclaimer">
+          </div>
+          <!--
           <p>Owl Series Music Play Centre(TM) is designed to supplement your music lessons. Additional activities and materials are provided to reinforce musical learning in the classroom. The suggested activities allow self-initiated music play for children to further expand, manipulate, create and explore their innate musicality.</p>
           <br/>
           <p>Here are three activities that you can choose from to compliment a cluster of music lessons. You may choose to place one or more activities at the MPC, based on the needs of your students.</p>
           <br/>
+          -->
           <div data-bind="html: CurrentLesson.Section4_Content">
           </div>
       </div>
       <!--End Music Play Center-->
       <!--Start Moments-->
-      <div class="tab-content-wrap tab-content-05" data-bind="html: CurrentLesson.Section5_Content">
+      <div id="kindertab-5" class="tab-content-wrap tab-content-05" data-bind="html: CurrentLesson.Section5_Content">
         
       </div>
       <!--End Moments-->
@@ -151,16 +100,17 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-chapter-kinder"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
-            <a data-role="button" class="bttn-prev bttn-prev-lesson" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Lesson </span> <span data-bind="text: PrevLessonNumber"></span></a>
-            <a data-role="button" class="bttn-prev-preface hide" href="views/mf-kinderbookpreface.html" data-transition="slide" ><span class="icon-left"></span> <span class="km-text">Back:</span> Preface</a>
+            <a data-role="button" class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-chapter-kinder"><span class="glyphicon glyphicon-menu-hamburger"></span><span data-bind="text: TableOfContentsLabel"></span></a>
+            <a data-role="button" class="bttn-prev bttn-prev-lesson" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="span-bold km-text" data-bind="text: Back"></span> <span data-bind="text: PrevLessonNumber"></span></a>
+            <a data-role="button" class="bttn-prev-preface hide" href="views/mf-kinderbookpreface.html" data-transition="slide" ><span class="icon-left"></span> <span class="span-bold km-text" data-bind="text: BackPreface"></span> <span class="span-bold km-text" data-bind="text: PrefaceTitle"></span></a>
         </div>
         <div class="col-xs-6">
-            <a class="bttn-next bttn-next-lesson" data-bind="events: { click: NextLessonClick }" data-role="button"><span class="km-text">Next: </span>Lesson </span> <span data-bind="text: NextLessonNumber" class="km-lessonnum"></span> <span class="icon-right"></span></a>
-            <a class="bttn-next bttn-glossary-lesson" href="views/mf-kinderbookglossary.html"  data-role="button" data-transition="slide"><span class="km-text">Next: </span>Glossary </span> <span class="icon-right"></span></a>
+            <a class="bttn-next bttn-next-lesson" data-bind="events: { click: NextLessonClick }" data-role="button"> <span class="span-bold km-text" data-bind="text: Next"></span> <span data-bind="text: NextLessonNumber" class="km-lessonnum"></span> <span class="icon-right"></span></a>
+            <a class="bttn-next bttn-glossary-lesson" href="views/mf-kinderbookglossary.html"  data-role="button" data-transition="slide"><span class="span-bold km-text" data-bind="text: NextGlossary"></span> <span class="span-bold km-text" data-bind="text: GlossaryTitle"></span> <span class="icon-right"></span></a>
         </div>	        
     </div> 
   </footer>
+<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
 <script src="js/kinderbookdetails.js"></script>
 </div>
 
@@ -170,11 +120,11 @@
       <h1 data-bind="text: Book.Title"></h1>
     </div>
     <div data-role="scroller" style="height: 473px" id="scroller">
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }">Cover</a></div>
-      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }"><span data-bind="text: CoverLabel"></span></a></div>
+      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }"><span data-bind="text: PrefaceTitle"></span></a></div>
       <ul id="list-chapters" class="bookdetails-drawer-firstnav" data-bind="source: Chapters" data-template="chapters-template">
       </ul>
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }">Glossary</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }"><span data-bind="text: GlossaryTitle"></span></a></div>
     </div>
     <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>

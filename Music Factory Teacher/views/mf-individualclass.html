@@ -34,58 +34,134 @@
             <h1>Class Joy 2015</h1>
             <strong>Age Group: 3-4 years old</strong>
           </div>
-          <div class="col-xs-5">
+          <div class="col-xs-5 masthead-classes-right">
             <strong>Total Students: 10</strong>
             <strong>Start Date: July 29, 2015</strong>
           </div>
         </div>
       </div>
       <!--end masthead-->
-      <div class="row listing-books row-margin-null" id="listingBooks" data-role="scroller" >   
-        <!--template KIN start-->            
-        <div class="clearfix">
-          <div class="row row-margin-null">
- 
-            <!--BIND template KIN start-->            
-            <div class="booklisting-kinder" data-bind="source: KinderBooks" data-template="kinder-template">
-              <!--content from template goes here-->
-            </div>
-              <script id="kinder-template" type="text/x-kendo-template">
-              <div class="col-xs-2">
-                <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
-                  <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
-                  <h3 data-bind="text: Title"></h3>
-                  <input type="text" data-bind="value: Id" hidden/>
-                  <input type="text" data-bind="value: CultureName" hidden/>
-                  <input type="text" data-bind="value: Type" hidden/>
-                </a>
-              </div>
-              </script> 
-            <!--BIND template KIN end-->   
-            
-            <!--BIND template INF start-->            
-            <div class="booklisting-infant" data-bind="source: InfantBooks" data-template="infant-template">
-              <!--content from template goes here-->
-            </div>
-              <script id="infant-template" type="text/x-kendo-template">
-              <div class="col-xs-2">
-                <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
-                  <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
-                  <h3 data-bind="text: Title"></h3>
-                  <input type="text" data-bind="value: Id" hidden/>
-                  <input type="text" data-bind="value: CultureName" hidden/>
-                  <input type="text" data-bind="value: Type" hidden/>
-                </a>
-              </div>
-              </script> 
-            <!--BIND template INF end-->   
-        
+      <div class="row row-margin-null js-individual-classes" data-role="scroller">   
+        <div class="col-xs-12">
+          <div class="individual-classes-tabcontrolwrap">
+            <div class="individual-classes-tabscontrol tabcontrol-active individual-classes-tabscontrol-01">Book</div>
+            <div class="individual-classes-tabscontrol individual-classes-tabscontrol-02">Student List</div>
           </div>
         </div>
-        <!--template KIN end-->
+        <div class="col-xs-12">
+          <div class="individual-classes-tabs" id="individual-classes-tab-book">
+          <!--start book-->
+            <div class="individual-classes-book-border">
+              <div class="individual-classes-book row">
+                <div class="individual-classes-leftcontent col-xs-12">
+                  <div class="individual-classes-bookcover">
+                    <img src="./img/books/owl_yellow.jpg" class="img-responsive"/>
+                  </div>
+                  <div class="individual-classes-slider">
+                    <h2>Owl Series : Blinkie Beats</h2>
+                    <div class="progress-wrap clearfix">
+                      <div class="progress-width">
+                        <div class="progress-bar-wrap">
+                          <div class="progress-bar" id="progressbar">
+                            <div class="progress-value">
+                              <div class="progress-lesson">L<span class="js-progress-lesson">0</span></div>
+                              <div class="progress-tooltip"><span class="js-tooltip-current-lesson">0</span>/<span class="js-tooltip-total-lesson">0</span></div>
+                            </div>
+                          </div>
+                          <span class="progress-initial">0</span>
+                        </div>
+                      </div>
+                      <div class="individual-classes-button">
+                        <a class="bttn">Continue</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="notification-warning">English Book : Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
+              <div class="notification-warning">English Book : Please conduct 12nd Semester Progress Report.<a class="bttn-go">Go</a></div>
+            </div> 
+            <!--end book-->
+            <!--start book-->
+            <div class="individual-classes-book-border">
+              <div class="individual-classes-book row">
+                <div class="individual-classes-leftcontent col-xs-12">
+                  <div class="individual-classes-bookcover">
+                    <img src="./img/books/owl_yellow.jpg" class="img-responsive"/>
+                  </div>
+                  <div class="individual-classes-slider">
+                    <h2>貓頭鷹系列 眨眼睛 節拍</h2>
+                    <div class="progress-wrap clearfix">
+                      <div class="progress-width">
+                        <div class="progress-bar-wrap">
+                          <div class="progress-bar" id="progressbar">
+                            <div class="progress-value">
+                              <div class="progress-lesson">L<span class="js-progress-lesson">0</span></div>
+                              <div class="progress-tooltip"><span class="js-tooltip-current-lesson">0</span>/<span class="js-tooltip-total-lesson">0</span></div>
+                            </div>
+                          </div>
+                          <span class="progress-initial">0</span>
+                        </div>
+                      </div>
+                      <div class="individual-classes-button">
+                        <a class="bttn">Continue</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="notification-warning">Chinese Book : Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
+            </div>  
+            <!--end book-->
+          </div>  
+          <div class="individual-classes-tabs" id="individual-classes-tab-student">
+            <div class="individual-student-wrap">
+            <!--start letter-block-->
+              <div class="individual-student-block">
+                <div class="individual-student-letter">A</div>
+                <div class="individual-student-group">
+                  <div class="individual-student A-group">
+                    <div class="row">
+                      <div class="col-xs-8">
+                        <img class="individual-student-profile" src="./img/studentphoto-small.jpg"/>
+                        <strong class="individual-student-name">Angi Lixian</strong>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="individual-student-link-wrap clearfix">
+                          <a class="bttn bttn-view">View</a>
+                          <span class="individual-student-progress">Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!--end letter-block-->
+            <!--start letter-block-->
+              <div class="individual-student-block">
+                <div class="individual-student-letter">B</div>
+                <div class="individual-student-group">
+                  <div class="individual-student B-group">
+
+                  </div>
+                </div>
+              </div>
+            <!--end letter-block-->
+            <!--start letter-block-->
+              <div class="individual-student-block">
+                <div class="individual-student-letter">C</div>
+                <div class="individual-student-group">
+                  <div class="individual-student C-group">
+
+                  </div>
+                </div>
+              </div>
+            <!--end letter-block-->
+            </div>
+          </div> 
+        </div> 
       </div>
-    </div>
-    <!--end listing-->
-<script src="js/booklisting.js"></script>
+  </div>
+  <script src="js/individualclass.js"></script>
 </div>
 

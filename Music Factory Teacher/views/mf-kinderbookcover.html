@@ -1,9 +1,9 @@
-<div id="cover-details-kinder" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-after-show="KinderafterShow" data-before-show="KinderBeforeShowCover">
+<div id="cover-details-kinder" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-after-show="afterShowKindercover" data-before-show="beforeShowKindercover" data-before-hide="beforeHideKindercover">
 
   <header data-role="footer" class="book-main-wrap-header">
     <div class="row">
         <div class="col-xs-6">
-            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> Back to Book List</a>
+            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> <span data-bind="text: GoToHomeLabel"></span></a>
         </div>
         <div class="col-xs-6" >
             <strong data-bind="text: BookTitle"></strong>
@@ -24,13 +24,14 @@
   <footer data-role="header" class="book-main-wrap-footer">
     <div class="row">
         <div class="col-xs-6">
-            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-cover-kinder"><span class="glyphicon glyphicon-menu-hamburger"></span>Table of Contents</a>
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-cover-kinder"><span class="glyphicon glyphicon-menu-hamburger"></span><span data-bind="text: TableOfContentsLabel"></span></a>
         </div>
         <div class="col-xs-6">
-            <a class="bttn-next" data-role="button" href="views/mf-kinderbookpreface.html" class="pull-right" data-transition="slide"><span>Next:</span> Preface <span class="icon-right"></span></a>
+            <a class="bttn-next" data-role="button" href="views/mf-kinderbookpreface.html" class="pull-right" data-transition="slide"><span data-bind="text: Next"></span> <span data-bind="text: PrefaceTitle"></span> <span class="icon-right"></span></a>
         </div>	        
     </div> 
   </footer>
+<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
 <script src="js/kinderbookcover.js"></script>
 </div>
 
@@ -40,11 +41,11 @@
       <h1 data-bind="text: Book.Title"></h1>
     </div>
     <div data-role="scroller" style="height: 473px" id="scroller">
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }">Cover</a></div>
-      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }">Preface</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }"><span data-bind="text: CoverLabel"></span></a></div>
+      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }"><span data-bind="text: PrefaceTitle"></span></a></div>
       <ul id="list-chapters" class="bookdetails-drawer-firstnav" data-bind="source: Chapters" data-template="chapters-template">
       </ul>
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }">Glossary</a></div>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }"><span data-bind="text: GlossaryTitle"></span></a></div>
     </div>
     <a data-click="hideDrawer" data-role="button" class="bttn-hidedrawer"></a>       
 </div>

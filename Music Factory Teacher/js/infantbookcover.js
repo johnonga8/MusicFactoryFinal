@@ -7,12 +7,24 @@ function InfantafterShow(){
 DropNav();
 //FULL HEIGHT
 var bookdetailsfullheightcover = $(window).height();
-$('.js-fullheight-cover').css('min-height', (bookdetailsfullheightcover - 140));
+$('.js-fullheight-cover').css('min-height', (bookdetailsfullheightcover - 100));
 
 //BINDING STARTS
 //Function for drawer
-function InfantBeforeShowCover(e)
+function initInfantcover(e)
+{
+//Do Something
+}
+function beforeShowInfantcover(e)
 {
   BindInfantCoverDetails(currentBook);
   closeNav();
+}
+function afterShowInfantcover(e)
+{  
+  $(".preloader-mf").hide();
+}
+function beforeHideInfantcover(e)
+{
+  //Do Something
 }

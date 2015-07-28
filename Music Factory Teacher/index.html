@@ -22,32 +22,41 @@
 </head>
 <body>
 
-<div class="container-fluid" id="login" data-role="view" data-layout="default" data-transition="overlay:down" data-before-show="beforeShowIndex" data-before-hide="beforeHideIndex">
-<!--
+<div class="container-fluid" id="login" data-role="view" data-layout="default" data-transition="overlay:down" data-before-show="beforeShowIndex" data-after-show="afterShowIndex" data-before-hide="beforeHideIndex">
+
   <div class="row row-margin-null">
     <div class="col-xs-offset-1 col-xs-10">
       <div class="pull-right choose-language">
-        <strong>Select your language</strong>
-        <select class="pull-right choose-language">
-          <option>English</option>
-          <option>Chinese</option>
+        <strong data-bind="text: SelectLanguageLabel"></strong>
+        <select class="pull-right choose-language" data-bind="events: { change: SelectLanguage }">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
         </select>
+        <input id="appLanguage" type="text" value="en" style="display:none"/>
       </div>
     </div>
   </div>
--->
+
   <div class="row marg-t-150 row-margin-null">
     <div class="col-xs-5 col-xs-offset-1">
       <div class="clearfix marg-b-10">
-        <h2>Sign in</h2>
+        <h2 data-bind="text: SignInLabel"></h2>
        <!-- <a href="#password" class="login-password">Forgot your password?</a> -->
-        <a href="#password" class="login-password">Forgot your password?</a>
+        <a href="#password" class="login-password" data-bind="text: ForgotPasswordLabel"></a>
       </div>
       <form>
-        <input id="login-username" class="login-input" type="text" placeholder="Username"/>
-        <input id="login-password" class="login-input" type="password" placeholder="Password"/>
-        <div class="login-error" style="display:none"><span class="glyphicon glyphicon-exclamation-sign"></span> Wrong Login Information</div>
-        <a class="km-button km-widget bttn bttn-login">Log In</a>
+        <input id="login-username" class="login-input" type="text" data-bind="attr: { placeholder: UsernameLabel }"/>
+        <input id="login-password" class="login-input" type="password" data-bind="attr: { placeholder: PasswordLabel }"/>
+        <div class="login-error" style="display:none"><div class="notification-warning" data-bind="text: InvalidLoginErrorMessage"></div></div>
+        <a class="km-button km-widget bttn bttn-login" data-bind="text: LoginLabel, events: { click: Login }"></a><img src="./img/preloader.GIF" class="preloader-log">
+
+        <!--
+        <a href="views/mf-individualstudent.html" data-role="button" class="tempbutton">Individual Student</a>
+        <a href="views/mf-individualclass.html" data-role="button" class="tempbutton">Individual Class</a>
+        <a href="views/mf-myclasses.html" data-role="button" class="tempbutton" >my Class</a>
+        <a href="views/mf-studentprogress.html" data-role="button" class="tempbutton">Student Progress</a>
+        <a href="views/mf-classprogress.html" data-role="button" class="tempbutton">Class Progress</a>
+        -->
       </form>
     </div>
     <div class="col-xs-6">
@@ -55,10 +64,11 @@
     </div>
   </div>
    <div id="alreadylogged" class="modalcontent">
-     <p>Someone is already using this username and password from another computer or browser. To proceed, you need to log him/her off.</p>
-     <div class="bttn js-proceed">Log Off User</div>
-     <div class="preloader-img"><img src="./img/preloader.gif"></div>
-     <div class="bttn js-modal-close">Cancel</div>
+     <div data-bind="html: UserLoggedInErrorMessage" class="modalcontent-loginmessage">
+     </div>
+     <div class="bttn js-proceed" data-bind="text: LogOffUserLabel, events: { click: LogOffUser }"></div>
+     <div class="preloader-img"><img src="./img/preloader.GIF"></div>
+     <div class="bttn js-modal-close" data-bind="text: CancelLabel, events: { click: Cancel }"></div>
    </div>
 </div>
 
@@ -80,8 +90,7 @@
     </div>
   </div>
 </div>
-
-<div class="preloader-mf">Loading</div>
+<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
 <script src="js/bindings.js"></script>
 <script src="js/index.js"></script>
 </body>

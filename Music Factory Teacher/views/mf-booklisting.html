@@ -1,6 +1,6 @@
-<div data-role="view" data-title="Book Listing" id="mf-booklisting" data-transition="overlay:down" data-before-show="beforeShowListing" data-after-show="showListing">    
+<div data-role="view" data-title="Book Listing" id="mf-booklisting" data-transition="overlay:down" data-before-show="beforeShowListing" data-after-show="afterShowListing" data-before-hide="beforeHideListing">    
     <!--start sidebar-->
-    <div class="col-xs-3 main-aside js-fullheight-side">
+    <div class="col-xs-3 main-aside js-fullheight-side" id="booklisting-teacher-profile">
       <div class="branding-wrap">
         <h1><img src="./img/branding.png" alt="Music Factory" class="center-block"/></h1>
       </div>
@@ -10,16 +10,16 @@
         </div>
         <img src="./img/profile-photo.jpg" class="img-responsive profile-photo" alt="Profile Photo"/>
         <div class="profile-header">
-          <strong>Welcome Back!</strong>
+          <strong data-bind="text: UserWelcomeLabel"></strong>
           <h2>Go Wan Xiu</h2>
         </div>
       </div>
       <nav>
         <ul data-role="listview">
             <li><a data-role="button"><span class="icon-class"></span>My Class</a></li>
-            <li class="booklist-activelink"><a data-role="button"><span class="icon-books"></span>Books</a></li>
+            <li class="booklist-activelink"><a data-role="button"><span class="icon-books"></span><span data-bind="text: BooksLabel"></span></a></li>
         </ul>
-        <a class="km-widget km-button bttn-signout">Sign Out</a>  
+        <div class="km-widget km-button bttn-signout" data-bind="text: SignOutLabel, events: {click: SignOut} "></div>  
       </nav>
     </div>
     <!--end sidebar-->
@@ -27,11 +27,11 @@
     <!--start listing-->
     <div class="col-xs-9">
       <!--start masthead-->
-      <div class="listing-masthead-wrap">
+      <div class="listing-masthead-wrap" id="booklisting-header">
         <div class="row row-margin-null">
-          <div class="col-xs-12">
-            <h1>Music Factory Library</h1>
-            <strong>Leading the way in creative music education</strong>
+          <div class="col-xs-12" data-bind="html: BookListingHeader">
+            <!--<h1>Music Factory Library</h1>
+            <strong>Leading the way in creative music education</strong>-->
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
               <script id="kinder-template" type="text/x-kendo-template">
               <div class="col-xs-2">
                 <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
-                  <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
+                  <img data-bind="attr: { src: CoverImageUrlTmb , alt: Title }" class="img-responsive listingbooks-cover"/>
                   <h3 data-bind="text: Title"></h3>
                   <input type="text" data-bind="value: Id" hidden/>
                   <input type="text" data-bind="value: CultureName" hidden/>
@@ -65,7 +65,7 @@
               <script id="infant-template" type="text/x-kendo-template">
               <div class="col-xs-2">
                 <a data-bind="attr: { title: Title }, events: { click: SelectBook }" data-role="button">
-                  <img data-bind="attr: { src: CoverImageUrl , alt: Title }" class="img-responsive listingbooks-cover"/>
+                  <img data-bind="attr: { src: CoverImageUrlTmb , alt: Title }" class="img-responsive listingbooks-cover"/>
                   <h3 data-bind="text: Title"></h3>
                   <input type="text" data-bind="value: Id" hidden/>
                   <input type="text" data-bind="value: CultureName" hidden/>
@@ -81,6 +81,7 @@
       </div>
     </div>
     <!--end listing-->
+<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
 <script src="js/booklisting.js"></script>
 </div>
 
