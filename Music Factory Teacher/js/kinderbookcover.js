@@ -19,6 +19,7 @@ function beforeShowKindercover(e)
 function afterShowKindercover(e)
 {
   $(".preloader-mf").hide();
+  KinderafterShow();
 }
 function beforeHideKindercover(e)
 {

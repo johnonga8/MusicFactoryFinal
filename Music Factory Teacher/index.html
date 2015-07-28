@@ -22,13 +22,13 @@
 </head>
 <body>
 
-<div class="container-fluid" id="login" data-role="view" data-layout="default" data-transition="overlay:down" data-before-show="beforeShowIndex" data-after-show="afterShowIndex" data-before-hide="beforeHideIndex">
+<div class="container-fluid js-fullheight-index" id="login" data-role="view" data-layout="default" data-transition="overlay:down" data-before-show="beforeShowIndex" data-after-show="afterShowIndex" data-before-hide="beforeHideIndex">
 
   <div class="row row-margin-null">
     <div class="col-xs-offset-1 col-xs-10">
       <div class="pull-right choose-language">
         <strong data-bind="text: SelectLanguageLabel"></strong>
-        <select class="pull-right choose-language" data-bind="events: { change: SelectLanguage }">
+        <select class="pull-right choose-language-select" data-bind="events: { change: SelectLanguage }" data-role="dropdownlist">
           <option value="en">English</option>
           <option value="zh">中文</option>
         </select>
@@ -47,7 +47,8 @@
       <form>
         <input id="login-username" class="login-input" type="text" data-bind="attr: { placeholder: UsernameLabel }"/>
         <input id="login-password" class="login-input" type="password" data-bind="attr: { placeholder: PasswordLabel }"/>
-        <div class="login-error" style="display:none"><div class="notification-warning" data-bind="text: InvalidLoginErrorMessage"></div></div>
+        <div class="login-error-invalid" style="display:none"><div class="notification-warning" data-bind="text: InvalidLoginErrorMessage"></div></div>
+        <div class="login-error-deactivated" style="display:none"><div class="notification-warning" data-bind="text: DeactivatedUserErrorMessage"></div></div>
         <a class="km-button km-widget bttn bttn-login" data-bind="text: LoginLabel, events: { click: Login }"></a><img src="./img/preloader.GIF" class="preloader-log">
 
         <!--

@@ -23,6 +23,7 @@ function beforeShowInfantcover(e)
 function afterShowInfantcover(e)
 {  
   $(".preloader-mf").hide();
+  InfantafterShow();
 }
 function beforeHideInfantcover(e)
 {

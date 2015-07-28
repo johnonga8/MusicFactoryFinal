@@ -10,7 +10,7 @@ var dashboardURL = "views/mf-booklisting.html";
 var currentUserName;
 var currentAppCultureName;
 var appLabels;
-//var domain = "http://192.168.1.39:2580/";
+//var domain = "http://192.168.1.44:2580/";
 //------FUNCTIONS FOR LOGIN START-----//
 function AuthenticateUser(username, password) {
     var response;
@@ -41,7 +41,7 @@ function LogIn(username, password) {
         switch (response.ResponseCode) {
             case 2: //UserNotFound
             case 7: //Unknown
-                $(".login-error").show();
+                $(".login-error-invalid").show();
                 break;
 
             case 3: //UserLoggedFromDifferentIp
@@ -49,7 +49,9 @@ function LogIn(username, password) {
             case 9: //UserAlreadyLoggedIn
                 $.fancybox.open([{ href: '#alreadylogged' }]);
                 break;
-
+            case 99: //DeactivatedAccount
+                $(".login-error-deactivated").show();
+                break;
             default:
                 alert("Something went wrong. Please contact your system administrator.");
                 break;
@@ -72,6 +74,7 @@ function GenerateLoginDetails() {
         InvalidLoginErrorMessage: appLabels.First(function (label) { return label.key == "InvalidLoginErrorMessage" }).value,
         LoginLabel: appLabels.First(function (label) { return label.key == "LoginLabel" }).value,
         UserLoggedInErrorMessage: appLabels.First(function (label) { return label.key == "UserLoggedInErrorMessage" }).value,
+        DeactivatedUserErrorMessage: appLabels.First(function (label) { return label.key == "DeactivatedUserErrorMessage" }).value,
         LogOffUserLabel: appLabels.First(function (label) { return label.key == "LogOffUserLabel" }).value,
         CancelLabel: appLabels.First(function (label) { return label.key == "CancelLabel" }).value,
         SelectLanguage: function (e) {
@@ -125,6 +128,23 @@ function GetAllBooks() {
     return books;
 };
 
+function GetTeacherProfile(username){
+  var teacherProfile;
+  $.ajax({
+        type: "POST",
+        url: domain + "Custom/Services/A8_MusicFactoryService.svc/GetTeacherDetails",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify({ username: username }),
+		async: false,
+        success: function (result) {
+            teacherProfile = result.d;
+        },
+        error: function (error) { alert(error); }
+    });
+    return teacherProfile;
+}
+
 function BindBooklistingDetails(books) {
     GenerateBooklistingHeader();
     var TeacherProfileViewModel = GenerateTeacherProfile();
@@ -142,8 +162,12 @@ function GenerateBooklistingHeader() {
 };
 
 function GenerateTeacherProfile() {
+    var profileDetails = GetTeacherProfile(currentUserName);
     var TeacherProfileViewModel = kendo.observable({
-        
+        ProfilePhotoUrl: profileDetails.ProfilePictureUrl,
+        FullName: profileDetails.FullName,
+        Logo: appLabels.First(function (label) { return label.key == "LogoUrl" }).value,
+        ProfileBackground: appLabels.First(function (label) { return label.key == "ProfileBackgroundUrl" }).value,
         UserWelcomeLabel: appLabels.First(function (label) { return label.key == "UserWelcomeLabel" }).value,
         BooksLabel: appLabels.First(function (label) { return label.key == "Menu_BooksLabel" }).value,
         SignOutLabel: appLabels.First(function (label) { return label.key == "SignOutLabel" }).value,

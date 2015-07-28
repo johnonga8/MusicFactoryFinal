@@ -1,3 +1,8 @@
+//FULL HEIGHT
+var indexFullheight = $(window).height();
+$('.js-fullheight-index').css('height', indexFullheight);
+
+
 $("#appLanguage").val();
 
 function afterShowIndex(e)
