@@ -10,16 +10,17 @@ var dashboardURL = "views/mf-booklisting.html";
 var currentUserName;
 var currentAppCultureName;
 var appLabels;
+
 //var domain = "http://192.168.1.44:2580/";
 //------FUNCTIONS FOR LOGIN START-----//
-function AuthenticateUser(username, password) {
+function AuthenticateUser(username, password, deviceId, isBypass) {
     var response;
     $.ajax({
         type: "POST",
         url: domain + "Custom/Services/A8_MusicFactoryService.svc/AuthenticateUser",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
-        data: JSON.stringify({ username: username, password: password }),
+        data: JSON.stringify({ username: username, password: password, deviceId: deviceId, isBypass:isBypass }),
         async: false,
         success: function (result) {
             response = result.d;
@@ -29,10 +30,10 @@ function AuthenticateUser(username, password) {
     return response;
 }
 
-function LogIn(username, password) {
-
-    var response = AuthenticateUser(username, password)
-
+function LogIn(username, password, isBypass) {
+    var deviceId = getUUID();
+    var response = AuthenticateUser(username, password, deviceId, isBypass)
+    
     if (response.IsValid === true) {
         app.navigate(dashboardURL);
         currentUserName = username;
@@ -92,7 +93,7 @@ function GenerateLoginDetails() {
         },
         Login: function (e) {
             $(".preloader-log").show();
-            LogIn($("#login-username").val(), $("#login-password").val());
+            LogIn($("#login-username").val(), $("#login-password").val(), false);
             $(".preloader-log").hide();
         },
         LogOffUser: function (e) {
@@ -756,6 +757,17 @@ function GetTeacherAppLabels(cultureName) {
         },
         error: function (error) { alert(error); }
     });
+}
+
+function getUUID() {
+  var deviceId;
+  if (document.location.hostname == "localhost"){
+    deviceId = "test local host";
+  } else {
+   deviceId = device.uuid;
+  }
+  
+  return deviceId;
 }
 //------COMMON FUNCTIONS END-----//
 
