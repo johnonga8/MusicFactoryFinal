@@ -7,11 +7,17 @@ function hideDrawerIC() {
 function hideDrawerIP() {
     $("#table-of-contents-preface-infant").data("kendoMobileDrawer").hide();
 }
+function hideDrawerID() {
+    $("#table-of-contents-theme-infant").data("kendoMobileDrawer").hide();
+}
 function hideDrawerKC() {
     $("#table-of-contents-cover-kinder").data("kendoMobileDrawer").hide();
 }
 function hideDrawerKP() {
     $("#table-of-contents-preface-kinder").data("kendoMobileDrawer").hide();
+}
+function hideDrawerKD() {
+    $("#table-of-contents-chapter-kinder").data("kendoMobileDrawer").hide();
 }
 //MEDIA
 function PauseMedia() {
