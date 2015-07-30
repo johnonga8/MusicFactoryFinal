@@ -288,6 +288,7 @@ ul.bookdetails-tabs{padding-left:0}
 #preface .book-content-wrap {padding:30px 30px}
 #preface .book-content-wrap h1{font:normal 25px "museo_slab700";color:#76c4e0;margin-bottom:15px}
 #preface .book-content-wrap p{font:normal 15px "museo_sans300";color:#12384b;margin-bottom:15px;white-space:normal!important}
+#preface .book-content-wrap ul{font:normal 15px "museo_sans300";color:#12384b;white-space:normal!important}
 .mf-scrollview p, .mf-scrollview ul{white-space:normal!important}
 .mf-scrollview .km-widget{color:#000}
 /*moments*/
