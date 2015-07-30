@@ -287,15 +287,12 @@ function GenerateKinderTableOfContents(kinderbook) {
             }
         },
         GoToPreface: function (e) {
-            $(".preloader-mf").show();
             window.location = "#views/mf-kinderbookpreface.html";
         },
         GoToCover: function (e) {
-            $(".preloader-mf").show();
             window.location = "#views/mf-kinderbookcover.html";
         },
         GoToGlossary: function (e) {
-            $(".preloader-mf").show();
             window.location = "#views/mf-kinderbookglossary.html";
         },
     });
@@ -524,17 +521,14 @@ function GenerateInfantTableOfContents(infantbook) {
         },
         GoToPreface: function (e) {
             // window.location = "#views/mf-infantbookpreface.html";
-            $(".preloader-mf").show();
             app.navigate("views/mf-infantbookpreface.html");
         },
         GoToCover: function (e) {
             //window.location = "#views/mf-infantbookcover.html";
-            $(".preloader-mf").show();
             app.navigate("views/mf-infantbookcover.html");
         },
         GoToGlossary: function (e) {
             // window.location = "#views/mf-infantbookglossary.html";
-            $(".preloader-mf").show();
             app.navigate("views/mf-infantbookglossary.html");
         },
     });
