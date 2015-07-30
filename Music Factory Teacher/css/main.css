@@ -288,7 +288,7 @@ ul.bookdetails-tabs{padding-left:0}
 #preface .book-content-wrap {padding:30px 30px}
 #preface .book-content-wrap h1{font:normal 25px "museo_slab700";color:#76c4e0;margin-bottom:15px}
 #preface .book-content-wrap p{font:normal 15px "museo_sans300";color:#12384b;margin-bottom:15px;white-space:normal!important}
-.mf-scrollview p{white-space:normal!important}
+.mf-scrollview p, .mf-scrollview ul{white-space:normal!important}
 .mf-scrollview .km-widget{color:#000}
 /*moments*/
 .moments-active{content:" ";background:rgba(0,0,0,0.5);position:fixed;width:100%;height:100%;top:0;left:0;z-index:10}
@@ -363,18 +363,19 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 .modalcontent li{font-size:20px}
 .modalcontent strong{font-size:20px}
 .audio-block strong{font-size:20px}
-.lang-zh .modalcontent h2{font-size:26px}
-.lang-zh .modalcontent h3{font-size:24px}
-.lang-zh .tp-content h2, .lang-zh .detail-wrap h2{font-size:26px}
-.lang-zh .tp-content h3, .lang-zh .detail-wrap h3{font-size:24px}
-.lang-zh .tp-content p, .lang-zh .detail-wrap p{color:#1c516c}
-.lang-zh .tp-content li, .lang-zh .detail-wrap li{color:#1c516c}
-.lang-zh .tp-content strong, .lang-zh .detail-wrap strong{color:#1c516c}
-.lang-zh .tp-content .gallery-center{color:#1c516c}
-.lang-zh .modalcontent p{color:#1c516c}
-.lang-zh .modalcontent li{color:#1c516c}
-.lang-zh .modalcontent strong{color:#1c516c}
-.lang-zh .audio-block strong{color:#1c516c}
+.lang-zh .modalcontent h2{font-size:26px!important}
+.lang-zh .modalcontent h3{font-size:24px!important}
+.lang-zh h3 strong{font-size:24px!important}
+.lang-zh .tp-content h2, .lang-zh .detail-wrap h2{font-size:26px!important}
+.lang-zh .tp-content h3, .lang-zh .detail-wrap h3{font-size:24px!important}
+.lang-zh .tp-content p, .lang-zh .detail-wrap p{color:#1c516c!important}
+.lang-zh .tp-content li, .lang-zh .detail-wrap li{color:#1c516c!important}
+.lang-zh .tp-content strong, .lang-zh .detail-wrap strong{color:#1c516c!important}
+.lang-zh .tp-content .gallery-center{color:#1c516c!important}
+.lang-zh .modalcontent p{color:#1c516c!important}
+.lang-zh .modalcontent li{color:#1c516c!important}
+.lang-zh .modalcontent strong{color:#1c516c!important}
+.lang-zh .audio-block strong{color:#1c516c!important}
 /**ASIDE**/
 .aside-myclasses {margin-left:-15px;margin-right:-15px}
 .aside-myclasses-title{font:normal 14px "museo_sans700";background:#93ceca;text-transform:uppercase;color:#2f716d;padding:10px 0 10px 30px}
