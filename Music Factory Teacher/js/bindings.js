@@ -97,8 +97,10 @@ function GenerateLoginDetails() {
             $(".preloader-log").hide();
         },
         LogOffUser: function (e) {
+            $(".preloader-img").show();
             LogoutUser($("#login-username").val());
             LogIn($("#login-username").val(), $("#login-password").val());
+            $(".preloader-img").hide();
         },
         Cancel: function (e) {
             $.fancybox.close([{ href: '#alreadylogged' }]);

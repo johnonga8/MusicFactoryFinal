@@ -1,6 +1,6 @@
 //FULL HEIGHT
 var indexFullheight = $(window).height();
-$('.js-fullheight-index').css('height', indexFullheight);
+$('.js-fullheight-index').css('min-height', indexFullheight);
 
 
 $("#appLanguage").val();
