@@ -280,7 +280,7 @@ function GenerateKinderTableOfContents(kinderbook) {
             $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
             $('#lesson-details-kinder .km-scroll-container').slideDown();
             if (window.location.href.indexOf("bookdetails") > -1) {
-                hideDrawer();
+                hideDrawerKD();
                 GenerateKinderLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
             }
             else {
@@ -512,7 +512,7 @@ function GenerateInfantTableOfContents(infantbook) {
             $('#lesson-details-infant .km-scroll-container').hide().slideUp();
             $('#lesson-details-infant .km-scroll-container').slideDown();
             if (window.location.href.indexOf("bookdetails") > -1) {
-                hideDrawer();
+                hideDrawerID();
                 GenerateInfantLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
             }
             else {

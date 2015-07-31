@@ -310,7 +310,7 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 .modalcontent{display:none}
 .fancybox-skin{background:#ffffff}
 .fancybox-close{background:url(../img/fancybox-close.png) top right no-repeat #fff!important;top:10px!important;right:10px!important;height:25px;width:25px}
-.gallery-01 .fancybox img{max-width:420px}
+.gallery-01 .fancybox img{max-width:100%}
 /**slider**/
 .flex-direction-nav{display:none}
 .flexslider{border:0;margin-bottom:10px;background:none}
