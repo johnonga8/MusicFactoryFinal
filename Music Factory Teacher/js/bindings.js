@@ -178,7 +178,6 @@ function GenerateTeacherProfile() {
           $(".preloader-mf").show();
           LogoutUser (currentUserName);
           app.navigate("#");
-          $(".preloader-mf").hide();
         }
     });
     
