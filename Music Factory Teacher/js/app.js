@@ -10,6 +10,9 @@ function hideDrawerIP() {
 function hideDrawerID() {
     $("#table-of-contents-theme-infant").data("kendoMobileDrawer").hide();
 }
+function hideDrawerIG() {
+    $("#table-of-contents-glossary-infant").data("kendoMobileDrawer").hide();
+}
 function hideDrawerKC() {
     $("#table-of-contents-cover-kinder").data("kendoMobileDrawer").hide();
 }
@@ -19,6 +22,10 @@ function hideDrawerKP() {
 function hideDrawerKD() {
     $("#table-of-contents-chapter-kinder").data("kendoMobileDrawer").hide();
 }
+function hideDrawerKG() {
+    $("#table-of-contents-glossary-kinder").data("kendoMobileDrawer").hide();
+}
+
 //MEDIA
 function PauseMedia() {
   if ( $( "video" ).length ) { 
