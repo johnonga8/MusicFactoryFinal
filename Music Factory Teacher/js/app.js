@@ -47,8 +47,9 @@ function removeScroll(){
 };
 function onShowDrawer(){
     var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
+    var toCheadHeight = $(".bookdetails-drawer-head").height();
     var libraryheight = $(window).height();
-    $('#scroller').css('height', (libraryheight - 120));
+    $('#scroller').css('height', (libraryheight - toCheadHeight));
     closeNav();
 };
 //REMOVE COLLAPSIBLE ON PAGE LOAD
