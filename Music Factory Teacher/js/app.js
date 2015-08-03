@@ -49,7 +49,7 @@ function onShowDrawer(){
     var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
     var toCheadHeight = $(".bookdetails-drawer-head").height();
     var libraryheight = $(window).height();
-    $('#scroller').css('height', (libraryheight - toCheadHeight));
+    $('#scroller').css('height', (libraryheight - toCheadHeight - 50));
     closeNav();
 };
 //REMOVE COLLAPSIBLE ON PAGE LOAD
