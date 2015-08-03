@@ -35,8 +35,8 @@ function LogIn(username, password, isBypass) {
     var response = AuthenticateUser(username, password, deviceId, isBypass)
     
     if (response.IsValid === true) {
-        app.navigate(dashboardURL);
         currentUserName = username;
+        app.navigate(dashboardURL);
     }
     else {
         switch (response.ResponseCode) {
@@ -175,8 +175,10 @@ function GenerateTeacherProfile() {
         BooksLabel: appLabels.First(function (label) { return label.key == "Menu_BooksLabel" }).value,
         SignOutLabel: appLabels.First(function (label) { return label.key == "SignOutLabel" }).value,
         SignOut: function(e){
+          $(".preloader-mf").show();
           LogoutUser (currentUserName);
           app.navigate("#");
+          $(".preloader-mf").hide();
         }
     });
     
