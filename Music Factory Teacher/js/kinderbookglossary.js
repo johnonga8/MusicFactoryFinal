@@ -1,5 +1,4 @@
 DropNav();
-
 //BINDING STARTS
 //Function for drawer
 function beforeShowKinderglossary(e)

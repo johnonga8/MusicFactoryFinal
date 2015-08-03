@@ -1,5 +1,5 @@
 DropNav();
-
+var bookdetailsfullheightglossary = $(window).height();
 //BINDING STARTS
 //Function for drawer
 function beforeShowInfantglossary(e)

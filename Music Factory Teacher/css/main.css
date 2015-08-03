@@ -168,7 +168,7 @@ input[type=submit]{width:150px;border-radius:5px;background:#ff914e;height:40px;
 .book-main-wrap-footer.km-header{background:url(../img/bg-header.jpg);height:50px;padding-top:5px;}
 .km-button.bttn-tableofcontents{width:170px;border-right:1px solid #7d878c;border-radius:0;color:#7d878c;padding-left:5px}
 .bttn-tableofcontents .glyphicon{margin-right:10px}
-a.bttn-prev.km-button, a.bttn-prev-preface, a.bttn-next.km-button{color:#7d878c!important}
+a.bttn-prev.km-button, a.bttn-prev-preface, a.bttn-next.km-button{color:#7d878c!important;padding:10px!important}
 .bttn-prev span.km-text, .bttn-next span.km-text, .bttn-prev-preface span.km-text{color:#39464c!important}
 .bttn-prev span.span-bold.km-text, .bttn-next span.span-bold.km-text, .bttn-prev-preface span.span-bold.km-text{color:#39464c!important}
 .bttn-prev span.km-text.km-lessonnum, .bttn-next span.km-text.km-lessonnum, .bttn-prev-preface span.km-text.km-lessonnum{color:#7d878c!important}
@@ -212,7 +212,7 @@ a.login-password{font-size:12px;color:#8d8d8d;float:left;line-height:40px}
 .tabs-listing .km-state-active{background-color:#fe904e}
 .tabcontent-infantbooks{display:none}
 .listing-books{padding-top:20px;background:#fff;/**margin-left:-28px;margin-right:-28px**/}
-.listing-books h3{font:normal 14px/1.2 "museo_sans300";text-align:left;margin-left:0}
+.listing-books h3{font:normal 16px/1.2 "museo_sans300";text-align:left;margin-left:0}
 .listing-books strong{font-weight:normal}
 .listing-books .km-listview-link::after, .listing-books .km-listview-label::after{display:none}
 .listing-books .col-xs-2 img{margin-bottom:10px;-webkit-box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);-moz-box-shadow: 5px 5px 10px 0px rgba(212,212,212,1);
@@ -355,7 +355,7 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 /**Font Changes**/
 .tp-content h2, .detail-wrap h2{font-size:24px}
 .tp-content h3, .detail-wrap h3{font-size:22px}
-.tp-content p, .detail-wrap p{font-size:20px}
+.tp-content p, .detail-wrap p, .mpc-disclaimer p{font-size:20px}
 .tp-content li, .detail-wrap li{font-size:20px}
 .tp-content strong, .detail-wrap strong{font-size:20px}
 .tp-content .gallery-center{font-size:20px}
@@ -378,6 +378,7 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 .lang-zh .modalcontent li{color:#1c516c!important}
 .lang-zh .modalcontent strong{color:#1c516c!important}
 .lang-zh .audio-block strong{color:#1c516c!important}
+#preface .tp-content strong{font-size:15px}
 /**ASIDE**/
 .aside-myclasses {margin-left:-15px;margin-right:-15px}
 .aside-myclasses-title{font:normal 14px "museo_sans700";background:#93ceca;text-transform:uppercase;color:#2f716d;padding:10px 0 10px 30px}

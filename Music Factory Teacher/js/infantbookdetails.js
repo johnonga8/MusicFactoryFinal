@@ -52,8 +52,8 @@ function beforeShowInfantthemes(e)
 function afterShowInfantthemes(e)
 {
   $(".preloader-mf").hide();
-  $('#lesson-details-infant .km-scroll-container').hide().slideUp();
-  $('#lesson-details-infant .km-scroll-container').slideDown();
+  //$('#lesson-details-infant .km-scroll-container').hide().slideUp();
+  //$('#lesson-details-infant .km-scroll-container').slideDown();
 }
 function beforeHideInfantthemes(e)
 {

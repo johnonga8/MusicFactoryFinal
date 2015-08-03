@@ -53,8 +53,8 @@ function beforeShowKinderlessons(e)
 function afterShowKinderlessons(e)
 {
   $(".preloader-mf").hide();
-  $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
-  $('#lesson-details-kinder .km-scroll-container').slideDown();
+  //$('#lesson-details-kinder .km-scroll-container').hide().slideUp();
+  //$('#lesson-details-kinder .km-scroll-container').slideDown();
 }
 function beforeHideKinderlessons(e)
 {

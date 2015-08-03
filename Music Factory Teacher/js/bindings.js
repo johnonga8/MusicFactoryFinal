@@ -279,8 +279,8 @@ function GenerateKinderTableOfContents(kinderbook) {
             currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
             currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
             InitializeTabs();
-            $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
-            $('#lesson-details-kinder .km-scroll-container').slideDown();
+            //$('#lesson-details-kinder .km-scroll-container').hide().slideUp();
+            //$('#lesson-details-kinder .km-scroll-container').slideDown();
             if (window.location.href.indexOf("bookdetails") > -1) {
                 hideDrawerKD();
                 GenerateKinderLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
@@ -511,8 +511,8 @@ function GenerateInfantTableOfContents(infantbook) {
             currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
             currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
             InitializeTabs();
-            $('#lesson-details-infant .km-scroll-container').hide().slideUp();
-            $('#lesson-details-infant .km-scroll-container').slideDown();
+            //$('#lesson-details-infant .km-scroll-container').hide().slideUp();
+            //$('#lesson-details-infant .km-scroll-container').slideDown();
             if (window.location.href.indexOf("bookdetails") > -1) {
                 hideDrawerID();
                 GenerateInfantLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
@@ -780,4 +780,5 @@ function getUUID() {
     else {
         $("body").removeClass("lang-zh");
     }
-});*/
+});*/    
+

@@ -40,6 +40,8 @@ function removeScroll(){
 };
 function onShowDrawer(){
     var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
+    var libraryheight = $(window).height();
+    $('#scroller').css('height', (libraryheight - 120));
     closeNav();
 };
 //REMOVE COLLAPSIBLE ON PAGE LOAD

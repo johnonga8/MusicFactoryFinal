@@ -8,7 +8,6 @@ DropNav();
 //FULL HEIGHT
 var bookdetailsfullheightcover = $(window).height();
 $('.js-fullheight-cover').css('min-height', (bookdetailsfullheightcover - 140));
-
 //BINDING STARTS
 //Function for drawer
 function beforeShowKindercover(e)
