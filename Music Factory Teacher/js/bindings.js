@@ -190,12 +190,11 @@ function GenerateKinderBooks(kinderbooks) {
     {
         KinderBooks: kinderbooks,
         SelectBook: function (e) {
-
+            $(".preloader-mf").show();
             currentBookId = e.data.Id;
             currentBookCultureName = e.data.CultureName;
             currentBookType = e.data.Type;
             GetKinderBookById(currentBookId, currentBookCultureName)
-            $(".preloader-mf").show();
             window.location = "#views/mf-kinderbookcover.html";
         }
     });
@@ -207,13 +206,12 @@ function GenerateInfantBooks(infantbooks) {
     {
         InfantBooks: infantbooks,
         SelectBook: function (e) {
-
+            $(".preloader-mf").show();
             currentBookId = e.data.Id;
             currentBookCultureName = e.data.CultureName;
             currentBookType = e.data.Type;
             GetInfantBookById(currentBookId, currentBookCultureName)
             //window.location = "#views/mf-infantbookcover.html";
-            $(".preloader-mf").show();
             app.navigate("views/mf-infantbookcover.html");
         }
     });

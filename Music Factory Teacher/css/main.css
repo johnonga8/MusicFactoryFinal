@@ -349,9 +349,9 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 #password h2{font:normal 30px "museo_slab700";color:#76c4e0;margin-bottom:5px}
 #password p{font:normal 14px "museo_sans500";color:#aab3b8;max-width:300px;margin-bottom:10px}
 a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;font-size:12px}
-.preloader-mf{background:rgba(255,255,255,0.8);width:100%;height:100%;top:0;left:0;position:fixed;z-index:10000;text-align:center;padding:100px 0;display:block}
+.preloader-mf{background:url(../img/mainpreloader.gif) center center no-repeat rgba(255,255,255,0.8);width:100%;height:100%;top:0;left:0;position:fixed;z-index:10000;text-align:center;padding:100px 0;display:none}
 .preloader-img{width:24px;height:24px;float:left;margin-top:5px;display:none}
-.preloader-mf-img{background:url(../img/mainpreloader.gif) center center no-repeat;width:100%;height:100%;display:block}
+/**.preloader-mf-img{background:url(../img/mainpreloader.gif) center center no-repeat rgba(255,255,255,0.8);width:100%;height:100%;display:none}**/
 /**Font Changes**/
 .tp-content h2, .detail-wrap h2{font-size:24px}
 .tp-content h3, .detail-wrap h3{font-size:22px}
