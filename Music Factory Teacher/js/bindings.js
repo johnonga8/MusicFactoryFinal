@@ -5,7 +5,7 @@ var currentBookType;
 var currentBook;
 var currentLessonNumber;
 var currentChapterNumber;
-var domain = "http://musicfactory.a8hosting.com/";
+var domain = "http://mf-live.a8hosting.com/";
 var dashboardURL = "views/mf-booklisting.html";
 var currentUserName;
 var currentAppCultureName;
