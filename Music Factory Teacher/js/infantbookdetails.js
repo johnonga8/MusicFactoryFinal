@@ -44,6 +44,7 @@
 //Function for drawer
 function beforeShowInfantthemes(e)
 {
+  $(".preloader-mf").show();
   BindInfantLessonDetails(currentBook);
   closeNav();
   InitializeTabs();

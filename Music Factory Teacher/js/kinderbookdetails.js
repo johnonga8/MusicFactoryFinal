@@ -45,6 +45,7 @@
 //Function for drawer
 function beforeShowKinderlessons(e)
 {
+  $(".preloader-mf").show();
   BindKinderLessonDetails(currentBook);
   closeNav();
   InitializeTabs();

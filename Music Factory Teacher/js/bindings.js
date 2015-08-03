@@ -722,12 +722,8 @@ function LogoutUser(username) {
         dataType: "json",
         data: JSON.stringify({ username: username }),
         async: false,
-        beforeSend: function () {
-            $(".preloader-img").show();
-        },
         complete: function () {
             $.fancybox.close([{ href: '#alreadylogged' }]);
-            $(".preloader-img").hide();
         },
         success: function (result) {
             isSuccessful = result.d;
