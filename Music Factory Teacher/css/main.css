@@ -256,7 +256,8 @@ ul.bookdetails-tabs{padding-left:0}
 .lesson-block{margin-bottom:20px}
 .lesson-block h3{color:#12384b;font-size:15px;margin-bottom:10px}
 .lesson-block p, .lesson-block li{color:#12384b;line-height:1.5}
-.mpc-disclaimer p{margin-bottom:10px;display:block}
+.mpc-disclaimer{background:#d3f3f0;padding:15px;margin-bottom:20px}
+.mpc-disclaimer p{margin-bottom:10px;display:block;color:#59b2aa}
 /*modal*/
 .modalcontent{width:880px;padding:0 30px}
 .modalcontent h2{font-size:21px;color:#69a1b5;margin-bottom:30px;}
