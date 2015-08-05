@@ -344,7 +344,7 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 #alreadylogged.modalcontent p{font-size:15px}
 .choose-language{padding:20px 10px;width:270px}
 .lang-zh .choose-language{padding:20px 10px;width:320px}
-.lang-zh .km-lessonnum{display:none!important}
+.lang-zh .km-lessonnum.km-text{display:none!important}
 .choose-language strong{font:normal 13px "museo_sans700";color:#7d8487;line-height:30px;margin-right:10px}
 .choose-language select{padding:5px!important;background:#f7f7f7!important;color:#7d8487!important;font-size:13px;height:30px;min-width:100px;border:none!important}
 #password h2{font:normal 30px "museo_slab700";color:#76c4e0;margin-bottom:5px}
