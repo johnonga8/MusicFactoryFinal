@@ -100,6 +100,7 @@ function GenerateLoginDetails() {
             LogoutUser($("#login-username").val());
             LogIn($("#login-username").val(), $("#login-password").val());
             $(".preloader-img").hide();
+            $("body").removeClass("lang-zh");
         },
         Cancel: function (e) {
             $.fancybox.close([{ href: '#alreadylogged' }]);

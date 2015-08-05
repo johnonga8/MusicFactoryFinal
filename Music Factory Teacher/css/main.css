@@ -380,10 +380,9 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 .lang-zh .modalcontent li{color:#1c516c!important}
 .lang-zh .modalcontent strong{color:#1c516c!important}
 .lang-zh .audio-block strong{color:#1c516c!important}
-.lang-zh .bookdetails-drawer-firstnav a.km-widget.km-button, .lang-zh .bookdetails-div a.km-widget.km-button{font:normal 16px "museo_sans700"!important}
-.lang-zh .bookdetails-tabs li{font-size:18px!important}
+.lang-zh .bookdetails-drawer-firstnav a.km-widget.km-button, .lang-zh .bookdetails-div a.km-widget.km-button{font:normal 18px "museo_sans700"!important}
 #preface .tp-content strong{font-size:15px}
-
+.lang-zh .bookdetails-tabs li{font-size:20px!important;}
 /**FINAL PHASE**/
 .versioncss{font-size:8px;padding:10px}
 .notify-wrap .modalcontent{max-width:600px;padding:50px 0;font:18px "museo_sans700", sans-serif;text-align:center}
