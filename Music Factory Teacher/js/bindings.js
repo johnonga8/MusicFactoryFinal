@@ -276,6 +276,7 @@ function GenerateKinderTableOfContents(kinderbook) {
             currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
             currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
             InitializeTabs();
+            removeScroll();
             //$('#lesson-details-kinder .km-scroll-container').hide().slideUp();
             //$('#lesson-details-kinder .km-scroll-container').slideDown();
             if (window.location.href.indexOf("bookdetails") > -1) {
@@ -509,6 +510,7 @@ function GenerateInfantTableOfContents(infantbook) {
             currentLessonNumber = $(e.currentTarget).children('input.js-lessonnumber').val();
             currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
             InitializeTabs();
+            removeScroll();
             //$('#lesson-details-infant .km-scroll-container').hide().slideUp();
             //$('#lesson-details-infant .km-scroll-container').slideDown();
             if (window.location.href.indexOf("bookdetails") > -1) {
