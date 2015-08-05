@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Class Progress" id="mf-classprogress" data-transition="overlay:down" data-before-show="beforeShowClassProgress" data-after-show="showClassProgress">    
+<div data-role="view" data-title="Class Progress" id="mf-classprogress" data-transition="overlay:down" data-before-show="beforeShowClassprogress" data-after-show="afterShowClassprogress" data-before-hide="beforeHideClassprogress">    
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -17,10 +17,11 @@
       <div class="aside-myclasses">
         <div class="aside-myclasses-title"><strong><span class="icon-class"></span>My Classes</strong></div>
         <div data-role="scroller" style="height: 250px" id="scroll-myclasses">
-          <div class="aside-myclasses-class aside-myclasses-class-active"><a class="aside-classes-link">Class Joy 2015</a></div>
-          <div class="aside-myclasses-class"><a class="aside-classes-link">Class Unity 2015</a></div>
+          <div class="aside-myclasses-class aside-myclasses-class-active"><span class="aside-classes-link">Joy 2015 EN</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Joy 2015 - CH</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Unity 2015 - EN</span></div>
         </div>
-        <div class="wrap-signout"><a class="km-widget km-button bttn-signout">Sign Out</a></div>
+        <div class="wrap-signout"><div class="km-widget km-button bttn-signout">Sign Out</div></div>
       </div>
     </div>
     <!--end sidebar-->
@@ -30,14 +31,13 @@
       <!--start masthead-->
       <div class="listing-masthead-wrap class-progress">
         <div class="row row-margin-null">
-          <div class="col-xs-8">
-            <h1>Class Joy 2015 - Progress Report</h1>
-            <strong>Book: Owl Series - Blinkie Beats</strong>
+          <div class="col-xs-9 masthead-classes-left">
+            <strong>My Classes</strong>
+            <h1>Joy 2015 EN: Progress Report - 1st Sem</h1>
           </div>
-          <div class="col-xs-4 masthead-classes-right">
+          <div class="col-xs-3 masthead-classes-right">
             <strong>Age Group: 3 - 4 years old</strong>
-            <strong>Total Students: 10</strong>
-            <strong>Start Date: July 29, 2015</strong>
+            <strong>Class Size: 10 Students</strong>
           </div>
         </div>
       </div>
@@ -45,21 +45,20 @@
       <div class="row row-margin-null js-class-progress" data-role="scroller">   
         <div class="col-xs-12 class-progress-wrap">
           <div class="class-progress-header">
-            <h2>1st Semester</h2>
             <strong>Question Nos:</strong>
             <div class="question-control clearfix">
               <span data-tab="tab-1" class="question-control-active">1</span>
               <span data-tab="tab-2">2</span>
               <span data-tab="tab-3">3</span>
               <span data-tab="tab-4">4</span>
-              <span data-tab="tab-5">R</span>
+              <span data-tab="tab-5">Remarks</span>
             </div>
           </div>
           <!--questions content start-->
           <div  id="tab-1" class="class-progress-content class-progress-content-active">
             <h3>Music Concepts</h3>
             <div class="question-item clearfix">
-              <div class="question-number">3.</div>
+              <div class="question-number">1.</div>
               <div class="question-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu nisl, commodo nec vehicula vel, vulputate eget dui. Pellentesque pellentesque tellus mi, vita
               </div>
@@ -80,22 +79,23 @@
                 </tr>
                 <tr>
                   <td><img src="img/student-photo.png" alt=""/><span>Bai Guangyuan Yuan</span></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c01"/><label for="s01-q01-c01"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c02"/><label for="s01-q01-c02"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c03"/><label for="s01-q01-c03"></label></td>
+                  <td><input type="radio" name="s02-q01" id="s02-q01-c01"/><label for="s02-q01-c01"></label></td>
+                  <td><input type="radio" name="s02-q01" id="s02-q01-c02"/><label for="s02-q01-c02"></label></td>
+                  <td><input type="radio" name="s02-q01" id="s02-q01-c03"/><label for="s02-q01-c03"></label></td>
                 </tr>
                 <tr>
                   <td><img src="img/student-photo.png" alt=""/><span>Bai Guangyuan Yuan</span></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c01"/><label for="s01-q01-c01"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c02"/><label for="s01-q01-c02"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c03"/><label for="s01-q01-c03"></label></td>
+                  <td><input type="radio" name="s03-q01" id="s03-q01-c01"/><label for="s03-q01-c01"></label></td>
+                  <td><input type="radio" name="s03-q01" id="s03-q01-c02"/><label for="s03-q01-c02"></label></td>
+                  <td><input type="radio" name="s03-q01" id="s03-q01-c03"/><label for="s03-q01-c03"></label></td>
                 </tr>
               </table>
             </div>
             <div class="student-progress-bttn-wrap clearfix">
               <div class="student-progress-bttn">Save and Proceed to Next Question</div>
-              <div class="student-progress-bttn bttn-inactive">Save Evaluation</div>
-              <div class="student-progress-bttn bttn-inactive">Previous</div>
+              <div class="student-progress-bttn bttn-regular">Save Evaluation</div>
+              <div class="student-progress-bttn bttn-regular fancybox-notify"  href="#classprogress-notification">Previous</div>
+              <div class="preloader-img"><img src="./img/preloader.GIF"></div>
             </div>
           </div>
           <!--questions content end-->
@@ -103,7 +103,7 @@
           <div  id="tab-2" class="class-progress-content">
             <h3>Music Concepts</h3>
             <div class="question-item clearfix">
-              <div class="question-number">4.</div>
+              <div class="question-number">2.</div>
               <div class="question-content">
                 Lorem ipsum dolor sit amet
               </div>
@@ -118,33 +118,71 @@
                 </tr>
                 <tr>
                   <td><img src="img/student-photo.png" alt=""/><span>Bai Guangyuan Yuan</span></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c01"/><label for="s01-q01-c01"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c02"/><label for="s01-q01-c02"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c03"/><label for="s01-q01-c03"></label></td>
+                  <td><input type="radio" name="s04-q01" id="s04-q01-c01"/><label for="s04-q01-c01"></label></td>
+                  <td><input type="radio" name="s04-q01" id="s04-q01-c02"/><label for="s04-q01-c02"></label></td>
+                  <td><input type="radio" name="s04-q01" id="s04-q01-c03"/><label for="s04-q01-c03"></label></td>
                 </tr>
                 <tr>
                   <td><img src="img/student-photo.png" alt=""/><span>Bai Guangyuan Yuan</span></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c01"/><label for="s01-q01-c01"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c02"/><label for="s01-q01-c02"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c03"/><label for="s01-q01-c03"></label></td>
+                  <td><input type="radio" name="s05-q01" id="s05-q01-c01"/><label for="s05-q01-c01"></label></td>
+                  <td><input type="radio" name="s05-q01" id="s05-q01-c02"/><label for="s05-q01-c02"></label></td>
+                  <td><input type="radio" name="s05-q01" id="s05-q01-c03"/><label for="s05-q01-c03"></label></td>
                 </tr>
                 <tr>
                   <td><img src="img/student-photo.png" alt=""/><span>Bai Guangyuan Yuan</span></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c01"/><label for="s01-q01-c01"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c02"/><label for="s01-q01-c02"></label></td>
-                  <td><input type="radio" name="s01-q01" id="s01-q01-c03"/><label for="s01-q01-c03"></label></td>
+                  <td><input type="radio" name="s06-q01" id="s06-q01-c01"/><label for="s06-q01-c01"></label></td>
+                  <td><input type="radio" name="s06-q01" id="s06-q01-c02"/><label for="s06-q01-c02"></label></td>
+                  <td><input type="radio" name="s06-q01" id="s06-q01-c03"/><label for="s06-q01-c03"></label></td>
                 </tr>
               </table>
             </div>
             <div class="student-progress-bttn-wrap clearfix">
               <div class="student-progress-bttn">Save and Proceed to Next Question</div>
               <div class="student-progress-bttn bttn-inactive">Save Evaluation</div>
-              <div class="student-progress-bttn bttn-inactive">Previous</div>
+              <div class="student-progress-bttn bttn-regular">Previous</div>
               <div class="student-progress-bttn bttn-inactive">Previous</div>
             </div>
           </div>
           <!--questions content end-->
+          <!--questions content start-->
+          <div  id="tab-5" class="class-progress-content class-progress-content-active">
+            <div class="remarks-wrap">
+              <div class="remarks-student-wrap">
+                <div class="remarks-student-head">
+                  <img src="img/student-photo.png" alt=""/><span>Bai Guangyuan Yuan</span>
+                </div>
+                <div class="remarks-student-textareawrap">
+                  <textarea>Bai Guangyuan can follow directions, enjoys listening to poetry, enjoys listening to stories. Bai Guangyuan can follow directions, enjoys listening to poetry, enjoys listening to stories. Bai Guangyuan can follow directions, enjoys listening to poetry, enjoys listening to stories.</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="remarks-wrap">
+              <div class="remarks-student-wrap">
+                <div class="remarks-student-head">
+                  <img src="img/student-photo.png" alt=""/><span>Bai Guangyuan Yuan</span>
+                </div>
+                <div class="remarks-student-textareawrap">
+                  <textarea>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="student-progress-bttn-wrap clearfix">
+              <div class="student-progress-bttn">Save and Proceed to Next Question</div>
+              <div class="student-progress-bttn bttn-regular">Save Evaluation</div>
+              <div class="student-progress-bttn bttn-regular fancybox-notify"  href="#classprogress-notification">Previous</div>
+              <div class="preloader-img"><img src="./img/preloader.GIF"></div>
+            </div>
+          </div>
+          <!--questions content end-->
         </div>
+      </div>
+      <div id="classprogress-notification" class="modalcontent">
+        <p>Are you sure you want to leave this page without saving? </p>
+        <div class="clearfix notifybttn-wrap">
+          <div class="bttn-notify">Yes</div> 
+          <div class="bttn-notify">No</div> 
+        </div>
+        <div class="preloader-img"><img src="./img/preloader.GIF"></div>
       </div>
   </div>
   <script src="js/classprogress.js"></script>

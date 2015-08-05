@@ -13,6 +13,7 @@
       $(this).addClass('tab-active');
       $("#"+tab_id).fadeIn();
       if ( $( "video" ).length ) { 
+        $("video").attr('poster', './img/videoposter.jpg');
         $("video").get(0).pause();
         $("#"+tab_id).find("video").load();
       } else {
@@ -28,18 +29,16 @@
         FlexsliderReference();
       } else if (tab_id === "kindertab-4") {
         FlexsliderMusic();
+      } else if (tab_id === "kindertab-5"){
+        //INPUT TEMP
+        $.fancybox.open([{ href: '#comingsoon',wrapCSS: "comingsoon-wrap" }]);
       } else {
         console.log('no slider');
       }
+      
     })
 
-    //INPUT TEMP
-    $(".moments-publish").click(function(){
-      $(".moments-img input").toggle();
-      $(".moments-active").toggle();
-      $(".phototooltip").toggle();
-      $(".photoselected").toggle();
-    });
+
 }());
 //BINDING STARTS
 //Function for drawer

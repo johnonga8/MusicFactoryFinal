@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Individual Class" id="mf-individualclass" data-transition="overlay:down" data-before-show="beforeShowIndividualClass" data-after-show="showIndividualClass">    
+<div data-role="view" data-title="Individual Class" id="mf-individualclass" data-before-show="beforeShowIndividualClass" data-after-show="afterShowIndividualClass" data-before-hide="beforeHideIndividualClass">    
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -17,10 +17,11 @@
       <div class="aside-myclasses">
         <div class="aside-myclasses-title"><strong><span class="icon-class"></span>My Classes</strong></div>
         <div data-role="scroller" style="height: 250px" id="scroll-myclasses">
-          <div class="aside-myclasses-class aside-myclasses-class-active"><a class="aside-classes-link">Class Joy 2015</a></div>
-          <div class="aside-myclasses-class"><a class="aside-classes-link">Class Unity 2015</a></div>
+          <div class="aside-myclasses-class aside-myclasses-class-active"><span class="aside-classes-link">Joy 2015 EN</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Joy 2015 - CH</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Unity 2015 - EN</span></div>
         </div>
-        <div class="wrap-signout"><a class="km-widget km-button bttn-signout">Sign Out</a></div>
+        <div class="wrap-signout"><div class="km-widget km-button bttn-signout">Sign Out</div></div>
       </div>
     </div>
     <!--end sidebar-->
@@ -30,13 +31,13 @@
       <!--start masthead-->
       <div class="listing-masthead-wrap">
         <div class="row row-margin-null">
-          <div class="col-xs-7">
-            <h1>Class Joy 2015</h1>
-            <strong>Age Group: 3-4 years old</strong>
+          <div class="col-xs-7 masthead-classes-left">
+            <strong>My Classes</strong>
+            <h1>Joy 2015 EN</h1>
           </div>
           <div class="col-xs-5 masthead-classes-right">
-            <strong>Total Students: 10</strong>
-            <strong>Start Date: July 29, 2015</strong>
+            <strong>Age Group: 3-4 years old</strong>
+            <strong>Class Size: 10 Students</strong>
           </div>
         </div>
       </div>
@@ -53,7 +54,7 @@
           <!--start book-->
             <div class="individual-classes-book-border">
               <div class="individual-classes-book row">
-                <div class="individual-classes-leftcontent col-xs-12">
+                <div class="individual-classes-content col-xs-12">
                   <div class="individual-classes-bookcover">
                     <img src="./img/books/owl_yellow.jpg" class="img-responsive"/>
                   </div>
@@ -81,37 +82,6 @@
               <div class="notification-warning">English Book : Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
               <div class="notification-warning">English Book : Please conduct 12nd Semester Progress Report.<a class="bttn-go">Go</a></div>
             </div> 
-            <!--end book-->
-            <!--start book-->
-            <div class="individual-classes-book-border">
-              <div class="individual-classes-book row">
-                <div class="individual-classes-leftcontent col-xs-12">
-                  <div class="individual-classes-bookcover">
-                    <img src="./img/books/owl_yellow.jpg" class="img-responsive"/>
-                  </div>
-                  <div class="individual-classes-slider">
-                    <h2>貓頭鷹系列 眨眼睛 節拍</h2>
-                    <div class="progress-wrap clearfix">
-                      <div class="progress-width">
-                        <div class="progress-bar-wrap">
-                          <div class="progress-bar" id="progressbar">
-                            <div class="progress-value">
-                              <div class="progress-lesson">L<span class="js-progress-lesson">0</span></div>
-                              <div class="progress-tooltip"><span class="js-tooltip-current-lesson">0</span>/<span class="js-tooltip-total-lesson">0</span></div>
-                            </div>
-                          </div>
-                          <span class="progress-initial">0</span>
-                        </div>
-                      </div>
-                      <div class="individual-classes-button">
-                        <a class="bttn">Continue</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="notification-warning">Chinese Book : Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
-            </div>  
             <!--end book-->
           </div>  
           <div class="individual-classes-tabs" id="individual-classes-tab-student">

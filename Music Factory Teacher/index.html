@@ -28,10 +28,8 @@
     <div class="col-xs-offset-1 col-xs-10">
       <div class="pull-right choose-language">
         <strong data-bind="text: SelectLanguageLabel"></strong>
-        <select class="pull-right choose-language-select" data-bind="events: { change: SelectLanguage }">
-          <option value="en">English</option>
-          <option value="zh">中文</option>
-        </select>
+          <div class="language-bttn" data-bind="events: { click: SelectLanguage }"><input value="zh" style="display:none"/>中文</div>
+          <div class="language-bttn" data-bind="events: { click: SelectLanguage }"><input value="en" style="display:none"/>English</div>
         <input id="appLanguage" type="text" value="en" style="display:none"/>
       </div>
     </div>
@@ -42,7 +40,7 @@
       <div class="clearfix marg-b-10">
         <h2 data-bind="text: SignInLabel"></h2>
        <!-- <a href="#password" class="login-password">Forgot your password?</a> -->
-        <a href="#password" class="login-password" data-bind="text: ForgotPasswordLabel"></a>
+        <a href="#" class="login-password" data-bind="text: ForgotPasswordLabel"></a>
       </div>
       <form>
         <input id="login-username" class="login-input" type="text" data-bind="attr: { placeholder: UsernameLabel }"/>
@@ -50,14 +48,14 @@
         <div class="login-error-invalid login-error" style="display:none"><div class="notification-warning" data-bind="text: InvalidLoginErrorMessage"></div></div>
         <div class="login-error-deactivated login-error" style="display:none"><div class="notification-warning" data-bind="text: DeactivatedUserErrorMessage"></div></div>
         <a class="km-button km-widget bttn bttn-login" data-bind="text: LoginLabel, events: { click: Login }"></a><img src="./img/preloader.GIF" class="preloader-log">
-
-        <!--
-        <a href="views/mf-individualstudent.html" data-role="button" class="tempbutton">Individual Student</a>
+<!--
+        <a href="views/mf-myclasses.html" data-role="button" class="tempbutton done" >my Class</a>
         <a href="views/mf-individualclass.html" data-role="button" class="tempbutton">Individual Class</a>
-        <a href="views/mf-myclasses.html" data-role="button" class="tempbutton" >my Class</a>
-        <a href="views/mf-studentprogress.html" data-role="button" class="tempbutton">Student Progress</a>
         <a href="views/mf-classprogress.html" data-role="button" class="tempbutton">Class Progress</a>
-        -->
+        <a href="views/mf-individualstudent.html" data-role="button" class="tempbutton">Individual Student</a>
+        <a href="views/mf-studentprogress.html" data-role="button" class="tempbutton">Student Progress</a>
+-->
+  
       </form>
     </div>
     <div class="col-xs-6">

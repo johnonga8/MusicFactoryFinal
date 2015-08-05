@@ -1,7 +1,3 @@
-function showIndividualClass(e)
-{
-    app.pane.loader.hide();
-}
 (function () {
     var fullheight = $(window).height();
     $('.js-fullheight-side').css('min-height', fullheight);
@@ -64,3 +60,16 @@ $(function() {
       }
   });
 });
+//BINDING STARTS
+function beforeShowIndividualClass(e)
+{
+
+}
+function afterShowIndividualClass(e)
+{
+    $(".preloader-mf").hide();
+}
+function beforeHideIndividualClass(e)
+{
+  //Do Something
+}

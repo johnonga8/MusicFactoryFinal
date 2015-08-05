@@ -1,4 +1,4 @@
-<div data-role="view" data-title="My Classes" id="mf-myclasses" data-transition="overlay:down" data-after-show="showMyClasses">    
+<div data-role="view" data-title="My Classes" id="mf-myclasses" data-transition="overlay:down" data-before-show="beforeShowMyclasses" data-after-show="afterShowMyclasses" data-before-hide="beforeHideMyclasses">    
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -16,7 +16,7 @@
       </div>
       <div class="aside-myclasses">
         <div class="aside-myclasses-title"><strong><span class="icon-class"></span>My Classes</strong></div>
-        <div class="wrap-signout"><a class="km-widget km-button bttn-signout">Sign Out</a></div>
+        <div class="wrap-signout"><div class="km-widget km-button bttn-signout">Sign Out</div></div>
       </div>
     </div>
     <!--end sidebar-->
@@ -27,8 +27,7 @@
       <div class="listing-masthead-wrap">
         <div class="row row-margin-null">
           <div class="col-xs-12">
-            <h1>My Classes</h1>
-            <strong>Leading the way in creative music education</strong>
+            <h1 class="lineheight-85">My Classes</h1>
           </div>
         </div>
       </div>
@@ -36,11 +35,11 @@
       <div class="row row-margin-null js-myclasses" data-role="scroller">  
         <div class="col-xs-12">
           <div class="myclasses-titleblock-wrap">
+            <div class="myclasses-title">
+              <h2>Joy 2015 EN</h2>
+            </div>
             <div class="myclasses-titleblock clearfix">
               <div class="myclasses-titleblock-left">
-                <div class="myclasses-title">
-                  <h2>Joy 2015</h2>
-                </div>
                 <div class="myclasses-details">
                   <strong>Age Group: 3 - 4 years old</strong>
                   <strong>Class Size: 25 students</strong>
@@ -50,19 +49,34 @@
                 <a class="bttn bttn-view">View</a>
               </div>
             </div>
-            <div class="notification-warning">English Book : Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
-            <div class="notification-warning">English Book : Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
-            <div class="notification-warning">English Book : Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
+            <div class="notification-warning">Attention: Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
+            <div class="notification-warning">Attention: Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
           </div>
           <div class="myclasses-titleblock-wrap">
+            <div class="myclasses-title">
+              <h2>Joy 2015 CH</h2>
+            </div>
             <div class="myclasses-titleblock clearfix">
               <div class="myclasses-titleblock-left">
-                <div class="myclasses-title">
-                  <h2>Unity 2015</h2>
-                </div>
                 <div class="myclasses-details">
                   <strong>Age Group: 3 - 4 years old</strong>
-                  <strong>Class Size: 25 students</strong>
+                  <strong>Class Size: 19 students</strong>
+                </div>
+              </div>
+              <div class="myclasses-titleblock-right">
+                <a class="bttn bttn-view">View</a>
+              </div>
+            </div>
+          </div>
+          <div class="myclasses-titleblock-wrap">
+            <div class="myclasses-title">
+              <h2>Unity 2015 EN</h2>
+            </div>
+            <div class="myclasses-titleblock clearfix">
+              <div class="myclasses-titleblock-left">
+                <div class="myclasses-details">
+                  <strong>Age Group: 0 - 24 months</strong>
+                  <strong>Class Size: 18 students</strong>
                 </div>
               </div>
               <div class="myclasses-titleblock-right">

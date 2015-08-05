@@ -79,9 +79,8 @@ function GenerateLoginDetails() {
         LogOffUserLabel: appLabels.First(function (label) { return label.key == "LogOffUserLabel" }).value,
         CancelLabel: appLabels.First(function (label) { return label.key == "CancelLabel" }).value,
         SelectLanguage: function (e) {
-            var langSelect = $(".choose-language select").val();
-            $("#appLanguage").val(langSelect);
-            currentAppCultureName = $("#appLanguage").val()
+            var langSelect = $(e.currentTarget).children("input").val();
+            currentAppCultureName = langSelect;
             GetTeacherAppLabels(currentAppCultureName);
             BindLoginDetails();
             if (currentAppCultureName === "zh") {
@@ -365,6 +364,7 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
         Complete: appLabels.First(function (label) { return label.key == "KinderLesson_Complete" }).value,
         CompleteButton: appLabels.First(function (label) { return label.key == "KinderLesson_CompleteButton" }).value,
         MPC_Disclaimer: appLabels.First(function (label) { return label.key == "KinderLesson_MPC_Disclaimer" }).value,
+        ComingSoon: appLabels.First(function (label) { return label.key == "Kinder_Comingsoon" }).value,
         PrevLessonClick: function (e) {
             GenerateKinderLessonDetails(currentBook, prevLesson.ChapterNumber, prevLesson.LessonNumber);
             $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
@@ -644,6 +644,7 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
         Complete: appLabels.First(function (label) { return label.key == "InfantLesson_Complete" }).value,
         CompleteButton: appLabels.First(function (label) { return label.key == "InfantLesson_CompleteButton" }).value,
         MPC_Disclaimer: appLabels.First(function (label) { return label.key == "InfantLesson_MPC_Disclaimer" }).value,
+        ComingSoon: appLabels.First(function (label) { return label.key == "Infant_Comingsoon" }).value,
         PrevLessonClick: function (e) {
             GenerateInfantLessonDetails(currentBook, prevLesson.ThemeNumber, prevLesson.LessonNumber);
             $('#lesson-details-infant .km-scroll-container').hide().slideUp();

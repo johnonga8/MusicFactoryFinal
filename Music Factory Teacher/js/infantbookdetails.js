@@ -28,6 +28,15 @@
         FlexsliderReference();
       } else if (tab_id === "infanttab-3") {
         FlexsliderMusic();
+      } else if (tab_id === "infanttab-4"){
+        $.fancybox.open([{ href: '#comingsoon',wrapCSS: "comingsoon-wrap" }]);
+        /*INPUT TEMP
+        $(".moments-publish").click(function(){
+          $(".moments-img input").toggle();
+          $(".moments-active").toggle();
+          $(".phototooltip").toggle();
+          $(".photoselected").toggle();
+        });**/
       } else {
         console.log('no slider');
       }
