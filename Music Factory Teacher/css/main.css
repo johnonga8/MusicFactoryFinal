@@ -370,7 +370,7 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 .lang-zh .modalcontent h2{font-size:26px!important}
 .lang-zh .modalcontent h3{font-size:24px!important}
 .lang-zh h3 strong{font-size:24px!important}
-.lang-zh .tp-content h2, .lang-zh .detail-wrap h2{font-size:26px!important}
+.lang-zh .tp-content h2, .lang-zh .detail-wrap h2{font-size:30px!important}
 .lang-zh .tp-content h3, .lang-zh .detail-wrap h3{font-size:24px!important;color:#000!important}
 .lang-zh .tp-content p, .lang-zh .detail-wrap p{color:#1c516c!important}
 .lang-zh .tp-content li, .lang-zh .detail-wrap li{color:#1c516c!important}
@@ -449,24 +449,27 @@ a.bttn-go{float:right;font:normal 12px/22px "museo_sans700";background:#ff8e3c;b
 .individual-student-name{font:normal 18px/50px "museo_sans500";color:#12384b;display:inline-block}
 .individual-student-progress{font:normal 14px "museo_sans300";color:#9d9e9e;float:right;line-height:30px;margin-right:25px}
 .individual-student-progress.progress-incomplete{color:#ff0000}
+.individual-student-progress-funsheet{font:normal 16px "museo_sans700";color:#e95a43;line-height:30px;width:125px;text-align:center;float:right}
+.individual-student-progress-funsheet.progress-incomplete{color:#40ab73}
 /**INDIVIDUAL STUDENT OVERVIEW**/
 .individual-student-masthead-overview  h3 {font:18px museo_sans700,sans-serif; color:#69a1b5; margin:40px 0 30px}
-.individual-student-masthead-overview-mid .iso-profile-photo-wrap{width:10%;float:left}
-.individual-student-masthead-overview-mid .iso-profile-photo{width:65px;height:65px;border-radius:50%;margin-right:10px;float:left}
-.individual-student-masthead-overview-mid  .individual-student-masthead-overview-inner-wrap{width:90%;float:left}
-.individual-student-masthead-overview-mid .class-title strong{font:16px museo_sans900,sans-serif; color:#12384b;float:left}
+.individual-student-masthead-overview-mid .iso-profile-photo-wrap{float:left;margin-right:10px;width:75px}
+.individual-student-masthead-overview-mid .iso-profile-photo{width:55px;height:55px;border-radius:50%;}
+.individual-student-masthead-overview-mid  .individual-student-masthead-overview-inner-wrap{float:left;margin-top:10px;max-width:85%}
+.individual-student-masthead-overview-mid .class-title strong{font:14px museo_sans500,sans-serif; color:#7d8487;float:left;margin-bottom:10px}
 .individual-student-masthead-overview-mid .book-title strong{font:14px museo_sans700,sans-serif; color:#7d8487;text-align:right}
-.overview-report-wrap{background:#f5f6f6;margin-top:25px}
-.overview-report-title{background:url(../img/bg-progress.png) right center no-repeat #b0c3ca;padding-left:20px;height:50px;line-height:55px}
-.overview-report-title h2{font:normal 21px/50px museo_sans900, sans-serif;color:#fff}
-.overview-report-content{padding:30px 20px 0px}
+.overview-report-wrap{margin-top:25px}
+.overview-report-title{height:50px;line-height:55px;border-bottom:3px solid #dbe1e6}
+.overview-report-title h2{font:normal 21px/50px museo_sans900, sans-serif;color:#12384b}
+.overview-report-content{padding:0px}
 .overview-report-title-inner{margin-bottom:20px}
 .overview-report-title-inner h3{font:18px museo_sans700,sans-serif;color:#12384b}
 .overview-report-title-inner h4{font:18px museo_sans500,sans-serif;color:#12384b}
 .overview-report-semester .individual-student-link-wrap{margin-top:0}
-.overview-report-semester strong{font:18px/30px museo_sans500,sans-serif;color:#76c4e0}
-.overview-report-semester .row-border-bottom {margin-top:25px;padding-bottom:20px}
+.overview-report-semester strong{font:18px/30px museo_sans500,sans-serif;color:#12384b}
+.overview-report-semester .row-border-bottom {margin-top:15px;padding-bottom:10px}
 .overview-report-semester .row-border-bottom:last-child{border:none}
+.overview-report-semester .row-border-bottom .row{padding:0 20px}
 /**CLASS PROGRESS**/
 .class-progress h1{font-size:26px}
 .class-progress .masthead-classes-right strong{font-size:13px}
@@ -511,24 +514,30 @@ nav.header-links>div>ul>li {display:inline-block; margin-left:10px}
 nav.header-links>div>ul>li a{display:block}
 .student-photo h2 {font:21px museo_sans900,sans-serif; color:#12384b; display:inline-block; vertical-align:middle}
 .student-photo img {display:inline-block; margin-right:10px}
+.student-photo{float:left;width:75px}
+.student-profile{float:left;max-width:85%;margin-bottom:10px}
 .book-title, .class-section {text-align:right}
 .class-section {margin-top:10px}
 .class-section strong {font:16px museo_sans900,sans-serif; color:#12384b}
 .book-title strong {font:14px museo_sans700,sans-serif; color:#7d8487}
-.student-progress h1 {padding:10px 0 20px}
-.student-progress h3 {font:18px museo_sans700,sans-serif; color:#69a1b5; margin:40px 0 30px}
+.student-progress h1 {padding:10px 0 5px}
+.student-progress h3 {font:18px museo_sans700,sans-serif; color:#12384b; margin:40px 0 20px}
 .student-progress ol{padding-left:0}
-.student-progress-content strong{font:15px museo_sans900,sans-serif; color:#12384b;margin-bottom:20px}
+.student-progress-num{width:20px;float:left;font:15px museo_sans900,sans-serif; color:#12384b}
+.student-progress-question strong{max-width:85%;float:left}
+.student-progress-content strong{font:15px museo_sans900,sans-serif; color:#12384b;}
+.student-progress-questions-wrap{margin-bottom:20px;border-bottom:1px solid #e5ebeb}
+.student-progress-grouping{margin-bottom:40px}
 .student-progress textarea{padding:20px;margin-top:20px;width:100%;height:200px;border:1px solid #e5ebeb;resize:none;overflow:auto;color:#12384b;font:15px museo_sans300, sans-serif}
 .student-progress textarea[disabled]{background:#f3f3f3;border:1px solid #f3f3f3}
 .choices ul {padding-left:20px; margin-top:20px}
 .choices ul li {list-style:none; display:inline-block; margin-right:50px}
-.student-progress-bttn-wrap {margin:20px 0}
+.student-progress-bttn-wrap {margin:20px 0 50px}
 .student-progress-bttn-wrap  div{float:right}
 .student-progress-bttn{background:#ff8e3c;margin-left:20px;color:#fff;font:14px museo_sans700,sans-serif;text-transform:capitalize;padding:10px 15px;border-radius:3px;border:1px solid #ff8e3c}
 .bttn-inactive{border-color:#e4e4e4;background-color:#f8f8f8;color:#b3b3b4;font-size:14px}
 .bttn-regular{border-color:#e4e4e4;background-color:#f8f8f8;color:#697982;font-size:14px}
-.student-progress-bttn-cancel{font:14px museo_sans700, sans-serif;color:#ff0000;line-height:37px}
+.student-progress-bttn-cancel{font:14px museo_sans700, sans-serif;color:#949494;line-height:37px;text-decoration:underline}
 .student-progress-bttn-wrap .preloader-img{margin-top:8px}
 /*radio styles*/
 .student-progress ol>li {list-style-position:inside; font:15px museo_sans900,sans-serif; color:#12384b; border-bottom:1px solid #e5ebeb; padding-bottom:20px; margin-bottom:20px}
