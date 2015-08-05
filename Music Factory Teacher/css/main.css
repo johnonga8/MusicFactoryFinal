@@ -385,6 +385,7 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 #preface .tp-content strong{font-size:15px}
 
 /**FINAL PHASE**/
+.versioncss{font-size:8px;padding:10px}
 .notify-wrap .modalcontent{max-width:600px;padding:50px 0;font:18px "museo_sans700", sans-serif;text-align:center}
 .notifybttn-wrap{width:295px;margin:20px auto}
 .notify-wrap .preloader-img{float:none;margin:0 auto}
