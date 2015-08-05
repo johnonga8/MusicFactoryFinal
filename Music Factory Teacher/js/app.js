@@ -29,6 +29,7 @@ function hideDrawerKG() {
 //MEDIA
 function PauseMedia() {
   if ( $( "video" ).length ) { 
+    $("video").attr('poster', './img/videoposter.jpg');
     $("video").get(0).pause();
     $("video").load();
   } else {

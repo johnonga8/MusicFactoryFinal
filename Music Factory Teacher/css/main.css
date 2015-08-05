@@ -25,7 +25,7 @@
  /*------------------------------------*\
     #SETTINGS
 \*------------------------------------*/
-html{background:#e4e9ed;margin:0 auto;width:/**height:576px!important - 1024px!important;**/}
+html{background:#e4e9ed;margin:0 auto;/**height:576px!important - 1024px!important;**/}
 body{font:normal 17px/1.5  "museo_sans300" ,sans-serif;color:#12384b;}
 a, a:hover, a:visited, a:active, a:focus{text-decoration:none;outline:none;}
 .nav > li > a:focus, .nav > li > a:hover {background-color:transparent}
@@ -343,7 +343,7 @@ span.tooltiparrow{background:url(../img/tooltip-arrow.png) no-repeat;position:ab
 #alreadylogged .js-modal-close{float:right;margin-right:0}
 #alreadylogged.modalcontent p{font-size:15px}
 .choose-language{padding:20px 10px;width:270px}
-.lang-zh .choose-language{padding:20px 10px;width:220px}
+.lang-zh .choose-language{padding:20px 10px;width:320px}
 .lang-zh .km-lessonnum{display:none!important}
 .choose-language strong{font:normal 13px "museo_sans700";color:#7d8487;line-height:30px;margin-right:10px}
 .choose-language select{padding:5px!important;background:#f7f7f7!important;color:#7d8487!important;font-size:13px;height:30px;min-width:100px;border:none!important}
@@ -370,39 +370,55 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 .lang-zh .modalcontent h3{font-size:24px!important}
 .lang-zh h3 strong{font-size:24px!important}
 .lang-zh .tp-content h2, .lang-zh .detail-wrap h2{font-size:26px!important}
-.lang-zh .tp-content h3, .lang-zh .detail-wrap h3{font-size:24px!important}
+.lang-zh .tp-content h3, .lang-zh .detail-wrap h3{font-size:24px!important;color:#000!important}
 .lang-zh .tp-content p, .lang-zh .detail-wrap p{color:#1c516c!important}
 .lang-zh .tp-content li, .lang-zh .detail-wrap li{color:#1c516c!important}
-.lang-zh .tp-content strong, .lang-zh .detail-wrap strong{color:#1c516c!important}
+.lang-zh .tp-content strong, .lang-zh .detail-wrap strong{color:#000!important}
 .lang-zh .tp-content .gallery-center{color:#1c516c!important}
 .lang-zh .modalcontent p{color:#1c516c!important}
 .lang-zh .modalcontent li{color:#1c516c!important}
 .lang-zh .modalcontent strong{color:#1c516c!important}
 .lang-zh .audio-block strong{color:#1c516c!important}
+.lang-zh .bookdetails-drawer-firstnav a.km-widget.km-button{font:normal 16px "museo_sans700"!important}
+.lang-zh .bookdetails-tabs li{font-size:18px!important}
 #preface .tp-content strong{font-size:15px}
+
+/**FINAL PHASE**/
+.notify-wrap .modalcontent{max-width:600px;padding:50px 0;font:18px "museo_sans700", sans-serif;text-align:center}
+.notifybttn-wrap{width:295px;margin:20px auto}
+.notify-wrap .preloader-img{float:none;margin:0 auto}
+.bttn-notify{background:#f8f8f8;height:35px;width:135px;border-radius:5px;float:left;margin-right:20px;font:14px/35px "museo_sans700",sans-serif;color:#697982;border:1px solid #e4e4e4}
+.bttn-notify:last-child{margin-right:0}
+/**
+.choose-language{width:370px}
+.language-bttn{float:right;margin-right:10px;background:#48c298;height:30px;width:85px;text-align:center;line-height:30px;border-radius:5px;color:#fff;font:13px/30px museo_sans700, sans-serif;border-style:none}
+h1.lineheight-85{line-height:85px}
+**/
 /**ASIDE**/
 .aside-myclasses {margin-left:-15px;margin-right:-15px}
 .aside-myclasses-title{font:normal 14px "museo_sans700";background:#93ceca;text-transform:uppercase;color:#2f716d;padding:10px 0 10px 30px}
 .aside-myclasses-title .icon-class{min-height:18px}
 .aside-myclasses-class{background:#549d99;border-bottom:1px solid #7ebbb7;padding:10px 0 10px 60px;}
 .aside-myclasses-class.aside-myclasses-class-active{background:#398682}
-.aside-myclasses-class a{font:normal 14px "museo_sans500";color:#def5f4;padding:0 10px}
-.aside-myclasses-class.aside-myclasses-class-active a{color:#79dcd6}
+.aside-myclasses-class span{font:normal 14px "museo_sans500";color:#def5f4;padding:0 10px}
+.aside-myclasses-class.aside-myclasses-class-active span{color:#79dcd6}
 .wrap-signout{position:absolute;background:#6baeaa;width:100%;height:40px;bottom:0;height:40px;}
 div.bttn-signout.km-button{background:url(../img/icon-signout.png) left center no-repeat!important;font:normal 14px "museo_sans500";color:#eafcfb!important;padding-left:40px;margin-left:20px;bottom:0;line-height:20px}
 /**MY CLASSES**/
 .myclasses-titleblock-wrap{margin:10px 0;border-bottom:1px solid #e5ebeb;padding:10px 0 5px}
-.myclasses-titleblock{margin-bottom:10px}
-.myclasses-title{float:left;border-right:1px solid #e5ebeb;padding:15px 10px 15px 0}
-.myclasses-title h2{font:normal 22px "museo_slab700";color:#76c4e0}
-.myclasses-details {float:left;padding:10px}
+.myclasses-titleblock{margin-bottom:20px}
+.myclasses-title h2{font:normal 22px "museo_slab700";color:#12384b}
+.myclasses-title{margin-bottom:10px}
+.myclasses-details {float:left;}
 .myclasses-details strong{font:normal 14px "museo_sans500";color:#a2a7a9;display:block;margin-bottom:5px}
 a.bttn-view{text-transform:capitalize;width:90px;height:30px;padding:0;text-align:center;line-height:30px;display:inline-block;float:right}
-.myclasses-titleblock-right .bttn-view{margin-top:10px}
 .myclasses-titleblock-wrap .notification-warning:last-child{margin-bottom:20px}
 /**INDIVIDUAL CLASS**/
 #individual-classes-tab-student{display:none}
-.masthead-classes-right strong{display:block;text-align:right;margin:10px 0 5px}
+.individual-classes-content{margin-bottom:20px}
+.masthead-classes-left strong{display:block;color:#76a2b2;font:14px "museo_slab700", sans-serif;text-transform:uppercase}
+.masthead-classes-right, .masthead-classes-left{padding-top:10px;}
+.masthead-classes-right strong{display:block;text-align:right;margin:5px 0}
 .individual-classes-tabcontrolwrap{border-bottom:1px solid #e5ebeb;height:55px;margin-bottom:25px}
 .individual-classes-tabscontrol{font:normal 16px "museo_sans900";color:#b5bdc0;float:left;line-height:50px;margin-right:40px;cursor:pointer}
 .individual-classes-tabscontrol.tabcontrol-active{color:#ff8e3c;border-bottom:5px solid #ff8e3c}
@@ -417,8 +433,8 @@ a.bttn-view{text-transform:capitalize;width:90px;height:30px;padding:0;text-alig
 .progress-bar{position:absolute;background:#56c39b;top:0;left:0;border-radius:10px 0 0 10px;height:15px}
 .progress-circle{width:20px;height:20px}
 .progress-initial{border-radius:50%;height:15px;width:15px;border-radius: 50%;z-index: 1;position: absolute;background:#078d5c;text-align: center;font-size: 11px;color:#fff;line-height:15px}
-.progress-value{border-radius:50%;height:35px;width:35px;background:#078d5c;z-index:2;position:absolute;right:-10px;top:-10px;line-height:35px;font-size:11px}
-.progress-tooltip{background:#56c39b;position:absolute;right:-10px;top:45px;width:55px;height:22px;color:#058154;font:normal 12px/22px "museo_sans900"}
+.progress-value{border-radius:50%;height:35px;width:35px;background:#078d5c;z-index:2;position:absolute;right:-10px;top:-10px;font-size:11px;font:12px/35px "museo_sans900"}
+.progress-tooltip{background:#737c81;position:absolute;right:-10px;top:45px;width:55px;height:22px;color:#dde0e2;font:normal 12px/22px "museo_sans700"}
 .progress-tooltip:before{content:url(../img/triangle-green.png);position:absolute;top:-12px;right:18px;height:7px;width:17px}
 .individual-classes-button {float:left;width:20%}
 .individual-classes-button a.bttn{width:90px;height:30px;padding:0;display:block;font:normal 14px/30px "museo_sans300";text-transform:capitalize;text-align:center;margin-left:20px;margin-top:-8px;float:right}
@@ -453,6 +469,7 @@ a.bttn-go{float:right;font:normal 12px/22px "museo_sans700";background:#ff8e3c;b
 .overview-report-semester .row-border-bottom:last-child{border:none}
 /**CLASS PROGRESS**/
 .class-progress h1{font-size:26px}
+.class-progress .masthead-classes-right strong{font-size:13px}
 .class-progress-wrap{margin:20px 0}
 .class-progress-header{border-bottom:1px solid #e5ebeb;margin-bottom:20px}
 .class-progress-header h2{font:21px museo_sans900,sans-serif;color:#69a1b5;margin-bottom:10px}
@@ -460,10 +477,11 @@ a.bttn-go{float:right;font:normal 12px/22px "museo_sans700";background:#ff8e3c;b
 .class-progress-header .question-control{margin-bottom:20px;line-height:20px}
 .class-progress-header .question-control span{text-align:center;font:13px museo_sans700;color:#b9b9b9;margin:0 5px;width:22px;height:22px;display:inline-block;}
 .class-progress-header span.question-control-active{background:#ff8e3c;border-radius:50%;width:22px;height:22px;display:inline-block;color:#fff;line-height:22px}
+.class-progress-header span.question-control-active:last-child{border-radius:5px;width:auto;height:auto;padding:0 2px}
 .class-progress-content{display:none}
 .class-progress-content-active{display:block}
-.class-progress-content h3{color:#69a1b5;font:18px museo_sans700;margin-bottom:10px}
-.class-progress-content .question-item{color:#12384b;font:18px museo_sans900;margin-bottom:20px}
+.class-progress-content h3{color:#12384b;font:18px museo_sans900;margin-bottom:10px}
+.class-progress-content .question-item{color:#12384b;font:18px museo_sans700;margin-bottom:20px}
 .class-progress-content .question-number{width:4%;float:left}
 .class-progress-content .question-content{width:96%;float:left}
 .class-progress-content .class-table table{width:100%}
@@ -474,6 +492,12 @@ th.class-name{background:#fff}
 .class-table td{background:#eee;border:2px solid #fff;padding:0 10px;}
 .class-table span{vertical-align:middle;color:#12384b;font:15px museo_sans500,sans-serif;}
 .class-table img{border-radius:50%;width:30px;height:30px;margin-right:10px;}
+.remarks-student-head img{border-radius:50%;width:28px;height:28px;margin-right:10px;}
+.remarks-student-head span{font:15px/25px "museo_sans700";color:#12384b;vertical-align:middle}
+.remarks-student-textareawrap{height:20px;overflow:hidden}
+.remarks-student-textareawrap.textarea-unFocus{height:auto;overflow:visible}
+.remarks-student-wrap textarea{margin-left:35px;width:95%;border:none;color:#12384b;overflow:auto;resize:none;}
+.remarks-student-wrap textarea:focus{border:1px solid #e5ebeb;height:100px;}
 /**STUDENT PROGRESS**/
 .row-border-bottom {border-bottom:1px solid #e5ebeb; margin-bottom:10px;padding-bottom:10px}
 .icon-list {background:url(../img/icon-list.png) no-repeat left; padding-left:35px}
@@ -503,7 +527,9 @@ nav.header-links>div>ul>li a{display:block}
 .student-progress-bttn-wrap  div{float:right}
 .student-progress-bttn{background:#ff8e3c;margin-left:20px;color:#fff;font:14px museo_sans700,sans-serif;text-transform:capitalize;padding:10px 15px;border-radius:3px;border:1px solid #ff8e3c}
 .bttn-inactive{border-color:#e4e4e4;background-color:#f8f8f8;color:#b3b3b4;font-size:14px}
+.bttn-regular{border-color:#e4e4e4;background-color:#f8f8f8;color:#697982;font-size:14px}
 .student-progress-bttn-cancel{font:14px museo_sans700, sans-serif;color:#ff0000;line-height:37px}
+.student-progress-bttn-wrap .preloader-img{margin-top:8px}
 /*radio styles*/
 .student-progress ol>li {list-style-position:inside; font:15px museo_sans900,sans-serif; color:#12384b; border-bottom:1px solid #e5ebeb; padding-bottom:20px; margin-bottom:20px}
 .student-progress .choices input[type="radio"]{width:auto; height:auto; display:none}
@@ -519,7 +545,10 @@ nav.header-links>div>ul>li a{display:block}
 .class-table  input[type="radio"]:checked + label:after {content:""; background:url(../img/icon-radio--checked.png) no-repeat}
 .class-table  input[type="radio"]:checked + label {color:#3faa72}
 
-/**DELETE**/
-a.tempbutton{border:1px solid #ff8e3c!important;background:#ff8e3c!important;border-radius:3px;padding:10px 15px;min-width:250px;max-width:270px;display:block;margin:10px 0;color:#fff!important}
 /**small device**/
 .km-phone .km-android:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-phone.png) center center no-repeat #e4e9ed!important;}
+
+
+/**delte**/
+a.tempbutton{display:block;width:150px;background:#7ebbb7!important;border:1px solid #ff8e3c;border-radius:5px;margin:5px 0;color:#fff!important}
+a.tempbutton.done{background:#2f716d!important}
