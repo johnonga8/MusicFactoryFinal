@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Student Progress" id="mf-studentprogress" data-transition="overlay:down" data-before-show="beforeShowStudentProgress" data-after-show="showStudentProgress">    
+<div data-role="view" data-title="Student Progress" id="mf-studentprogress" data-transition="overlay:down" data-before-show="beforeShowStudentProgress" data-after-show="afterShowStudentProgress" data-before-hide="beforeHideStudentProgress">
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -17,10 +17,11 @@
       <div class="aside-myclasses">
         <div class="aside-myclasses-title"><strong><span class="icon-class"></span>My Classes</strong></div>
         <div data-role="scroller" style="height: 250px" id="scroll-myclasses">
-          <div class="aside-myclasses-class aside-myclasses-class-active"><a class="aside-classes-link">Class Joy 2015</a></div>
-          <div class="aside-myclasses-class"><a class="aside-classes-link">Class Unity 2015</a></div>
+          <div class="aside-myclasses-class aside-myclasses-class-active"><span class="aside-classes-link">Joy 2015 EN</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Joy 2015 - CH</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Unity 2015 - EN</span></div>
         </div>
-        <div class="wrap-signout"><a class="km-widget km-button bttn-signout">Sign Out</a></div>
+        <div class="wrap-signout"><div class="km-widget km-button bttn-signout">Sign Out</div></div>
       </div>
     </div>
     <!--end sidebar-->
@@ -43,64 +44,112 @@
 						</ul>
 					</div>
 				</nav>
-        <div class="row row-margin-null row-border-bottom">
+        <div class="row row-margin-null">
           <div class="col-xs-12">
-            <h1>Student Progress Report : 1st Semester</h1>
+            <div class="student-photo">
+              <img src="img/student-photo.png" alt="Student Photo">
+            </div>
+            <div class="student-profile">
+              <h1><span>Bai Guangyuan</span>: <span>Progress Report - 1st Sem</span></h1>
+              <div class="class-title"><strong>Class Joy 2015</strong></div>
+            </div>
           </div>
         </div>
-				<div class="row row-margin-null student-profile">
-				  <div class="col-xs-8 student-photo clearfix">
-					  <img src="img/student-photo.png" alt="Student Photo">
-						<h2>Bai Guangyuan</h2>
-					</div>
-					<div class="col-xs-4">
-					  <div class="class-section"><strong>Class Joy 2015</strong></div>
-					  <div class="book-title"><strong>Book : Owl Series - Blinkie Beats</strong></div>
-					</div>
-				</div>
       </div>
       <!--end masthead-->
       <div class="row row-margin-null js-student-progress js-form mode-editoff" data-role="scroller">   
         
 				<div class="col-xs-12 student-progress student-progress-content">
           <h3>Music Concepts:</h3>
-					<ol>
-					  <!--start concept 1-->
-					  <li><strong>I can identify the beat and tempo in music using different body movements</strong>
-						  <div class="choices">
-							  <ul>
-								  <li><input name="question-one" id="developing-one" type="radio" disabled><label for="developing-one">Developing</label></li>
-								  <li><input name="question-one" id="performing-one" type="radio" checked disabled><label for="performing-one">Performing</label></li>
-								  <li><input name="question-one" id="mastering-one" type="radio" disabled><label for="mastering-one">Mastering</label></li>
-								</ul>
-							</div>
-						</li>
-						<!--end concept 1-->
-						
-						<!--start concept 2-->
-					  <li><strong>I can identify strong and weak beats in music</strong>
-						  <div class="choices">
-							  <ul>
-								  <li><input name="question-two" id="developing-two" type="radio"><label for="developing-two">Developing</label></li>
-								  <li><input name="question-two" id="performing-two" type="radio"><label for="performing-two">Performing</label></li>
-								  <li><input name="question-two" id="mastering-two" type="radio"><label for="mastering-two">Mastering</label></li>
-								</ul>
-							</div>
-						</li>
-						<!--end concept 2-->
-					</ol>
+          <div class="student-progress-grouping">
+            <!--start concept 1-->
+            <div class="student-progress-questions-wrap">
+              <div class="student-progress-question clearfix">
+                <div class="student-progress-num">
+                1.
+                </div>
+                <strong>I can identify the beat and tempo in music using different body movements</strong>
+              </div>
+              <div class="choices">
+                <ul>
+                  <li><input name="question-one" id="developing-one" type="radio" disabled><label for="developing-one">Developing</label></li>
+                  <li><input name="question-one" id="performing-one" type="radio" checked disabled><label for="performing-one">Performing</label></li>
+                  <li><input name="question-one" id="mastering-one" type="radio" disabled><label for="mastering-one">Mastering</label></li>
+                </ul>
+              </div>
+            </div>
+            <!--end concept 1-->
+            <!--start concept 1-->
+            <div class="student-progress-questions-wrap">
+              <div class="student-progress-question clearfix">
+                <div class="student-progress-num">
+                2.
+                </div>
+                <strong>I can identify the beat and tempo in music using different body movements</strong>
+              </div>
+              <div class="choices">
+                <ul>
+                  <li><input name="question-one" id="developing-one" type="radio" disabled><label for="developing-one">Developing</label></li>
+                  <li><input name="question-one" id="performing-one" type="radio" checked disabled><label for="performing-one">Performing</label></li>
+                  <li><input name="question-one" id="mastering-one" type="radio" disabled><label for="mastering-one">Mastering</label></li>
+                </ul>
+              </div>
+            </div>
+            <!--end concept 1-->
+				  </div>
+          
+          <h3>Music Literacy:</h3>
+          <div class="student-progress-grouping">
+            <!--start concept 1-->
+            <div class="student-progress-questions-wrap">
+              <div class="student-progress-question clearfix">
+                <div class="student-progress-num">
+                1.
+                </div>
+                <strong>I can identify the beat and tempo in music using different body movements</strong>
+              </div>
+              <div class="choices">
+                <ul>
+                  <li><input name="question-one" id="developing-one" type="radio" disabled><label for="developing-one">Developing</label></li>
+                  <li><input name="question-one" id="performing-one" type="radio" checked disabled><label for="performing-one">Performing</label></li>
+                  <li><input name="question-one" id="mastering-one" type="radio" disabled><label for="mastering-one">Mastering</label></li>
+                </ul>
+              </div>
+            </div>
+            <!--end concept 1-->
+            <!--start concept 1-->
+            <div class="student-progress-questions-wrap">
+              <div class="student-progress-question clearfix">
+                <div class="student-progress-num">
+                2.
+                </div>
+                <strong>I can identify the beat and tempo in music using different body movements</strong>
+              </div>
+              <div class="choices">
+                <ul>
+                  <li><input name="question-one" id="developing-one" type="radio" disabled><label for="developing-one">Developing</label></li>
+                  <li><input name="question-one" id="performing-one" type="radio" checked disabled><label for="performing-one">Performing</label></li>
+                  <li><input name="question-one" id="mastering-one" type="radio" disabled><label for="mastering-one">Mastering</label></li>
+                </ul>
+              </div>
+            </div>
+            <!--end concept 1-->
+				  </div>
+          
           <strong>Remarks</strong>
           <textarea disabled></textarea>
           <div class="student-progress-bttn-wrap clearfix">
-            <div class="student-progress-bttn">Save and Evaluate Next Student</div>
-            <div class="student-progress-bttn bttn-inactive">Save Evaluation</div>
+            <!--<div class="student-progress-bttn">Save and Evaluate Next Student</div>-->
+            <div class="student-progress-bttn">Save Evaluation</div>
             <div class="student-progress-bttn-cancel fancybox-notify" href="#notification">Cancel</div>
           </div>
 				</div>
        <div id="notification" class="modalcontent">
          <p>Are You sure you want to leave this page without saving?</p>
-         <div class="bttn-notify">Yes</div> 
-         <div class="bttn-notify">No</div> 
+        <div class="clearfix notifybttn-wrap">
+          <div class="bttn-notify">Yes</div> 
+          <div class="bttn-notify">No</div> 
+        </div>
          <div class="preloader-img"><img src="./img/preloader.GIF"></div>
        </div>
       </div>

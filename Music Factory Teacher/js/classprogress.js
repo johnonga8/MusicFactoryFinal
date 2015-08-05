@@ -12,13 +12,32 @@ $('.question-control span').click(function(){
   $("#"+tab_id).addClass('class-progress-content-active');
 })
 //REMARKS 
-$('.remarks-student-textareawrap textarea').val().length;
-                      
-$('.remarks-student-textareawrap textarea').focus(function(){
-  $(this).parent('.remarks-student-textareawrap').addClass('textarea-unFocus');
-}).blur(function(){
-  $(this).parent('.remarks-student-textareawrap').removeClass('textarea-unFocus');
-});
+  $('.remarks-student-textareawrap textarea').focus(function(){
+    $(this).parent('.remarks-student-textareawrap').addClass('textarea-unFocus');
+  }).blur(function(){
+    $(this).parent('.remarks-student-textareawrap').removeClass('textarea-unFocus');
+  });
+/**
+var fullLength;
+function jsTextbox(){
+  $(".remarks-student-textareawrap textarea").each(function(i){
+    len=$(this).val().length;
+    fullLength = $(this).val();
+    if(len>100)
+    {
+      $(this).val($(this).val().substr(0,100)+'...');
+    }
+    return fullLength;
+  });
+  $('.remarks-student-textareawrap textarea').focus(function(){
+    $(this).parent('.remarks-student-textareawrap').addClass('textarea-unFocus');
+  }).blur(function(){
+    $(this).parent('.remarks-student-textareawrap').removeClass('textarea-unFocus');
+    $(this).val(fullLength);
+  });
+}
+**/
+                     
 //BINDING STARTS
 function beforeShowClassprogress(e)
 {

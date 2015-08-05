@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Individual Student" id="mf-individualstudent" data-transition="overlay:down" data-before-show="beforeShowIndividualStudent" data-after-show="showIndividualStudent">    
+<div data-role="view" data-title="Individual Student" id="mf-individualstudent" data-transition="overlay:down" data-before-show="beforeShowIndividualStudent" data-after-show="afterShowIndividualStudent" data-before-hide="beforeHideIndividualStudent">    
     <!--start sidebar-->
     <div class="col-xs-3 main-aside js-fullheight-side">
       <div class="branding-wrap">
@@ -17,10 +17,11 @@
       <div class="aside-myclasses">
         <div class="aside-myclasses-title"><strong><span class="icon-class"></span>My Classes</strong></div>
         <div data-role="scroller" style="height: 250px" id="scroll-myclasses">
-          <div class="aside-myclasses-class aside-myclasses-class-active"><a class="aside-classes-link">Class Joy 2015</a></div>
-          <div class="aside-myclasses-class"><a class="aside-classes-link">Class Unity 2015</a></div>
+          <div class="aside-myclasses-class aside-myclasses-class-active"><span class="aside-classes-link">Joy 2015 EN</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Joy 2015 - CH</span></div>
+          <div class="aside-myclasses-class"><span class="aside-classes-link">Class Unity 2015 - EN</span></div>
         </div>
-        <div class="wrap-signout"><a class="km-widget km-button bttn-signout">Sign Out</a></div>
+        <div class="wrap-signout"><div class="km-widget km-button bttn-signout">Sign Out</div></div>
       </div>
     </div>
     <!--end sidebar-->
@@ -49,7 +50,6 @@
               <h1>Bai Guangyuan</h1>
               <div class="individual-student-masthead-overview-inner">
                 <div class="class-title"><strong>Class Joy 2015</strong></div>
-                <div class="book-title"><strong>Book : Owl Series - Blinkie Beats</strong></div>
               </div>
             </div>          
           </div>
@@ -61,10 +61,6 @@
           <div class="overview-report-wrap">
             <div class="overview-report-title"><h2>Progress Report</h2></div>
             <div class="overview-report-content">
-              <div class="overview-report-title-inner">
-                <h3>Owl Series</h3>
-                <h4>Language: English</h4>
-              </div>
               <div class="overview-report-semester">
                 <div class="row-border-bottom">
                   <div class="row">
@@ -74,7 +70,7 @@
                     <div class="col-xs-6">
                       <div class="individual-student-link-wrap clearfix">
                         <a class="bttn bttn-view">View</a>
-                        <span class="individual-student-progress">Complete</span>
+                        <span class="individual-student-progress progress-incomplete">Incomplete</span>
                       </div>
                     </div>
                   </div>
@@ -97,10 +93,70 @@
           </div>
           <div class="overview-report-wrap">
             <div class="overview-report-title"><h2>Funsheet Status</h2></div>
-            <div class="overview-report-content">
-              <div class="overview-report-title-inner">
-                <h3>Coming Soon</h3>
-                <br/>
+              <div class="overview-report-content">
+                <div class="overview-report-title-inner">
+                  <div class="overview-report-semester">
+                    <div class="row-border-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <strong>Funsheet No. 1</strong>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="individual-student-link-wrap clearfix">
+                            <span class="individual-student-progress-funsheet progress-incomplete">Done</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row-border-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <strong>Funsheet No. 2</strong>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="individual-student-link-wrap clearfix">
+                            <span class="individual-student-progress-funsheet">Not Yet Done</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row-border-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <strong>Funsheet No. 3</strong>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="individual-student-link-wrap clearfix">
+                            <span class="individual-student-progress-funsheet">Not Yet Done</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row-border-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <strong>Funsheet No. 4</strong>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="individual-student-link-wrap clearfix">
+                            <span class="individual-student-progress-funsheet">Not Yet Done</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row-border-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <strong>Funsheet No. 5</strong>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="individual-student-link-wrap clearfix">
+                            <span class="individual-student-progress-funsheet">Not Yet Done</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>

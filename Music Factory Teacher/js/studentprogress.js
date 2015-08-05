@@ -10,3 +10,19 @@ $(".js-editbttn").click(function(){
   $('.js-form input').prop('disabled', function(i, v) { return !v; });
   $('.js-form textarea').prop('disabled', function(i, v) { return !v; });
 });
+//BINDING STARTS
+function beforeShowStudentProgress(e)
+{
+
+}
+function afterShowStudentProgress(e)
+{
+    $(".preloader-mf").hide();
+    var windowHeight = $(window).height();
+    var myClassesHead = $("#mf-studentprogress .listing-masthead-wrap").height();
+    $('.js-student-progress').css('height', windowHeight - myClassesHead);
+}
+function beforeHideStudentProgress(e)
+{
+  //Do Something
+}
