@@ -402,7 +402,7 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
         },
         GoToLibrary: function (e) {
-           // $(".preloader-mf").show();
+            $(".preloader-mf").show();
             window.location = "#views/mf-booklisting.html";
         },
     });
@@ -587,7 +587,7 @@ function GenerateInfantPrefaceDetails(book) {
         NextLessonClick: function (e) {
             currentLessonNumber = firstLesson.LessonNumber;
             currentChapterNumber = firstLesson.ThemeNumber;
-           // $(".preloader-mf").show();
+            $(".preloader-mf").show();
             app.navigate("views/mf-infantbookdetails.html");
         },
         GoToLibrary: function (e) {
@@ -677,8 +677,7 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
             GenerateInfantLessonDetails(currentBook, nextLesson.ThemeNumber, nextLesson.LessonNumber);
         },
         GoToLibrary: function (e) {
-            //window.location = "#views/mf-booklisting.html";
-           // $(".preloader-mf").show();
+            $(".preloader-mf").show();
             app.navigate(dashboardURL);
         },
     });
