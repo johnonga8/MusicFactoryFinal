@@ -6,8 +6,7 @@
 //BINDING STARTS
 function beforeShowListing(e)
 {
-    var books = GetAllBooks();
-    BindBooklistingDetails(books);
+    BindBooklistingDetails(allBooks);
 }
 function beforeHideListing(e)
 {

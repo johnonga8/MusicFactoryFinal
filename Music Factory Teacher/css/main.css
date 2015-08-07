@@ -27,6 +27,7 @@
 \*------------------------------------*/
 html{background:#e4e9ed;margin:0 auto;/**height:576px!important - 1024px!important;**/}
 body{font:normal 17px/1.5  "museo_sans300" ,sans-serif;color:#12384b;}
+.pretest{position:fixed;width:100%;height:100%;background:rgba(255,255,255,0.7);z-index:100000000}
 a, a:hover, a:visited, a:active, a:focus{text-decoration:none;outline:none;}
 .nav > li > a:focus, .nav > li > a:hover {background-color:transparent}
  /*------------------------------------*\
@@ -138,6 +139,7 @@ div.bttn-signout.km-button span{line-height:22px}
 .marg-b-15{margin-bottom:15px}
 .marg-b-20{margin-bottom:20px}
 .marg-t-20{margin-top:20px}
+.marg-t-120{margin-top:120px}
 .marg-t-150{margin-top:150px}
 .marg-t-200{margin-top:200px}
 /**ICONS**/

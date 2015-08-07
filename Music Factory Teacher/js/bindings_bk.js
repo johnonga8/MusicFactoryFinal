@@ -44,18 +44,15 @@ function LogIn(username, password, isBypass) {
         switch (response.ResponseCode) {
             case 2: //UserNotFound
             case 7: //Unknown
-                $(".preloader-log").hide();
                 $(".login-error-invalid").show();
                 break;
 
             case 3: //UserLoggedFromDifferentIp
             case 6: //UserLoggedFromDifferentComputer
             case 9: //UserAlreadyLoggedIn
-                $(".preloader-log").hide();
                 $.fancybox.open([{ href: '#alreadylogged' }]);
                 break;
             case 99: //DeactivatedAccount
-                $(".preloader-log").hide();
                 $(".login-error-deactivated").show();
                 break;
             default:
@@ -97,18 +94,14 @@ function GenerateLoginDetails() {
         },
         Login: function (e) {
             $(".preloader-log").show();
-            setTimeout(ajaxPreloader, 100);
-            function ajaxPreloader(){
-              LogIn($("#login-username").val(), $("#login-password").val(), false);
-            }
+            LogIn($("#login-username").val(), $("#login-password").val(), false);
+            $(".preloader-log").hide();
         },
         LogOffUser: function (e) {
             $(".preloader-img").show();
-            setTimeout(ajaxPreloader, 100);
-            function ajaxPreloader(){
-              LogoutUser($("#login-username").val());
-              LogIn($("#login-username").val(), $("#login-password").val());
-            }
+            LogoutUser($("#login-username").val());
+            LogIn($("#login-username").val(), $("#login-password").val());
+            $(".preloader-img").hide();
         },
         Cancel: function (e) {
             $.fancybox.close([{ href: '#alreadylogged' }]);
@@ -130,6 +123,9 @@ function GetAllBooks() {
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         data: null,
+        beforeSend: function(){
+            $(".preloader-mf").show();
+           },
         success: function (result) {
             books = result.d;
         },
@@ -148,6 +144,9 @@ function GetTeacherProfile(username){
         dataType: "json",
         data: JSON.stringify({ username: username }),
         async: false,
+        beforeSend: function(){
+            $(".preloader-mf").show();
+           },
         success: function (result) {
             teacherProfile = result.d;
         },
@@ -184,13 +183,9 @@ function GenerateTeacherProfile() {
         SignOutLabel: appLabels.First(function (label) { return label.key == "SignOutLabel" }).value,
         SignOut: function(e){
           $(".preloader-mf").show();
-          setTimeout(ajaxPreloader, 100);
-          function ajaxPreloader(){
           LogoutUser (currentUserName);
           app.navigate("#");
           $("body").removeClass("lang-zh");
-          $(".preloader-log").hide();
-          }
         }
     });
     
@@ -203,15 +198,12 @@ function GenerateKinderBooks(kinderbooks) {
         KinderBooks: kinderbooks,
         SelectBook: function (e) {
             $(".preloader-mf").show();
-            setTimeout(ajaxPreloader, 100);
-            function ajaxPreloader(){
-              currentBookId = e.data.Id;
-              currentBookCultureName = e.data.CultureName;
-              currentBookType = e.data.Type;
-              GetKinderBookById(currentBookId, currentBookCultureName);
-              app.navigate("views/mf-kinderbookcover.html");
-             }
-
+            currentBookId = e.data.Id;
+            currentBookCultureName = e.data.CultureName;
+            currentBookType = e.data.Type;
+            GetKinderBookById(currentBookId, currentBookCultureName);
+            //window.location = "#views/mf-kinderbookcover.html";
+            app.navigate("views/mf-kinderbookcover.html");
         }
     });
     kendo.bind($(".booklisting-kinder"), KinderBooksViewModel);
@@ -223,14 +215,12 @@ function GenerateInfantBooks(infantbooks) {
         InfantBooks: infantbooks,
         SelectBook: function (e) {
             $(".preloader-mf").show();
-            setTimeout(ajaxPreloader, 100);
-              function ajaxPreloader(){
-              currentBookId = e.data.Id;
-              currentBookCultureName = e.data.CultureName;
-              currentBookType = e.data.Type;
-              GetInfantBookById(currentBookId, currentBookCultureName)
-              app.navigate("views/mf-infantbookcover.html");
-            }
+            currentBookId = e.data.Id;
+            currentBookCultureName = e.data.CultureName;
+            currentBookType = e.data.Type;
+            GetInfantBookById(currentBookId, currentBookCultureName)
+            //window.location = "#views/mf-infantbookcover.html";
+            app.navigate("views/mf-infantbookcover.html");
         }
     });
     kendo.bind($(".booklisting-infant"), InfantBooksViewModel);
@@ -238,7 +228,6 @@ function GenerateInfantBooks(infantbooks) {
 //------FUNCTIONS FOR BOOK LISTING END-----//
 
 //------FUNCTIONS FOR KINDER BOOK DETAILS START-----//
-
 function GetKinderBookById(_bookId, _cultureName) {
     $.ajax({
         type: "POST",
@@ -247,6 +236,10 @@ function GetKinderBookById(_bookId, _cultureName) {
         dataType: "json",
         data: JSON.stringify({ bookId: _bookId, cultureName: _cultureName }),
         async: false,
+        beforeSend: function(){
+          /**start test here***/
+        $(".preloader-mf").show();
+           },
         success: function (result) {
             var book = result.d;
             currentBook = book;
@@ -304,7 +297,7 @@ function GenerateKinderTableOfContents(kinderbook) {
                 GenerateKinderLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
             }
             else {
-               // $(".preloader-mf").show();
+                $(".preloader-mf").show();
                 window.location = "#views/mf-kinderbookdetails.html";
             }
         },
@@ -402,7 +395,7 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
         },
         GoToLibrary: function (e) {
-           // $(".preloader-mf").show();
+            $(".preloader-mf").show();
             window.location = "#views/mf-booklisting.html";
         },
     });
@@ -442,13 +435,12 @@ function GenerateKinderGlossaryDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-mf").show();
             window.location = "#views/mf-booklisting.html";
         },
         PrevLessonClick: function (e) {
             currentLessonNumber = lastLesson.LessonNumber;
             currentChapterNumber = lastLesson.ChapterNumber;
-           // $(".preloader-mf").show();
+            $(".preloader-mf").show();
             window.location = "#views/mf-kinderbookdetails.html";
         },
     });
@@ -482,6 +474,9 @@ function GetInfantBookById(_bookId, _cultureName) {
         dataType: "json",
         data: JSON.stringify({ bookId: _bookId, cultureName: _cultureName }),
         async: false,
+        beforeSend: function(){
+            $(".preloader-mf").show();
+           },
         success: function (result) {
             var book = result.d;
             currentBook = book;
@@ -540,17 +535,20 @@ function GenerateInfantTableOfContents(infantbook) {
             }
             else {
                 //window.location = "#views/mf-infantbookdetails.html";
-               // $(".preloader-mf").show();
+                $(".preloader-mf").show();
                 app.navigate("views/mf-infantbookdetails.html");
             }
         },
         GoToPreface: function (e) {
+            // window.location = "#views/mf-infantbookpreface.html";
             app.navigate("views/mf-infantbookpreface.html");
         },
         GoToCover: function (e) {
+            //window.location = "#views/mf-infantbookcover.html";
             app.navigate("views/mf-infantbookcover.html");
         },
         GoToGlossary: function (e) {
+            // window.location = "#views/mf-infantbookglossary.html";
             app.navigate("views/mf-infantbookglossary.html");
         },
     });
@@ -567,6 +565,7 @@ function GenerateInfantCoverDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
+            // window.location = "#views/mf-booklisting.html";
             $(".preloader-mf").show();
             app.navigate(dashboardURL);
         },
@@ -587,11 +586,13 @@ function GenerateInfantPrefaceDetails(book) {
         NextLessonClick: function (e) {
             currentLessonNumber = firstLesson.LessonNumber;
             currentChapterNumber = firstLesson.ThemeNumber;
-           // $(".preloader-mf").show();
+            //window.location = "#views/mf-infantbookdetails.html";
+            $(".preloader-mf").show();
             app.navigate("views/mf-infantbookdetails.html");
         },
         GoToLibrary: function (e) {
-           // $(".preloader-mf").show();
+            // window.location = "#views/mf-booklisting.html";
+            $(".preloader-mf").show();
             app.navigate(dashboardURL);
         },
     });
@@ -607,6 +608,7 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
     var prevLessonNumber = "";
     var prevLesson;
     if (currentIndex > 0) {
+        //prevLesson = GetLessonByNumber(book.Lessons, (parseInt(lessonNumber) - 1));
         prevLesson = book.Lessons[currentIndex - 1];
     }
     if (prevLesson == null || prevLesson.LessonNumber == 0) {
@@ -678,7 +680,7 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
         },
         GoToLibrary: function (e) {
             //window.location = "#views/mf-booklisting.html";
-           // $(".preloader-mf").show();
+            $(".preloader-mf").show();
             app.navigate(dashboardURL);
         },
     });
@@ -702,7 +704,7 @@ function GenerateInfantGlossaryDetails(book) {
             currentLessonNumber = lastLesson.LessonNumber;
             currentChapterNumber = lastLesson.ThemeNumber;
             //  window.location = "#views/mf-infantbookdetails.html";
-           // $(".preloader-mf").show();
+            $(".preloader-mf").show();
             app.navigate("views/mf-infantbookdetails.html");
         },
     });
@@ -741,7 +743,6 @@ function LogoutUser(username) {
         async: false,
         complete: function () {
             $.fancybox.close([{ href: '#alreadylogged' }]);
-            $(".preloader-img").hide();
         },
         success: function (result) {
             isSuccessful = result.d;
@@ -762,6 +763,9 @@ function GetTeacherAppLabels(cultureName) {
         dataType: "json",
         data: JSON.stringify({ cultureName: cultureName }),
         async: false,
+        beforeSend: function(){
+            $(".preloader-mf").show();
+           },
         success: function (result) {
             appLabels = result.d;
         },
