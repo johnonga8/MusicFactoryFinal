@@ -360,7 +360,8 @@ a.password-remember{text-decoration:underline;margin-left:20px;color:#ff914e;fon
 .tp-content h2, .detail-wrap h2{font-size:24px}
 .tp-content h3, .detail-wrap h3{font-size:22px}
 .tp-content p, .detail-wrap p{font-size:20px}
-.mpc-disclaimer p{font-size:15px}
+.mpc-disclaimer p{font-size:16px}
+.lang-zh .mpc-disclaimer p{font-size:18px!important}
 .tp-content li, .detail-wrap li{font-size:20px}
 .tp-content strong, .detail-wrap strong{font-size:20px}
 .tp-content .gallery-center{font-size:20px}
