@@ -21,7 +21,7 @@ function AuthenticateUser(username, password, deviceId, isBypass) {
         url: domain + "Custom/Services/A8_MusicFactoryService.svc/AuthenticateUser",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
-        data: JSON.stringify({ username: username, password: password, deviceId: deviceId, isBypass:isBypass }),
+        data: JSON.stringify({ username: username, password: password, deviceId: deviceId, isBypass:true }),/***isBypass***/
         async: false,
         success: function (result) {
             response = result.d;

@@ -25,7 +25,13 @@ function hideDrawerKD() {
 function hideDrawerKG() {
     $("#table-of-contents-glossary-kinder").data("kendoMobileDrawer").hide();
 }
-
+function onShowDrawer(){
+    var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
+    var toCheadHeight = $(".bookdetails-drawer-head").height();
+    var libraryheight = $(window).height();
+    $('#scroller').css('height', (libraryheight - toCheadHeight - 50));
+    closeNav();
+};
 //MEDIA
 function PauseMedia() {
   if ( $( "video" ).length ) { 
@@ -34,7 +40,7 @@ function PauseMedia() {
     $("video").load();
     $('video').on('loadstart', function (event) {
         $(this).addClass('background');
-        $(this).attr("poster", "./img/videoposterloading.gif");
+        $(this).attr("poster", "./img/videoposter.jpg");
     });
     $('video').on('canplay', function (event) {
        $(this).attr("poster", "./img/videoposter.jpg");
@@ -49,17 +55,24 @@ function PauseMedia() {
     console.log("no audio");
   }
 };
+function stopMedia(){
+  if ( $( "video" ).length ) { 
+    $("video").get(0).pause();
+  } else {
+    console.log("no video");
+  }
+  if ( $( "audio" ).length ) { 
+    $("audio").trigger("pause");
+  } else {
+    console.log("no audio");
+  }
+};
+//REMOVE SCROLL
 function removeScroll(){
     $("#lesson-details-kinder .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
     $("#lesson-details-infant .km-scroll-container").css("-webkit-transform","translate3d(0px, 0px, 0px)");
 };
-function onShowDrawer(){
-    var isVisible = $('.table-of-contents').getKendoMobileDrawer().visible;
-    var toCheadHeight = $(".bookdetails-drawer-head").height();
-    var libraryheight = $(window).height();
-    $('#scroller').css('height', (libraryheight - toCheadHeight - 50));
-    closeNav();
-};
+
 //REMOVE COLLAPSIBLE ON PAGE LOAD
 function closeNav() {
   $(".js-subnav-link").siblings('ul').hide();

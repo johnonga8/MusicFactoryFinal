@@ -17,7 +17,7 @@
         $("#"+tab_id).find("video").load();
         $('video').on('loadstart', function (event) {
             $(this).addClass('background');
-            $(this).attr("poster", "./img/videoposterloading.gif");
+            $(this).attr("poster", "./img/videoposter.jpg");
         });
         $('video').on('canplay', function (event) {
             $(this).attr("poster", "./img/videoposter.jpg");
@@ -74,6 +74,6 @@ function afterShowInfantthemes(e)
 }
 function beforeHideInfantthemes(e)
 {
-  PauseMedia();
+  stopMedia();
 //Do Something
 }

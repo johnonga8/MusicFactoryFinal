@@ -17,7 +17,7 @@
         $("#"+tab_id).find("video").load();
         $('video').on('loadstart', function (event) {
             $(this).addClass('background');
-            $(this).attr("poster", "./img/videoposterloading.gif");
+            $(this).attr("poster", "./img/videoposter.jpg");
         });
         $('video').on('canplay', function (event) {
             $(this).attr("poster", "./img/videoposter.jpg");
@@ -64,6 +64,6 @@ function afterShowKinderlessons(e)
 }
 function beforeHideKinderlessons(e)
 {
-  PauseMedia();
+  stopMedia();
 //Do Something
 }
