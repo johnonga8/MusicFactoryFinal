@@ -11,7 +11,6 @@ var currentUserName;
 var currentAppCultureName;
 var appLabels;
 var allBooks;
-ClearStorage();
 //var domain = "http://192.168.1.44:2580/";
 //------FUNCTIONS FOR LOGIN START-----//
 function AuthenticateUser(username, password, deviceId, isBypass) {
@@ -778,13 +777,7 @@ function getUUID() {
   
   return deviceId;
 }
-function ClearStorage(){
-  if (document.location.hostname == "localhost"){
-    console.log("local");
-  } else {
-    localStorage.clear();
-  }
-}
+
 
 //------COMMON FUNCTIONS END-----//
 

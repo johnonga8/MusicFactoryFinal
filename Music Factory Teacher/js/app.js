@@ -1,5 +1,12 @@
 //INITIATE APP
 var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
+//CLEAR STORAGE
+ClearStorage();
+function ClearStorage(){
+    localStorage.clear();
+    window.localStorage.clear();
+    window.sessionStorage.clear();
+}
 //DRAWER
 function hideDrawerIC() {
     $("#table-of-contents-cover-infant").data("kendoMobileDrawer").hide();
