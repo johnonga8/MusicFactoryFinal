@@ -44,14 +44,7 @@ function PauseMedia() {
   if ( $( "video" ).length ) { 
     $("video").attr('poster', './img/videoposter.jpg');
     $("video").get(0).pause();
-    $("video").load();
-    $('video').on('loadstart', function (event) {
-        $(this).addClass('background');
-        $(this).attr("poster", "./img/videoposter.jpg");
-    });
-    $('video').on('canplay', function (event) {
-       $(this).attr("poster", "./img/videoposter.jpg");
-    });
+    //$("video").load();
   } else {
     console.log("no video");
   }

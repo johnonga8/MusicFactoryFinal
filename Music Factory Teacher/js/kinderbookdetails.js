@@ -12,6 +12,12 @@
       $('.js-kindertabs .tab-content-wrap').hide();
       $(this).addClass('tab-active');
       $("#"+tab_id).show();
+        if ( $( "video" ).length ) { 
+        $("video").get(0).pause();
+      } else {
+        //do nothing
+      }
+      /**
       if ( $( "video" ).length ) { 
         $("video").get(0).pause();
         $("#"+tab_id).find("video").load();
@@ -25,6 +31,7 @@
       } else {
         //do nothing
       }
+      **/
       if ( $( "audio" ).length ) { 
         $("audio").trigger("pause");
         $("#"+tab_id).find("audio").load();
@@ -59,9 +66,12 @@ function beforeShowKinderlessons(e)
 function afterShowKinderlessons(e)
 {
   $(".preloader-mf").hide();
+  callPlayer();
 }
 function beforeHideKinderlessons(e)
 {
   stopMedia();
 //Do Something
 }
+
+

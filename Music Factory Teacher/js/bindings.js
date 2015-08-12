@@ -807,6 +807,12 @@ function getUUID() {
         $("body").removeClass("lang-zh");
     }
 });*/    
-
-
-
+function callPlayer(){
+var myPlayer = amp('azuremediaplayer', { /* Options */
+        "nativeControlsForTouch": false,
+        autoplay: false,
+        controls: true,
+        width: "100%",
+        //height: "400",
+    });
+}
