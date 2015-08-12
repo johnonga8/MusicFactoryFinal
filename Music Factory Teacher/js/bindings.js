@@ -806,13 +806,29 @@ function getUUID() {
     else {
         $("body").removeClass("lang-zh");
     }
-});*/    
-function callPlayer(){
-var myPlayer = amp('azuremediaplayer', { /* Options */
+});
+function callPlayer(playerID){
+  
+  myPlayer = amp(playerID, { 
         "nativeControlsForTouch": false,
         autoplay: false,
         controls: true,
         width: "100%",
         //height: "400",
     });
+
+        amp.options.flashSS.swf = "http://amp.azure.net/libs/amp/1.2.0/techs/StrobeMediaPlayback.2.0.swf"
+        amp.options.flashSS.plugin = "http://amp.azure.net/libs/amp/1.2.0/techs/MSAdaptiveStreamingPlugin-osmf2.0.swf"
+        amp.options.silverlightSS.xap = "http://amp.azure.net/libs/amp/1.2.0/techs/SmoothStreamingPlayer.xap"
+
+
 }
+ 
+function loadPlayer()
+{
+  myPlayer.src([
+    {
+      src: "http://mfvideo.streaming.mediaservices.windows.net/2c9e2eaa-5e47-4a4c-8ea4-4c9d0ae85708/CL%20K2L1.ism/Manifest", type:"application/vnd.ms-sstr+xml"
+    }
+    ]);
+}*/   

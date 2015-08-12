@@ -44,7 +44,7 @@ function PauseMedia() {
   if ( $( "video" ).length ) { 
     $("video").attr('poster', './img/videoposter.jpg');
     $("video").get(0).pause();
-    //$("video").load();
+    $("video").load();
   } else {
     console.log("no video");
   }
@@ -133,7 +133,7 @@ function InitializeTabs(){
   } else {
     //do nothing
   }
-  
+    
   $(".js-infanttabs .bookdetails-tabs li").removeClass('tab-active');
   $(".js-infanttabs .tab-control-01").addClass("tab-active");
   $(".js-infanttabs .tab-content-01").show();
@@ -146,6 +146,7 @@ function InitializeTabs(){
   } else {
     //do nothing
   }
+  
 };
 
 //LINQ INITIALIZATION

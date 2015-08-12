@@ -13,10 +13,18 @@
       $(this).addClass('tab-active');
       $("#"+tab_id).show();
         if ( $( "video" ).length ) { 
-        $("video").get(0).pause();
-      } else {
-        //do nothing
-      }
+          $("video").get(0).pause();
+          $("#"+tab_id).find("video").load();
+          $('video').on('loadstart', function (event) {
+              $(this).addClass('background');
+              $(this).attr("poster", "./img/videoposter.jpg");
+          });
+          $('video').on('canplay', function (event) {
+              $(this).attr("poster", "./img/videoposter.jpg");
+          });
+        } else {
+          //do nothing
+        }
       /**
       if ( $( "video" ).length ) { 
         $("video").get(0).pause();
@@ -55,18 +63,17 @@
 }());
 //BINDING STARTS
 //Function for drawer
+
 function beforeShowKinderlessons(e)
 {
   $(".preloader-mf").show();
   BindKinderLessonDetails(currentBook);
   closeNav();
   InitializeTabs();
-  PauseMedia();
 }
 function afterShowKinderlessons(e)
 {
   $(".preloader-mf").hide();
-  callPlayer();
 }
 function beforeHideKinderlessons(e)
 {
