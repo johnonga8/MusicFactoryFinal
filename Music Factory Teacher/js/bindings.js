@@ -401,7 +401,7 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
         },
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                window.location = "#views/mf-booklisting.html";
@@ -427,7 +427,7 @@ function GenerateKinderPrefaceDetails(book) {
             window.location = "#views/mf-kinderbookdetails.html";
         },
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                window.location = "#views/mf-booklisting.html";
@@ -447,7 +447,7 @@ function GenerateKinderGlossaryDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                window.location = "#views/mf-booklisting.html";
@@ -473,7 +473,7 @@ function GenerateKinderCoverDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                window.location = "#views/mf-booklisting.html";
@@ -578,7 +578,7 @@ function GenerateInfantCoverDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                app.navigate(dashboardURL);
@@ -605,7 +605,7 @@ function GenerateInfantPrefaceDetails(book) {
             app.navigate("views/mf-infantbookdetails.html");
         },
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                app.navigate(dashboardURL);
@@ -694,7 +694,7 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
             GenerateInfantLessonDetails(currentBook, nextLesson.ThemeNumber, nextLesson.LessonNumber);
         },
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                app.navigate(dashboardURL);
@@ -714,7 +714,7 @@ function GenerateInfantGlossaryDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-log").show();
+            $(".preloader-mf").show();
             setTimeout(ajaxPreloader, 100);
             function ajaxPreloader(){
                app.navigate(dashboardURL);
