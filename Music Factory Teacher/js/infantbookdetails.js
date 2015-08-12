@@ -9,9 +9,9 @@
     $('.infant-tabs li').click(function(){
       var tab_id = $(this).attr('data-tab');
       $('.infant-tabs li').removeClass('tab-active');
-      $('.js-infanttabs .tab-content-wrap').fadeOut();
+      $('.js-infanttabs .tab-content-wrap').hide();
       $(this).addClass('tab-active');
-      $("#"+tab_id).fadeIn();
+      $("#"+tab_id).show();
       if ( $( "video" ).length ) { 
         $("video").get(0).pause();
         $("#"+tab_id).find("video").load();
@@ -69,8 +69,6 @@ function beforeShowInfantthemes(e)
 function afterShowInfantthemes(e)
 {
   $(".preloader-mf").hide();
-  //$('#lesson-details-infant .km-scroll-container').hide().slideUp();
-  //$('#lesson-details-infant .km-scroll-container').slideDown();
 }
 function beforeHideInfantthemes(e)
 {

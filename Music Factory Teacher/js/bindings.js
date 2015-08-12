@@ -296,8 +296,6 @@ function GenerateKinderTableOfContents(kinderbook) {
             currentChapterNumber = $(e.currentTarget).children('input.js-chapternumber').val();
             InitializeTabs();
             removeScroll();
-            //$('#lesson-details-kinder .km-scroll-container').hide().slideUp();
-            //$('#lesson-details-kinder .km-scroll-container').slideDown();
             if (window.location.href.indexOf("bookdetails") > -1) {
                 hideDrawerKD();
                 GenerateKinderLessonDetails(currentBook, currentChapterNumber, currentLessonNumber);
@@ -388,14 +386,10 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
         ComingSoon: appLabels.First(function (label) { return label.key == "Kinder_Comingsoon" }).value,
         PrevLessonClick: function (e) {
             GenerateKinderLessonDetails(currentBook, prevLesson.ChapterNumber, prevLesson.LessonNumber);
-            $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
-            $('#lesson-details-kinder .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
         },
         NextLessonClick: function (e) {
-            $('#lesson-details-kinder .km-scroll-container').hide().slideUp();
-            $('#lesson-details-kinder .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
@@ -681,14 +675,10 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
         ComingSoon: appLabels.First(function (label) { return label.key == "Infant_Comingsoon" }).value,
         PrevLessonClick: function (e) {
             GenerateInfantLessonDetails(currentBook, prevLesson.ThemeNumber, prevLesson.LessonNumber);
-            $('#lesson-details-infant .km-scroll-container').hide().slideUp();
-            $('#lesson-details-infant .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
         },
         NextLessonClick: function (e) {
-            $('#lesson-details-infant .km-scroll-container').hide().slideUp();
-            $('#lesson-details-infant .km-scroll-container').slideDown();
             InitializeTabs();
             removeScroll();
             GenerateInfantLessonDetails(currentBook, nextLesson.ThemeNumber, nextLesson.LessonNumber);

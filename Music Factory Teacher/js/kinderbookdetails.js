@@ -9,9 +9,9 @@
     $('.kinder-tabs li').click(function(){
       var tab_id = $(this).attr('data-tab');
       $('.kinder-tabs li').removeClass('tab-active');
-      $('.js-kindertabs .tab-content-wrap').fadeOut();
+      $('.js-kindertabs .tab-content-wrap').hide();
       $(this).addClass('tab-active');
-      $("#"+tab_id).fadeIn();
+      $("#"+tab_id).show();
       if ( $( "video" ).length ) { 
         $("video").get(0).pause();
         $("#"+tab_id).find("video").load();
@@ -59,8 +59,6 @@ function beforeShowKinderlessons(e)
 function afterShowKinderlessons(e)
 {
   $(".preloader-mf").hide();
-  //$('#lesson-details-kinder .km-scroll-container').hide().slideUp();
-  //$('#lesson-details-kinder .km-scroll-container').slideDown();
 }
 function beforeHideKinderlessons(e)
 {

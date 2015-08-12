@@ -130,11 +130,11 @@ function FlexsliderMusic(){
 function InitializeTabs(){
   $(".js-kindertabs .bookdetails-tabs li").removeClass('tab-active');
   $(".js-kindertabs .tab-control-01").addClass("tab-active");
-  $(".js-kindertabs .tab-content-01").fadeIn();
-  $(".js-kindertabs .tab-content-02").fadeOut();
-  $(".js-kindertabs .tab-content-03").fadeOut();
-  $(".js-kindertabs .tab-content-04").fadeOut();
-  $(".js-kindertabs .tab-content-05").fadeOut();
+  $(".js-kindertabs .tab-content-01").show();
+  $(".js-kindertabs .tab-content-02").hide();
+  $(".js-kindertabs .tab-content-03").hide();
+  $(".js-kindertabs .tab-content-04").hide();
+  $(".js-kindertabs .tab-content-05").hide();
   if ( $(".js-kindertabs .tab-control-01").find( "video" ).length ) { 
     $("video").load();
   } else {
@@ -143,11 +143,11 @@ function InitializeTabs(){
   
   $(".js-infanttabs .bookdetails-tabs li").removeClass('tab-active');
   $(".js-infanttabs .tab-control-01").addClass("tab-active");
-  $(".js-infanttabs .tab-content-01").fadeIn();
-  $(".js-infanttabs .tab-content-02").fadeOut();
-  $(".js-infanttabs .tab-content-03").fadeOut();
-  $(".js-infanttabs .tab-content-04").fadeOut();
-  $(".js-infanttabs .tab-content-05").fadeOut();
+  $(".js-infanttabs .tab-content-01").show();
+  $(".js-infanttabs .tab-content-02").hide();
+  $(".js-infanttabs .tab-content-03").hide();
+  $(".js-infanttabs .tab-content-04").hide();
+  $(".js-infanttabs .tab-content-05").hide();
   if ( $(".js-infanttabs .tab-control-01").find( "video" ).length ) { 
     $("video").load();
   } else {
