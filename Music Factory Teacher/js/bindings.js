@@ -401,8 +401,11 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
             GenerateKinderLessonDetails(currentBook, nextLesson.ChapterNumber, nextLesson.LessonNumber);
         },
         GoToLibrary: function (e) {
-            $(".preloader-mf").show();
-            window.location = "#views/mf-booklisting.html";
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               window.location = "#views/mf-booklisting.html";
+            }
         },
     });
     kendo.bind($("#lesson-details-kinder"), LessonViewModel);
@@ -424,8 +427,11 @@ function GenerateKinderPrefaceDetails(book) {
             window.location = "#views/mf-kinderbookdetails.html";
         },
         GoToLibrary: function (e) {
-            $(".preloader-mf").show();
-            window.location = "#views/mf-booklisting.html";
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               window.location = "#views/mf-booklisting.html";
+            }
         },
     });
     kendo.bind($("#preface-details-kinder"), PrefaceViewModel, kendo.ui, kendo.mobile.ui);
@@ -441,8 +447,11 @@ function GenerateKinderGlossaryDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-mf").show();
-            window.location = "#views/mf-booklisting.html";
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               window.location = "#views/mf-booklisting.html";
+            }
         },
         PrevLessonClick: function (e) {
             currentLessonNumber = lastLesson.LessonNumber;
@@ -464,8 +473,11 @@ function GenerateKinderCoverDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-mf").show();
-            window.location = "#views/mf-booklisting.html";
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               window.location = "#views/mf-booklisting.html";
+            }
         },
     });
     kendo.bind($("#cover-details-kinder"), CoverViewModel);
@@ -566,8 +578,11 @@ function GenerateInfantCoverDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            $(".preloader-mf").show();
-            app.navigate(dashboardURL);
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               app.navigate(dashboardURL);
+            }
         },
     });
     kendo.bind($("#cover-details-infant"), CoverViewModel);
@@ -590,8 +605,11 @@ function GenerateInfantPrefaceDetails(book) {
             app.navigate("views/mf-infantbookdetails.html");
         },
         GoToLibrary: function (e) {
-           // $(".preloader-mf").show();
-            app.navigate(dashboardURL);
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               app.navigate(dashboardURL);
+            }
         },
     });
     kendo.bind($("#preface-details-infant"), PrefaceViewModel, kendo.ui, kendo.mobile.ui);
@@ -676,8 +694,11 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
             GenerateInfantLessonDetails(currentBook, nextLesson.ThemeNumber, nextLesson.LessonNumber);
         },
         GoToLibrary: function (e) {
-            $(".preloader-mf").show();
-            app.navigate(dashboardURL);
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               app.navigate(dashboardURL);
+            }
         },
     });
     kendo.bind($("#lesson-details-infant"), LessonViewModel);
@@ -693,8 +714,11 @@ function GenerateInfantGlossaryDetails(book) {
         GoToHomeLabel: appLabels.First(function (label) { return label.key == "GoToHomeLabel" }).value,
         TableOfContentsLabel: appLabels.First(function (label) { return label.key == "TableOfContentsLabel" }).value,
         GoToLibrary: function (e) {
-            // window.location = "#views/mf-booklisting.html";
-            app.navigate(dashboardURL);
+            $(".preloader-log").show();
+            setTimeout(ajaxPreloader, 100);
+            function ajaxPreloader(){
+               app.navigate(dashboardURL);
+            }
         },
         PrevLessonClick: function (e) {
             currentLessonNumber = lastLesson.LessonNumber;
