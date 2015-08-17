@@ -5,12 +5,16 @@ var currentBookType;
 var currentBook;
 var currentLessonNumber;
 var currentChapterNumber;
-var domain = "http://mf-live.a8hosting.com/";
+//var domain = "http://mf-live.a8hosting.com/";
+var domain = "http://musicfactory.a8hosting.com/";
 var dashboardURL = "views/mf-booklisting.html";
 var currentUserName;
 var currentAppCultureName;
 var appLabels;
 var allBooks;
+var playerInstance;
+var currentVideoUrl;
+
 //var domain = "http://192.168.1.44:2580/";
 //------FUNCTIONS FOR LOGIN START-----//
 function AuthenticateUser(username, password, deviceId, isBypass) {
@@ -403,6 +407,11 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
         },
     });
     kendo.bind($("#lesson-details-kinder"), LessonViewModel);
+    if(currentLesson.HasVideo === true)
+    {
+      initializeJWPlayer("video_kinder", currentLesson.VideoUrl);
+      currentVideoUrl = currentLesson.VideoUrl;
+    }
 }
 
 function GenerateKinderPrefaceDetails(book) {
@@ -692,6 +701,12 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
         },
     });
     kendo.bind($("#lesson-details-infant"), LessonViewModel);
+    
+    if(currentLesson.HasVideo === true)
+    {
+      initializeJWPlayer("video_infant", currentLesson.VideoUrl);
+      currentVideoUrl = currentLesson.VideoUrl;
+    }
 }
 
 function GenerateInfantGlossaryDetails(book) {
@@ -792,43 +807,16 @@ function getUUID() {
   return deviceId;
 }
 
-
-//------COMMON FUNCTIONS END-----//
-
-/*$(".choose-language select").change(function () {
-    var langSelect = $(".choose-language select").val();
-    $("#appLanguage").val(langSelect);
-    currentAppCultureName = $("#appLanguage").val()
-    GetTeacherAppLabels(currentAppCultureName);
-    if (currentAppCultureName === "zh") {
-        $("body").addClass("lang-zh");
-    }
-    else {
-        $("body").removeClass("lang-zh");
-    }
-});
-function callPlayer(playerID){
-  
-  myPlayer = amp(playerID, { 
-        "nativeControlsForTouch": false,
-        autoplay: false,
-        controls: true,
-        width: "100%",
-        //height: "400",
+function initializeJWPlayer(playerID, videoUrl) {
+     jwplayer(playerID).setup({
+       file: videoUrl,
+       // height: 360,
+        width: '100%',
+         modes:[{type:'html5'}]
     });
+    jwplayer(playerID).on('fullscreen', function(e) {
+        var screenheight = $(window).height();
+        $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheight +'px !important');
+    });
+};
 
-        amp.options.flashSS.swf = "http://amp.azure.net/libs/amp/1.2.0/techs/StrobeMediaPlayback.2.0.swf"
-        amp.options.flashSS.plugin = "http://amp.azure.net/libs/amp/1.2.0/techs/MSAdaptiveStreamingPlugin-osmf2.0.swf"
-        amp.options.silverlightSS.xap = "http://amp.azure.net/libs/amp/1.2.0/techs/SmoothStreamingPlayer.xap"
-
-
-}
- 
-function loadPlayer()
-{
-  myPlayer.src([
-    {
-      src: "http://mfvideo.streaming.mediaservices.windows.net/2c9e2eaa-5e47-4a4c-8ea4-4c9d0ae85708/CL%20K2L1.ism/Manifest", type:"application/vnd.ms-sstr+xml"
-    }
-    ]);
-}*/   

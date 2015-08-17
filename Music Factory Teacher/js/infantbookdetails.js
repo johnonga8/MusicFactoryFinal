@@ -12,25 +12,13 @@
       $('.js-infanttabs .tab-content-wrap').hide();
       $(this).addClass('tab-active');
       $("#"+tab_id).show();
-      if ( $( "video" ).length ) { 
-        $("video").get(0).pause();
-        $("#"+tab_id).find("video").load();
-        $('video').on('loadstart', function (event) {
-            $(this).addClass('background');
-            $(this).attr("poster", "./img/videoposter.jpg");
-        });
-        $('video').on('canplay', function (event) {
-            $(this).attr("poster", "./img/videoposter.jpg");
-        });
-      } else {
-        //do nothing
-      }
-      if ( $( "audio" ).length ) { 
-        $("audio").trigger("pause");
-        $("#"+tab_id).find("audio").load();
-      } else {
-        //do nothing
-      }
+        initializeJWPlayer("video_infant", currentVideoUrl)
+        if ( $( "audio" ).length ) { 
+          $("audio").trigger("pause");
+          $("#"+tab_id).find("audio").load();
+        } else {
+          //do nothing
+        }
       if (tab_id === "infanttab-2"){
         FlexsliderReference();
       } else if (tab_id === "infanttab-3") {

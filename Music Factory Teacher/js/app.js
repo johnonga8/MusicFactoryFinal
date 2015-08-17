@@ -1,5 +1,10 @@
 //INITIATE APP
-var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
+document.addEventListener("deviceready", function () {  
+   navigator.splashscreen.hide();
+
+    app = new kendo.mobile.Application($(document.body), { initial: "#login" });
+}, false);
+//var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
 //CLEAR STORAGE
 ClearStorage();
 function ClearStorage(){
@@ -41,13 +46,6 @@ function onShowDrawer(){
 };
 //MEDIA
 function PauseMedia() {
-  if ( $( "video" ).length ) { 
-    $("video").attr('poster', './img/videoposter.jpg');
-    $("video").get(0).pause();
-    $("video").load();
-  } else {
-    console.log("no video");
-  }
   if ( $( "audio" ).length ) { 
     $("audio").trigger("pause");
     $("audio").load();
@@ -56,11 +54,6 @@ function PauseMedia() {
   }
 };
 function stopMedia(){
-  if ( $( "video" ).length ) { 
-    $("video").get(0).pause();
-  } else {
-    console.log("no video");
-  }
   if ( $( "audio" ).length ) { 
     $("audio").trigger("pause");
   } else {
@@ -128,11 +121,6 @@ function InitializeTabs(){
   $(".js-kindertabs .tab-content-03").hide();
   $(".js-kindertabs .tab-content-04").hide();
   $(".js-kindertabs .tab-content-05").hide();
-  if ( $(".js-kindertabs .tab-control-01").find( "video" ).length ) { 
-    $("video").load();
-  } else {
-    //do nothing
-  }
     
   $(".js-infanttabs .bookdetails-tabs li").removeClass('tab-active');
   $(".js-infanttabs .tab-control-01").addClass("tab-active");
@@ -141,12 +129,6 @@ function InitializeTabs(){
   $(".js-infanttabs .tab-content-03").hide();
   $(".js-infanttabs .tab-content-04").hide();
   $(".js-infanttabs .tab-content-05").hide();
-  if ( $(".js-infanttabs .tab-control-01").find( "video" ).length ) { 
-    $("video").load();
-  } else {
-    //do nothing
-  }
-  
 };
 
 //LINQ INITIALIZATION

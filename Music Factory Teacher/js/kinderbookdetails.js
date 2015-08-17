@@ -12,40 +12,13 @@
       $('.js-kindertabs .tab-content-wrap').hide();
       $(this).addClass('tab-active');
       $("#"+tab_id).show();
-        if ( $( "video" ).length ) { 
-          $("video").get(0).pause();
-          $("#"+tab_id).find("video").load();
-          $('video').on('loadstart', function (event) {
-              $(this).addClass('background');
-              $(this).attr("poster", "./img/videoposter.jpg");
-          });
-          $('video').on('canplay', function (event) {
-              $(this).attr("poster", "./img/videoposter.jpg");
-          });
+        initializeJWPlayer("video_kinder", currentVideoUrl)
+        if ( $( "audio" ).length ) { 
+          $("audio").trigger("pause");
+          $("#"+tab_id).find("audio").load();
         } else {
           //do nothing
         }
-      /**
-      if ( $( "video" ).length ) { 
-        $("video").get(0).pause();
-        $("#"+tab_id).find("video").load();
-        $('video').on('loadstart', function (event) {
-            $(this).addClass('background');
-            $(this).attr("poster", "./img/videoposter.jpg");
-        });
-        $('video').on('canplay', function (event) {
-            $(this).attr("poster", "./img/videoposter.jpg");
-        });
-      } else {
-        //do nothing
-      }
-      **/
-      if ( $( "audio" ).length ) { 
-        $("audio").trigger("pause");
-        $("#"+tab_id).find("audio").load();
-      } else {
-        //do nothing
-      }
       if (tab_id === "kindertab-3"){
         FlexsliderReference();
       } else if (tab_id === "kindertab-4") {
@@ -70,6 +43,7 @@ function beforeShowKinderlessons(e)
   BindKinderLessonDetails(currentBook);
   closeNav();
   InitializeTabs();
+  PauseMedia();
 }
 function afterShowKinderlessons(e)
 {
@@ -80,5 +54,4 @@ function beforeHideKinderlessons(e)
   stopMedia();
 //Do Something
 }
-
 
