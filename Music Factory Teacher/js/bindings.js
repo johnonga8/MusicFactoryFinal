@@ -410,6 +410,18 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
     if(currentLesson.HasVideo === true)
     {
       initializeJWPlayer("video_kinder", currentLesson.VideoUrl);
+      jwplayer("video_kinder").on('fullscreen', function(e) {
+        if(jwplayer("video_kinder").getFullscreen(true))
+        {
+          var screenheight = $(window).height();
+          var screenheightTotal = screenheight - 100;
+          $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheightTotal +'px !important');
+        }
+        else
+        {
+          $(".jwplayer").attr('style',  'height:' + 360 +'px !important;width:400px!important');
+        }
+      });
       currentVideoUrl = currentLesson.VideoUrl;
     }
 }
@@ -705,6 +717,19 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
     if(currentLesson.HasVideo === true)
     {
       initializeJWPlayer("video_infant", currentLesson.VideoUrl);
+      jwplayer("video_infant").on('fullscreen', function(e) {
+        if(jwplayer("video_kinder").getFullscreen(true))
+        {
+          var screenheight = $(window).height();
+          var screenheightTotal = screenheight - 100;
+          $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheightTotal +'px !important');
+        }
+        else
+        {
+          $(".jwplayer").attr('style',  'height:' + 360 +'px !important;width:400px!important');
+        }
+      });
+
       currentVideoUrl = currentLesson.VideoUrl;
     }
 }
@@ -798,7 +823,7 @@ function GetTeacherAppLabels(cultureName) {
 
 function getUUID() {
   var deviceId;
-  if (document.location.hostname == "localhost"){
+  if (document.location.hostname == "localhost" || document.location.hostname.indexOf("192") >= 0){
     deviceId = "test local host";
   } else {
    deviceId = device.uuid;
@@ -807,16 +832,13 @@ function getUUID() {
   return deviceId;
 }
 
+
 function initializeJWPlayer(playerID, videoUrl) {
      jwplayer(playerID).setup({
        file: videoUrl,
-       // height: 360,
-        width: '100%',
+        height: 360,
+        width: 400,
          modes:[{type:'html5'}]
     });
-    jwplayer(playerID).on('fullscreen', function(e) {
-        var screenheight = $(window).height();
-        $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheight +'px !important');
-    });
+    
 };
-

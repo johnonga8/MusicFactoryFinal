@@ -1,10 +1,10 @@
 //INITIATE APP
-document.addEventListener("deviceready", function () {  
+/**document.addEventListener("deviceready", function () {  
    navigator.splashscreen.hide();
 
     app = new kendo.mobile.Application($(document.body), { initial: "#login" });
-}, false);
-//var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
+}, false);**/
+var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
 //CLEAR STORAGE
 ClearStorage();
 function ClearStorage(){
