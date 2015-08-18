@@ -15,20 +15,7 @@
         if(currentVideoUrl != null)
         {
           initializeJWPlayer("video_kinder", currentVideoUrl);
-          jwplayer("video_kinder").on('fullscreen', function(e) {
-            if(jwplayer("video_kinder").getFullscreen(true))
-            {
-              var screenheight = $(window).height();
-              var screenheightTotal = screenheight - 100;
-              $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheightTotal +'px !important');
-              removeScroll();
-            }
-            else
-            {
-              $(".jwplayer").attr('style',  'height:' + 360 +'px !important;width:400px!important');
-              removeScroll();
-            }
-          });
+          KinderFullScreen();
         }
 
         if ( $( "audio" ).length ) { 

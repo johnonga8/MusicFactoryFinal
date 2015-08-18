@@ -410,18 +410,7 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
     if(currentLesson.HasVideo === true)
     {
       initializeJWPlayer("video_kinder", currentLesson.VideoUrl);
-      jwplayer("video_kinder").on('fullscreen', function(e) {
-        if(jwplayer("video_kinder").getFullscreen(true))
-        {
-          var screenheight = $(window).height();
-          var screenheightTotal = screenheight - 100;
-          $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheightTotal +'px !important');
-        }
-        else
-        {
-          $(".jwplayer").attr('style',  'height:' + 360 +'px !important;width:400px!important');
-        }
-      });
+      KinderFullScreen();
       currentVideoUrl = currentLesson.VideoUrl;
     }
 }
@@ -717,19 +706,7 @@ function GenerateInfantLessonDetails(book, chapterNumber, lessonNumber) {
     if(currentLesson.HasVideo === true)
     {
       initializeJWPlayer("video_infant", currentLesson.VideoUrl);
-      jwplayer("video_infant").on('fullscreen', function(e) {
-        if(jwplayer("video_kinder").getFullscreen(true))
-        {
-          var screenheight = $(window).height();
-          var screenheightTotal = screenheight - 100;
-          $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheightTotal +'px !important');
-        }
-        else
-        {
-          $(".jwplayer").attr('style',  'height:' + 360 +'px !important;width:400px!important');
-        }
-      });
-
+      InfantFullScreen();
       currentVideoUrl = currentLesson.VideoUrl;
     }
 }
@@ -842,3 +819,36 @@ function initializeJWPlayer(playerID, videoUrl) {
     });
     
 };
+
+function KinderFullScreen(){
+    jwplayer("video_kinder").on('fullscreen', function(e) {
+      if(jwplayer("video_kinder").getFullscreen(true))
+      {
+        var screenheight = $(window).height();
+        var screenheightTotal = screenheight - 100;
+        $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheightTotal +'px !important');
+        removeScroll();
+      }
+      else
+      {
+        $(".jwplayer").attr('style',  'height:' + 360 +'px !important;width:400px!important');
+        removeScroll();
+      }
+    });
+}
+function InfantFullScreen(){
+    jwplayer("video_infant").on('fullscreen', function(e) {
+      if(jwplayer("video_infant").getFullscreen(true))
+      {
+        var screenheight = $(window).height();
+        var screenheightTotal = screenheight - 100;
+        $(".jwplayer.jw-flag-fullscreen").attr('style',  'height:' + screenheightTotal +'px !important');
+        removeScroll();
+      }
+      else
+      {
+        $(".jwplayer").attr('style',  'height:' + 360 +'px !important;width:400px!important');
+        removeScroll();
+      }
+    });
+}

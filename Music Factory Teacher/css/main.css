@@ -572,3 +572,7 @@ a.tempbutton.done{background:#2f716d!important}
 .comingsoon{width:320px}
 .comingsoon h1{font-size:25px;text-align:center;color:#76c4e0;padding:0 10px}
 .comingsoon img{margin:0 auto;display:block}
+
+/**changes**/
+#video_infant{background:url(../img/videoposterloading.gif) center center;width:400px;height:360px}
+#video_kinder{background:url(../img/videoposterloading.gif) center center;width:400px;height:360px}
