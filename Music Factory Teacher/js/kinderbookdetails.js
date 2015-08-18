@@ -68,6 +68,10 @@ function afterShowKinderlessons(e)
 function beforeHideKinderlessons(e)
 {
   stopMedia();
+  if(currentVideoUrl != null)
+  {
+    jwplayer("video_kinder").pause(true);
+  }
 //Do Something
 }
 

@@ -76,5 +76,8 @@ function afterShowInfantthemes(e)
 function beforeHideInfantthemes(e)
 {
   stopMedia();
-//Do Something
+  if(currentVideoUrl != null)
+  {
+    jwplayer("video_infant").pause(true);
+  }
 }
