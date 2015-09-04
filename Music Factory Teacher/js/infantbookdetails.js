@@ -16,7 +16,6 @@
         {
           initializeJWPlayer("video_infant", currentVideoUrl);
           InfantFullScreen();
-          });
         }
         if ( $( "audio" ).length ) { 
           $("audio").trigger("pause");

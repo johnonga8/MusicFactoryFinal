@@ -815,7 +815,8 @@ function initializeJWPlayer(playerID, videoUrl) {
        file: videoUrl,
         height: 360,
         width: 400,
-         modes:[{type:'html5'}]
+        type:'m3u8',
+        androidhls:'true',
     });
     
 };

@@ -6,8 +6,8 @@
   "DisplayName": "Music Factory Teacher",
   "Author": "",
   "Description": "Music Factory Teacher",
-  "BundleVersion": "1.0",
-  "AndroidVersionCode": "1",
+  "BundleVersion": "1.10",
+  "AndroidVersionCode": "7",
   "iOSDeviceFamily": [],
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
@@ -37,5 +37,9 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "org.apache.cordova.console",
+    "org.apache.cordova.device"
   ]
 }
