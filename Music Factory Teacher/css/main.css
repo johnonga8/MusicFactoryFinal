@@ -558,9 +558,9 @@ nav.header-links>div>ul>li a{display:block}
 .class-table  input[type="radio"]:checked + label:after {content:""; background:url(../img/icon-radio--checked.png) no-repeat}
 .class-table  input[type="radio"]:checked + label {color:#3faa72}
 
-/**small device
+/**small device**/
 .km-phone .km-android:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;background:url(../img/icon-phone.png) center center no-repeat #e4e9ed!important;}
-**/
+
 
 /**delete**/
 a.tempbutton{display:block;width:150px;background:#7ebbb7!important;border:1px solid #ff8e3c;border-radius:5px;margin:5px 0;color:#fff!important}
