@@ -5,5 +5,9 @@ app.factory('apiAuth', ['$http', function ($http) {
 		return $http.post(apiBaseUrl + "AuthenticateUser", creds)
 	}
 
+	apiAuth.logout = function (creds) {
+		return $http.post(apiBaseUrl + "LogoutUser", creds)
+	}
+
 	return apiAuth;
 }]);
