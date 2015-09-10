@@ -7,7 +7,7 @@ app.controller('LoginCtrl', ['apiAuth', function(apiAuth) {
 	]
 
 	vm.getDeviceId = function () {
-		if (testEnvs.indexOf(document.location.hostname) != 1) {
+		if (testEnvs.indexOf(document.location.hostname) == -1) {
 			return device.uuid;
 		}
 
