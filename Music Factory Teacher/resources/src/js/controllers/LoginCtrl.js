@@ -1,7 +1,23 @@
 app.controller('LoginCtrl', ['apiAuth', function(apiAuth) {
 	var vm = this;
 
+	var testEnvs = [
+		"localhost",
+		"music-factory.dev"
+	]
+
+	vm.getDeviceId = function () {
+		if (testEnvs.indexOf(document.location.hostname) != 1) {
+			return device.uuid;
+		}
+
+		return 'test';
+	}
+
 	vm.login = function (creds) {
+		creds.isBypass = false;
+		creds.deviceId = vm.getDeviceId();
+
 		apiAuth.login(creds).then(function(response) {
 			var response = response.data.d;
 			if (response.isValid) {
