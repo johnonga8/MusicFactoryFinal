@@ -16,7 +16,7 @@
     
 	<script src="js/jwplayer.js"></script>
     <script>jwplayer.key="SExEikaULtEhfgVT90rNrLkELQfbirt9gA41ufAsg5s=";</script>
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="www/css/musicfactory.css" rel="stylesheet" />
     
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
@@ -31,77 +31,6 @@
 
 </head>
 <body ng-app="musicFactoryTeacherApp">
-
-<div class="container-fluid js-fullheight-index" id="login" data-role="view" data-layout="default"  data-before-show="beforeShowIndex" data-after-show="afterShowIndex" data-before-hide="beforeHideIndex">
-  <div class="row row-margin-null">
-    <div class="col-xs-offset-1 col-xs-10">
-      <span class="pull-left versioncss">v1.10</span>
-      <div class="pull-right choose-language">
-        <strong data-bind="text: SelectLanguageLabel"></strong>
-          <div class="language-bttn" data-bind="events: { click: SelectLanguage }"><input value="zh" style="display:none"/>中文</div>
-          <div class="language-bttn" data-bind="events: { click: SelectLanguage }"><input value="en" style="display:none"/>English</div>
-        <input id="appLanguage" type="text" value="en" style="display:none"/>
-      </div>
-    </div>
-  </div>
-  <div class="row marg-t-120 row-margin-null">
-
-    <div class="col-xs-5 col-xs-offset-1">
-      <div class="clearfix marg-b-10">
-        <h2 data-bind="text: SignInLabel"></h2>
-       <!-- <a href="#password" class="login-password">Forgot your password?</a> -->
-        <a href="#" class="login-password" data-bind="text: ForgotPasswordLabel"></a>
-      </div>
-      <form>
-        <input id="login-username" class="login-input" type="text" data-bind="attr: { placeholder: UsernameLabel }"/>
-        <input id="login-password" class="login-input" type="password" data-bind="attr: { placeholder: PasswordLabel }"/>
-        <div class="login-error-invalid login-error" style="display:none"><div class="notification-warning" data-bind="text: InvalidLoginErrorMessage"></div></div>
-        <div class="login-error-deactivated login-error" style="display:none"><div class="notification-warning" data-bind="text: DeactivatedUserErrorMessage"></div></div>
-        <a class="km-button km-widget bttn bttn-login" data-bind="text: LoginLabel, events: { click: Login }"></a><img src="./img/preloader.GIF" class="preloader-log">
-<!--
-        <a href="views/mf-myclasses.html" data-role="button" class="tempbutton done" >my Class</a>
-        <a href="views/mf-individualclass.html" data-role="button" class="tempbutton">Individual Class</a>
-        <a href="views/mf-classprogress.html" data-role="button" class="tempbutton">Class Progress</a>
-        <a href="views/mf-individualstudent.html" data-role="button" class="tempbutton">Individual Student</a>
-        <a href="views/mf-studentprogress.html" data-role="button" class="tempbutton">Student Progress</a>
--->
-  
-      </form>
-    </div>
-    <div class="col-xs-6">
-      <img src="./img/branding-home.png" class="img-responsive"/>
-    </div>
-  </div>
-   <div id="alreadylogged" class="modalcontent">
-     <div data-bind="html: UserLoggedInErrorMessage" class="modalcontent-loginmessage">
-     </div>
-     <div class="bttn js-proceed" data-bind="text: LogOffUserLabel, events: { click: LogOffUser }"></div>
-     <div class="preloader-img"><img src="./img/preloader.GIF"></div>
-     <div class="bttn js-modal-close" data-bind="text: CancelLabel, events: { click: Cancel }"></div>
-   </div>
-
-</div>
-
-<div class="container-fluid" id="password" data-role="view" data-layout="default" data-before-show="beforeShowPassword">
-  <div class="row marg-t-150 row-margin-null">
-    <div class="col-xs-5 col-xs-offset-1">
-      <div class="clearfix marg-b-10">
-        <h2>Reset Your Password</h2>
-        <p>Enter your registered email and we'll send instructions to get you back on your feet.</p>
-      </div>
-      <form>
-        <input type="email" placeholder="Email address"/>
-        <input type="submit" value="Send" class="bttn" data-role="button"/>
-        <a href="#login" class="password-remember">I remember now</a>  
-      </form>
-    </div>
-    <div class="col-xs-6">
-      <img src="./img/branding-home.png" class="img-responsive"/>
-    </div>
-  </div>
-</div>
-<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
-<script src="js/bindings.js"></script>
-<script src="js/index.js"></script>
+  <div ng-view></div>
 </body>
 </html>

@@ -1,8 +1,12 @@
 var gulp = require('gulp'),
 	util = require('gulp-util'),
+	sass = require('gulp-sass'),
 	concat = require('gulp-concat')
 
 var srcs = {
+	sass: [
+		"Music Factory Teacher/resources/src/sass/**/*.scss"
+	],
 	js: [
 		"Music Factory Teacher/resources/src/js/init.js",
         "Music Factory Teacher/resources/src/js/@(providers|factories|services|controllers|filters|directives)/**/*.js",
@@ -11,6 +15,13 @@ var srcs = {
 		"Music Factory Teacher/resources/lib/angular-route/angular-route.min.js"
 	]
 }
+
+gulp.task('sass', function () {
+	gulp.src(srcs.sass)
+		.pipe(sass().on('error', sass.logError))
+		.pipe(concat('musicfactory.css'))
+		.pipe(gulp.dest('Music Factory Teacher/www/css'))
+});
 
 gulp.task('js', function () {
 	gulp.src(srcs.js)
@@ -28,4 +39,5 @@ gulp.task('default', ['js', 'deps']);
 
 gulp.task('watch', function() {
 	gulp.watch('Music Factory Teacher/resources/src/js/**/*.js', ['js', 'deps']);
+	gulp.watch('Music Factory Teacher/resources/src/sass/**/*.scss', ['sass']);
 });
