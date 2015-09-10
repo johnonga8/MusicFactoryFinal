@@ -7,3 +7,5 @@ app.config(function ($routeProvider) {
 			controller: 'LoginCtrl as ctrl'
 		});
 });
+
+var apiBaseUrl = "http://mf-live.a8hosting.com/Custom/Services/A8_MusicFactoryService.svc/";
