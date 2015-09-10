@@ -4,6 +4,8 @@
 
     app = new kendo.mobile.Application($(document.body), { initial: "#login" });
 }, false);**/
+var teacherApp = angular.module("musicFactoryTeacherApp", [ "kendo.directives" ]);
+
 var app = new kendo.mobile.Application($(document.body), { initial: "#login" });
 //CLEAR STORAGE
 ClearStorage();
