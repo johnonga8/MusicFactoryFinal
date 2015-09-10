@@ -18,7 +18,7 @@ var srcs = {
 
 gulp.task('sass', function () {
 	gulp.src(srcs.sass)
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(concat('musicfactory.css'))
 		.pipe(gulp.dest('Music Factory Teacher/www/css'))
 });
