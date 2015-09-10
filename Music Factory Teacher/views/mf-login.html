@@ -19,12 +19,13 @@
          <!-- <a href="#password" class="login-password">Forgot your password?</a> -->
           <a href="#" class="login-password" data-bind="text: ForgotPasswordLabel"></a>
         </div>
-        <form>
-          <input id="login-username" class="login-input" type="text" data-bind="attr: { placeholder: UsernameLabel }"/>
-          <input id="login-password" class="login-input" type="password" data-bind="attr: { placeholder: PasswordLabel }"/>
+        <form ng-submit="ctrl.login(creds)">
+          <input id="login-username" class="login-input" type="text" data-ng-model="creds.username"/>
+          <input id="login-password" class="login-input" type="password" data-ng-model="creds.password"/>
           <div class="login-error-invalid login-error" style="display:none"><div class="notification-warning" data-bind="text: InvalidLoginErrorMessage"></div></div>
           <div class="login-error-deactivated login-error" style="display:none"><div class="notification-warning" data-bind="text: DeactivatedUserErrorMessage"></div></div>
-          <a class="km-button km-widget bttn bttn-login" data-bind="text: LoginLabel, events: { click: Login }"></a><img src="./img/preloader.GIF" class="preloader-log">
+          <button type="submit" class="km-button km-widget bttn bttn-login"></a>
+          <img src="./img/preloader.GIF" class="preloader-log">
   <!--
           <a href="views/mf-myclasses.html" data-role="button" class="tempbutton done" >my Class</a>
           <a href="views/mf-individualclass.html" data-role="button" class="tempbutton">Individual Class</a>
