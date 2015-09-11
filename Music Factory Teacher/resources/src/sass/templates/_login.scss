@@ -79,7 +79,7 @@
 			border-radius:5px;
 			background:#ff914e;
 			height:40px;
-			font-size:16px
+			font-size:16px;
 		}
 		.login-error{
 			margin-bottom:20px;
@@ -104,6 +104,20 @@
 		float:left;
 		font-size:12px;
 		line-height:40px
+	}
+}
+
+#alreadyloggedin {
+	.modal-dialog {
+		max-width: 380px;
+	}
+	.message-content {
+		color: rgb(68, 68, 68);
+		font-size: .9em;
+		padding: 15px 0 20px;
+	}
+	.modal-body {
+		padding: 15px 30px;
 	}
 }
 

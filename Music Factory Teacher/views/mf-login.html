@@ -20,7 +20,7 @@
         <form ng-submit="ctrl.login(creds)">
           <input id="login-username" class="login-input" placeholder="{{ ctrl.labels.username }}" type="text" data-ng-model="creds.username" data-ng-focus="ctrl.hasLoginError = false"/>
           <input id="login-password" class="login-input" placeholder="{{ ctrl.labels.password }}" type="password" data-ng-model="creds.password" data-ng-focus="ctrl.hasLoginError = false"/>
-          <div class="login-error" data-ng-if="ctrl.hasLoginError">
+          <div class="login-error" data-ng-if="ctrl.hasLoginError && ctrl.loginError != 'alreadyLoggedIn'">
             <div class="notification-warning">
               <span data-ng-if="ctrl.loginError =='invalid'" data-ng-bind="ctrl.labels.invalidLogin"></span>
               <span data-ng-if="ctrl.loginError =='deactivated'" data-ng-bind="ctrl.labels.deactivatedUser"></span>
@@ -37,14 +37,20 @@
       <div class="clearfix"></div>
     </div>
 
-     <div id="alreadylogged" class="modalcontent" style="display: none;">
-       <div data-bind="html: UserLoggedInErrorMessage" class="modalcontent-loginmessage">
-       </div>
-       <div class="bttn js-proceed" data-bind="text: LogOffUserLabel, events: { click: LogOffUser }"></div>
-       <div class="preloader-img"><img src="./img/preloader.GIF"></div>
-       <div class="bttn js-modal-close" data-bind="text: CancelLabel, events: { click: Cancel }"></div>
-     </div>
-    
+      <!-- Modal -->
+      <div class="modal fade" id="alreadyloggedin" tabindex="-1" role="dialog" aria-labelledby="alreadyloggedin">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div data-ng-bind="ctrl.labels.userLoggedIn" class="message-content">sadfsdf</div>
+              <button data-ng-bind="ctrl.labels.logoff" data-ng-click="ctrl.logout()" type="button" class="bttn js-proceed">1</button>
+              <button data-ng-bind="ctrl.labels.cancel" type="button" class="bttn js-modal-close pull-right" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+
   </div>
 
 </div>
@@ -73,4 +79,18 @@
 
 <script>
   $('#login').height( $(window).outerHeight() - $('.language-bar').outerHeight() + 38);
+
+  $('#alreadyloggedin').on('show.bs.modal', reposition);
+
+  $(window).on('resize', function() {
+      $('#alreadyloggedin:visible').each(reposition);
+  });
+
+  function reposition() {
+      var modal = $(this),
+          dialog = modal.find('.modal-dialog');
+
+      modal.css('display', 'block');
+      dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+  }
 </script>
