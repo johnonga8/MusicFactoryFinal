@@ -12,7 +12,8 @@ var srcs = {
         "Music Factory Teacher/resources/src/js/@(providers|factories|services|controllers|filters|directives)/**/*.js",
 	],
 	deps: [
-		"Music Factory Teacher/resources/lib/angular-route/angular-route.min.js"
+		"Music Factory Teacher/resources/lib/angular-route/angular-route.min.js",
+		"Music Factory Teacher/resources/lib/lodash/lodash.min.js",
 	]
 }
 
