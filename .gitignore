@@ -5,3 +5,6 @@ Music Factory Teacher/js/bindings.js
 node_modules
 www/
 Music Factory Teacher/resources/lib
+Music Factory Teacher/.ab/
+Music Factory Teacher/App_Resources
+*.apk
