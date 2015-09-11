@@ -18,8 +18,8 @@
         <h2 class="signin-title" data-ng-bind="ctrl.labels.signIn"></h2>
         <a href="#password" class="forgot-password" data-ng-bind="ctrl.labels.forgotPassword">{{ FORGOT_PASSWORD || 'Forgot your password?' }}</a>
         <form ng-submit="ctrl.login(creds)">
-          <input id="login-username" class="login-input" placeholder="{{ USERNAME_PLACEHOLDER || 'User name' }}" type="text" data-ng-model="creds.username" data-ng-focus="ctrl.hasLoginError = false"/>
-          <input id="login-password" class="login-input" placeholder="{{ PASSWORD_PLACEHOLDER || 'Password' }}" type="password" data-ng-model="creds.password" data-ng-focus="ctrl.hasLoginError = false"/>
+          <input id="login-username" class="login-input" placeholder="{{ ctrl.labels.username }}" type="text" data-ng-model="creds.username" data-ng-focus="ctrl.hasLoginError = false"/>
+          <input id="login-password" class="login-input" placeholder="{{ ctrl.labels.password }}" type="password" data-ng-model="creds.password" data-ng-focus="ctrl.hasLoginError = false"/>
           <div class="login-error" data-ng-if="ctrl.hasLoginError">
             <div class="notification-warning">
               <span data-ng-if="ctrl.loginError =='invalid'" data-ng-bind="ctrl.labels.invalidLogin"></span>

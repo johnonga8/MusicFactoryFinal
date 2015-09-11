@@ -35,6 +35,8 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 			"selectLanguage": "SelectLanguageLabel",
 			"signIn": "SignInLabel",
 			"forgotPassword": "ForgotPasswordLabel",
+			"username": "UsernameLabel",
+			"password": "PasswordLabel",
 			"login": "LoginLabel",
 			"invalidLogin": "InvalidLoginErrorMessage",
 			"deactivatedUser": "DeactivatedUserErrorMessage",
