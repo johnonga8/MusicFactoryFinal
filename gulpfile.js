@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
 	util = require('gulp-util'),
 	sass = require('gulp-sass'),
-	concat = require('gulp-concat')
+	concat = require('gulp-concat');
 
 var srcs = {
 	sass: [
@@ -12,6 +12,8 @@ var srcs = {
         "Music Factory Teacher/resources/src/js/@(providers|factories|services|controllers|filters|directives)/**/*.js",
 	],
 	deps: [
+		"Music Factory Teacher/resources/lib/jquery/dist/jquery.min.js",
+		"Music Factory Teacher/resources/lib/angular/angular.min.js",
 		"Music Factory Teacher/resources/lib/angular-route/angular-route.min.js"
 	]
 }
@@ -35,7 +37,7 @@ gulp.task('deps', function () {
 		.pipe(gulp.dest('Music Factory Teacher/www/js'))
 });
 
-gulp.task('default', ['js', 'deps']);
+gulp.task('default', ['js', 'deps', 'sass']);
 
 gulp.task('watch', function() {
 	gulp.watch(

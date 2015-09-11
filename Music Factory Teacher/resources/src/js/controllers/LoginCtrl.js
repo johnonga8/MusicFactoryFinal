@@ -15,10 +15,12 @@ app.controller('LoginCtrl', ['apiAuth', function(apiAuth) {
 	}
 
 	vm.login = function (creds) {
+		$('.login-form form .preloader-log').show();
 		creds.isBypass = false;
 		creds.deviceId = vm.getDeviceId();
 
 		apiAuth.login(creds).then(function(response) {
+			$('.login-form form .preloader-log').hide();
 			var response = response.data.d;
 			if (response.isValid) {
 				// Proceed class listing

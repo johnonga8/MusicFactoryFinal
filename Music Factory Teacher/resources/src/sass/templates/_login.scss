@@ -1,11 +1,114 @@
 // Login
+.language-bar {
+	background-color: #e4e9ed;
+
+	.versioncss {
+		color: #000;
+		font-size:8px;
+		padding:10px;
+	}
+	.choose-language{
+		padding:20px 10px;
+		vertical-align: middle;
+
+		.language-label {
+			color:#7d8487;
+			font:normal 13px "museo_sans700";
+			line-height:30px;
+			padding-right: 30px;
+		}
+
+		.language-bttn {
+			display: inline-block;
+			margin-right:7px;
+			background:#48c298;
+			height:30px;	
+			width:85px;
+			text-align:center;
+			line-height:30px;
+			border-radius:5px;
+			color:#fff;font:13px/30px museo_sans700, sans-serif;
+			border-style:none;
+		}
+	}
+}
+
+#login,
+#password {
+	.wrapper {
+		background:url('../../img/bg-login.png') bottom center no-repeat #e4e9ed!important;
+		height: 100%;
+		width: 100%;
+	}
+}
 
 #login {
-	.container-fluid {
-		padding: 0;
-	}
-	.wrapper {
-		background:url('/img/bg-login.png') bottom center no-repeat #e4e9ed!important;
-	}
+	.login-form {
+		width: 100%;
+		padding-top: 120px;
 
+		input{
+			display:block;
+			margin-bottom:10px;
+			border:0;
+			height:40px;
+			width:320px;
+			padding:10px;
+			background-clip:border-box
+		}
+		#login-username {
+			background:url(../../img/icon-username.png) 300px center no-repeat #f7f7f7;
+			padding-right:25px
+			&:focus {
+				background:url(../../img/icon-username-active.png) 300px center no-repeat #f7f7f7;
+				border:1px solid #ff914e;
+			}
+		}
+		#login-password {
+			background:url(../../img/icon-password.png) 300px center no-repeat #f7f7f7;
+			padding-right:25px
+			&:focus {
+				background:url(../../img/icon-password-active.png) 300px center no-repeat #f7f7f7;
+				border:1px solid #ff914e;
+			}
+		}
+		.bttn-login {
+			display: inline-block;
+			border: 0;
+			width:150px;
+			border-radius:5px;
+			background:#ff914e;
+			height:40px;
+			font-size:16px
+		}
+		.login-error{
+			margin-bottom:20px;
+			width:320px;
+		}
+		.modalcontent-loginmessage{
+			padding:15px 0 20px;
+		}
+	}
+	.signin-title {
+		color:#76c4e0;
+		font: {
+			family: "museo_slab700";
+			size:30px;
+			weight: 700;
+		}
+		float:left;
+		margin:0 85px 0 0;
+	}
+	.forgot-password {
+		color:#8d8d8d;
+		float:left;
+		font-size:12px;
+		line-height:40px
+	}
+}
+
+.lang-zh {
+	#login {
+
+	}
 }

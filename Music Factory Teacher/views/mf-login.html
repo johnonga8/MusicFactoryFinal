@@ -1,46 +1,38 @@
-<div id="login">
-  <div class="wrapper">
-    <div class="row row-margin-null">
-      <div class="col-xs-offset-1 col-xs-10">
-        <span class="pull-left versioncss">v1.10</span>
-        <div class="pull-right choose-language">
-          <strong data-bind="text: SelectLanguageLabel"></strong>
-            <div class="language-bttn" data-bind="events: { click: SelectLanguage }"><input value="zh" style="display:none"/>中文</div>
-            <div class="language-bttn" data-bind="events: { click: SelectLanguage }"><input value="en" style="display:none"/>English</div>
-          <input id="appLanguage" type="text" value="en" style="display:none"/>
-        </div>
-      </div>
+<!-- Language Bar -->
+<div class="row language-bar">
+  <div class="col-xs-offset-1 col-xs-10">
+    <span class="pull-left versioncss">v1.10</span>
+    <div class="pull-right choose-language">
+      <strong class="language-label">{{ SELECT_LANGUAGE_LABEL || 'Select your language' }}</strong>
+      <a class="language-bttn" ng-click="">{{ EN_LANG || 'English' }}</a>
+      <a class="language-bttn" ng-click="">{{ ZH_LANG || '中文' }}</a>
     </div>
-    <div class="row marg-t-120 row-margin-null">
+  </div>
+</div>
 
+<div id="login" class="row">
+  <div class="wrapper">
+    <!-- Login Form -->
+    <div class="login-form">
       <div class="col-xs-5 col-xs-offset-1">
-        <div class="clearfix marg-b-10">
-          <h2 data-bind="text: SignInLabel"></h2>
-         <!-- <a href="#password" class="login-password">Forgot your password?</a> -->
-          <a href="#" class="login-password" data-bind="text: ForgotPasswordLabel"></a>
-        </div>
+        <h2 class="signin-title">{{ SIGNIN_LABEL || 'Sign in' }}</h2>
+        <a href="#password" class="forgot-password">{{ FORGOT_PASSWORD || 'Forgot your password?' }}</a>
         <form ng-submit="ctrl.login(creds)">
-          <input id="login-username" class="login-input" type="text" data-ng-model="creds.username"/>
-          <input id="login-password" class="login-input" type="password" data-ng-model="creds.password"/>
-          <div class="login-error-invalid login-error" style="display:none"><div class="notification-warning" data-bind="text: InvalidLoginErrorMessage"></div></div>
-          <div class="login-error-deactivated login-error" style="display:none"><div class="notification-warning" data-bind="text: DeactivatedUserErrorMessage"></div></div>
-          <button type="submit" class="km-button km-widget bttn bttn-login"></a>
+          <input id="login-username" class="login-input" placeholder="{{ USERNAME_PLACEHOLDER || 'User name' }}" type="text" data-ng-model="creds.username"/>
+          <input id="login-password" class="login-input" placeholder="{{ PASSWORD_PLACEHOLDER || 'Password' }}" type="password" data-ng-model="creds.password"/>
+          <div class="login-error"></div>
+          <button type="submit" class="bttn bttn-login">{{ LOGIN_BUTTON || 'Log in' }}</button>
           <img src="./img/preloader.GIF" class="preloader-log">
-  <!--
-          <a href="views/mf-myclasses.html" data-role="button" class="tempbutton done" >my Class</a>
-          <a href="views/mf-individualclass.html" data-role="button" class="tempbutton">Individual Class</a>
-          <a href="views/mf-classprogress.html" data-role="button" class="tempbutton">Class Progress</a>
-          <a href="views/mf-individualstudent.html" data-role="button" class="tempbutton">Individual Student</a>
-          <a href="views/mf-studentprogress.html" data-role="button" class="tempbutton">Student Progress</a>
-  -->
-    
         </form>
+        <div class="clearfix"></div>
       </div>
       <div class="col-xs-6">
         <img src="./img/branding-home.png" class="img-responsive"/>
       </div>
+      <div class="clearfix"></div>
     </div>
-     <div id="alreadylogged" class="modalcontent">
+
+     <div id="alreadylogged" class="modalcontent" style="display: none;">
        <div data-bind="html: UserLoggedInErrorMessage" class="modalcontent-loginmessage">
        </div>
        <div class="bttn js-proceed" data-bind="text: LogOffUserLabel, events: { click: LogOffUser }"></div>
@@ -52,24 +44,36 @@
 
 </div>
 
-<div class="container-fluid" id="password" data-role="view" data-layout="default" data-before-show="beforeShowPassword">
-  <div class="row marg-t-150 row-margin-null">
-    <div class="col-xs-5 col-xs-offset-1">
-      <div class="clearfix marg-b-10">
-        <h2>Reset Your Password</h2>
-        <p>Enter your registered email and we'll send instructions to get you back on your feet.</p>
+<div id="password" class="container-fluid" style="display: none;">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-xs-5 col-xs-offset-1">
+        <div class="clearfix marg-b-10">
+          <h2>Reset Your Password</h2>
+          <p>Enter your registered email and we'll send instructions to get you back on your feet.</p>
+        </div>
+        <form>
+          <input type="email" placeholder="Email address"/>
+          <input type="submit" value="Send" class="bttn" data-role="button"/>
+          <a href="#login" class="password-remember">I remember now</a>  
+        </form>
       </div>
-      <form>
-        <input type="email" placeholder="Email address"/>
-        <input type="submit" value="Send" class="bttn" data-role="button"/>
-        <a href="#login" class="password-remember">I remember now</a>  
-      </form>
-    </div>
-    <div class="col-xs-6">
-      <img src="./img/branding-home.png" class="img-responsive"/>
+      <div class="col-xs-6">
+        <img src="./img/branding-home.png" class="img-responsive"/>
+      </div>
     </div>
   </div>
 </div>
 <div class="preloader-mf"><div class="preloader-mf-img"></div></div>
-<script src="js/bindings.js"></script>
-<script src="js/index.js"></script>
+
+<script>
+  $('#login').height( $(window).outerHeight() - $('.language-bar').outerHeight() + 38);
+
+  var loginError = function(msg) {
+    $('.login-form .login-error').html('<div class="notification-warning">' + msg +'</div>');
+
+    setTimeout(function() {
+      $('.login-error .notification-warning').fadeOut(1000);
+    }, 3000);
+  }
+</script>
