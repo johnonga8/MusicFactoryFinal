@@ -7,12 +7,19 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 
 	activate();
 
+	vm.changeLanguage = changeLanguage;
 	vm.login = login;
 	vm.labels = {};
 
 	////////////////////
 	function activate () {
 		getAppLabels('en').then(function(response) {
+			setLoginPageLabels(response.data.d);
+		});
+	}
+
+	function changeLanguage(lang) {
+		getAppLabels(lang).then(function(response) {
 			setLoginPageLabels(response.data.d);
 		});
 	}
@@ -24,7 +31,9 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 	function setLoginPageLabels (data) {
 		labels = {
 			"selectLanguage": "SelectLanguageLabel",
-			"signIn": "SignInLabel"
+			"signIn": "SignInLabel",
+			"forgotPassword": "ForgotPasswordLabel",
+			"login": "LoginLabel"
 		};
 
 		angular.forEach(labels, function(val, key) {
