@@ -79,7 +79,7 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 		apiAuth.login(creds).then(function(response) {
 			$('.login-form form .preloader-log').hide();
 			var response = response.data.d;
-			if (response.isValid) {
+			if (response.IsValid) {
 				// Proceed class listing
 				alert('logged in success')
 			} else {
