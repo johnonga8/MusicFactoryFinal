@@ -38,6 +38,8 @@ gulp.task('deps', function () {
 gulp.task('default', ['js', 'deps']);
 
 gulp.task('watch', function() {
-	gulp.watch('Music Factory Teacher/resources/src/js/**/*.js', ['js', 'deps']);
-	gulp.watch('Music Factory Teacher/resources/src/sass/**/*.scss', ['sass']);
+	gulp.watch(
+		['Music Factory Teacher/resources/src/js/**/*.js','Music Factory Teacher/resources/src/sass/**/*.scss'],
+		['js', 'deps', 'sass']
+	);
 });
