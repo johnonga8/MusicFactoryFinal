@@ -7,6 +7,8 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 
 	activate();
 
+	vm.hasLoginError = false;
+	vm.loginError = 'wew';
 	vm.changeLanguage = changeLanguage;
 	vm.login = login;
 	vm.labels = {};
@@ -33,7 +35,10 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 			"selectLanguage": "SelectLanguageLabel",
 			"signIn": "SignInLabel",
 			"forgotPassword": "ForgotPasswordLabel",
-			"login": "LoginLabel"
+			"login": "LoginLabel",
+			"invalidLogin": "InvalidLoginErrorMessage",
+			"deactivatedUser": "DeactivatedUserErrorMessage",
+			"userLoggedIn": "UserLoggedInErrorMessage",
 		};
 
 		angular.forEach(labels, function(val, key) {
@@ -66,10 +71,11 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 			if (response.isValid) {
 				// Proceed class listing
 			} else {
+            	vm.hasLoginError = true;
 				switch (response.ResponseCode) {
 		            case 2: //UserNotFound
 		            case 7: //Unknown
-		            	alert ('Error on log in.');
+		            	vm.loginError = 'invalid';
 		                break;
 		            case 3: //UserLoggedFromDifferentIp
 		            case 6: //UserLoggedFromDifferentComputer
@@ -77,7 +83,7 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 		            	alert ('User already logged in.');
 		                break;
 		            case 99: //DeactivatedAccount
-		            	alert ('User is deactivated.');
+		            	vm.loginError = 'deactivated';
 		                break;
 		            default:
 		                alert("Something went wrong. Please contact your system administrator.");
