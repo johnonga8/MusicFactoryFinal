@@ -47,10 +47,12 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 	}
 
 	function login (creds) {
+		$('.login-form form .preloader-log').show();
 		creds.isBypass = false;
 		creds.deviceId = getDeviceId();
 
 		apiAuth.login(creds).then(function(response) {
+			$('.login-form form .preloader-log').hide();
 			var response = response.data.d;
 			if (response.isValid) {
 				// Proceed class listing
