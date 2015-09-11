@@ -5,6 +5,10 @@ app.config(function ($routeProvider) {
 		.when('/', {
 			templateUrl: './views/mf-login.html',
 			controller: 'LoginCtrl as ctrl'
+		})
+		.when('/home', {
+			templateUrl: './views/mf-myclasses.html',
+			controller: 'ClassesCtrl as ctrl'
 		});
 });
 
