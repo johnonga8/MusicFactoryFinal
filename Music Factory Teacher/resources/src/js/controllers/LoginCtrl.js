@@ -1,12 +1,44 @@
-app.controller('LoginCtrl', ['apiAuth', function(apiAuth) {
-	var vm = this;
+app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLanguage) {
+	var vm = this,
+		testEnvs = [
+			"localhost",
+			"music-factory.dev"
+		];
 
-	var testEnvs = [
-		"localhost",
-		"music-factory.dev"
-	]
+	activate();
 
-	vm.getDeviceId = function () {
+	vm.login = login;
+	vm.labels = {};
+
+	////////////////////
+	function activate () {
+		getAppLabels('en').then(function(response) {
+			setLoginPageLabels(response.data.d);
+		});
+	}
+
+	function getAppLabels(lang) {
+		return apiLanguage.getAppLabels(lang);
+	}
+
+	function setLoginPageLabels (data) {
+		labels = {
+			"selectLanguage": "SelectLanguageLabel",
+			"signIn": "SignInLabel"
+		};
+
+		angular.forEach(labels, function(val, key) {
+			vm.labels[key] = getLabelValue(data, val);
+		});
+	}
+
+	function getLabelValue(data, key) {
+		return _.result(_.find(data, function (label) {
+			return label.key == key;
+		}), 'value');
+	}
+
+	function getDeviceId () {
 		if (testEnvs.indexOf(document.location.hostname) == -1) {
 			return device.uuid;
 		}
@@ -14,9 +46,9 @@ app.controller('LoginCtrl', ['apiAuth', function(apiAuth) {
 		return 'test';
 	}
 
-	vm.login = function (creds) {
+	function login (creds) {
 		creds.isBypass = false;
-		creds.deviceId = vm.getDeviceId();
+		creds.deviceId = getDeviceId();
 
 		apiAuth.login(creds).then(function(response) {
 			var response = response.data.d;
