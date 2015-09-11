@@ -14,7 +14,7 @@ var srcs = {
 	deps: [
 		"Music Factory Teacher/resources/lib/jquery/dist/jquery.min.js",
 		"Music Factory Teacher/resources/lib/angular/angular.min.js",
-		"Music Factory Teacher/resources/lib/angular-route/angular-route.min.js"
+		"Music Factory Teacher/resources/lib/angular-route/angular-route.min.js",
 		"Music Factory Teacher/resources/lib/lodash/lodash.min.js",
 	]
 }
