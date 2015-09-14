@@ -18,7 +18,7 @@
         <ul class="nav-menu">
           <li class="menu-item">
             <a class="menu-link active" href="#"><span class="icon-class"></span><span class="menu-text">MY CLASSES</span></a>
-            <ul class="sub-menu">
+            <ul class="sub-menu hidden">
               <li class="menu-item" data-ng-repeat="class in ctrl.teacher.AssignedClasses">
                 <a class="menu-link active" href="#" data-ng-bind="class.ClassName"></a>
               </li>
@@ -34,13 +34,11 @@
     <!--end sidebar-->
     
     <!--start listing-->
-    <div class="col-xs-9">
+    <div class="col-xs-9 mf-main">
       <!--start masthead-->
-      <div class="listing-masthead-wrap">
-        <div class="row row-margin-null">
-          <div class="col-xs-12">
-            <h1 class="lineheight-85">My Classes</h1>
-          </div>
+      <div class="listing-masthead-wrap row">
+        <div class="col-xs-12">
+          <h1 class="lineheight-85">My Classes</h1>
         </div>
       </div>
       <!--end masthead-->
@@ -61,19 +59,25 @@
                 <a class="bttn bttn-view" ui-sref="class({classId: class.ClassId})">View</a>
               </div>
             </div>
-            <div class="notification-warning" data-ng-if="class.IsProgressReport1Triggered">Attention: Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
-            <div class="notification-warning" data-ng-if="class.IsProgressReport2Triggered">Attention: Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
+          </div>
+          <div class="notifications">
+            <div class="notification-warning" data-ng-if="class.IsProgressReport1Triggered"><span>Attention: Please conduct 1st Semester Progress Report.</span><a class="bttn bttn-go pull-right">Go</a></div>
+            <div class="notification-warning" data-ng-if="class.IsProgressReport2Triggered"><span>Attention: Please conduct 2nd Semester Progress Report.</span><a class="bttn bttn-go pull-right">Go</a></div>
           </div>
         </div>
+        <!-- end ng-repeat Classes -->
+
       </div>
   </div>
   <script src="js/myclasses.js"></script>
 
   <script>
     $('#class_listing').height( $(window).outerHeight() );
+    $('#class_listing .js-classes').height( $(window).outerHeight() - $('.listing-masthead-wrap').outerHeight() );
 
     $(window).resize(function() {
       $('#class_listing').height( $(window).outerHeight() );
+      $('#class_listing .js-classes').height( $(window).outerHeight() - $('.listing-masthead-wrap').outerHeight() );
     })
   </script>
 </div>

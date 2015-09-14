@@ -47,9 +47,28 @@
 		}
 	}
 
-	.aside-classes {
+	.menu-signout {
+		background: #93c8c5;
+		color:#eafcfb!important;
+		display: block;
+		font:normal 14px "museo_sans500";
+		padding: 7.5px 20px;
 
+		.power-class {
+			display: inline-block;
+		}
+
+		span {
+			font-size: 17px;
+			line-height: 28px;
+			vertical-align: top;
+		}
 	}
 
+	.wrap-signout {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
 }
 
