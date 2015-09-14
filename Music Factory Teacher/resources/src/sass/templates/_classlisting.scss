@@ -1,0 +1,39 @@
+// Class Listing
+
+#class_listing {
+	.js-classes {
+		overflow-y: scroll;
+
+		.classes-details {
+			.bttn-view {
+				padding: 5px 35px;
+			}
+
+			.classes-title {
+				font:normal 28px "museo_sans700";
+				color:#2f716d;
+				margin-top: 0;
+				margin-bottom: 5px;
+			}
+			strong {
+				color:#a2a7a9;
+				display: block;
+				font:normal 16px "museo_sans500";
+				margin-bottom: 5px;
+			}
+		}
+
+		.classes-wrap {
+			border-bottom: 1px solid #dbe1e6;
+			padding : 25px;
+
+			&:first-child {
+				padding-top: 45px;
+			}
+		}
+		.notifications:not(:empty) {
+			padding-top: 20px;
+		}
+	}
+
+}

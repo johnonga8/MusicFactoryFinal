@@ -1,0 +1,83 @@
+<div id="class_listing">    
+    <!--start sidebar-->
+    <div class="col-xs-3 main-aside">
+      <div class="branding-wrap">
+        <img src="./img/branding.png" alt="Music Factory" class="center-block"/>
+      </div>
+      <div class="profile-wrap">
+        <div class="profile-wrap-bg">
+          <img src="./img/profile-bg.jpg" alt="class"/>
+        </div>
+        <img ng-src="{{ctrl.teacher.ProfilePictureUrl}}" class="img-responsive profile-photo" alt="Profile Photo"/>
+        <div class="profile-header">
+          <strong data-ng-bind="ctrl.labels.welcomeMessage"></strong>
+          <h2 data-ng-bind="ctrl.teacher.FullName">Go Wan Xiu</h2>
+        </div>
+      </div>
+      <div class="aside-classes">
+        <ul class="nav-menu">
+          <li class="menu-item">
+            <a class="menu-link active" href="#"><span class="icon-class"></span><span class="menu-text">MY CLASSES</span></a>
+            <ul class="sub-menu hidden">
+              <li class="menu-item" data-ng-repeat="class in ctrl.teacher.AssignedClasses">
+                <a class="menu-link active" href="#" data-ng-bind="class.ClassName"></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="wrap-signout">
+            <a class="menu-signout" data-ng-click="ctrl.logout()"><span class="power-class"></span><span class="signout-text" data-ng-bind="ctrl.labels.signOut"></span></a>
+          </div>
+      </div>
+    </div>
+    <!--end sidebar-->
+    
+    <!--start listing-->
+    <div class="col-xs-9 mf-main">
+      <!--start masthead-->
+      <div class="listing-masthead-wrap row">
+        <div class="col-xs-12">
+          <h1 class="lineheight-85">My Classes</h1>
+        </div>
+      </div>
+      <!--end masthead-->
+      <div class="row row-margin-null js-myclasses" data-role="scroller">  
+        <div class="col-xs-12">
+          <div class="classes-titleblock-wrap" data-ng-repeat="class in ctrl.teacher.AssignedClasses">
+            <div class="classes-title">
+              <h2 data-ng-bind="class.ClassName"></h2>
+            </div>
+            <div class="classes-titleblock clearfix">
+              <div class="classes-titleblock-left">
+                <div class="classes-details">
+                  <strong data-ng-bind="'Age Group: ' + class.AgeGroup + ' old'"></strong>
+                  <strong data-ng-bind="'Class Size: ' + class.ClassSize" + " Students"></strong>
+                </div>
+              </div>
+              <div class="classes-titleblock-right">
+                <a class="bttn bttn-view" ui-sref="class({classId: class.ClassId})">View</a>
+              </div>
+            </div>
+          </div>
+          <div class="notifications">
+            <div class="notification-warning" data-ng-if="class.IsProgressReport1Triggered"><span>Attention: Please conduct 1st Semester Progress Report.</span><a class="bttn bttn-go pull-right">Go</a></div>
+            <div class="notification-warning" data-ng-if="class.IsProgressReport2Triggered"><span>Attention: Please conduct 2nd Semester Progress Report.</span><a class="bttn bttn-go pull-right">Go</a></div>
+          </div>
+        </div>
+        <!-- end ng-repeat Classes -->
+
+      </div>
+  </div>
+  <script src="js/myclasses.js"></script>
+
+  <script>
+    $('#class_listing').height( $(window).outerHeight() );
+    $('#class_listing .js-classes').height( $(window).outerHeight() - $('.listing-masthead-wrap').outerHeight() );
+
+    $(window).resize(function() {
+      $('#class_listing').height( $(window).outerHeight() );
+      $('#class_listing .js-classes').height( $(window).outerHeight() - $('.listing-masthead-wrap').outerHeight() );
+    })
+  </script>
+</div>

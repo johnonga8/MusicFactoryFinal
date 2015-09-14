@@ -1,0 +1,198 @@
+//Fonts
+@font-face {
+    font-family: 'museo_sans300';
+    src: url('../../fonts/museosans-300-webfont.eot'),
+         url('../../fonts/museosans-300-webfont.woff2') format('woff2'),
+         url('../../fonts/museosans-300-webfont.woff') format('woff'),
+         url('../../fonts/museosans-300-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans500';
+    src: url('../../fonts/museosans_2-webfont.eot'),
+         url('../../fonts/museosans_2-webfont.woff2') format('woff2'),
+         url('../../fonts/museosans_2-webfont.woff') format('woff'),
+         url('../../fonts/museosans_2-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans700';
+    src: url('../../fonts/museosans_3-webfont.eot'),
+         url('../../fonts/museosans_3-webfont.woff2') format('woff2'),
+         url('../../fonts/museosans_3-webfont.woff') format('woff'),
+         url('../../fonts/museosans_3-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans700_italic';
+    src: url('../../fonts/museosans-700italic-webfont.eot'),
+         url('../../fonts/museosans-700italic-webfont.woff2') format('woff2'),
+         url('../../fonts/museosans-700italic-webfont.woff') format('woff'),
+         url('../../fonts/museosans-700italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans900';
+    src: url('../../fonts/museosans_4-webfont.eot'),
+         url('../../fonts/museosans_4-webfont.woff2') format('woff2'),
+         url('../../fonts/museosans_4-webfont.woff') format('woff'),
+         url('../../fonts/museosans_4-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'museo_slab700';
+    src: url('../../fonts/museo_slab_2-webfont.eot'),
+         url('../../fonts/museo_slab_2-webfont.woff2') format('woff2'),
+         url('../../fonts/museo_slab_2-webfont.woff') format('woff'),
+         url('../../fonts/museo_slab_2-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// Base
+html {
+	background:#e4e9ed;
+	margin:0 auto;
+    height: 100%;
+    width: 100%;
+}
+body {
+	color:#12384b;
+	font: {
+		family: "museo_sans300" , sans-serif;
+		size: 17px;
+		weight: normal;
+	}
+    line-height: 1.5;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.pretest {
+	background:rgba(255,255,255,0.7);
+	height:100%;
+	position:fixed;
+	width:100%;
+	z-index:100000000;
+}
+a, 
+a:hover, 
+a:visited, 
+a:active, 
+a:focus {
+	text-decoration:none;
+	outline:none;
+}
+.nav > li > a:focus,
+.nav > li > a:hover {
+	background-color:transparent
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+.preloader-log {
+    display: none;
+    margin-left: 20px;
+}
+
+.notification-warning {
+    border:1px solid #ffe7b0;background:url(../../img/icon-warning.png) 15px center no-repeat #fff6e1;
+    padding:10px;
+    font:normal 12px "museo_sans500";
+    color:#12384b;
+    padding-left:35px;
+    margin-bottom:5px;
+
+    .bttn {
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        margin-top: -5px;
+        margin-right: 15px;
+    }
+}
+.bttn {
+    background:#ff914e;
+    border: 0;
+    border-radius:5px;
+    color:#fff;
+    display: inline-block;
+    font-size:16px;
+    padding:10px 30px;
+}
+
+.icon-class {
+    background:url('../../img/icon-class-actv.png') center center no-repeat;
+    margin-right:10px;
+    min-height: 25px;
+    width: 25px;
+}
+
+.power-class {
+    background:url('../../img/icon-signout.png') center center no-repeat;
+    margin-right:10px;
+    min-height: 25px;
+    width: 25px;
+}
+
+.nav-menu,
+.sub-menu {
+    list-style: none;
+    padding: 0;
+
+    .menu-link {
+        background: #69ada9;
+        color: #fff;
+        display: block;
+        margin-bottom: 2px;
+        padding: 10px 20px;
+    }
+
+}
+
+.nav-menu {
+    > .menu-item {
+        > .menu-link {
+            .menu-text {
+                font-weight: bold;
+            }
+
+            &.active {
+                color: #2f716d;
+            }
+        }
+
+        .icon-class {
+            float: left;
+        }
+    }
+}
+
+.sub-menu {
+    .menu-item {
+        > .menu-link {
+            padding-left: 55px;
+
+            &.active {
+                background: #2f716d !important;
+                color: #93c8c5;
+                font-weight: bold;
+            }
+        }    
+    }
+}

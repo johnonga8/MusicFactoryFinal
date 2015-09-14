@@ -411,6 +411,7 @@ function GenerateKinderLessonDetails(book, chapterNumber, lessonNumber) {
     {
       initializeJWPlayer("video_kinder", currentLesson.VideoUrl);
       KinderFullScreen();
+      console.log(currentLesson);
       currentVideoUrl = currentLesson.VideoUrl;
     }
 }

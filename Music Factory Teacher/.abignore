@@ -46,3 +46,8 @@ obj/**/*
 **/*.bak
 **/*.cache
 **/*.log
+
+# Project Files
+css/**/*
+js/**/*
+resources/**/*

@@ -1,4 +1,10 @@
 */bin
 */obj
+*/.ab/
 *.user-settings.xml
 Music Factory Teacher/js/bindings.js
+node_modules
+Music Factory Teacher/resources/lib
+Music Factory Teacher/.ab/
+Music Factory Teacher/App_Resources
+*.apk
