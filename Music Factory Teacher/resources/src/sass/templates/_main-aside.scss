@@ -1,0 +1,55 @@
+// Main Aside
+.main-aside {
+	background:#7ebbb7;
+	padding: 0;
+	height:100%;
+
+	.branding-wrap {
+		background: #fff;
+		padding: 15px 0;
+	}
+
+	.profile-wrap-bg {
+		max-height: 100px;
+		overflow: hidden;
+
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	.profile-photo {
+		border:3px solid #fff;
+		border-radius:50%;
+		width:100px;
+		height:100px;
+		margin:-50px auto 10px;
+		position:relative;
+	}
+
+	.profile-header {
+	    background: url('../../img/line.png') bottom center no-repeat;
+	    padding-bottom: 20px;
+	    margin-bottom: 30px;	
+		text-align: center;
+
+		strong {
+			font: normal 14px "museo_sans500";
+		    color: #b0e6e2;
+		    margin-bottom: 5px;	
+		}
+
+		h2 {
+    		color: #eafcfb;	
+		    font: normal 20px "museo_sans700";
+    		margin-top: 0;
+		}
+	}
+
+	.aside-classes {
+
+	}
+
+}
+

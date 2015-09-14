@@ -1,0 +1,118 @@
+<div id="class_listing">    
+    <!--start sidebar-->
+    <div class="col-xs-3 main-aside">
+      <div class="branding-wrap">
+        <img src="./img/branding.png" alt="Music Factory" class="center-block"/>
+      </div>
+      <div class="profile-wrap">
+        <div class="profile-wrap-bg">
+          <img src="./img/profile-bg.jpg" alt="class"/>
+        </div>
+        <img ng-src="{{ctrl.teacher.ProfilePictureUrl}}" class="img-responsive profile-photo" alt="Profile Photo"/>
+        <div class="profile-header">
+          <strong>Welcome Back!</strong>
+          <h2 data-ng-bind="ctrl.teacher.FullName">Go Wan Xiu</h2>
+        </div>
+      </div>
+      <div class="aside-classes">
+        <ul class="nav-menu">
+          <li class="menu-item">
+            <a class="menu-link active" href="#"><span class="icon-class"></span><span class="menu-text">MY CLASSES</span></a>
+
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a class="menu-link active" href="#">Joy 2015 EN</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">Class Joy 2015 CN</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">Class Unity 2015 - EN</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="wrap-signout">
+            <a class="menu-signout" href="#"><span class="power-class"></span><span class="signout-text">Sign Out</span></a>
+          </div>
+      </div>
+    </div>
+    <!--end sidebar-->
+    
+    <!--start listing-->
+    <div class="col-xs-9">
+      <!--start masthead-->
+      <div class="listing-masthead-wrap">
+        <div class="row row-margin-null">
+          <div class="col-xs-12">
+            <h1 class="lineheight-85">My Classes</h1>
+          </div>
+        </div>
+      </div>
+      <!--end masthead-->
+      <div class="row row-margin-null js-myclasses" data-role="scroller">  
+        <div class="col-xs-12">
+          <div class="classes-titleblock-wrap">
+            <div class="classes-title">
+              <h2>Joy 2015 EN</h2>
+            </div>
+            <div class="classes-titleblock clearfix">
+              <div class="classes-titleblock-left">
+                <div class="classes-details">
+                  <strong>Age Group: 3 - 4 years old</strong>
+                  <strong>Class Size: 25 students</strong>
+                </div>
+              </div>
+              <div class="classes-titleblock-right">
+                <a class="bttn bttn-view">View</a>
+              </div>
+            </div>
+            <div class="notification-warning">Attention: Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
+            <div class="notification-warning">Attention: Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
+          </div>
+          <div class="classes-titleblock-wrap">
+            <div class="classes-title">
+              <h2>Joy 2015 CH</h2>
+            </div>
+            <div class="classes-titleblock clearfix">
+              <div class="classes-titleblock-left">
+                <div class="classes-details">
+                  <strong>Age Group: 3 - 4 years old</strong>
+                  <strong>Class Size: 19 students</strong>
+                </div>
+              </div>
+              <div class="classes-titleblock-right">
+                <a class="bttn bttn-view">View</a>
+              </div>
+            </div>
+          </div>
+          <div class="classes-titleblock-wrap">
+            <div class="classes-title">
+              <h2>Unity 2015 EN</h2>
+            </div>
+            <div class="classes-titleblock clearfix">
+              <div class="classes-titleblock-left">
+                <div class="classes-details">
+                  <strong>Age Group: 0 - 24 months</strong>
+                  <strong>Class Size: 18 students</strong>
+                </div>
+              </div>
+              <div class="classes-titleblock-right">
+                <a class="bttn bttn-view">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <script src="js/myclasses.js"></script>
+
+  <script>
+    $('#class_listing').height( $(window).outerHeight() );
+
+    $(window).resize(function() {
+      $('#class_listing').height( $(window).outerHeight() );
+    })
+  </script>
+</div>

@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLanguage) {
+app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', 'sessionService', '$location', function(apiAuth, apiLanguage, sessionService, $location) {
 	var vm = this,
 		testEnvs = [
 			"localhost",
@@ -67,6 +67,7 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 
 	function logout() {
 		apiAuth.logout(vm.userCreds).then(function(response) {
+        	$('#alreadyloggedin').modal('hide');
 			login(vm.userCreds);
 		});
 	}
@@ -81,7 +82,10 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 			var response = response.data.d;
 			if (response.IsValid) {
 				// Proceed class listing
-				alert('logged in success')
+				sessionService.setSession('currentUser', creds.username);
+				sessionService.setSession('deviceId', creds.deviceId);
+
+				$location.path('/home');
 			} else {
             	vm.hasLoginError = true;
 				switch (response.ResponseCode) {
@@ -94,7 +98,7 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 		            case 9: //UserAlreadyLoggedIn
 		            	vm.loginError = 'alreadyLoggedIn';
 		            	vm.userCreds = creds;
-		            	$('#alreadyloggedin').modal();
+		            	$('#alreadyloggedin').modal('show');
 		                break;
 		            case 99: //DeactivatedAccount
 		            	vm.loginError = 'deactivated';

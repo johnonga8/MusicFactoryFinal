@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
 			controller: 'LoginCtrl as ctrl'
 		})
 		.when('/home', {
-			templateUrl: './views/mf-myclasses.html',
+			templateUrl: './views/mf-classlisting.html',
 			controller: 'ClassesCtrl as ctrl'
 		});
 });
