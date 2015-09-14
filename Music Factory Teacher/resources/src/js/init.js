@@ -16,4 +16,4 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		});
 });
 
-var apiBaseUrl = "http://mf-live.a8hosting.com/Custom/Services/A8_MusicFactoryService.svc/";
+var apiBaseUrl = "http://musicfactory.a8hosting.com/Custom/Services/A8_MusicFactoryService.svc/";
