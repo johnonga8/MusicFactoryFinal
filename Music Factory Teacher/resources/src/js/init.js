@@ -7,12 +7,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		.state('login', {
 			url: "/login",
 			templateUrl: './views/mf-login.html',
-			controller: 'LoginCtrl as ctrl'
+			controller: 'LoginCtrl as ctrl',
 		})
 		.state('home', {
 			url: "/home",
 			templateUrl: './views/mf-classlisting.html',
 			controller: 'ClassesCtrl as ctrl'
+		})
+		.state('class', {
+			url: "/class",
+			templateUrl: './views/mf-individualclass.html',
+			controller: 'ClassCtrl as ctrl',
+			params: {
+				classId: null
+			}
 		});
 });
 

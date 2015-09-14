@@ -5,7 +5,7 @@ app.factory('apiClass', ['$http', function($http) {
 
 	return apiClass;
 
-	function getDetails(params) {
-		return $http.post(apiBaseUrl + 'GetClassDetails', params);
+	function getDetails(id) {
+		return $http.post(apiBaseUrl + 'GetClassDetails', {classId: id});
 	}
 }]);

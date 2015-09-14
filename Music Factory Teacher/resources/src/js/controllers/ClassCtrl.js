@@ -1,4 +1,4 @@
-app.controller('ClassCtrl', ['apiClass', function (apiClass) {
+app.controller('ClassCtrl', ['apiClass', '$stateParams', function (apiClass, $stateParams) {
 	var vm = this;
 
 	vm.class = {};
@@ -7,7 +7,7 @@ app.controller('ClassCtrl', ['apiClass', function (apiClass) {
 
 	////////////////////
 	function activate () {
-		var id = 1;
+		var id = $stateParams.classId;
 		apiClass.getDetails(id).then(function(response) {
 			vm.class = response.data.d;
 		});
