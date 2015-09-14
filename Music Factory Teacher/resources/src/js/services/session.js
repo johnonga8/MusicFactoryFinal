@@ -2,7 +2,8 @@ app.service('sessionService', function ($http) {
 	var session = {
 		currentUser: 'TeacherAppUser4', // Mocked for testing
 		profileId: '',
-		deviceId: ''
+		deviceId: '',
+		language: 'en',
 	};
 
 	var setSession = function (obj, value) {

@@ -10,7 +10,7 @@
         </div>
         <img ng-src="{{ctrl.teacher.ProfilePictureUrl}}" class="img-responsive profile-photo" alt="Profile Photo"/>
         <div class="profile-header">
-          <strong>Welcome Back!</strong>
+          <strong data-ng-bind="ctrl.labels.welcomeMessage"></strong>
           <h2 data-ng-bind="ctrl.teacher.FullName">Go Wan Xiu</h2>
         </div>
       </div>
@@ -27,7 +27,7 @@
         </ul>
 
         <div class="wrap-signout">
-            <a class="menu-signout" href="#"><span class="power-class"></span><span class="signout-text">Sign Out</span></a>
+            <a class="menu-signout" href="#"><span class="power-class"></span><span class="signout-text" data-ng-bind="ctrl.labels.signOut"></span></a>
           </div>
       </div>
     </div>

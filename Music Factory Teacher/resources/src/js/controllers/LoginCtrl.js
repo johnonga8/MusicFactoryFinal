@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', 'sessionService', '$state', function(apiAuth, apiLanguage, sessionService, $state) {
+app.controller('LoginCtrl', ['apiAuth', 'apiLabels', 'sessionService', '$state', function(apiAuth, apiLanguage, sessionService, $state) {
 	var vm = this,
 		testEnvs = [
 			"localhost",
@@ -24,6 +24,7 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', 'sessionService', '$state
 	function changeLanguage(lang) {
 		getAppLabels(lang).then(function(response) {
 			setLoginPageLabels(response.data.d);
+			sessionService.setSession('language', lang);
 		});
 	}
 
@@ -84,7 +85,7 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', 'sessionService', '$state
 				// Proceed class listing
 				sessionService.setSession('currentUser', creds.username);
 				sessionService.setSession('deviceId', creds.deviceId);
-
+				
 				$state.go('home');
 			} else {
             	vm.hasLoginError = true;
