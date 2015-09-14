@@ -56,8 +56,9 @@ app.controller('ClassCtrl', ['apiClass', '$stateParams', function (apiClass, $st
 		});
 	}
 }]);
-app.controller('ClassesCtrl', ['apiTeacher' , 'apiLabels' ,'sessionService', function (apiTeacher, apiLabels, sessionService) {
+app.controller('ClassesCtrl', ['apiTeacher' , 'apiLabels', 'apiAuth' ,'sessionService', '$state', function (apiTeacher, apiLabels, apiAuth, sessionService, $state) {
 	var vm = this;
+	vm.logout = logout;
 	vm.session = sessionService.getSession();
 	vm.teacher = {};
 	vm.labels = {};
@@ -100,6 +101,14 @@ app.controller('ClassesCtrl', ['apiTeacher' , 'apiLabels' ,'sessionService', fun
 		return _.result(_.find(data, function (label) {
 			return label.key == key;
 		}), 'value');
+	}
+
+	function logout() {
+		apiAuth.logout(vm.currentUser).then(function(response) {
+			// show loading screen
+			// clear session
+			$state.go("login");
+		});
 	}
 }]);
 
