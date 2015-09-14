@@ -14,7 +14,7 @@ var srcs = {
 	deps: [
 		"Music Factory Teacher/resources/lib/jquery/dist/jquery.min.js",
 		"Music Factory Teacher/resources/lib/angular/angular.min.js",
-		"Music Factory Teacher/resources/lib/angular-route/angular-route.min.js",
+		"Music Factory Teacher/resources/lib/angular-ui-router/release/angular-ui-router.min.js",
 		"Music Factory Teacher/resources/lib/bootstrap-sass-official/assets/javascripts/bootstrap.min.js",
 		"Music Factory Teacher/resources/lib/lodash/lodash.min.js",
 	]
@@ -41,7 +41,7 @@ gulp.task('deps', function () {
 
 gulp.task('default', ['js', 'deps', 'sass']);
 
-gulp.task('watch', function() {
+gulp.task('watch', ['default'], function() {
 	gulp.watch(
 		['Music Factory Teacher/resources/src/js/**/*.js','Music Factory Teacher/resources/src/sass/**/*.scss'],
 		['js', 'deps', 'sass']
