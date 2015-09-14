@@ -1,14 +1,13 @@
-var app = angular.module('musicFactory', ['ngRoute']);
+var app = angular.module('musicFactory', ['ui.router']);
+	
+app.config(function ($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise("/login");
 
-app.config(function ($routeProvider) {
-	$routeProvider
-		.when('/', {
+	$stateProvider
+		.state('login', {
+			"url": "/login",
 			templateUrl: './views/mf-login.html',
 			controller: 'LoginCtrl as ctrl'
-		})
-		.when('/home', {
-			templateUrl: './views/mf-myclasses.html',
-			controller: 'ClassesCtrl as ctrl'
 		});
 });
 
