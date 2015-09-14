@@ -61,8 +61,8 @@
                 <a class="bttn bttn-view">View</a>
               </div>
             </div>
-            <div class="notification-warning">Attention: Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
-            <div class="notification-warning">Attention: Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
+            <div class="notification-warning" data-ng-if="class.IsProgressReport1Triggered">Attention: Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
+            <div class="notification-warning" data-ng-if="class.IsProgressReport2Triggered">Attention: Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
           </div>
         </div>
       </div>
