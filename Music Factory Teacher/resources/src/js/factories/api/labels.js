@@ -1,9 +1,9 @@
-app.factory('apiLanguage', ['$http', function ($http) {
-	var apiLanguage = {
+app.factory('apiLabels', ['$http', function ($http) {
+	var apiLabels = {
 		getAppLabels: getAppLabels
 	}
 
-	return apiLanguage;
+	return apiLabels;
 
 	function getAppLabels (lang) {
 		return $http.post(apiBaseUrl + 'GetTeacherAppLabels', {cultureName: lang});
