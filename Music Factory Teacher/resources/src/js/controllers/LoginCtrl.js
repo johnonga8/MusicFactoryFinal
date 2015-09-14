@@ -11,6 +11,7 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 	vm.loginError = 'wew';
 	vm.changeLanguage = changeLanguage;
 	vm.login = login;
+	vm.logout = logout;
 	vm.labels = {};
 
 	////////////////////
@@ -38,6 +39,8 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 			"username": "UsernameLabel",
 			"password": "PasswordLabel",
 			"login": "LoginLabel",
+			"logoff": "LogOffUserLabel",
+			"cancel": "CancelLabel",
 			"invalidLogin": "InvalidLoginErrorMessage",
 			"deactivatedUser": "DeactivatedUserErrorMessage",
 			"userLoggedIn": "UserLoggedInErrorMessage",
@@ -62,6 +65,12 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 		return 'test';
 	}
 
+	function logout() {
+		apiAuth.logout(vm.userCreds).then(function(response) {
+			login(vm.userCreds);
+		});
+	}
+
 	function login (creds) {
 		$('.login-form form .preloader-log').show();
 		creds.isBypass = false;
@@ -70,8 +79,9 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 		apiAuth.login(creds).then(function(response) {
 			$('.login-form form .preloader-log').hide();
 			var response = response.data.d;
-			if (response.isValid) {
+			if (response.IsValid) {
 				// Proceed class listing
+				alert('logged in success')
 			} else {
             	vm.hasLoginError = true;
 				switch (response.ResponseCode) {
@@ -82,7 +92,9 @@ app.controller('LoginCtrl', ['apiAuth', 'apiLanguage', function(apiAuth, apiLang
 		            case 3: //UserLoggedFromDifferentIp
 		            case 6: //UserLoggedFromDifferentComputer
 		            case 9: //UserAlreadyLoggedIn
-		            	alert ('User already logged in.');
+		            	vm.loginError = 'alreadyLoggedIn';
+		            	vm.userCreds = creds;
+		            	$('#alreadyloggedin').modal();
 		                break;
 		            case 99: //DeactivatedAccount
 		            	vm.loginError = 'deactivated';
