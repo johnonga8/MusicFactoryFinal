@@ -13,6 +13,7 @@ app.controller('ClassesCtrl', ['apiTeacher' , 'sessionService', function (apiTea
 	function activate () {
 		apiTeacher.getDetails(vm.currentUser).then(function(response) {
 			vm.teacher = response.data.d;
+			console.log(vm.teacher);
 			sessionService.setSession('profileId', vm.teacher.ProfileId);
 		});
 	}

@@ -1,6 +1,6 @@
 app.service('sessionService', function ($http) {
 	var session = {
-		currentUser: '',
+		currentUser: 'TeacherAppUser4', // Mocked for testing
 		profileId: '',
 		deviceId: ''
 	};

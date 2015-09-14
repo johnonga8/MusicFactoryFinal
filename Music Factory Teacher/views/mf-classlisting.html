@@ -18,16 +18,9 @@
         <ul class="nav-menu">
           <li class="menu-item">
             <a class="menu-link active" href="#"><span class="icon-class"></span><span class="menu-text">MY CLASSES</span></a>
-
             <ul class="sub-menu">
-              <li class="menu-item">
-                <a class="menu-link active" href="#">Joy 2015 EN</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" href="#">Class Joy 2015 CN</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" href="#">Class Unity 2015 - EN</a>
+              <li class="menu-item" data-ng-repeat="class in ctrl.teacher.AssignedClasses">
+                <a class="menu-link active" href="#" data-ng-bind="class.ClassName"></a>
               </li>
             </ul>
           </li>
@@ -53,15 +46,15 @@
       <!--end masthead-->
       <div class="row row-margin-null js-myclasses" data-role="scroller">  
         <div class="col-xs-12">
-          <div class="classes-titleblock-wrap">
+          <div class="classes-titleblock-wrap" data-ng-repeat="class in ctrl.teacher.AssignedClasses">
             <div class="classes-title">
-              <h2>Joy 2015 EN</h2>
+              <h2 data-ng-bind="class.ClassName"></h2>
             </div>
             <div class="classes-titleblock clearfix">
               <div class="classes-titleblock-left">
                 <div class="classes-details">
-                  <strong>Age Group: 3 - 4 years old</strong>
-                  <strong>Class Size: 25 students</strong>
+                  <strong data-ng-bind="'Age Group: ' + class.AgeGroup + ' old'"></strong>
+                  <strong data-ng-bind="'Class Size: ' + class.ClassSize" + " Students"></strong>
                 </div>
               </div>
               <div class="classes-titleblock-right">
@@ -70,38 +63,6 @@
             </div>
             <div class="notification-warning">Attention: Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
             <div class="notification-warning">Attention: Please conduct 2nd Semester Progress Report.<a class="bttn-go">Go</a></div>
-          </div>
-          <div class="classes-titleblock-wrap">
-            <div class="classes-title">
-              <h2>Joy 2015 CH</h2>
-            </div>
-            <div class="classes-titleblock clearfix">
-              <div class="classes-titleblock-left">
-                <div class="classes-details">
-                  <strong>Age Group: 3 - 4 years old</strong>
-                  <strong>Class Size: 19 students</strong>
-                </div>
-              </div>
-              <div class="classes-titleblock-right">
-                <a class="bttn bttn-view">View</a>
-              </div>
-            </div>
-          </div>
-          <div class="classes-titleblock-wrap">
-            <div class="classes-title">
-              <h2>Unity 2015 EN</h2>
-            </div>
-            <div class="classes-titleblock clearfix">
-              <div class="classes-titleblock-left">
-                <div class="classes-details">
-                  <strong>Age Group: 0 - 24 months</strong>
-                  <strong>Class Size: 18 students</strong>
-                </div>
-              </div>
-              <div class="classes-titleblock-right">
-                <a class="bttn bttn-view">View</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
