@@ -1,27 +1,39 @@
 // Class Listing
 
 #class_listing {
-	.menu-signout {
-		background: #93c8c5;
-		color:#eafcfb!important;
-		display: block;
-		font:normal 14px "museo_sans500";
-		padding: 7.5px 20px;
+	.js-classes {
+		overflow-y: scroll;
 
-		.power-class {
-			display: inline-block;
+		.classes-details {
+			.bttn-view {
+				padding: 5px 35px;
+			}
+
+			.classes-title {
+				font:normal 28px "museo_sans700";
+				color:#2f716d;
+				margin-top: 0;
+				margin-bottom: 5px;
+			}
+			strong {
+				color:#a2a7a9;
+				display: block;
+				font:normal 16px "museo_sans500";
+				margin-bottom: 5px;
+			}
 		}
 
-		span {
-			font-size: 17px;
-			line-height: 28px;
-			vertical-align: top;
+		.classes-wrap {
+			border-bottom: 1px solid #dbe1e6;
+			padding : 25px;
+
+			&:first-child {
+				padding-top: 45px;
+			}
+		}
+		.notifications:not(:empty) {
+			padding-top: 20px;
 		}
 	}
 
-	.wrap-signout {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-	}
 }
