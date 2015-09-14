@@ -1,5 +1,6 @@
 */bin
 */obj
+*/.ab/
 *.user-settings.xml
 Music Factory Teacher/js/bindings.js
 node_modules

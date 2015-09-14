@@ -83,7 +83,8 @@
   $('#alreadyloggedin').on('show.bs.modal', reposition);
 
   $(window).on('resize', function() {
-      $('#alreadyloggedin:visible').each(reposition);
+    $('#login').height( $(window).outerHeight() - $('.language-bar').outerHeight() + 38);
+    $('#alreadyloggedin:visible').each(reposition);
   });
 
   function reposition() {

@@ -5,9 +5,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 	$stateProvider
 		.state('login', {
-			"url": "/login",
+			url: "/login",
 			templateUrl: './views/mf-login.html',
 			controller: 'LoginCtrl as ctrl'
+		})
+		.state('home', {
+			url: "/home",
+			templateUrl: './views/mf-classlisting.html',
+			controller: 'ClassesCtrl as ctrl'
 		});
 });
 
