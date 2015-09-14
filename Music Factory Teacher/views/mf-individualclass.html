@@ -33,11 +33,11 @@
         <div class="row row-margin-null">
           <div class="col-xs-7 masthead-classes-left">
             <strong>My Classes</strong>
-            <h1>Joy 2015 EN</h1>
+            <h1 data-ng-bind="ctrl.class.AssignedBookTitle"></h1>
           </div>
           <div class="col-xs-5 masthead-classes-right">
-            <strong>Age Group: 3-4 years old</strong>
-            <strong>Class Size: 10 Students</strong>
+            <strong data-ng-bind="'Age Group: ' + ctrl.class.AgeGroup +' old'"></strong>
+            <strong data-ng-bind="'Class Size: ' + ctrl.class.ClassSize+ ' Students'"></strong>
           </div>
         </div>
       </div>
@@ -56,10 +56,10 @@
               <div class="individual-classes-book row">
                 <div class="individual-classes-content col-xs-12">
                   <div class="individual-classes-bookcover">
-                    <img src="./img/books/owl_yellow.jpg" class="img-responsive"/>
+                    <img data-ng-src="{{ ctrl.class.AssignedBookThumbnailUrl }}" class="img-responsive"/>
                   </div>
                   <div class="individual-classes-slider">
-                    <h2>Owl Series : Blinkie Beats</h2>
+                    <h2 data-ng-bind="ctrl.class.AssignedBookTitle"></h2>
                     <div class="progress-wrap clearfix">
                       <div class="progress-width">
                         <div class="progress-bar-wrap">
@@ -79,8 +79,8 @@
                   </div>
                 </div>
               </div>
-              <div class="notification-warning">English Book : Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
-              <div class="notification-warning">English Book : Please conduct 12nd Semester Progress Report.<a class="bttn-go">Go</a></div>
+              <div class="notification-warning" data-ng-if="ctrl.class.IsProgressReport1Triggered">English Book : Please conduct 1st Semester Progress Report.<a class="bttn-go">Go</a></div>
+              <div class="notification-warning" data-ng-if="ctrl.class.IsProgressReport1Triggered">English Book : Please conduct 12nd Semester Progress Report.<a class="bttn-go">Go</a></div>
             </div> 
             <!--end book-->
           </div>  
